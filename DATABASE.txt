@@ -57,7 +57,7 @@ CREATE TABLE `StepPage`(
     FOREIGN KEY (StepID) REFERENCES `Step`(StepID)
 )
 
-CREATE TABLE `ProgressStep`(
+CREATE TABLE `ProgressStep`()
 	StudentID int,
     PageID int,
     Correct BOOLEAN
@@ -77,11 +77,11 @@ CREATE TABLE Shift(
     DaysID int,
     StudentID int,
     TeacherID int,
-    
+
     TimeStart TIME NOT NULL,
     TimeEnd TIME NOT NULL,
     Booked BOOLEAN,
-    
+
     FOREIGN KEY (DaysID) REFERENCES Days(DaysID),
     FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
     FOREIGN KEY (TeacherID) REFERENCES Teacher(TeacherID)
