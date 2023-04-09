@@ -1,0 +1,117 @@
+CREATE TABLE `User`(
+	UserID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Name VARCHAR(50) NOT NULL,
+    Email VARCHAR(50) NOT NULL,
+    UserType VARCHAR(8) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    `Password` VARCHAR(10) NOT NULL,
+    PhoneNumber VARCHAR(14),
+    Gender VARCHAR(8),
+    DOB DATE,
+    Photo VARCHAR(20)
+)
+
+CREATE TABLE `Student`(
+	StudentID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Subscribe BOOLEAN ,
+    PointXP INT,
+    UserID INT,
+    FOREIGN KEY (UserID) REFERENCES `User`(UserID)
+)
+
+CREATE TABLE `Teacher`(
+	TeacherID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Description TEXT NOT NULL,
+    Fee INT NOT NULL,
+    Certificate VARCHAR(20) NOT NULL,
+    UserID INT,
+    FOREIGN KEY (UserID) REFERENCES `User`(UserID)
+)
+
+CREATE TABLE `Payment`(
+	PaymentID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Evidance VARCHAR(20) NOT NULL,
+    `Date` DATE NOT NULL,
+    Verified BOOLEAN,
+    StudentID INT,
+    FOREIGN KEY (StudentID) REFERENCES `Student`(StudentID)
+)
+
+CREATE TABLE `Subscribe`(
+	SubscribeID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Accepted BOOLEAN,
+    Finished BOOLEAN,
+    StudentID INT,
+    TeacherID INT,
+    FOREIGN KEY (StudentID) REFERENCES `Student`(StudentID),
+    FOREIGN KEY (TeacherID) REFERENCES `Teacher`(TeacherID)
+)
+
+CREATE TABLE Step(
+	`StepID` int PRIMARY KEY AUTO_INCREMENT NOT NULL
+)
+
+CREATE TABLE `StepPage`(
+	PageID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    StepID int,
+    FOREIGN KEY (StepID) REFERENCES `Step`(StepID)
+)
+
+CREATE TABLE `ProgressStep`(
+	StudentID int,
+    PageID int,
+    Correct BOOLEAN
+)
+
+ALTER TABLE progressstep ADD CONSTRAINT FK_ProgressStep_StudentID FOREIGN KEY(StudentID) REFERENCES Student(StudentID);
+ALTER TABLE progressstep ADD CONSTRAINT FK_ProgressStep_PageID FOREIGN KEY(PageID) REFERENCES steppage(PageID)
+
+CREATE TABLE Days(
+	DaysID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    TeacherID int,
+    FOREIGN KEY (TeacherID) REFERENCES Teacher(TeacherID)
+)
+
+CREATE TABLE Shift(
+	ShiftID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    DaysID int,
+    StudentID int,
+    TeacherID int,
+    
+    TimeStart TIME NOT NULL,
+    TimeEnd TIME NOT NULL,
+    Booked BOOLEAN,
+    
+    FOREIGN KEY (DaysID) REFERENCES Days(DaysID),
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+    FOREIGN KEY (TeacherID) REFERENCES Teacher(TeacherID)
+)
+
+CREATE TABLE `Article` (
+	ArticleID INT PRIMARY KEY AUTO_INCREMENT,
+	Title VARCHAR(255) NOT NULL,
+	Body TEXT NOT NULL,
+	Author VARCHAR(255) NOT NULL,
+	Date DATE NOT NULL,
+	Image VARCHAR(255) NOT NULL
+)
+
+CREATE TABLE `Flashcard` (
+	FlashcardID INT PRIMARY KEY AUTO_INCREMENT,
+	JapanChars VARCHAR(255) NOT NULL,
+	Romaji VARCHAR(255) NOT NULL
+)
+
+CREATE TABLE `CertificateVerification` (
+	VerifyID INT PRIMARY KEY AUTO_INCREMENT,
+	Name VARCHAR(255) NOT NULL,
+	Email VARCHAR(255) NOT NULL,
+	Password VARCHAR(10) NOT NULL,
+	PhoneNumber VARCHAR(20) NOT NULL,
+	Gender VARCHAR(255) NOT NULL,
+	DOB DATE NOT NULL,
+	Address VARCHAR(255) NOT NULL,
+	Certificate VARCHAR(255) NOT NULL,
+	Verified BOOLEAN
+)
+
