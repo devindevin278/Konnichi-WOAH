@@ -1,12 +1,25 @@
+body{
+    height: 100%;
+    /* background-color:#FAEEE7 ; */
+}
+.body-bg{
+    /* background-color:#FAEEE7 */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Poppins", sans-serif;
+  }
+
+.container{
+    display: flex;
+    justify-content: flex;
+    color: #33272A;
+}
+
 .navbar{
     padding: 0;
     background-color: #FAEEE7;
     color: #33272A;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1vw;
-    line-height: 100%;
 }
 
 .navbar ul {
@@ -67,3 +80,23 @@
 .navbar .active:focus{
   color: #33272A;
 }
+
+/* SECTION GENERAL */
+section {
+    /* display: flex; */
+    justify-content: flex;
+    padding: 50px 50px;
+    background-color: #FAEEE7;
+}
+
+.section-bg {
+    background-color: FAEEE7;
+  }
+
+/* ARTICLE */
+
+section.article {
+    background-color: #33272A;
+}
+
+
