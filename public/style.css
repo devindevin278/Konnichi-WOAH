@@ -1,0 +1,69 @@
+.navbar{
+    padding: 0;
+    background-color: #FAEEE7;
+    color: #33272A;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1vw;
+    line-height: 100%;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.navbar li {
+  position: relative;
+}
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: flex;
+  padding: 10px 15px;
+  color: #33272A;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.navbar a i,
+.navbar a:focus i{
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+.navbar>ul>li>a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -1px;
+  left: 3;
+  background-color: #33272A;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+.navbar a:hover:before,
+.navbar li:hover>a:before,
+.navbar .active:before {
+  visibility: visible;
+  width: 25px;
+}
+.navbar a:hover,
+.navbar li:hover>a {
+  color: #FF8BA7;
+}
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus{
+  color: #33272A;
+}
