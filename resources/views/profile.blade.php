@@ -1,5 +1,6 @@
 @extends('layouts.mainStudent')
 
-@section('container')
+@section('content')
 
 @endsection
+

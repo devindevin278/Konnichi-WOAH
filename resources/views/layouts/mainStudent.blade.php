@@ -7,18 +7,19 @@
     <title>@yield('title')</title>
 
     {{-- CSS --}}
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
 
 </head>
 <body>
 
     @include('partials.navbarStudent')
 
-    <div class="container mt-4">
-        @yield('container')
-    </div>
+
+    @yield('content')
+
 
 
 
