@@ -5,11 +5,8 @@
 
 
 <section class="article">
-    @extends('layouts.mainStudent')
 
-    @section('content')
 
-    <section class="article">
         <div class="container mt-5 ">
             <h2>Want to more about Japan?</h2>
         </div>
@@ -52,10 +49,8 @@
         </div>
 
 
-    </section>
 
 
-    @endsection
 
 
 </section>

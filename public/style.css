@@ -1,7 +1,7 @@
 body{
     height: 100%;
-    /* background-color:#FAEEE7 ; */
 }
+
 h1,h2,h3,h4,h5,h6 {
     font-family: "Poppins", sans-serif;
   }
@@ -29,17 +29,12 @@ h1,h2,h3,h4,h5,h6 {
   position: relative;
 }
 .navbar a, .navbar a:focus {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  justify-content: flex;
   padding: 10px 15px;
   color: #33272A;
   white-space: nowrap;
   transition: 0.3s;
   font-size: 12px;
   font-family: 'Poppins', sans-serif;
-  text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -56,7 +51,7 @@ h1,h2,h3,h4,h5,h6 {
   height: 2px;
   bottom: -1px;
   left: 3;
-  /* background-color: #33272A; */
+  background-color: #33272A;
   visibility: hidden;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
@@ -67,19 +62,16 @@ h1,h2,h3,h4,h5,h6 {
   visibility: visible;
   width: 25px;
 }
-.navbar a:hover,
-.navbar li:hover>a {
-  color: #FF8BA7;
-}
+
 .navbar a:hover,
 .navbar .active,
-.navbar .active:focus{
-  color: #33272A;
+.navbar .active:focus,
+.navbar li:hover>a {
+    color: #FF8BA7;
 }
 
 /* SECTION GENERAL */
 section {
-    /* display: flex; */
     justify-content: flex;
     padding: 50px 50px;
     background-color: #FAEEE7;
@@ -100,7 +92,7 @@ section.article {
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
-/* article inside */
+/* Article Inside */
 
 section.showArticle{
     background-color: #FAEEE7;
@@ -108,9 +100,15 @@ section.showArticle{
 }
 .btn-back {
     background: #FFC6C7;
-    background: linear-gradient(to right, #FFC6C7, #FFC6C7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #FFC6C7, #FFC6C7);
     color: #FFC6C7;
     border: 3px solid #FFC6C7;
+}
+
+.btn-back:hover{
+    background: #f48183;
+    background: linear-gradient(to right, #f48183, #f48183);
+    color: #f48183;
 }
 
 .imgbox{
@@ -120,8 +118,8 @@ section.showArticle{
     gap: 1.605vw;
     background: #FFC6C7;
     width: 148.315vw;
-    height: 282px;
-    left: 258px;
+    height: 45.265vw;
+    left: 413px;
     top: 186px;
     border-radius: 8px;
 }
@@ -139,10 +137,9 @@ section.showArticle{
     height: 30px;
     left: 258px;
     top: 535.64px;
-
     font-weight: 700;
     font-size: 32px;
     line-height: 32px;
-
     color: #33272A;
 }
+

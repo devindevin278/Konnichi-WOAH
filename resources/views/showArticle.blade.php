@@ -6,10 +6,10 @@
     <div class="container mt-5 d-flex justify-content-around">
         <div class="col" style="display: flex; justify-content:space-between; width: fit-content">
 		    <div style="width: 50px;">
-                <button class="col btn btn-back">Back</button>
+                <a class="col btn btn-back" href="/article">Back</a>
             </div>
 
-            <div >
+            <div class="linking">
                 <a href="#" style="color:black;">English</a>
                 <a style="color:black;">|</a>
                 <a href="#" style="color:black;">Japanese</a>
