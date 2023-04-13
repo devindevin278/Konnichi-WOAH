@@ -4,12 +4,16 @@
 
 <section class="showArticle">
     <div class="container mt-5 d-flex justify-content-around">
-        <div class="col">
-		    <button class="col btn btn-back">Back</button>
+        <div class="col" style="display: flex; justify-content:space-between; width: fit-content">
+		    <div style="width: 50px;">
+                <button class="col btn btn-back">Back</button>
+            </div>
 
-            <a href="#" class="text-end">English</a>
-            <a class="text-end">|</a>
-            <a href="#" class="text-end">Japanese</a>
+            <div >
+                <a href="#" style="color:black;">English</a>
+                <a style="color:black;">|</a>
+                <a href="#" style="color:black;">Japanese</a>
+            </div>
 		</div>
     </div>
 

@@ -20,7 +20,7 @@
                     <img class="card-img-top " src="img/hanabi.jpg"
                     alt="" >
                     <div class="card-body rounded-bottom border-0" style=" background-color:#ffffff;">
-                        <h5 class="card-title"><a href="/showArticle">Hanabi Festival in Japan</a></h5>
+                        <h5 class="card-title"><a href="/showArticle" style="color:black;">Hanabi Festival in Japan</a></h5>
                         <p class="card-text">April 29 2023</p>
                     </div>
             </div>
@@ -28,7 +28,7 @@
                 <img class="card-img-top " src="img/hanabi.jpg"
                 alt="" >
                 <div class="card-body rounded-bottom border-0" style=" background-color:#ffffff;">
-                    <h5 class="card-title"><a href="/showArticle">Hanabi Festival in Japan</a></h5>
+                    <h5 class="card-title"><a href="/showArticle" style="color:black;">Hanabi Festival in Japan</a></h5>
                     <p class="card-text">April 29 2023</p>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <img class="card-img-top " src="img/hanabi.jpg"
                 alt="" >
                 <div class="card-body rounded-bottom border-0" style=" background-color:#ffffff;">
-                    <h5 class="card-title"><a href="/showArticle">Hanabi Festival in Japan</a></h5>
+                    <h5 class="card-title"><a href="/showArticle" style="color:black;">Hanabi Festival in Japan</a></h5>
                     <p class="card-text">April 29 2023</p>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                 <img class="card-img-top " src="img/hanabi.jpg"
                 alt="" >
                 <div class="card-body rounded-bottom border-0" style=" background-color:#ffffff;">
-                    <h5 class="card-title"><a href="/showArticle">Hanabi Festival in Japan</a></h5>
+                    <h5 class="card-title"><a href="/showArticle" style="color:black;">Hanabi Festival in Japan</a></h5>
                     <p class="card-text">April 29 2023</p>
                 </div>
             </div>
