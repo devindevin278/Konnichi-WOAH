@@ -25,6 +25,13 @@ Route::get('/home', function () {
 Route::get('/article', function () {
     return view('article',["title" => "article"]);
 });
+Route::get('/showArticle', function () {
+    return view('showArticle',["title" => "showArticle"]);
+});
+Route::get('/showArticleJapan', function () {
+    return view('showArticleJapan',["title" => "showArticleJapan"]);
+});
+
 Route::get('/learn', function () {
     return view('learn',["title" => "learn"]);
 });
@@ -34,6 +41,9 @@ Route::get('/teacher', function () {
 Route::get('/profile', function () {
     return view('profile',["title" => "profile"]);
 });
+
+// Route::get('/article', [ArticleController::class, 'index']);
+// Route::get('article/{slug}', [ArticleController::class, 'showArticle']);
 
 
 // Auth::routes();
