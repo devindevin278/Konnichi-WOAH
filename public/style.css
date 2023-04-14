@@ -143,3 +143,29 @@ section.showArticle{
     color: #33272A;
 }
 
+/* Profile Student */
+.container-profileStudent{
+    border-radius: 30px;
+}
+section.profileStudent{
+    background-color: #FAEEE7;
+    font-family: "Poppins", sans-serif;
+}
+.chooseimgbut{
+    width: 150px;
+    height: fit-content;
+    border: none;
+    background: #F5F5F5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btnsave{
+    width: 70px;
+    height: fit-content;
+    border: none;
+    background: #FF8BA7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}

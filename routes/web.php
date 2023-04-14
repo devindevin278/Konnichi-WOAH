@@ -14,16 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home',["title" => "home"]);
+    return view('homeStudent',["title" => "homeStudent"]);
 });
 
-Route::get('/home', function () {
-    return view('home',["title" => "home"]);
+Route::get('/homeStudent', function () {
+    return view('homeStudent',["title" => "homeStudent"]);
 });
 
 
-Route::get('/article', function () {
-    return view('article',["title" => "article"]);
+Route::get('/articleStudent', function () {
+    return view('articleStudent',["title" => "articleStudent"]);
 });
 Route::get('/showArticle', function () {
     return view('showArticle',["title" => "showArticle"]);
@@ -32,14 +32,14 @@ Route::get('/showArticleJapan', function () {
     return view('showArticleJapan',["title" => "showArticleJapan"]);
 });
 
-Route::get('/learn', function () {
-    return view('learn',["title" => "learn"]);
+Route::get('/learnStudent', function () {
+    return view('learnStudent',["title" => "learnStudent"]);
 });
 Route::get('/teacher', function () {
     return view('teacher',["title" => "teacher"]);
 });
-Route::get('/profile', function () {
-    return view('profile',["title" => "profile"]);
+Route::get('/profileStudent', function () {
+    return view('profileStudent',["title" => "profileStudent"]);
 });
 
 // Route::get('/article', [ArticleController::class, 'index']);
