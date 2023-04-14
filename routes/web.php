@@ -52,6 +52,41 @@ Route::get('/profileStudent', function () {
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+// GAMES
+Route::get('/1', function () {
+    return view('1',["title" => "1"]);
+});
+Route::get('/2', function () {
+    return view('2',["title" => "2"]);
+});
+Route::get('/3', function () {
+    return view('3',["title" => "3"]);
+});
+Route::get('/4', function () {
+    return view('4',["title" => "4"]);
+});
+Route::get('/5', function () {
+    return view('5',["title" => "5"]);
+});
+Route::get('/6', function () {
+    return view('6',["title" => "6"]);
+});
+Route::get('/7', function () {
+    return view('7',["title" => "7"]);
+});
+Route::get('/8', function () {
+    return view('8',["title" => "8"]);
+});
+Route::get('/9', function () {
+    return view('9',["title" => "9"]);
+});
+Route::get('/10', function () {
+    return view('10',["title" => "10"]);
+});
+
+
+
+
 // TEACHER
 Route::get('/homeTeacher', function () {
     return view('homeTeacher',["title" => "homeTeacher"]);
