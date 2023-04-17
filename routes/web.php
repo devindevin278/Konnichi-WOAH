@@ -29,9 +29,6 @@ Route::get('/articleStudent', function () {
 Route::get('/showArticle', function () {
     return view('showArticle',["title" => "showArticle"]);
 });
-Route::get('/showArticleJapan', function () {
-    return view('showArticleJapan',["title" => "showArticleJapan"]);
-});
 
 Route::get('/learnStudent', function () {
     return view('learnStudent',["title" => "learnStudent"]);
@@ -83,7 +80,9 @@ Route::get('/9', function () {
 Route::get('/10', function () {
     return view('10',["title" => "10"]);
 });
-
+Route::get('/studentLeaderboard', function () {
+    return view('studentLeaderboard',["title" => "studentLeaderboard"]);
+});
 
 
 
@@ -111,6 +110,12 @@ Route::get('/homeAdmin', function () {
 });
 Route::get('/articleAdmin', function () {
     return view('articleAdmin',["title" => "articleAdmin"]);
+});
+Route::get('/showArticleAdmin', function () {
+    return view('showArticleAdmin',["title" => "showArticleAdmin"]);
+});
+Route::get('/addArticle', function () {
+    return view('addArticle',["title" => "addArticle"]);
 });
 Route::get('/verifyPayment', function () {
     return view('verifyPayment',["title" => "verifyPayment"]);

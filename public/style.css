@@ -99,12 +99,7 @@ section.showArticle{
     background-color: #FAEEE7;
     font-family: "Poppins", sans-serif;
 }
-.btn-back {
-    background: #FFC6C7;
-    background: linear-gradient(to right, #FFC6C7, #FFC6C7);
-    color: #FFC6C7;
-    border: 3px solid #FFC6C7;
-}
+
 
 .btn-back:hover{
     background: #f48183;
@@ -119,7 +114,7 @@ section.showArticle{
     gap: 1.605vw;
     background: #FFC6C7;
     width: 148.315vw;
-    height: 45.265vw;
+    height: 45.265vh;
     left: 413px;
     top: 186px;
     border-radius: 8px;
@@ -170,4 +165,10 @@ section.profileStudent{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     font-weight: 500;
+}
+
+/* Leaderboard Student */
+section.studentLeaderboard{
+    background-color: #FAEEE7;
+    font-family: "Poppins", sans-serif;
 }
