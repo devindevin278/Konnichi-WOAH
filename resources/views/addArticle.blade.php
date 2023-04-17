@@ -1,4 +1,4 @@
-@extends('layouts.mainStudent')
+@extends('layouts.mainAdmin')
 
 @section('content')
 
@@ -26,8 +26,11 @@
 		</div>
     </div>
 
-    <div class="container mt-5 d-flex jusify-content-around">
+    <div class="container mt-5 ">
         <div class="imgbox" >
+            <div class="container d-flex justify-content-around align-items-center" style=" height: 45.265vh;" >
+                <a href="#"><img  src="img/addimg.png" alt="addimg" style="width:45px; "></a>
+            </div>
         </div>
     </div>
 
@@ -38,6 +41,9 @@
 
     <div class="container mt-3 d-flex jusify-content-around align-items-center">
         <div class="container titlearticle">日本の花火祭り</div>
+        <div class="d-flex justify-content-end m-1">
+            <a href="#"><img  src="img/edit2.png" alt="edit2" style="width:45px; "></a>
+        </div>
     </div>
 
     <div class="container mt-3 d-flex jusify-content-around">

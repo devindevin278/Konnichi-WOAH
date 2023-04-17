@@ -87,6 +87,7 @@ section.article {
     transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
     cursor: pointer;
 }
+
 .card:hover{
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
@@ -98,12 +99,7 @@ section.showArticle{
     background-color: #FAEEE7;
     font-family: "Poppins", sans-serif;
 }
-.btn-back {
-    background: #FFC6C7;
-    background: linear-gradient(to right, #FFC6C7, #FFC6C7);
-    color: #FFC6C7;
-    border: 3px solid #FFC6C7;
-}
+
 
 .btn-back:hover{
     background: #f48183;
@@ -118,7 +114,7 @@ section.showArticle{
     gap: 1.605vw;
     background: #FFC6C7;
     width: 148.315vw;
-    height: 45.265vw;
+    height: 45.265vh;
     left: 413px;
     top: 186px;
     border-radius: 8px;
@@ -158,7 +154,7 @@ section.profileStudent{
     background: #F5F5F5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .btnsave{
@@ -168,4 +164,11 @@ section.profileStudent{
     background: #FF8BA7;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
+    font-weight: 500;
+}
+
+/* Leaderboard Student */
+section.studentLeaderboard{
+    background-color: #FAEEE7;
+    font-family: "Poppins", sans-serif;
 }
