@@ -36,6 +36,9 @@ Route::get('/learnStudent', function () {
 Route::get('/teacher', function () {
     return view('teacher',["title" => "teacher"]);
 });
+Route::get('/viewTeacher', function () {
+    return view('viewTeacher',["title" => "viewTeacher"]);
+});
 Route::get('/profileStudent', function () {
     return view('profileStudent',["title" => "profileStudent"]);
 });
