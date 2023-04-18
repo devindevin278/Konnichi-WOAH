@@ -113,6 +113,7 @@ section.showArticle{
     padding: 0vw;
     gap: 1.605vw;
     background: #FFC6C7;
+    /* background: transparent; */
     width: 148.315vw;
     height: 45.265vh;
     left: 413px;
@@ -260,4 +261,20 @@ section.viewTeacher{
     border-radius: 30px;
     border:none;
     font-weight: 600;
+}
+
+/* Find Teacher */
+section.findTeacher{
+    background-color: #FAEEE7;
+    font-family: "Poppins", sans-serif;
+}
+
+.viewteacherbut{
+    background: #C3F0CA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    width: 100px;
+    height: 40px;
 }

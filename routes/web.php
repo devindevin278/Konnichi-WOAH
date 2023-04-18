@@ -42,7 +42,9 @@ Route::get('/viewTeacher', function () {
 Route::get('/profileStudent', function () {
     return view('profileStudent',["title" => "profileStudent"]);
 });
-
+Route::get('/findTeacher', function () {
+    return view('findTeacher',["title" => "findTeacher"]);
+});
 // Route::get('/article', [ArticleController::class, 'index']);
 // Route::get('article/{slug}', [ArticleController::class, 'showArticle']);
 

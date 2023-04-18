@@ -49,7 +49,7 @@
         </div>
 
         <div class="container">
-            <div class="tuition d-flex flex-start justify-content-center align-items-center" style="width:20%;">
+            <div class="tuition d-flex flex-end justify-content-center align-items-center" style="width:20%;">
                 Rp 150.000,00/Hour
             </div>
         </div>
