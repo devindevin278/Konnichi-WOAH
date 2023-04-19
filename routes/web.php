@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ALL
+Route::get('/login', function () {
+    return view('login',["title" => "homeStudent"]);
+});
+
 // STUDENT
 
 Route::get('/', function () {
@@ -90,6 +95,10 @@ Route::get('/studentLeaderboard', function () {
 
 
 // TEACHER
+
+Route::get('/signUpTeacher', function () {
+    return view('teacher.signUpTeacher',["title" => "homeTeacher"]);
+});
 Route::get('/homeTeacher', function () {
     return view('teacher.homeTeacher',["title" => "homeTeacher"]);
 });

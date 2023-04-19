@@ -9,7 +9,7 @@
       <div class="transisi d-flex">
         <a href="" class="text-decoration-underline">As a Student</a>
         <div class="divider"></div>
-        <a href="">As a Teacher</a>
+        <a href="/signUpTeacher">As a Teacher</a>
       </div>
 
       <div class="form-floating rounded">
@@ -34,7 +34,7 @@
         <p class=""><b>Terms of Service and Privacy Policy</b></p>
       </div>
 
-      <p class="mt-4 mb-3 text-body-secondary" style="opacity: 80%;">Already have an account? <a href="" style="font-weight:500;">Login</a></p>
+      <p class="mt-4 mb-3 text-body-secondary" style="opacity: 70%;">Already have an account? <a href="/login" style="font-weight:500;">Login</a></p>
     </form>
 
 </main>

@@ -66,8 +66,9 @@ button.submit {
   font-size: 1rem;
 }
 
-.forget {
-  color: #FF8BA7;
+button.submit:hover {
+    background-color: #FF8BA7;
+    opacity: 90%;
 }
 
 .policy p{
@@ -80,6 +81,36 @@ form a {
 }
 
 /* Signup end */
+
+/* Login start */
+
+.form-login {
+    background-color: #FAEEE7;
+    text-align: center;
+    padding-top: 12vw;
+    margin-bottom: -20px;
+    font-family: "Poppins", sans-serif;
+}
+
+main.form-login form {
+    width: 24%;
+    margin: 0;
+    /* background-color: #33272A; */
+}
+
+.form-login input[type="password"] {
+    margin-bottom: 1rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+.forget {
+    color: #FF8BA7;
+    margin-top: 10rem;
+    /* text-decoration: underline; */
+}
+
+/* Login end */
 
 
 /* footer start */
