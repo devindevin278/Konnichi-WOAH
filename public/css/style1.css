@@ -45,7 +45,7 @@ main.form-signin form {
 } */
 
 .form-signin input[type="password"] {
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }

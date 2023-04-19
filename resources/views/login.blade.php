@@ -4,6 +4,13 @@
     <main class="form-login">
     <form class=" m-auto">
 
+        @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        @endif
+
       <h1 class="h3 fs-1 mb-4" style="font-weight: 600;">Login</h1>
 
 

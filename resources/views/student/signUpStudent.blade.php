@@ -2,8 +2,8 @@
 
 @section('content')
     <main class="form-signin">
-    <form class=" m-auto">
-
+    <form class=" m-auto" action="/signUpStudent" method="post">
+        @csrf
       <h1 class="h3 fs-1" style="font-weight: 600;">Sign Up</h1>
 
       <div class="transisi d-flex">
@@ -13,21 +13,33 @@
       </div>
 
       <div class="form-floating rounded">
-        <input type="email" class="w-100" id="floatingInput" placeholder="Fullname" >
-        {{-- <label for="floatingInput">Fullname</label> --}}
+        <input type="text" name="name" class="w-100 @error('name')
+        is-invalid
+        @enderror" id="floatingInput" placeholder="Fullname"  value="{{ old('name') }}">
+        @error('name')
+            {{ $message }}
+        @enderror
       </div>
 
       <div class="form-floating">
-        <input type="email" class="w-100" id="floatingInput" placeholder="Email">
-        {{-- <label for="floatingInput">Email</label> --}}
-      </div>
+        <input type="email" name="email" class="w-100 @error('email')
+        is-invalid
+        @enderror" id="floatingInput" placeholder="Email" value="{{ old('email') }}">
+        @error('email')
+            {{ $message }}
+        @enderror
+    </div>
 
       <div class="form-floating">
-        <input type="password" class="w-100" id="floatingPassword" placeholder="Password">
-        {{-- <label for="floatingPassword">Password</label> --}}
-      </div>
+        <input type="password" name="password" class="w-100 @error('password')
+        is-invalid
+        @enderror" id="floatingPassword" placeholder="Password">
+        @error('password')
+            {{ $message }}
+        @enderror
+    </div>
 
-      <button class="w-100 btn btn-lg btn-primary submit" type="submit">Sign Up</button>
+      <button class="w-100 mt-3 btn btn-lg btn-primary submit" type="submit">Sign Up</button>
 
       <div class="policy">
         <p class="mt-3 text-body-secondary" style="opacity: 80%;">By Signing Up, You are Accepting</p>
