@@ -53,7 +53,7 @@ main.form-signin form {
 #floatingInput, #floatingPassword {
   border-radius: 1.4rem;
   margin-top: .7rem;
-  border: 1.5px solid black;
+  /* border: 1.5px solid black; */
   padding: .8rem;
 }
 

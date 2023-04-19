@@ -103,6 +103,10 @@ Route::get('/studentLeaderboard', function () {
 Route::get('/signUpTeacher', function () {
     return view('teacher.signUpTeacher',["title" => "homeTeacher"]);
 });
+
+Route::post('/signUpTeacher', [RegisterController::class, 'store']);
+
+
 Route::get('/homeTeacher', function () {
     return view('teacher.homeTeacher',["title" => "homeTeacher"]);
 });

@@ -13,11 +13,11 @@
       </div>
 
       <div class="form-floating rounded">
-        <input type="text" name="name" class="w-100 @error('name')
+        <input type="text" name="name" class="is-invalid w-100 @error('name')
         is-invalid
         @enderror" id="floatingInput" placeholder="Fullname"  value="{{ old('name') }}">
         @error('name')
-            {{ $message }}
+            <p class="mb-0" style="color: red;">{{ $message }}</p>
         @enderror
       </div>
 
@@ -26,7 +26,7 @@
         is-invalid
         @enderror" id="floatingInput" placeholder="Email" value="{{ old('email') }}">
         @error('email')
-            {{ $message }}
+        <p class="mb-0" style="color: red;">{{ $message }}</p>
         @enderror
     </div>
 
@@ -35,7 +35,7 @@
         is-invalid
         @enderror" id="floatingPassword" placeholder="Password">
         @error('password')
-            {{ $message }}
+        <p class="mb-0" style="color: red;">{{ $message }}</p>
         @enderror
     </div>
 

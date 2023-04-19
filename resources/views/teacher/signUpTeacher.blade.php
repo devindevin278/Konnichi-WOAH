@@ -2,8 +2,8 @@
 
 @section('content')
     <main class="form-signin">
-    <form class=" m-auto">
-
+    <form class=" m-auto" action="/signUpTeacher" method="post">
+        @csrf
       <h1 class="h3 fs-1" style="font-weight: 600;">Sign Up</h1>
 
       <div class="transisi d-flex">
@@ -13,22 +13,34 @@
       </div>
 
       <div class="form-floating rounded">
-        <input type="email" class="w-100" id="floatingInput" placeholder="Fullname" >
-        {{-- <label for="floatingInput">Fullname</label> --}}
+        <input type="text" name="name" class="w-100 @error('name')
+        is-invalid
+        @enderror" id="floatingInput" placeholder="Fullname" value="{{ old('name') }}">
+        @error('name')
+        <p class="mb-0" style="color: red;">{{ $message }}</p>
+     @enderror
       </div>
 
       <div class="form-floating">
-        <input type="email" class="w-100" id="floatingInput" placeholder="Email">
-        {{-- <label for="floatingInput">Email</label> --}}
+        <input type="email" name="email" class="w-100 @error('email')
+        is-invalid
+        @enderror" id="floatingInput" placeholder="Email" value="{{ old('email') }}">
+        @error('email')
+        <p class="mb-0" style="color: red;">{{ $message }}</p>
+     @enderror
       </div>
 
       <div class="form-floating">
-        <input type="password" class="w-100" id="floatingPassword" placeholder="Password">
-        {{-- <label for="floatingPassword">Password</label> --}}
+        <input type="password" name="password" class="w-100 @error('password')
+        is-invalid
+        @enderror" id="floatingPassword" placeholder="Password">
+        @error('password')
+        <p class="mb-0" style="color: red;">{{ $message }}</p>
+     @enderror
       </div>
 
       <div class="img_upload">
-        <p class="certif_title">Certificate</p>
+        <p class="certif_title mt-3">Certificate</p>
         <div class="uploadOuter">
 
           <span class="dragBox" >
