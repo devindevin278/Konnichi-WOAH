@@ -16,28 +16,28 @@ use Illuminate\Support\Facades\Route;
 // STUDENT
 
 Route::get('/', function () {
-    return view('homeStudent',["title" => "homeStudent"]);
+    return view('student.homeStudent',["title" => "homeStudent"]);
 });
 
 Route::get('/homeStudent', function () {
-    return view('homeStudent',["title" => "homeStudent"]);
+    return view('student.homeStudent',["title" => "homeStudent"]);
 });
 
 Route::get('/articleStudent', function () {
-    return view('articleStudent',["title" => "articleStudent"]);
+    return view('student.articleStudent',["title" => "articleStudent"]);
 });
 Route::get('/showArticle', function () {
-    return view('showArticle',["title" => "showArticle"]);
+    return view('student.showArticle',["title" => "showArticle"]);
 });
 
 Route::get('/learnStudent', function () {
-    return view('learnStudent',["title" => "learnStudent"]);
+    return view('student.learnStudent',["title" => "learnStudent"]);
 });
 Route::get('/teacher', function () {
-    return view('teacher',["title" => "teacher"]);
+    return view('teacher.teacher',["title" => "teacher"]);
 });
 Route::get('/profileStudent', function () {
-    return view('profileStudent',["title" => "profileStudent"]);
+    return view('student.profileStudent',["title" => "profileStudent"]);
 });
 
 // Route::get('/article', [ArticleController::class, 'index']);
@@ -81,48 +81,48 @@ Route::get('/10', function () {
     return view('10',["title" => "10"]);
 });
 Route::get('/studentLeaderboard', function () {
-    return view('studentLeaderboard',["title" => "studentLeaderboard"]);
+    return view('student.studentLeaderboard',["title" => "studentLeaderboard"]);
 });
 
 
 
 // TEACHER
 Route::get('/homeTeacher', function () {
-    return view('homeTeacher',["title" => "homeTeacher"]);
+    return view('teacher.homeTeacher',["title" => "homeTeacher"]);
 });
 Route::get('/articleTeacher', function () {
-    return view('articleTeacher',["title" => "articleTeacher"]);
+    return view('teacher.articleTeacher',["title" => "articleTeacher"]);
 });
 Route::get('/teacherSchedule', function () {
-    return view('teacherSchedule',["title" => "teacherSchedule"]);
+    return view('teacher.teacherSchedule',["title" => "teacherSchedule"]);
 });
 Route::get('/profileTeacher', function () {
-    return view('profileTeacher',["title" => "profileTeacher"]);
+    return view('teacher.profileTeacher',["title" => "profileTeacher"]);
 });
 Route::get('/notificationTeacher', function () {
-    return view('notificationTeacher',["title" => "notificationTeacher"]);
+    return view('teacher.notificationTeacher',["title" => "notificationTeacher"]);
 });
 
 
 // ADMIN
 Route::get('/homeAdmin', function () {
-    return view('homeAdmin',["title" => "homeAdmin"]);
+    return view('admin.homeAdmin',["title" => "homeAdmin"]);
 });
 Route::get('/articleAdmin', function () {
-    return view('articleAdmin',["title" => "articleAdmin"]);
+    return view('admin.articleAdmin',["title" => "articleAdmin"]);
 });
 Route::get('/showArticleAdmin', function () {
-    return view('showArticleAdmin',["title" => "showArticleAdmin"]);
+    return view('admin.showArticleAdmin',["title" => "showArticleAdmin"]);
 });
 Route::get('/addArticle', function () {
-    return view('addArticle',["title" => "addArticle"]);
+    return view('admin.addArticle',["title" => "addArticle"]);
 });
 Route::get('/verifyPayment', function () {
-    return view('verifyPayment',["title" => "verifyPayment"]);
+    return view('admin.verifyPayment',["title" => "verifyPayment"]);
 });
 Route::get('/verifyTeacher', function () {
-    return view('verifyTeacher',["title" => "verifyTeacher"]);
+    return view('admin.verifyTeacher',["title" => "verifyTeacher"]);
 });
 Route::get('/profileAdmin', function () {
-    return view('profileAdmin',["title" => "profileAdmin"]);
+    return view('admin.profileAdmin',["title" => "profileAdmin"]);
 });
