@@ -1,4 +1,4 @@
-<footer class="">
+<footer class="m-0">
     <div class="row">
       <div class="footerbox col-6 col-md-3 mb-3">
         <h5 class="mb-3">Konnichi-Woah</h5>
@@ -53,7 +53,7 @@
 
     <div class="line"></div>
 
-    <div class="text-center mt-3 border-top">
+    <div class="copyright text-center mt-3 border-top">
       <p>&copy; Copyright @Konichi-WOAH! 2023. All rights reserved.</p>
     </div>
   </footer>
