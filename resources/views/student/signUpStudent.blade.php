@@ -30,7 +30,7 @@
       <button class="w-100 btn btn-lg btn-primary submit" type="submit">Sign Up</button>
 
       <div class="policy">
-        <p class="mt-3 text-body-secondary" style="opacity: 80%;">By Sign Up, You are Accepting</p>
+        <p class="mt-3 text-body-secondary" style="opacity: 80%;">By Signing Up, You are Accepting</p>
         <p class=""><b>Terms of Service and Privacy Policy</b></p>
       </div>
 
