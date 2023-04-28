@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -137,9 +138,13 @@ Route::get('/showArticleAdmin', function () {
 Route::get('/addArticle', function () {
     return view('admin.addArticle',["title" => "addArticle"]);
 });
-Route::get('/verifyPayment', function () {
-    return view('admin.verifyPayment',["title" => "verifyPayment"]);
-});
+// Route::get('/verifyPayment', function () {
+//     return view('admin.verifyPayment',["title" => "verifyPayment"]);
+// });
+
+Route::get('/verifyPayment', [PaymentController::class, 'index']);
+Route::get('/verifyPayment/{payment}', [PaymentController::class, 'showDetail']);
+
 Route::get('/verifyTeacher', function () {
     return view('admin.verifyTeacher',["title" => "verifyTeacher"]);
 });
