@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\CertificateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -143,11 +144,8 @@ Route::get('/addArticle', function () {
 // });
 
 Route::get('/verifyPayment', [PaymentController::class, 'index']);
-Route::get('/verifyPayment/{payment}', [PaymentController::class, 'showDetail']);
+Route::get('/verifyTeacher', [CertificateController::class, 'index']);
 
-Route::get('/verifyTeacher', function () {
-    return view('admin.verifyTeacher',["title" => "verifyTeacher"]);
-});
 Route::get('/profileAdmin', function () {
     return view('admin.profileAdmin',["title" => "profileAdmin"]);
 });
