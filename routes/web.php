@@ -62,7 +62,6 @@ Route::post('/signUpStudent', [RegisterController::class, 'store']);
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 // GAMES
 Route::get('/1', function () {
     return view('1',["title" => "1"]);
@@ -149,3 +148,5 @@ Route::get('/verifyTeacher', [CertificateController::class, 'index']);
 Route::get('/profileAdmin', function () {
     return view('admin.profileAdmin',["title" => "profileAdmin"]);
 });
+
+//test
