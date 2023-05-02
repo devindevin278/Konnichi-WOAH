@@ -1,0 +1,360 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Signup start */
+
+a:link {
+  text-decoration: none;
+}
+
+.form-signin {
+    background-color: #FAEEE7;
+    text-align: center;
+    padding-top: 8vw;
+    margin-bottom: -20px;
+    font-family: "Poppins", sans-serif;
+}
+
+main.form-signin form {
+    width: 24%;
+    margin: 0;
+    /* background-color: #33272A; */
+}
+
+.transisi {
+    justify-content:space-evenly;
+    align-items: center;
+    height: 1.6vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1vw;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divider {
+    height: 100%;
+    width: .8px;
+    background-color: black;
+}
+
+/* .form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+} */
+
+.form-signin input[type="password"] {
+  /* margin-bottom: 2rem; */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#floatingInput, #floatingPassword {
+  border-radius: 1.4rem;
+  margin-top: .7rem;
+  /* border: 1.5px solid black; */
+  padding: .8rem;
+}
+
+button.submit {
+  background-color: #FF8BA7;
+  border-radius: 1.4rem;
+  border: none;
+  padding: .7rem;
+  color: black;
+  font-size: 1rem;
+}
+
+button.submit:hover {
+    background-color: #FF8BA7;
+    opacity: 90%;
+}
+
+.policy p{
+  margin: 0;
+  font-size: .8rem;
+}
+
+form a {
+  color: black;
+}
+
+/* upload image start */
+
+.img_upload p.certif_title{
+    text-align: left;
+    margin-left: .5rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+}
+
+.uploadOuter {
+    text-align: center;
+    /* padding: 20px; */
+}
+
+.dragBox {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    color: black;
+    border: 2px dashed #ccc;
+    background-color: white;
+    display: inline-block;
+    transition: transform 0.3s;
+    padding: 2rem;
+}
+
+.dragBox:hover {
+    cursor: pointer;
+}
+
+.dragBox .atas {
+    font-size: .9vw;
+    font-weight: 800;
+    /* margin-bottom: rem; */
+}
+
+.dragbox .bawah {
+    font-size: .7vw;
+    /* background-color: #33272A; */
+}
+
+input[type="file"] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}
+  .draging {
+    transform: scale(1.1);
+  }
+  #preview {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+img {
+  max-width: 100%
+}
+/* upload image end */
+
+/* Signup end */
+
+/* Login start */
+
+.form-login {
+    background-color: #FAEEE7;
+    text-align: center;
+    padding-top: 12vw;
+    margin-bottom: -20px;
+    font-family: "Poppins", sans-serif;
+}
+
+main.form-login form {
+    width: 24%;
+    margin: 0;
+    /* background-color: #33272A; */
+}
+
+.form-login input[type="password"] {
+    margin-bottom: 1rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+.forget {
+    color: #FF8BA7;
+    margin-top: 10rem;
+    /* text-decoration: underline; */
+}
+
+/* Login end */
+
+/* ADMIN start */
+
+/* Verify payment start */
+
+section#verifyPayment {
+    background-color: #FAEEE7;
+}
+
+section#verifyPayment table {
+    font-weight: 600;
+}
+
+.table_border {
+    border-left: 2.5px solid #33272A;
+    border-right: 2.5px solid #33272A;
+}
+
+.table_border td {
+    height: 4rem;
+}
+
+.modal-content#modal-content {
+    padding: 2rem;
+    background-color: #FAEEE7;
+}
+
+.modal_back {
+    border: none;
+    padding: .2rem 2rem;
+    border-radius: 1rem;
+    font-weight: 600;
+}
+
+.modal-header, .modal-body, .modal-button {
+    background-color: #FAEEE7;
+}
+
+.modal-body {
+    width: 60%;
+    /* background-color: #33272A; */
+    margin: auto;
+
+}
+
+.modal-body label {
+    width: 40%;
+    font-weight: 600;
+    /* background-color: #9c6f7b; */
+    height: fit-content;
+    padding: 0;
+}
+
+.modal-body p {
+    /* margin-top: auto; */
+    margin-bottom: auto;
+    margin-right: 1rem;
+    font-weight: 600;
+    /* background-color: #9c6f7b; */
+    height: fit-content;
+    padding: 0;
+}
+
+.modal-body input:disabled {
+    width: 56%;
+    font-weight: 600;
+    background-color: #FAEEE7;
+    border: none;
+    align-items: center;
+    height: fit-content;
+    padding: 0;
+}
+
+.modal-body img {
+    /* margin-right: auto; */
+    background-color: #33272A;
+    padding: 0;
+}
+
+.modal-button {
+    /* background-color: #33272A; */
+    width: fit-content;
+    margin: auto;
+}
+
+.modal-button button {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 1rem;
+    padding: .5rem 2rem;
+    font-weight: 600;
+}
+
+.modal-title {
+    /* background-color: #33272A; */
+    margin: auto;
+    text-decoration: underline;
+}
+
+/* a.payment_detail {
+    text-decoration: underline;
+
+} */
+
+/* Verify payment end */
+
+/* ADMIN end */
+
+
+/* footer start */
+footer {
+    background-color: #FAEEE7;
+    padding: 7vw;
+    padding-bottom: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+footer a.nav-link {
+    color: black;
+    font-size: 1.1vw;
+}
+
+footer h5 {
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+#newsletter1 {
+    border-radius: 0;
+    border: 1px solid black;
+    width: 65%;
+}
+
+.btn.subscribe {
+    background-color: #FF8BA7;
+    border-radius: 0;
+    border: 1px solid black;
+    width: 35%;
+}
+
+footer .footerbox {
+    /* background-color: #FF8BA7; */
+    width: 21%;
+}
+
+footer .newsletter {
+    width: 35%;
+}
+
+footer .newsletter_input {
+    height: 3.5vw;
+}
+
+footer form p.will {
+    color: #33272A;
+    opacity: 80%;
+    font-size: 1.1vw;
+    /* background-color: #FF8BA7; */
+}
+
+.footer_logo {
+    width: 65%;
+}
+
+.footer_logo a{
+    width: 20%;
+    margin: auto;
+}
+
+.line {
+    background-color: black;
+    width: 100%;
+    height: 2px;
+}
+
+.copyright {
+    font-size: 1.1vw;
+    font-weight: 500;
+    padding: 1vw;
+}
+
+/* footer end */
