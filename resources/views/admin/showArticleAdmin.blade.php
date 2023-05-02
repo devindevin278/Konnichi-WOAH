@@ -28,8 +28,10 @@
 
     <div class="container mt-5 d-flex jusify-content-around">
         <div class="imgbox" >
-            <div class="d-flex justify-content-end m-1" >
-                <a href="#"><img  src="img/edit1.png" alt="edit1" style="width:45px; "></a>
+
+            {{-- <img src="img/hanabi.jpg" alt="" style="height: 45.265vh; width:fit-in; z-index:1; position:absolut;"> --}}
+            <div class="d-flex justify-content-end m-1" style="z-index:2;">
+                <a href="#"><img  src="img/edit1.png" alt="edit1" style="width:45px;  "></a>
             </div>
         </div>
     </div>
@@ -40,7 +42,7 @@
     </div>
 
     <div class="container mt-3 d-flex jusify-content-around align-items-center">
-        <div class="container titlearticle">日本の花火祭り</div>
+        <div class="container titlearticle p-0">日本の花火祭り</div>
         <div class="d-flex justify-content-end m-1">
             <a href="#"><img  src="img/edit2.png" alt="edit2" style="width:45px; "></a>
         </div>

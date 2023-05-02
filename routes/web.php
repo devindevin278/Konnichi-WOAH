@@ -44,16 +44,15 @@ Route::get('/learnStudent', function () {
 Route::get('/teacher', function () {
     return view('teacher.teacher',["title" => "teacher"]);
 });
+Route::get('/viewTeacher', function () {
+    return view('viewTeacher',["title" => "viewTeacher"]);
+});
 Route::get('/profileStudent', function () {
     return view('student.profileStudent',["title" => "profileStudent"]);
 });
-// Route::get('/signUpStudent', function () {
-//     return view('student.signUpStudent',["title" => "profileStudent"]);
-// });
-
-Route::get('/signUpStudent', [RegisterController::class, 'index']);
-Route::post('/signUpStudent', [RegisterController::class, 'store']);
-
+Route::get('/findTeacher', function () {
+    return view('findTeacher',["title" => "findTeacher"]);
+});
 // Route::get('/article', [ArticleController::class, 'index']);
 // Route::get('article/{slug}', [ArticleController::class, 'showArticle']);
 
