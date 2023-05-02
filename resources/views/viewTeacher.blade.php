@@ -1,7 +1,6 @@
 @extends('layouts.mainStudent')
 
 @section('content')
-
 <section class="viewTeacher">
     <div class="container d-flex row mt-5 gap-3 bg-white p-3" style="border-radius:30px; height=743px;">
         <div style="font-weight: 600; font-size: 26px;">
