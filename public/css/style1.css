@@ -176,6 +176,37 @@ main.form-login form {
 
 /* Login end */
 
+/* STUDENTS start */
+
+/* learn start */
+
+#sidebarMenu {
+    background-color: #FAEEE7;
+}
+
+#sidebarMenu a {
+    color: #777777;
+    font-weight: 500;
+    /* font-size:  */
+}
+
+nav#sidebarMenu a.nav-link.active {
+    background-color: #DDF4FF;
+    border: 2px solid #84D8FF;
+    color: #1CB0F6;
+    border-radius: 1rem;
+}
+
+#progress_sidebar {
+    background-color: #FAEEE7;
+    position: sticky;
+    right: 0;
+}
+
+/* learn end */
+
+/* STUDENTS end */
+
 /* ADMIN start */
 
 /* Verify payment start */

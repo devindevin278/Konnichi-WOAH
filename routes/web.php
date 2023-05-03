@@ -48,9 +48,13 @@ Route::get('/showArticle', function () {
     return view('student.showArticle',["title" => "showArticle"]);
 });
 
-Route::get('/learnStudent', function () {
-    return view('student.learnStudent',["title" => "learnStudent"]);
+Route::get('/learnStudent/cards', function () {
+    return view('student.learn.cards',["title" => "learnStudent"]);
 });
+Route::get('/learnStudent/games', function () {
+    return view('student.learn.games',["title" => "learnStudent"]);
+});
+
 Route::get('/teacher', function () {
     return view('teacher.teacher',["title" => "teacher"]);
 });
@@ -102,8 +106,8 @@ Route::get('/9', function () {
 Route::get('/10', function () {
     return view('10',["title" => "10"]);
 });
-Route::get('/studentLeaderboard', function () {
-    return view('student.studentLeaderboard',["title" => "studentLeaderboard"]);
+Route::get('/learnStudent/studentLeaderboard', function () {
+    return view('student.learn.leaderboard',["title" => "studentLeaderboard"]);
 });
 
 
