@@ -54,6 +54,8 @@
         <div id="preview"></div>
       </div>
 
+      <input type="text" name="isTeacher" value="1" class="d-none">
+
       <button class="w-100 btn btn-lg btn-primary submit" type="submit">Sign Up</button>
 
       <div class="policy">

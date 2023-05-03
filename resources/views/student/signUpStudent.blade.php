@@ -39,6 +39,8 @@
         @enderror
     </div>
 
+    <input type="text" name="isTeacher" value="0" class="d-none">
+
       <button class="w-100 mt-3 btn btn-lg btn-primary submit" type="submit">Sign Up</button>
 
       <div class="policy">
