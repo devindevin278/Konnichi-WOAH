@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CertificateController;
 
@@ -20,12 +21,21 @@ use App\Http\Controllers\CertificateController;
 Route::get('/login', function () {
     return view('login',["title" => "homeStudent"]);
 });
+Route::post('/login', [LoginController::class, 'authenticate']);
 
 // STUDENT
 
 Route::get('/', function () {
     return view('student.homeStudent',["title" => "homeStudent"]);
 });
+
+Route::get('/signUpStudent', function () {
+    return view('student.signUpStudent',["title" => "signUpStudent"]);
+});
+
+// Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('/signUpStudent', [RegisterController::class, 'store']);
+
 
 Route::get('/homeStudent', function () {
     return view('student.homeStudent',["title" => "homeStudent"]);
