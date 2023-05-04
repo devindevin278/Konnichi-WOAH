@@ -54,7 +54,7 @@
         <div id="preview"></div>
       </div>
 
-      <input type="checkbox" name="isTeacher" value="true" checked>
+      <input type="checkbox" name="userIsTeacher" value="true" checked>
 
       <button class="w-100 btn btn-lg btn-primary submit" type="submit">Sign Up</button>
 

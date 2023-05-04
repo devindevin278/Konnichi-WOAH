@@ -45,26 +45,37 @@ class RegisterController extends Controller
 
     public function storeTeacher(Request $request) {
 
-        // dd('test');
+        // dd($request);
 
+        // return $request->file('image')->store('post-images');
         $validatedData = $request->validate([
             'name' => 'required|max:255',
+            // 'userIsTeacher' => 'required',
             // 'username' => ['required', 'min:4', 'max:255', 'unique:users'],
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255',
-            'isTeacher' => 'required',
             'photo' => 'image'
         ]);
         if($request->file('image')){
-            $validatedData['image'] = $request->file('image')->storeTeacher('post-images');
+            dd('ada image');
+            // $validatedData['image'] = $request->file('image')->store('post-images');
 
         }
+
+        if($request['userIsTeacher'] == true) {
+            $validatedData['userIsTeacher'] = 1;
+        } else {
+            $validatedData['userIsTeacher'] = 0;
+        }
+
+        // dd($validatedData);
 
 
         // klo di atas lolos, maka akan jalanin yg di bawah
 
         // $validatedData['password'] = bcrypt($validatedData['password']);
         $validatedData['password'] = Hash::make($validatedData['password']);
+
 
         User::create($validatedData);
 
