@@ -107,20 +107,15 @@ section.showArticle{
     color: #f48183;
 }
 
-.imgbox{
-    display: flex;
-    flex-direction: column;
-    padding: 0vw;
-    gap: 1.605vw;
+/* .imgbox{
+    gap: 3vw;
     background: #FFC6C7;
-    /* background: transparent; */
-    width: 148.315vw;
+    /* background: transparent;
     height: 45.265vh;
-    left: 413px;
     top: 186px;
     border-radius: 8px;
 }
-
+*/
 .tgl{
     font-weight: 400;
     font-size: 12px;
@@ -130,14 +125,16 @@ section.showArticle{
     margin: 4px
 }
 .titlearticle{
-    width: 417px;
+    /* margin: auto;
+    width: fit-content; */
     height: 30px;
-    left: 258px;
     top: 535.64px;
     font-weight: 700;
     font-size: 32px;
     line-height: 32px;
     color: #33272A;
+    align-items: start;
+    text-align: start;
 }
 
 /* Profile Student */

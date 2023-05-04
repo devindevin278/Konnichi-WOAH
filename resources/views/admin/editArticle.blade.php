@@ -8,13 +8,13 @@
 
 </style>
 
-<section class="addArticle">
+<section class="editArticle">
     <div class="container mt-5 d-flex justify-content-around">
         <div class="col " style="display: flex; justify-content:space-between; width: fit-content">
 
             <div class="col d-flex m-0 p-0 gap-2" style=" width:200px">
                 <div class="" style="">
-                    <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/articleAdmin">Back</a>
+                    <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/admin">Back</a>
                 </div>
 
                 {{-- <div class="" style="">
@@ -32,7 +32,8 @@
 		</div>
     </div>
 
-    <form method="post" action="/admin" enctype="multipart/form-data">
+    <form method="post" action="/admin/{{ $articles->slug }}" enctype="multipart/form-data">
+        @method('put')
         @csrf
 
 
@@ -41,7 +42,7 @@
                 <div class="container justify-content-around align-items-center" style=" height: 45.265vh;" >
                     <img src="img/addimg.png" alt="" style="width:45px; ">
                     <input class="form-control d-flex justify-content-center" style="height: 45.265vh;width: fit; top: 186px;
-                    background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()" />
+                    background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()" >
 
                 </div>
             </div>
@@ -53,7 +54,7 @@
 
         <div class="container mt-3 d-flex jusify-content-around">
             <div class="input-group date" style="width:17vw;">
-                <input type="date" class="form-control" id="date" name="date" style="background: #FFC6C7;" required value="{{ old('date') }}">
+                <input type="date" class="form-control" id="date" name="date" style="background: #FFC6C7;" required value="{{ old('date', $articles->date) }}">
             </div>
         </div>
 
@@ -63,7 +64,7 @@
             <div style="width: fit;">
                 <input type="text" class="form-control @error('title') is-invalid
 
-                @enderror" id="title" name="title" placeholder="Add title" required value="{{ old('title') }}"
+                @enderror" id="title" name="title" placeholder="Add title" required value="{{ old('title', $articles->title) }}"
                 style="background: #FFC6C7;width:35vw;">
                 @error('title')
                     <div class="invalid-feedback">
@@ -78,7 +79,7 @@
             <div style="width: fit;">
                 <input type="text" class="form-control @error('slug') is-invalid
 
-                 @enderror" id="slug" name="slug" placeholder="Slug Auto generated" required value="{{ old('slug') }}"
+                 @enderror" id="slug" name="slug" placeholder="Slug Auto generated" required value="{{ old('slug', $articles->slug) }}"
                 style="background: #FFC6C7;width:35vw;">
 
                 @error('slug')
@@ -100,7 +101,7 @@
 
                 @enderror
                 <input id="body" type="hidden" name="body" >
-                <trix-editor input="body" style="height: fit; word-wrap: break-word; " required></trix-editor>
+                <trix-editor input="body" style="height: fit; word-wrap: break-word; " required required value="{{ old('body', $articles->body) }}"></trix-editor>
 
         </div>
 

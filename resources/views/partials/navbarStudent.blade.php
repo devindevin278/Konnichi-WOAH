@@ -2,7 +2,7 @@
 <header id="header" class="fixed-top justify-content-center align-items-center">
     <nav id="navbar" class="navbar" >
 
-            <a class="navbar-brand text-center justify-content-around" href="/"> <img src="img/logo.png" alt="logo"> </a>
+            <a class="navbar-brand text-center justify-content-around" href="/"> <img src="{{ asset('img/logo.png') }}" alt="logo"> </a>
             <ul>
                 <li> <a class="nav-link {{ Request::is('homeStudent')? 'active' : '' }}" href="/homeStudent">Home</a> </li>
                 <li> <a class="nav-link {{ Request::is('learnStudent')? 'active' : '' }}" href="/learnStudent">Learn</a> </li>

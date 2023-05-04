@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ArticleAdminController;
 use App\Http\Controllers\CertificateController;
 
 /*
@@ -63,8 +64,8 @@ Route::get('/profileStudent', function () {
 Route::get('/findTeacher', function () {
     return view('findTeacher',["title" => "findTeacher"]);
 });
-// Route::get('/article', [ArticleController::class, 'index']);
-// Route::get('article/{slug}', [ArticleController::class, 'showArticle']);
+// Route::get('/article', [ArticleAdminController::class, 'index']);
+// Route::get('article/{slug}', [ArticleAdminController::class, 'showArticle']);
 
 
 // Auth::routes();
@@ -138,9 +139,9 @@ Route::get('/notificationTeacher', function () {
 Route::get('/homeAdmin', function () {
     return view('admin.homeAdmin',["title" => "homeAdmin"]);
 });
-Route::get('/articleAdmin', function () {
-    return view('admin.articleAdmin',["title" => "articleAdmin"]);
-});
+// Route::get('/articleAdmin', function () {
+//     return view('admin.articleAdmin',["title" => "articleAdmin"]);
+// });
 Route::get('/showArticleAdmin', function () {
     return view('admin.showArticleAdmin',["title" => "showArticleAdmin"]);
 });
@@ -157,5 +158,11 @@ Route::get('/verifyTeacher', [CertificateController::class, 'index']);
 Route::get('/profileAdmin', function () {
     return view('admin.profileAdmin',["title" => "profileAdmin"]);
 });
+
+
+Route::get('/admin/checkSlug',[ArticleAdminController::class, 'checkSlug']);
+
+Route::resource('/admin', ArticleAdminController::class);
+Route::resource('/admin/articleAdmin', ArticleAdminController::class);
 
 //test
