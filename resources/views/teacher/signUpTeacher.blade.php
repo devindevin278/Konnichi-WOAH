@@ -1,8 +1,8 @@
-@extends('layouts.mainStudent')
+@extends('layouts.mainTeacher')
 
 @section('content')
     <main class="form-signin">
-    <form class=" m-auto" action="/signUpTeacher" method="post">
+    <form class=" m-auto" action="/signUpTeacher" method="post" enctype="multipart/form-data">
         @csrf
       <h1 class="h3 fs-1" style="font-weight: 600;">Sign Up</h1>
 
@@ -47,14 +47,14 @@
             <img src="img/Upload icon.png" alt="">
             <p class="atas m-0 mb-2">Drag and Drop files or <a class="text-decoration-underline" style="color: #FF8BA7">Browse</a></p>
             <p class="bawah">Supported formates: JPEG, PNG, PDF</p>
-          <input type="file" onChange="dragNdrop(event)"  ondragover="drag()" ondrop="drop()" id="uploadFile"  />
+          <input type="file" onChange="dragNdrop(event)"  ondragover="drag()" ondrop="drop()"  id="photo" name="photo"  />
           </span>
 
         </div>
         <div id="preview"></div>
       </div>
 
-      <input type="text" name="isTeacher" value="1" class="d-none">
+      <input type="checkbox" name="isTeacher" value="true" checked>
 
       <button class="w-100 btn btn-lg btn-primary submit" type="submit">Sign Up</button>
 

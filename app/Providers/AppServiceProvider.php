@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+Use Illuminate\Support\Facades\Gate;
+use App\Models\User;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,8 +19,13 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot()
     {
         //
+        // Paginator::useBootstrap();
+
+        Gate::define('teacher',function(User $user){
+            return $user->userIsTeacher;
+        });
     }
 }

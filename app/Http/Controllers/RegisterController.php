@@ -52,8 +52,13 @@ class RegisterController extends Controller
             // 'username' => ['required', 'min:4', 'max:255', 'unique:users'],
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255',
-            'isTeacher' => 'required'
+            'isTeacher' => 'required',
+            'photo' => 'image'
         ]);
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->storeTeacher('post-images');
+
+        }
 
 
         // klo di atas lolos, maka akan jalanin yg di bawah
