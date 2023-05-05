@@ -3,6 +3,6 @@
 @section('content')
 
 
-<h1>cokk</h1>
+<h1>cokkk</h1>
 
 @endsection
