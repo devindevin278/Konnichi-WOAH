@@ -190,6 +190,7 @@
                     <source src="" type="audio/mpeg">
                 </audio>
             </button>
+            
         {{-- ------------------------------------------------------------------------------ --}}
 
         <button id="NA" class="flashcard" onclick="playAudio()">
