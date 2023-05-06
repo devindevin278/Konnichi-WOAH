@@ -1,4 +1,6 @@
-
+* {
+    font-family: "Poppins", sans-serif;
+}
 
 /* Signup start */
 
@@ -173,6 +175,144 @@ main.form-login form {
 }
 
 /* Login end */
+
+/* STUDENTS start */
+
+/* learn start */
+
+#sidebarMenu {
+    background-color: #FAEEE7;
+}
+
+#sidebarMenu a {
+    color: #777777;
+    font-weight: 500;
+    /* font-size:  */
+}
+
+nav#sidebarMenu a.nav-link.active {
+    background-color: #DDF4FF;
+    border: 2px solid #84D8FF;
+    color: #1CB0F6;
+    border-radius: 1rem;
+}
+
+#progress_sidebar {
+    background-color: #FAEEE7;
+    position: sticky;
+    right: 0;
+}
+
+/* learn end */
+
+/* STUDENTS end */
+
+/* ADMIN start */
+
+/* Verify payment start */
+
+section#verifyPayment {
+    background-color: #FAEEE7;
+}
+
+section#verifyPayment table {
+    font-weight: 600;
+}
+
+.table_border {
+    border-left: 2.5px solid #33272A;
+    border-right: 2.5px solid #33272A;
+}
+
+.table_border td {
+    height: 4rem;
+}
+
+.modal-content#modal-content {
+    padding: 2rem;
+    background-color: #FAEEE7;
+}
+
+.modal_back {
+    border: none;
+    padding: .2rem 2rem;
+    border-radius: 1rem;
+    font-weight: 600;
+}
+
+.modal-header, .modal-body, .modal-button {
+    background-color: #FAEEE7;
+}
+
+.modal-body {
+    width: 60%;
+    /* background-color: #33272A; */
+    margin: auto;
+
+}
+
+.modal-body label {
+    width: 40%;
+    font-weight: 600;
+    /* background-color: #9c6f7b; */
+    height: fit-content;
+    padding: 0;
+}
+
+.modal-body p {
+    /* margin-top: auto; */
+    margin-bottom: auto;
+    margin-right: 1rem;
+    font-weight: 600;
+    /* background-color: #9c6f7b; */
+    height: fit-content;
+    padding: 0;
+}
+
+.modal-body input:disabled {
+    width: 56%;
+    font-weight: 600;
+    background-color: #FAEEE7;
+    border: none;
+    align-items: center;
+    height: fit-content;
+    padding: 0;
+}
+
+.modal-body img {
+    /* margin-right: auto; */
+    background-color: #33272A;
+    padding: 0;
+}
+
+.modal-button {
+    /* background-color: #33272A; */
+    width: fit-content;
+    margin: auto;
+}
+
+.modal-button button {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 1rem;
+    padding: .5rem 2rem;
+    font-weight: 600;
+}
+
+.modal-title {
+    /* background-color: #33272A; */
+    margin: auto;
+    text-decoration: underline;
+}
+
+/* a.payment_detail {
+    text-decoration: underline;
+
+} */
+
+/* Verify payment end */
+
+/* ADMIN end */
 
 
 /* footer start */

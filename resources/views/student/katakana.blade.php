@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,13 +14,13 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
 </head>
-<body>
+<body> --}}
     {{-- @include('partials.navbarStudent') --}}
 
     <div class="content">
 
         <div class="linksec">
-            <a href="" class="Hiralink">Hiragana</a>
+            <a href="/learnStudent/cards/hiragana" class="Hiralink">Hiragana</a>
             <a href="" class="Katalink" style="background-color: #FF8BA7">Katakana</a>
         </div>
 
@@ -232,7 +232,52 @@
                     <source src="" type="audio/mpeg">
                 </audio>
             </button>
+
             {{-- ------------------------------------------------------------------------------ --}}
+
+
+        {{-- ------------------------------------------------------------------------------ --}}
+
+        <button id="NA" class="flashcard" onclick="playAudio()">
+            <h3 style="margin-bottom:0">ナ</h3>
+            <h4>NA</h4>
+            <audio id="audio" autoplay>
+                <source src="" type="audio/mpeg">
+            </audio>
+        </button>
+
+        <button id="NI" class="flashcard" onclick="playAudio()">
+            <h3 style="margin-bottom:0">ニ</h3>
+            <h4>NI</h4>
+            <audio id="audio" autoplay>
+                <source src="" type="audio/mpeg">
+            </audio>
+        </button>
+
+        <button id="NU" class="flashcard" onclick="playAudio()">
+            <h3 style="margin-bottom:0">ヌ</h3>
+            <h4>NU</h4>
+            <audio id="audio" autoplay>
+                <source src="" type="audio/mpeg">
+            </audio>
+        </button>
+
+        <button id="NE" class="flashcard" onclick="playAudio()">
+            <h3 style="margin-bottom:0">ネ</h3>
+            <h4>NE</h4>
+            <audio id="audio" autoplay>
+                <source src="" type="audio/mpeg">
+            </audio>
+        </button>
+
+        <button id="NO" class="flashcard" onclick="playAudio()">
+            <h3 style="margin-bottom:0">ノ</h3>
+            <h4>NO</h4>
+            <audio id="audio" autoplay>
+                <source src="" type="audio/mpeg">
+            </audio>
+        </button>
+        {{-- ------------------------------------------------------------------------------ --}}
 
             <button id="HA" class="flashcard" onclick="playAudio()">
                 <h3 style="margin-bottom:0">ハ</h3>
@@ -705,5 +750,5 @@
           });
         }
       </script>
-</body>
-</html>
+{{-- </body>
+</html> --}}

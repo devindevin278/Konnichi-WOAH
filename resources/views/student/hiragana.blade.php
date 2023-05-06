@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,13 +14,13 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
 </head>
-<body>
+<body> --}}
     {{-- @include('partials.navbarStudent') --}}
 
     <div class="content">
         <div class="linksec">
             <a href="" class="Hiralink" style="background-color: #FF8BA7">Hiragana</a>
-            <a href="" class="Katalink">Katakana</a>
+            <a href="/learnStudent/cards/katakana" class="Katalink">Katakana</a>
         </div>
 
         <div class="whitebg">
@@ -706,5 +706,5 @@
         }
       </script>
 
-</body>
-</html>
+{{-- </body>
+</html> --}}

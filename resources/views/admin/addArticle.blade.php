@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="showArticle">
+<section class="addArticle">
     <div class="container mt-5 d-flex justify-content-around">
         <div class="col " style="display: flex; justify-content:space-between; width: fit-content">
 
@@ -27,22 +27,43 @@
     </div>
 
     <div class="container mt-5 ">
-        <div class="imgbox" >
+        <div class="imgbox" style="overflow:hidden; border:solid red;" >
             <div class="container d-flex justify-content-around align-items-center" style=" height: 45.265vh;" >
-                <a href="#"><img  src="img/addimg.png" alt="addimg" style="width:45px; "></a>
+                <img  src="img/addimg.png" alt="" style="width:45px; ">
+                <input class="container form-control d-flex" style="width: 140vw; height: 45.265vh;top: 186px;
+                border-radius: 8px;" type="file" id="image" name="image" onchange="previewImage()">
             </div>
         </div>
     </div>
 
+    {{-- <div class="mb-3">
+        <label for="image" class="form-label @error('image') is-invalid
+        @enderror">Post Image</label>
+        <img class="img-preview img-fluid col-sm-5">
+        <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
+        @error('image')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+
+        @enderror
+    </div> --}}
+
     <div class="container mt-3 d-flex jusify-content-around">
         <img src="img/calendar.png" alt="" >
-        <h5 class="tgl">2023年4月29日</h5>
+        {{-- <h5 class="tgl">2023年4月29日</h5> --}}
+        <div class="input-group date" style="width:9vw;">
+            <input type="text" class="form-control" id="date" name="date" data-toggle="datepicker">
+        </div>
     </div>
+
+
 
     <div class="container mt-3 d-flex jusify-content-around align-items-center">
         <div class="container titlearticle">日本の花火祭り</div>
         <div class="d-flex justify-content-end m-1">
             <a href="#"><img  src="img/edit2.png" alt="edit2" style="width:45px; "></a>
+
         </div>
     </div>
 
@@ -59,6 +80,19 @@
 
 
 </section>
+
+<script>
+    function previewImage(){
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.imgbox');
+        imgPreview.style.display = 'block';
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+        oFReader.onload = function(oFRevent){
+            imgPreview.src = oFRevent.target.result;
+        }
+    }
+</script>
 
 
 @endsection

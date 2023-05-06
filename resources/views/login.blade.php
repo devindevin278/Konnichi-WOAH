@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="form-login">
-    <form class=" m-auto">
+    <div class=" m-auto" >
 
         @if(session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -13,14 +13,15 @@
 
       <h1 class="h3 fs-1 mb-4" style="font-weight: 600;">Login</h1>
 
-
-      <div class="form-floating">
-        <input type="email" class="w-100" id="floatingInput" placeholder="Email">
+    <form class=" m-auto" action="/login" method="post">
+        @csrf
+        <div class="form-floating">
+        <input type="email" class="w-100" id="floatingInput" placeholder="Email" name="email">
         {{-- <label for="floatingInput">Email</label> --}}
       </div>
 
       <div class="form-floating">
-        <input type="password" class="w-100" id="floatingPassword" placeholder="Password">
+        <input type="password" class="w-100" id="floatingPassword" placeholder="Password" name="password">
         {{-- <label for="floatingPassword">Password</label> --}}
       </div>
 
@@ -30,6 +31,7 @@
 
       <p class="mt-4 mb-3 text-body-secondary" style="opacity: 70%;">Don't have an account yet? <a href="/signUpStudent" style="font-weight:500;">Sign Up</a></p>
     </form>
+    </div>
 
 </main>
 @endsection
