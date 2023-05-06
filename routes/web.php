@@ -29,6 +29,7 @@ Route::get('/', function () {
     return view('student.homeStudent',["title" => "homeStudent"]);
 });
 
+
 Route::get('/signUpStudent', function () {
     return view('student.signUpStudent',["title" => "signUpStudent"]);
 });
@@ -48,8 +49,11 @@ Route::get('/showArticle', function () {
     return view('student.showArticle',["title" => "showArticle"]);
 });
 
-Route::get('/learnStudent/cards', function () {
-    return view('student.learn.cards',["title" => "learnStudent"]);
+Route::get('/learnStudent/cards/katakana', function () {
+    return view('student.learn.cards_katakana',["title" => "learnStudent"]);
+});
+Route::get('/learnStudent/cards/hiragana', function () {
+    return view('student.learn.cards_hiragana',["title" => "learnStudent"]);
 });
 Route::get('/learnStudent/games', function () {
     return view('student.learn.games',["title" => "learnStudent"]);

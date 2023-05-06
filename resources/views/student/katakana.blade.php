@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,13 +14,13 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
 </head>
-<body>
+<body> --}}
     {{-- @include('partials.navbarStudent') --}}
 
     <div class="content">
 
         <div class="linksec">
-            <a href="" class="Hiralink">Hiragana</a>
+            <a href="/learnStudent/cards/hiragana" class="Hiralink">Hiragana</a>
             <a href="" class="Katalink" style="background-color: #FF8BA7">Katakana</a>
         </div>
 
@@ -190,7 +190,7 @@
                     <source src="" type="audio/mpeg">
                 </audio>
             </button>
-            
+
         {{-- ------------------------------------------------------------------------------ --}}
 
         <button id="NA" class="flashcard" onclick="playAudio()">
@@ -707,5 +707,5 @@
           });
         }
       </script>
-</body>
-</html>
+{{-- </body>
+</html> --}}
