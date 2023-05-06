@@ -63,17 +63,21 @@ h4{
 
 }
 
+.characterss{
+    display: flex;
+    flex-direction: row;
+}
+
 .chara2{
-    position: absolute;
-    left: 45vw;
+    /* position: absolute; */
+    /* left: 45vw; */
     /* top: 230px; */
 
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top: 8.2vw;
+    margin-top: 12.2vw;
     width: 42vw;
-
 }
 
 .chara21{
