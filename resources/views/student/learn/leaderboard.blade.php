@@ -2,7 +2,7 @@
 
 @section('learnContent')
 
-<section class="studentLeaderboard">
+<section class="studentLeaderboard col-md-10">
 
 
     <div class="container mt-5 d-flex text-center align-items-center justify-content-center">

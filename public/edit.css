@@ -41,15 +41,14 @@ h4{
 }
 
 .whitebg{
-    /* width: 80vw; */
+    width: 87vw;
     padding-bottom: 3vh;
     top: 9vw;
-    /* position: absolute; */
+    position: absolute;
     background-color: white;
     border-radius: 30px;
     left: 6vw;
     margin-bottom: 3rem;
-    /* display: none; */
 }
 
 .chara1{
@@ -64,17 +63,21 @@ h4{
 
 }
 
+.characterss{
+    display: flex;
+    flex-direction: row;
+}
+
 .chara2{
-    position: absolute;
-    left: 45vw;
+    /* position: absolute; */
+    /* left: 45vw; */
     /* top: 230px; */
 
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top: 8.2vw;
+    margin-top: 12.2vw;
     width: 42vw;
-
 }
 
 .chara21{
@@ -113,7 +116,7 @@ h4{
     background-color: #FFC6C7;
 }
 
-img.mochi {
+img{
     position: absolute;
     display: flex;
 }
