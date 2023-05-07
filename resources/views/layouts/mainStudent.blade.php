@@ -23,9 +23,9 @@
     @yield('content')
     @include('partials.footer')
     {{-- JS --}}
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="node_modules/waypoints/noframework.waypoints.js"></script>
-    <script src="/main.js"></script>
+    <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('node_modules/waypoints/noframework.waypoints.js') }}"></script>
+    <script src="{{ asset('/main.js') }}"></script>
     <script src="node_modules/aos/dist/aos.js"></script>
     <script> AOS.init(); </script>
 </body>
