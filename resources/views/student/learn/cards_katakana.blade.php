@@ -23,8 +23,8 @@
     <div class="content">
 
         <div class="linksec container my-4">
-            <a href="/learnStudent/cards/hiragana" class="Hiralink">Hiragana</a>
-            <a class="Katalink" style="background-color: #FF8BA7">Katakana</a>
+            <a href="/learnStudent/cards/hiragana" class="Hiralink" style="background-color: #FF8BA7">Hiragana</a>
+            <a class="Katalink" style="opacity: 100%">Katakana</a>
         </div>
 
         <div class="whitebg container">

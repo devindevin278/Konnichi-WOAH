@@ -34,31 +34,31 @@
                         </div>
                         <div style="border: 1px solid #A08A8F;"></div>
 
-                    <form class="row mt-3" action="profileStudent" method="post" id="form-control">
-
+                    <form class="row mt-3" action="/profileStudent" method="post" id="form-control">
+                            
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Name</label>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Enter your name" value="" style="border: solid #A08A8F;">
+                                <input type="text" class="form-control" placeholder="Enter your name" value="{{ old('name', $user[0]->name) }}" style="border: solid #A08A8F;">
                             </div>
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Address</label>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Enter your address" value="" style="border: solid #A08A8F;">
+                                <input type="text" class="form-control" placeholder="Enter your address" value="{{ old('name', $user[0]->address) }}" style="border: solid #A08A8F;">
                             </div>
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Email</label>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Enter your email" value="" style="border: solid #A08A8F;">
+                                <input type="text" class="form-control" placeholder="Enter your email" value="{{ old('name', $user[0]->email) }}" style="border: solid #A08A8F;">
                             </div>
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Phone Number</label>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Enter your phone number" value="" style="border: solid #A08A8F;">
+                                <input type="text" class="form-control" placeholder="Enter your phone number" value="{{ old('name', $user[0]->phoneNumber) }}" style="border: solid #A08A8F;">
                             </div>
                             <div class="d-flex align-item-center mt-4" style="gap:10px" >
                                 <div class="d-flex">
@@ -85,7 +85,7 @@
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">DOB</label>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Enter your date of birth" value="" style="border: solid #A08A8F;">
+                                <input type="text" class="form-control" placeholder="Enter your date of birth" value="{{ old('name', $user[0]->DOB) }}" style="border: solid #A08A8F;">
                             </div>
                         </div>
                         <div class="mb-5 text-center"><button class="btnsave" type="button">Save</button></div>

@@ -4,7 +4,7 @@
 
             <a class="navbar-brand text-center justify-content-around" href="/" ><img src="img/logo.png" alt="logo"></a>
             <ul class="d-flex align-items-center justify-content-end" style=" width:50vw; ">
-                <li> <a class="nav-link {{ Request::is('homeAdmin')? 'active' : '' }}" href="/homeAdmin">Home</a> </li>
+                <li> <a class="nav-link " href="/homeAdmin">Home</a> </li>
                 <li> <a class="nav-link {{ Request::is('verifyPayment')? 'active' : '' }}" href="/verifyPayment">Verify Payment</a> </li>
                 <li> <a class="nav-link {{ Request::is('verifyTeacher')? 'active' : '' }}" href="/verifyTeacher">Verify Teacher</a></li>
                 <li> <a class="nav-link {{ Request::is('articleAdmin')? 'active' : '' }}" href="/articleAdmin">Article</a> </li>

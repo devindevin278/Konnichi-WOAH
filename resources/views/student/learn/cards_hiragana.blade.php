@@ -25,8 +25,8 @@
 <div class="col-md-10" style="background-color: #FAEEE7">
     <div class="content">
                 <div class="linksec container my-4">
-            <a class="Hiralink" style="background-color: #FF8BA7">Hiragana</a>
-            <a href="/learnStudent/cards/katakana" class="Katalink">Katakana</a>
+            <a class="Hiralink" style="opacity: 100%">Hiragana</a>
+            <a href="/learnStudent/cards/katakana" class="Katalink" style="background-color: #FF8BA7">Katakana</a>
         </div>
 
         <div class="whitebg container col-md-12">

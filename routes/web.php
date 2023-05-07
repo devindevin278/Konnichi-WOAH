@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\RegisterTeacherController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,9 +67,8 @@ Route::get('/teacher', function () {
 Route::get('/viewTeacher', function () {
     return view('viewTeacher',["title" => "viewTeacher"]);
 });
-Route::get('/profileStudent', function () {
-    return view('student.profileStudent',["title" => "profileStudent"]);
-});
+Route::resource('/profileStudent', StudentController::class);
+
 Route::get('/findTeacher', function () {
     return view('findTeacher',["title" => "findTeacher"]);
 });
@@ -118,11 +119,14 @@ Route::get('/learnStudent/studentLeaderboard', function () {
 
 // TEACHER
 
-Route::get('/signUpTeacher', function () {
-    return view('teacher.signUpTeacher',["title" => "signUpTeacher"]);
-});
+// Route::get('/signUpTeacher', function () {
+//     return view('teacher.signUpTeacher',["title" => "signUpTeacher"]);
+// });
 
-Route::post('/signUpTeacher', [RegisterController::class, 'storeTeacher']);
+Route::resource('/signUpTeacher', RegisterTeacherController::class);
+// Route::post('/signUpTeacher', [RegisterTeacherController::class, 'store']);
+
+Route::resource('/certificate', CertificateController::class);
 
 
 Route::get('/homeTeacher', function () {
@@ -160,7 +164,7 @@ Route::get('/addArticle', function () {
 // });
 
 Route::get('/verifyPayment', [PaymentController::class, 'index']);
-Route::get('/verifyTeacher', [CertificateController::class, 'index']);
+Route::resource('/verifyTeacher', CertificateController::class);
 
 Route::get('/profileAdmin', function () {
     return view('admin.profileAdmin',["title" => "profileAdmin"]);

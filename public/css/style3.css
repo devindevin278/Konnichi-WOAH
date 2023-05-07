@@ -36,7 +36,8 @@ h4{
 }
 
 .Hiralink:hover, .Katalink:hover{
-    background-color: #FFC6C7;
+    /* background-color: #f9f9f9; */
+    opacity: 80%;
     color: black;
 }
 
