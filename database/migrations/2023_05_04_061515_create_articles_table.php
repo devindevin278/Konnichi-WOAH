@@ -16,7 +16,9 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->foreignid('author_id'); //foreign key untuk table author
             $table->string('title');
+            $table->date('articlepublish');
             $table->string('slug')->unique(); //slug akan jadi url jadi hrs unik
             $table->string('image')->nullable();
             $table->text('body');

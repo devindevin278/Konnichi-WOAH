@@ -12,6 +12,15 @@ class Article extends Model
     use Sluggable;
 
     protected $guarded = ['id'];
+    protected $with = ['author'];
+    public function scopeFilter($query, array $filters){
+
+        $query->when($filters['author'] ?? false, function($query, $author){
+                return $query->whereHas('author', function($query) use  ($author){
+                $query->where('name', $author);
+                });
+        });
+    }
 
     public function getRouteKeyName(){
         return 'slug';
@@ -23,6 +32,11 @@ class Article extends Model
                 'source' => 'title'
             ]
          ];
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(Author::class);
     }
 
 }

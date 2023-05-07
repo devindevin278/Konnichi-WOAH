@@ -14,7 +14,7 @@
 
             <div class="col d-flex m-0 p-0 gap-2" style=" width:200px">
                 <div class="" style="">
-                    <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/articleAdmin">Back</a>
+                    <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/admin">Back</a>
                 </div>
 
                 {{-- <div class="" style="">
@@ -53,7 +53,7 @@
 
         <div class="container mt-3 d-flex jusify-content-around">
             <div class="input-group date" style="width:17vw;">
-                <input type="date" class="form-control" id="date" name="date" style="background: #FFC6C7;" required value="{{ old('date') }}">
+                <input type="date" class="form-control" id="articlepublish" name="articlepublish" style="background: #FFC6C7;" required value="{{ old('articlepublish') }}">
             </div>
         </div>
 
@@ -71,6 +71,23 @@
                     </div>
 
                 @enderror
+            </div>
+        </div>
+
+        <div class="container mt-3 d-flex align-items-center">
+            <div style="width: fit;">
+                <select class="form-select" name="author_id" value="Choose author name" required value="{{ old('author') }}" style="background: #FFC6C7;">
+                    <option selected>  Choose Author</option>
+                    @foreach ($authors as $author)
+                        @if(old('author_id') == $author->id)
+                            <option value="{{ $author->id }}" selected>{{ $author->name }}</option>
+                        @else
+                            <option value="{{ $author->id }}">{{ $author->name }}</option>
+
+                        @endif
+                    @endforeach
+                </select>
+
             </div>
         </div>
 

@@ -137,6 +137,19 @@ section.showArticle{
     text-align: start;
 }
 
+.authorname{
+    /* margin: auto;
+    width: fit-content; */
+    height: 30px;
+    top: 535.64px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #33272A;
+    align-items: start;
+    text-align: start;
+}
+
 /* Profile Student */
 .container-profileStudent{
     border-radius: 30px;

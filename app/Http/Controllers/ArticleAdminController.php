@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Article;
+use App\Models\Author;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,8 +16,15 @@ class ArticleAdminController extends Controller
     public function index()
     {
         $articles = Article::latest();
+
+        if(request('search')){
+            $articles->where('title','like','%'.request('search').'%')
+            ->orWhere('body','like','%'.request('search').'%');
+        }
+
         return view('admin.articleAdmin',[
-            'articles' => $articles->get()
+            'articles' => $articles->get(),
+            'authors' => Author::all()
         ]);
     }
 
@@ -28,7 +36,9 @@ class ArticleAdminController extends Controller
     public function create()
     {
         //
-        return view('admin.addArticle');
+        return view('admin.addArticle', [
+            'authors' => Author::all()
+        ]);
     }
 
     /**
@@ -41,10 +51,23 @@ class ArticleAdminController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|max:255',
+            'author_id' => 'required',
+            'articlepublish' => 'required',
             'slug' => 'required|unique:articles',
             'body' => 'required',
             'image' => 'image'
         ]);
+
+        // dd($validatedData);
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('article-images');
+
+        }
+
+
+        Article::create($validatedData);
+        return redirect('/admin')->with('success', 'New post has been added');
+
     }
 
     /**
@@ -55,20 +78,12 @@ class ArticleAdminController extends Controller
     // @return \Illuminate\Http\Response
     public function show(Article $article)
     {
+
         return view('admin.showArticleAdmin',[
-            'articles' => $article
+            'articles' => $article,
+            'authors' => Author::all()
         ]);
-
-        // $artikel = [];
-        // foreach($article as $a){
-        //     if($a["id"] == $article->id){
-        //         $artikel = $a;
-        //     }
-        // }
-        // return view('admin.showArticleAdmin', ["admin.showArticleAdmin" => $artikel]);
-
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -78,7 +93,8 @@ class ArticleAdminController extends Controller
     public function edit(Article $article)
     {
         return view('admin.editArticle',[
-            'articles' => $article
+            'articles' => $article,
+            'authors' => Author::all()
         ]);
     }
 
@@ -93,6 +109,8 @@ class ArticleAdminController extends Controller
     {
         $rules = [
             'title' => 'required|max:255',
+            'author_id' => 'required',
+            'articlepublish' => 'required',
             'body' => 'required',
             'image' => 'image'
         ];
@@ -125,9 +143,6 @@ class ArticleAdminController extends Controller
         if($article->image){
             Storage::delete($article->image);
         }
-        // $articles = Article::findOrFail($article);
-        // $articles->each()->delete();
-
         Article::destroy($article->id);
 
         return redirect('/admin')->with('success','Article has been deleted!');

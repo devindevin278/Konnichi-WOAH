@@ -1,10 +1,12 @@
 <?php
-
+use App\Models\Author;
+use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ArticleAdminController;
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CertificateController;
 
 /*
@@ -64,13 +66,6 @@ Route::get('/profileStudent', function () {
 Route::get('/findTeacher', function () {
     return view('findTeacher',["title" => "findTeacher"]);
 });
-// Route::get('/article', [ArticleAdminController::class, 'index']);
-// Route::get('article/{slug}', [ArticleAdminController::class, 'showArticle']);
-
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // GAMES
 Route::get('/1', function () {
@@ -139,18 +134,12 @@ Route::get('/notificationTeacher', function () {
 Route::get('/homeAdmin', function () {
     return view('admin.homeAdmin',["title" => "homeAdmin"]);
 });
-// Route::get('/articleAdmin', function () {
-//     return view('admin.articleAdmin',["title" => "articleAdmin"]);
-// });
 Route::get('/showArticleAdmin', function () {
     return view('admin.showArticleAdmin',["title" => "showArticleAdmin"]);
 });
 Route::get('/addArticle', function () {
     return view('admin.addArticle',["title" => "addArticle"]);
 });
-// Route::get('/verifyPayment', function () {
-//     return view('admin.verifyPayment',["title" => "verifyPayment"]);
-// });
 
 Route::get('/verifyPayment', [PaymentController::class, 'index']);
 Route::get('/verifyTeacher', [CertificateController::class, 'index']);
@@ -161,8 +150,10 @@ Route::get('/profileAdmin', function () {
 
 
 Route::get('/admin/checkSlug',[ArticleAdminController::class, 'checkSlug']);
-
-Route::resource('/admin', ArticleAdminController::class);
-Route::resource('/admin/articleAdmin', ArticleAdminController::class);
-
-//test
+Route::delete('/admin/{article:slug}', [ArticleAdminController::class, 'destroy']);
+Route::get('/admin/{article:slug}/edit', [ArticleAdminController::class, 'edit']);
+Route::get('/admin/{article:slug}', [ArticleAdminController::class, 'show']);
+Route::get('/admin', [ArticleAdminController::class, 'index']);
+Route::post('/admin', [ArticleAdminController::class, 'store']);
+Route::get('/addArticle', [ArticleAdminController::class, 'create']);
+Route::get('/author/{author:name}',[AuthorController::class, 'index']);

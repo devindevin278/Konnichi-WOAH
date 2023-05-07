@@ -37,7 +37,7 @@
     <div class="container mt-3 d-flex jusify-content-around">
         <img src="img/calendar.png" alt="" >
         {{-- <h5 class="tgl">2023年4月29日</h5> --}}
-        <h5 class="tgl">{{ $articles->created_at }}</h5>
+        <h5 class="tgl">{{ $articles->articlepublish }}</h5>
     </div>
 
     <div class="container mt-3 d-flex jusify-content-around align-items-center">
