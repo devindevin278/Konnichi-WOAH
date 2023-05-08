@@ -125,6 +125,9 @@ Route::get('/teacherSchedule', function () {
 Route::get('/profileTeacher', function () {
     return view('teacher.profileTeacher',["title" => "profileTeacher"]);
 });
+Route::get('/viewTeacher', function () {
+    return view('teacher.viewTeacher',["title" => "viewTeacher"]);
+});
 Route::get('/notificationTeacher', function () {
     return view('teacher.notificationTeacher',["title" => "notificationTeacher"]);
 });
