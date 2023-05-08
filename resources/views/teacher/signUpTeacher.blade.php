@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="form-signin">
-    <form class=" m-auto" action="/signUpTeacher" method="post" enctype="multipart/form-data">
+    <form class=" m-auto" action="/certificate" method="post" enctype="multipart/form-data">
         @csrf
       <h1 class="h3 fs-1" style="font-weight: 600;">Sign Up</h1>
 
@@ -47,14 +47,20 @@
             <img src="img/Upload icon.png" alt="">
             <p class="atas m-0 mb-2">Drag and Drop files or <a class="text-decoration-underline" style="color: #FF8BA7">Browse</a></p>
             <p class="bawah">Supported formates: JPEG, PNG, PDF</p>
-          <input type="file" onChange="dragNdrop(event)"  ondragover="drag()" ondrop="drop()"  id="photo" name="photo"  />
+          <input type="file" onChange="dragNdrop(event)"  ondragover="drag()" ondrop="drop()"  id="image" name="image"  />
           </span>
 
         </div>
         <div id="preview"></div>
       </div>
 
-      <input type="checkbox" name="userIsTeacher" value="true" checked>
+      {{-- <div class="mb-3">
+        <label for="image" class="form-label">Certificate</label>
+        <img src="" alt="" class="img-preview img-fluid mb-3">
+        <input class="form-control certif_input" type="file" id="image" name="image" onchange="previewImage()">
+    </div> --}}
+
+      {{-- <input type="checkbox" name="userIsTeacher" value="true" checked> --}}
 
       <button class="w-100 btn btn-lg btn-primary submit" type="submit">Sign Up</button>
 

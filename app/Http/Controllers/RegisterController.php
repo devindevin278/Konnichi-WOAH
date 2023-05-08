@@ -54,12 +54,12 @@ class RegisterController extends Controller
             // 'username' => ['required', 'min:4', 'max:255', 'unique:users'],
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255',
-            'photo' => 'image'
+            'photo' => 'image|file'
         ]);
+
         if($request->file('image')){
             dd('ada image');
-            // $validatedData['image'] = $request->file('image')->store('post-images');
-
+            $validatedData['image'] = $request->file('image')->store('post-images');
         }
 
         if($request['userIsTeacher'] == true) {
@@ -76,11 +76,7 @@ class RegisterController extends Controller
         // $validatedData['password'] = bcrypt($validatedData['password']);
         $validatedData['password'] = Hash::make($validatedData['password']);
 
-
         User::create($validatedData);
-
-
-        // $request->session()->flash('success', 'Registration successfull! Please Login');
 
         return redirect('/login')->with('success', 'Registration successfull! Please Login');
 

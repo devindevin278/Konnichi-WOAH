@@ -1,7 +1,7 @@
-body{
+/* body{
     height: 100%;
     background-color: #FAEEE7;
-}
+} */
 
 h1,h2,h3,h4,h5,h6 {
     font-family: "Poppins", sans-serif;
@@ -36,50 +36,60 @@ h4{
 }
 
 .Hiralink:hover, .Katalink:hover{
-    background-color: #FFC6C7;
+    /* background-color: #f9f9f9; */
+    opacity: 80%;
     color: black;
 }
 
 .whitebg{
-    /* width: 80vw; */
+    width: 87vw;
     padding-bottom: 3vh;
-    top: 9vw;
+    /* top: 9vw; */
     /* position: absolute; */
     background-color: white;
     border-radius: 30px;
     left: 6vw;
     margin-bottom: 3rem;
-    /* display: none; */
+    display: flex;
+    flex-direction: column;
 }
 
 .chara1{
     position: static;
     display: flex;
     flex-direction: row;
-    margin-top: 4vw;
-    margin-left: 1.5vw;
+    /* margin-top: 4vw; */
+    /* margin-left: 1.5vw; */
     flex-wrap: wrap;
-    width: 42vw;
-    height: 90vw;
+    /* width: 42vw; */
+    /* height: 90vw; */
+    /* margin-left: auto;
+    margin-right: auto; */
 
 }
 
+.characterss{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: fit-content;
+}
+
 .chara2{
-    position: absolute;
-    left: 45vw;
+    /* position: absolute; */
+    /* left: 45vw; */
     /* top: 230px; */
 
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top: 8.2vw;
-    width: 42vw;
-
+    /* margin-top: 12.2vw; */
+    /* width: 42vw; */
 }
 
 .chara21{
     /* height: 330px; */
-    height: 24vw;
+    /* height: 24vw; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -90,22 +100,24 @@ h4{
     flex-direction: row;
     flex-wrap: wrap;
     /* margin-top: 6.5rem; */
-    margin-top: 9vw;
+    /* margin-top: 9vw; */
 
-    height: 16vw;
+    /* height: 16vw; */
 }
 
 .flashcard{
-    height: 6.5vw;
-    width: 6.5vw;
+    height: 6vw;
+    width: 5.5vw;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     display: flex;
-    border-radius: 2vw;
+    border-radius: 1vw;
     background-color: #C3F0CA;
     border: none;
-    margin: 0.3vw 0.3rem 2.26px 0.3rem;
+    /* margin: 0.3vw 0.3rem 2.26px 0.3rem; */
+    margin: 0.7vw;
+    /* margin: auto; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -113,9 +125,10 @@ h4{
     background-color: #FFC6C7;
 }
 
-img.mochi {
+img.mochi, img.mochikana{
     position: absolute;
     display: flex;
+    /* width: 100%; */
 }
 
 #blankk{
@@ -123,14 +136,18 @@ img.mochi {
 }
 
 .mochi{
-    left: 70vw;
-    top: 75vw;
+    /* left: 70vw; */
+    /* top: 75vw; */
+    bottom: 0px;
+    right: 10vw;
     height: 30vw;
 }
 
 .mochikana{
-    left: 55vw;
-    top: 75vw;
+    /* left: 55vw; */
+    /* top: 75vw; */
+    bottom: 0px;
+    right: 5vw;
     height: 27vw;
     transform: scaleX(-1);
 }
