@@ -11,7 +11,7 @@ a:link {
 .form-signin {
     background-color: #FAEEE7;
     text-align: center;
-    padding-top: 8vw;
+    padding-top: 2vw;
     margin-bottom: -20px;
     font-family: "Poppins", sans-serif;
 }
@@ -131,6 +131,7 @@ input[type="file"] {
   opacity: 0;
   top: 0;
   left: 0;
+  background-color: #1CB0F6;
 }
   .draging {
     transform: scale(1.1);
@@ -139,8 +140,13 @@ input[type="file"] {
     text-align: center;
     margin-bottom: 2rem;
 }
-img {
+/* img {
   max-width: 100%
+} */
+
+.certif_input {
+    /* background-color: #1CB0F6; */
+    width: 1vw;
 }
 /* upload image end */
 
@@ -151,7 +157,7 @@ img {
 .form-login {
     background-color: #FAEEE7;
     text-align: center;
-    padding-top: 12vw;
+    padding-top: 5vw;
     margin-bottom: -20px;
     font-family: "Poppins", sans-serif;
 }
@@ -175,6 +181,37 @@ main.form-login form {
 }
 
 /* Login end */
+
+/* STUDENTS start */
+
+/* learn start */
+
+#sidebarMenu {
+    background-color: #FAEEE7;
+}
+
+#sidebarMenu a {
+    color: #777777;
+    font-weight: 500;
+    /* font-size:  */
+}
+
+nav#sidebarMenu a.nav-link.active {
+    background-color: #DDF4FF;
+    border: 2px solid #84D8FF;
+    color: #1CB0F6;
+    border-radius: 1rem;
+}
+
+#progress_sidebar {
+    background-color: #FAEEE7;
+    position: sticky;
+    right: 0;
+}
+
+/* learn end */
+
+/* STUDENTS end */
 
 /* ADMIN start */
 
