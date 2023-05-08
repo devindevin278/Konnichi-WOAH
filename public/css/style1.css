@@ -11,7 +11,7 @@ a:link {
 .form-signin {
     background-color: #FAEEE7;
     text-align: center;
-    padding-top: 8vw;
+    padding-top: 2vw;
     margin-bottom: -20px;
     font-family: "Poppins", sans-serif;
 }
@@ -124,7 +124,7 @@ form a {
     /* background-color: #33272A; */
 }
 
-.dragbox input[type="file"] {
+input[type="file"] {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -157,7 +157,7 @@ form a {
 .form-login {
     background-color: #FAEEE7;
     text-align: center;
-    padding-top: 12vw;
+    padding-top: 5vw;
     margin-bottom: -20px;
     font-family: "Poppins", sans-serif;
 }

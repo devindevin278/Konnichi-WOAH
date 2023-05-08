@@ -25,7 +25,7 @@ use App\Http\Controllers\StudentController;
 // ALL
 Route::get('/login', function () {
     return view('login',["title" => "homeStudent"]);
-});
+})->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 // STUDENT
@@ -70,7 +70,7 @@ Route::get('/teacher', function () {
 Route::get('/viewTeacher', function () {
     return view('viewTeacher',["title" => "viewTeacher"]);
 });
-Route::resource('/profileStudent', StudentController::class);
+Route::resource('/profileStudent', StudentController::class)->middleware(('auth'));
 
 Route::get('/findTeacher', function () {
     return view('findTeacher',["title" => "findTeacher"]);
