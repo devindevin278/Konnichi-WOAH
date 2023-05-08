@@ -174,4 +174,5 @@ Route::get('/articleTeacher', [ArticleAdminController::class, 'indexTeacher']);
 Route::post('/admin', [ArticleAdminController::class, 'store']);
 Route::get('/addArticle', [ArticleAdminController::class, 'create']);
 Route::get('/author/{author:name}',[AuthorController::class, 'index']);
-// Route::get('/author/{author:name}',[AuthorController::class, 'indexStudent']);
+// Route::get('/profileStudent', [StudentController::class,'index']);
+// Route::get('/profileStudent/{id}', [StudentController::class,'index'])->middleware('auth');

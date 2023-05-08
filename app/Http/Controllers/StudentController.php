@@ -10,11 +10,16 @@ class StudentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    // public function index()
+    // {
+    //     return view('student.profileStudent');
+
+
+    // }
+    public function index(User $user)
     {
-        //
-        // $user = User::findOrFail(auth()->user()->id);
-        // // dd($user);
+        // $id = intval($user->id);
+        // $user = User::findOrFail($user->id)->get();
         // return view('student.profileStudent', [
         //     'user' => $user
         // ]);
@@ -80,13 +85,6 @@ class StudentController extends Controller
         }
 
         $validatedData = $request->validate($rules);
-
-        // dd($user);
-
-        // $user->name = $validatedData['name'];
-        // $user->email = $validatedData['email'];
-        // $user->address = $validatedData['address'];
-        // $user->phoneNumber = $validatedData['phoneNumber'];
 
         User::where('id', auth()->user()>$id)->update($validatedData);
 
