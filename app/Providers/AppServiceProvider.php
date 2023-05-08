@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 Use Illuminate\Support\Facades\Gate;
 use App\Models\User;
@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        // Paginator::useBootstrap();
+        Paginator::useBootstrap();
 
         Gate::define('teacher',function(User $user){
             return $user->userIsTeacher;

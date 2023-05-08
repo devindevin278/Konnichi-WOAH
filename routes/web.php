@@ -139,6 +139,9 @@ Route::get('/teacherSchedule', function () {
 Route::get('/profileTeacher', function () {
     return view('teacher.profileTeacher',["title" => "profileTeacher"]);
 });
+Route::get('/viewTeacher', function () {
+    return view('teacher.viewTeacher',["title" => "viewTeacher"]);
+});
 Route::get('/notificationTeacher', function () {
     return view('teacher.notificationTeacher',["title" => "notificationTeacher"]);
 });
@@ -168,6 +171,10 @@ Route::delete('/admin/{article:slug}', [ArticleAdminController::class, 'destroy'
 Route::get('/admin/{article:slug}/edit', [ArticleAdminController::class, 'edit']);
 Route::get('/admin/{article:slug}', [ArticleAdminController::class, 'show']);
 Route::get('/admin', [ArticleAdminController::class, 'index']);
+Route::get('/articleStudent', [ArticleAdminController::class, 'indexStudent']);
+Route::get('/articleTeacher', [ArticleAdminController::class, 'indexTeacher']);
 Route::post('/admin', [ArticleAdminController::class, 'store']);
 Route::get('/addArticle', [ArticleAdminController::class, 'create']);
 Route::get('/author/{author:name}',[AuthorController::class, 'index']);
+// Route::get('/profileStudent', [StudentController::class,'index']);
+// Route::get('/profileStudent/{id}', [StudentController::class,'index'])->middleware('auth');

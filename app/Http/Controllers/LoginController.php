@@ -11,12 +11,10 @@ class LoginController extends Controller
     public function index(){
         return view('login.index',[
             'title' => 'login'
-            // 'active' => 'login'
         ]);
     }
 
     public function authenticate(Request $request){
-        // dd('halo');
        $credentials = $request->validate([
             'email' => 'required|email:dns',
             'password' => 'required'
@@ -24,7 +22,6 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)){
             $match_user = DB::table('users')->where('email', $credentials['email'])->get();
-            // dd($match_user);
             if($match_user[0]->userIsTeacher) {
                 $request->session()->regenerate();
                 return redirect()->intended('/homeTeacher');
@@ -34,9 +31,6 @@ class LoginController extends Controller
             }
         }
         // dd('berhasil login teacher');
-
-
-        // return redirect()->intended('/homeStudent');
         return back()->with('loginError','Login Failed');
     }
 
