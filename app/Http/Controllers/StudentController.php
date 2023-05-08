@@ -16,13 +16,14 @@ class StudentController extends Controller
 
 
     // }
-    public function index(User $user)
+    public function index()
     {
-        // $id = intval($user->id);
-        // $user = User::findOrFail($user->id)->get();
-        // return view('student.profileStudent', [
-        //     'user' => $user
-        // ]);
+        $id = intval(auth()->user()->id);
+        $user = User::findOrFail($id)->get();
+        // dd($user[0]);
+        return view('student.profileStudent', [
+            'user' => $user[0]
+        ]);
 
 
     }
@@ -58,8 +59,8 @@ class StudentController extends Controller
     {
         $user = User::findOrFail($id)->get();
         // dd($user);
-        return view('student.profileStudent', [
-            'user' => $user
+        return view('student.profileStudentEdit', [
+            'user' => $user[0]
         ]);
     }
 

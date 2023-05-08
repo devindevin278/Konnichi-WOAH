@@ -41,32 +41,32 @@
                         <div style="border: 1px solid #A08A8F;"></div>
 
                         {{-- <h1>{{ $user->name }} yeah</h1> --}}
-                    <form class="row mt-3" action="/profileStudent/{{ $user->id }}" method="post" id="form-control">
-                        @method('PUT')
+                    <form class="row mt-3" action="/profileStudent/{{ $user->id }}/edit" method="get" id="form-control">
+                        {{-- @method('PUT') --}}
                             @csrf
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Name</label>
                                 </div>
-                                <input type="text" class="form-control" name="name" placeholder="Enter your name" value="{{ old('name', $user->name) }}" style="border: solid #A08A8F;">
+                                <input type="text" class="form-control" name="name" placeholder="Enter your name" value="{{ old('name', $user->name) }}" style="border: solid #A08A8F;" readonly>
                             </div>
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Address</label>
                                 </div>
-                                <input type="text" class="form-control" name="address" placeholder="Enter your address" value="{{ old('address', $user->address) }}" style="border: solid #A08A8F;">
+                                <input type="text" class="form-control" name="address" placeholder="Enter your address" value="{{ old('address', $user->address) }}" style="border: solid #A08A8F;" readonly>
                             </div>
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Email</label>
                                 </div>
-                                <input type="text" class="form-control" name="email" placeholder="Enter your email" value="{{ old('email', $user->email) }}" style="border: solid #A08A8F;">
+                                <input type="text" class="form-control" name="email" placeholder="Enter your email" value="{{ old('email', $user->email) }}" style="border: solid #A08A8F;" readonly>
                             </div>
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Phone Number</label>
                                 </div>
-                                <input type="text" class="form-control" name="phoneNumber" placeholder="Enter your phone number" value="{{ old('phoneNumber', $user->phoneNumber) }}" style="border: solid #A08A8F;">
+                                <input type="text" class="form-control" name="phoneNumber" placeholder="Enter your phone number" value="{{ old('phoneNumber', $user->phoneNumber) }}" style="border: solid #A08A8F;" readonly>
                             </div>
                             <div class="d-flex align-item-center mt-4" style="gap:10px" >
                                 <div class="d-flex">
@@ -75,14 +75,14 @@
 
                                 <div class="d-flex align-item-center " style="gap:10px">
                                     <div class="form-check">
-                                        <input class="form-check-input genderselect" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" style="border: solid #A08A8F;" checked >
+                                        <input class="form-check-input genderselect" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" style="border: solid #A08A8F;" readonly checked >
                                         <label class="form-check-label" for="exampleRadios1">
                                         Male
                                         </label>
                                     </div>
 
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" style="border: solid #A08A8F;" checked>
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" style="border: solid #A08A8F;" readonly checked>
                                         <label class="form-check-label" for="exampleRadios1">
                                         Female
                                         </label>
@@ -93,10 +93,10 @@
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">DOB</label>
                                 </div>
-                                <input type="date" class="form-control" name="DOB" placeholder="Enter your date of birth" value="{{ old('DOB', $user->DOB) }}" style="border: solid #A08A8F;">
+                                <input type="date" class="form-control" name="DOB" placeholder="Enter your date of birth" value="{{ old('DOB', $user->DOB) }}" style="border: solid #A08A8F;" readonly>
                             </div>
                         </div>
-                        <div class="mb-5 text-center"><button class="btnsave" type="submit">Save</button></div>
+                        <div class="mb-5 text-center"><button class="btnsave" type="submit">Edit</button></div>
                     </form>
 
 
