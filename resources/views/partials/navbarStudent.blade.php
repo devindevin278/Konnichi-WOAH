@@ -11,7 +11,7 @@
             </ul>
             @if (auth()->user())
                 <h5>Konnichiwa, {{ auth()->user()->name }}</h5>
-                <a href="/profileStudent/{{ auth()->user()->id }}/edit" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
+                <a href="/profileStudent/{{ auth()->user()->id }}" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
                 @else
                 <a href="/profileStudent/{{ auth()->user() }}" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
             @endif

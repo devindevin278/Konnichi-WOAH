@@ -23,7 +23,37 @@ class ArticleAdminController extends Controller
         }
 
         return view('admin.articleAdmin',[
-            'articles' => $articles->get(),
+            'articles' => $articles->paginate(2),
+            'authors' => Author::all()
+        ]);
+    }
+
+    public function indexStudent()
+    {
+        $articles = Article::latest();
+
+        if(request('search')){
+            $articles->where('title','like','%'.request('search').'%')
+            ->orWhere('body','like','%'.request('search').'%');
+        }
+
+        return view('student.articleStudent',[
+            'articles' => $articles->paginate(2),
+            'authors' => Author::all()
+        ]);
+    }
+
+    public function indexTeacher()
+    {
+        $articles = Article::latest();
+
+        if(request('search')){
+            $articles->where('title','like','%'.request('search').'%')
+            ->orWhere('body','like','%'.request('search').'%');
+        }
+
+        return view('teacher.articleTeacher',[
+            'articles' => $articles->paginate(2),
             'authors' => Author::all()
         ]);
     }
