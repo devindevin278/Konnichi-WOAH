@@ -32,7 +32,7 @@ class RegisterTeacherController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        // dd($request);
 
         DB::table('certificates')->where('email', $request['email'])->update(['verified' => true]);
 
@@ -47,11 +47,12 @@ class RegisterTeacherController extends Controller
             'image' => 'required'
         ]);
 
-        $validatedData['password'] = $password[0]->password;
-        $validatedData['userIsTeacher'] = 1;
         $validatedData['certificate'] = $validatedData['image'];
+        $validatedData['password'] = $password[0]->password;
+        $validatedData['userIsTeacher'] = true;
 
         User::create($validatedData);
+        // dd($validatedData);
 
         return redirect('/verifyTeacher')->with('success', 'Registration successfull! Please Login');
 

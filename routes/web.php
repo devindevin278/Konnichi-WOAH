@@ -28,6 +28,8 @@ Route::get('/login', function () {
 })->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
+Route::post('/logout', [LoginController::class, 'logout']);
+
 // STUDENT
 
 Route::get('/', function () {

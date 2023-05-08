@@ -19,6 +19,12 @@
                     <div class="d-flex text-center justify-content-center" style="width: 200px; font-weight: 800; font-size: 12px;">
                         File Size: Max 2 Mb
                     </div>
+
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                    </form>
+                    <button>Delete Account</button>
                 </div>
             </div>
 
