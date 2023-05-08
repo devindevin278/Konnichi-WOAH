@@ -54,10 +54,15 @@
                                 <button class="btn btn-primary" type="submit" style="background: #FFC6C7; border:none;">Search</button>
                             </div>
                         </form>
+
+
                     </div>
 
                 </div>
 
+                <div class="paginate-color d-flex justify-content-center align-items-center">
+                    {{ $articles->links() }}
+                </div>
 
                 @if (count($articles) > 0)
                 <div class="card mb-3 mt-5 col-md-10">
@@ -71,8 +76,8 @@
                         <a href="/admin/{{ $articles[0]->slug }}" class="text-decoration-none text-dark">{{ $articles[0]->title }}</a></h3>
                     <p>
                         <small class="text-muted">
-                                By. <a href="/author/{{ $articles[0]->author->username }}" class="text-decoration-none">{{ $articles[0]->author->name }}</a>
-                                {{ $articles[0]->created_at->diffForHumans() }}
+                            By. <a class="card-title text-decoration-none"><a href="/author/{{ $articles[0]->author->name }}" style="color:black;">{{ $articles[0]->author->name }}</a></a>
+                            {{ $articles[0]->created_at->diffForHumans() }}
                         </small>
                     </p>
 
@@ -117,6 +122,9 @@
             @else
             <h1>No Article Yet</h1>
                 @endif
+
+
+
 
             </div>
         </div>
