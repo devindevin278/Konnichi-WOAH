@@ -10,14 +10,20 @@ class StudentController extends Controller
     /**
      * Display a listing of the resource.
      */
+    // public function index()
+    // {
+    //     return view('student.profileStudent');
+
+
+    // }
     public function index()
     {
-        //
-        // $user = User::findOrFail(auth()->user()->id);
-        // // dd($user);
-        // return view('student.profileStudent', [
-        //     'user' => $user
-        // ]);
+        $id = intval(auth()->user()->id);
+        $user = User::findOrFail($id)->get();
+        // dd($user[0]);
+        return view('student.profileStudent', [
+            'user' => $user[0]
+        ]);
 
 
     }
@@ -49,12 +55,12 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit( $id)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($id)->get();
         // dd($user);
-        return view('student.profileStudent', [
-            'user' => $user
+        return view('student.profileStudentEdit', [
+            'user' => $user[0]
         ]);
     }
 
@@ -80,13 +86,6 @@ class StudentController extends Controller
         }
 
         $validatedData = $request->validate($rules);
-
-        // dd($user);
-
-        // $user->name = $validatedData['name'];
-        // $user->email = $validatedData['email'];
-        // $user->address = $validatedData['address'];
-        // $user->phoneNumber = $validatedData['phoneNumber'];
 
         User::where('id', auth()->user()>$id)->update($validatedData);
 

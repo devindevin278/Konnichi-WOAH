@@ -20,7 +20,6 @@ class AuthorController extends Controller
             'articles' => $author->articles
         ]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
