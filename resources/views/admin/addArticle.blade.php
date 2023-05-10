@@ -1,6 +1,12 @@
 @extends('layouts.mainAdmin')
 
 @section('content')
+<style>
+    trix-toolbar [data-trix-button-group="file-tools"]{
+        display: none;
+    }
+
+</style>
 
 <section class="addArticle">
     <div class="container mt-5 d-flex justify-content-around">
@@ -8,12 +14,12 @@
 
             <div class="col d-flex m-0 p-0 gap-2" style=" width:200px">
                 <div class="" style="">
-                    <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/articleAdmin">Back</a>
+                    <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/admin">Back</a>
                 </div>
 
-                <div class="" style="">
+                {{-- <div class="" style="">
                     <a class="col btn btn-save" style="background-color:#FF8BA7;" href="/showArticleAdmin">Save</a>
-                </div>
+                </div> --}}
 
             </div>
 
@@ -26,65 +32,119 @@
 		</div>
     </div>
 
-    <div class="container mt-5 ">
-        <div class="imgbox" style="overflow:hidden; border:solid red;" >
-            <div class="container d-flex justify-content-around align-items-center" style=" height: 45.265vh;" >
-                <img  src="img/addimg.png" alt="" style="width:45px; ">
-                <input class="container form-control d-flex" style="width: 140vw; height: 45.265vh;top: 186px;
-                border-radius: 8px;" type="file" id="image" name="image" onchange="previewImage()">
-            </div>
-        </div>
-    </div>
+    <form method="post" action="/admin" enctype="multipart/form-data">
+        @csrf
 
-    {{-- <div class="mb-3">
-        <label for="image" class="form-label @error('image') is-invalid
-        @enderror">Post Image</label>
-        <img class="img-preview img-fluid col-sm-5">
-        <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
-        @error('image')
-            <div class="invalid-feedback">
-                {{ $message }}
+
+        <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit">
+            <div class="imgbox d-flex justify-content-center " style=" background: #FFC6C7; border-radius: 8px;" >
+                <div class="container justify-content-around align-items-center" style=" height: 45.265vh;" >
+                    <img src="img/addimg.png" alt="" style="width:45px; ">
+                    <input class="form-control d-flex justify-content-center" style="height: 45.265vh;width: fit; top: 186px;
+                    background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()" />
+
+                </div>
+            </div>
+            <div class="mt-3 d-flex justify-content-start align-items-start float-left" style="width: fit;  ">
+                <img class="img-preview img-fluid " style="height: fit; overflow:hidden;">
             </div>
 
-        @enderror
-    </div> --}}
-
-    <div class="container mt-3 d-flex jusify-content-around">
-        <img src="img/calendar.png" alt="" >
-        {{-- <h5 class="tgl">2023年4月29日</h5> --}}
-        <div class="input-group date" style="width:9vw;">
-            <input type="text" class="form-control" id="date" name="date" data-toggle="datepicker">
         </div>
-    </div>
+
+        <div class="container mt-3 d-flex jusify-content-around">
+            <div class="input-group date" style="width:17vw;">
+                <input type="date" class="form-control" id="articlepublish" name="articlepublish" style="background: #FFC6C7;" required value="{{ old('articlepublish') }}">
+            </div>
+        </div>
 
 
 
-    <div class="container mt-3 d-flex jusify-content-around align-items-center">
-        <div class="container titlearticle">日本の花火祭り</div>
-        <div class="d-flex justify-content-end m-1">
-            <a href="#"><img  src="img/edit2.png" alt="edit2" style="width:45px; "></a>
+        <div class="container mt-3 d-flex align-items-center">
+            <div style="width: fit;">
+                <input type="text" class="form-control @error('title') is-invalid
+
+                @enderror" id="title" name="title" placeholder="Add title" required value="{{ old('title') }}"
+                style="background: #FFC6C7;width:35vw;">
+                @error('title')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+
+                @enderror
+            </div>
+        </div>
+
+        <div class="container mt-3 d-flex align-items-center">
+            <div style="width: fit;">
+                <select class="form-select" name="author_id" value="Choose author name" required value="{{ old('author') }}" style="background: #FFC6C7;">
+                    <option selected>  Choose Author</option>
+                    @foreach ($authors as $author)
+                        @if(old('author_id') == $author->id)
+                            <option value="{{ $author->id }}" selected>{{ $author->name }}</option>
+                        @else
+                            <option value="{{ $author->id }}">{{ $author->name }}</option>
+
+                        @endif
+                    @endforeach
+                </select>
+
+            </div>
+        </div>
+
+        <div class="container mt-3 d-flex align-items-center">
+            <div style="width: fit;">
+                <input type="text" class="form-control @error('slug') is-invalid
+
+                 @enderror" id="slug" name="slug" placeholder="Slug Auto generated" required value="{{ old('slug') }}"
+                style="background: #FFC6C7;width:35vw;">
+
+                @error('slug')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+
+            </div>
+        </div>
+
+
+        <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit;">
+
+                @error('body')
+                    <p class="text-danger">
+                        {{ $message }}
+                    </p>
+
+                @enderror
+                <input id="body" type="hidden" name="body" >
+                <trix-editor input="body" style="height: fit; word-wrap: break-word; " required></trix-editor>
 
         </div>
-    </div>
-
-    <div class="container mt-3 d-flex jusify-content-around">
-        <p>日本には花火祭りという、素晴らしい花火のディスプレイが数世紀にわたって祝われている伝統があります。花火は日本語で「花火」という意味で、日本の夏の象徴的なものの一つです。
-
-            花火祭りは、通常7月から8月にかけて開催され、コミュニティが一緒になって息をのむほどの花火のスペクタクルを楽しむ時間です。この祭りは日本全国で祝われ、各都市が独自のスタイルとアプローチで花火を打ち上げ、中には最も華やかな花火のディスプレイを作るために競い合う都市もあります。
-
-            花火の伝統は江戸時代にまで遡ります。この時代には、花火は邪気を払うなどの宗教的な目的で使用されました。時間が経つにつれて、花火の伝統は文化の祝賀に進化し、花火祭りが誕生しました。
-            今日、花火祭りは、世界中の人々が集まって色鮮やかな花火を楽しむ大きな祝典です。祭りは家族や友人が集まって楽しみ、美しい花火のスペクタクルを楽しむ時間です。また、美味しい日本の屋台料理を味わったり、キャンバスゲームを試したりするチャンスでもあります。
-
-            夏に日本を訪れる予定がある場合は、花火祭りは見逃せないイベントです。その深い文化的意義と美しい花火のディスプレイは、一生の思い出になることでしょう。ぜひ祭りに参加して、日本の鮮やかな文化に浸ってください。</p>
-    </div>
 
 
+        <div class="container mt-5 d-flex justify-content-around" style="width: 200px;">
+            <button class="col btn btn-back" type="submit" style="background-color:#FF8BA7;" >Save</button>
+        </div>
+    </form>
 </section>
 
 <script>
+    const title = document.querySelector('#title');
+    const slug = document.querySelector('#slug');
+
+    title.addEventListener('change', function(){
+        fetch('/admin/checkSlug?title=' + title.value)
+            .then(response => response.json())
+            .then(data => slug.value = data.slug)
+    });
+
+    document.addEventListener('trix-file-accept', function(e){
+        e.preventDefault()
+    });
+
     function previewImage(){
         const image = document.querySelector('#image');
-        const imgPreview = document.querySelector('.imgbox');
+        const imgPreview = document.querySelector('.img-preview');
         imgPreview.style.display = 'block';
         const oFReader = new FileReader();
         oFReader.readAsDataURL(image.files[0]);
@@ -92,6 +152,9 @@
             imgPreview.src = oFRevent.target.result;
         }
     }
+
+
+
 </script>
 
 

@@ -9,7 +9,12 @@
                 <li> <a class="nav-link {{ Request::is('articleStudent')? 'active' : '' }}" href="/articleStudent">Article</a> </li>
                 <li> <a class="nav-link {{ Request::is('teacher')? 'active' : '' }}" href="/teacher">Teacher</a></li>
             </ul>
-            <a href="/profileStudent" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
+            @if (auth()->user())
+                <h5>Konnichiwa, {{ auth()->user()->name }}</h5>
+                <a href="/profileStudent" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
+                @else
+                <a href="/profileStudent/{{ auth()->user() }}" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
+            @endif
 
   </nav><!-- .navbar -->
 </header><!-- End Header -->

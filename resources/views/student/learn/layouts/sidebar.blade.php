@@ -9,7 +9,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('learnStudent/cards*') ? 'active' : '' }}" href="/learnStudent/cards">
+          <a class="nav-link {{ Request::is('learnStudent/cards*') ? 'active' : '' }}" href="/learnStudent/cards/hiragana">
             <span data-feather="file-text" class="align-text-bottom"></span>
             <img src="{{ asset('img/learn/hiragana.png') }}" alt="">
             CARDS
