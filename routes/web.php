@@ -24,7 +24,7 @@ use App\Http\Controllers\StudentController;
 
 // ALL
 Route::get('/login', function () {
-    return view('login',["title" => "homeStudent"]);
+    return view('login',["title" => "login"]);
 })->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
@@ -72,7 +72,7 @@ Route::get('/teacher', function () {
 Route::get('/viewTeacher', function () {
     return view('viewTeacher',["title" => "viewTeacher"]);
 });
-Route::resource('/profileStudent', StudentController::class)->middleware(('auth'));
+
 
 Route::get('/findTeacher', function () {
     return view('findTeacher',["title" => "findTeacher"]);
@@ -169,6 +169,7 @@ Route::get('/profileAdmin', function () {
 Route::get('/admin/checkSlug',[ArticleAdminController::class, 'checkSlug']);
 Route::delete('/admin/{article:slug}', [ArticleAdminController::class, 'destroy']);
 Route::get('/admin/{article:slug}/edit', [ArticleAdminController::class, 'edit']);
+Route::put('/admin/{article:slug}', [ArticleAdminController::class, 'update']);
 Route::get('/admin/{article:slug}', [ArticleAdminController::class, 'show']);
 Route::get('/admin', [ArticleAdminController::class, 'index']);
 Route::get('/articleStudent', [ArticleAdminController::class, 'indexStudent']);
@@ -176,5 +177,11 @@ Route::get('/articleTeacher', [ArticleAdminController::class, 'indexTeacher']);
 Route::post('/admin', [ArticleAdminController::class, 'store']);
 Route::get('/addArticle', [ArticleAdminController::class, 'create']);
 Route::get('/author/{author:name}',[AuthorController::class, 'index']);
+Route::get('/profileStudent', [StudentController::class, 'index']);
+Route::get('/profileStudent/{user:id}/edit', [StudentController::class, 'edit']);
+Route::put('/profileStudent/{user:id}', [StudentController::class, 'update']);
+Route::delete('/profileStudent/{user:id}', [StudentController::class, 'destroy']);
+// Route::resource('/profileStudent', StudentController::class);
+
 // Route::get('/profileStudent', [StudentController::class,'index']);
 // Route::get('/profileStudent/{id}', [StudentController::class,'index'])->middleware('auth');
