@@ -9,6 +9,9 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ArticleAdminController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PointController;
 use App\Http\Controllers\StudentController;
 
 /*
@@ -22,9 +25,13 @@ use App\Http\Controllers\StudentController;
 |
 */
 
+// Route::get('/games/{}', function () {
+//     return view('Question.question1-1');
+// });
+
 // ALL
 Route::get('/login', function () {
-    return view('login',["title" => "homeStudent"]);
+    return view('login',["title" => "login"]);
 })->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
@@ -62,9 +69,15 @@ Route::get('/learnStudent/cards/katakana', function () {
 Route::get('/learnStudent/cards/hiragana', function () {
     return view('student.learn.cards_hiragana',["title" => "learnStudent"]);
 });
-Route::get('/learnStudent/games', function () {
-    return view('student.learn.games',["title" => "learnStudent"]);
-});
+// Route::get('/learnStudent/games', function () {
+//     return view('student.learn.games',["title" => "learnStudent"]);
+// });
+
+// buat halaman games
+Route::resource('learnStudent/games', GameController::class);
+// buat questions
+Route::resource('/questions', PointController::class);
+Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
 
 Route::get('/teacher', function () {
     return view('teacher.teacher',["title" => "teacher"]);
@@ -72,7 +85,7 @@ Route::get('/teacher', function () {
 Route::get('/viewTeacher', function () {
     return view('viewTeacher',["title" => "viewTeacher"]);
 });
-Route::resource('/profileStudent', StudentController::class)->middleware(('auth'));
+
 
 Route::get('/findTeacher', function () {
     return view('findTeacher',["title" => "findTeacher"]);
@@ -136,9 +149,9 @@ Route::get('/articleTeacher', function () {
 Route::get('/teacherSchedule', function () {
     return view('teacher.teacherSchedule',["title" => "teacherSchedule"]);
 });
-Route::get('/profileTeacher', function () {
-    return view('teacher.profileTeacher',["title" => "profileTeacher"]);
-});
+// Route::get('/profileTeacher', function () {
+//     return view('teacher.profileTeacher',["title" => "profileTeacher"]);
+// });
 Route::get('/viewTeacher', function () {
     return view('teacher.viewTeacher',["title" => "viewTeacher"]);
 });
@@ -169,6 +182,7 @@ Route::get('/profileAdmin', function () {
 Route::get('/admin/checkSlug',[ArticleAdminController::class, 'checkSlug']);
 Route::delete('/admin/{article:slug}', [ArticleAdminController::class, 'destroy']);
 Route::get('/admin/{article:slug}/edit', [ArticleAdminController::class, 'edit']);
+Route::put('/admin/{article:slug}', [ArticleAdminController::class, 'update']);
 Route::get('/admin/{article:slug}', [ArticleAdminController::class, 'show']);
 Route::get('/admin', [ArticleAdminController::class, 'index']);
 Route::get('/articleStudent', [ArticleAdminController::class, 'indexStudent']);
@@ -176,5 +190,11 @@ Route::get('/articleTeacher', [ArticleAdminController::class, 'indexTeacher']);
 Route::post('/admin', [ArticleAdminController::class, 'store']);
 Route::get('/addArticle', [ArticleAdminController::class, 'create']);
 Route::get('/author/{author:name}',[AuthorController::class, 'index']);
-// Route::get('/profileStudent', [StudentController::class,'index']);
-// Route::get('/profileStudent/{id}', [StudentController::class,'index'])->middleware('auth');
+Route::get('/profileStudent', [StudentController::class, 'index']);
+Route::get('/profileStudent/{user:id}/edit', [StudentController::class, 'edit']);
+Route::put('/profileStudent/{user:id}', [StudentController::class, 'update']);
+Route::delete('/profileStudent/{user:id}', [StudentController::class, 'destroy']);
+
+Route::get('/profileTeacher', [StudentController::class, 'index']);
+Route::get('/profileTeacher/{user:id}/edit', [StudentController::class, 'edit']);
+Route::put('/profileTeacher/{user:id}', [StudentController::class, 'update']);
