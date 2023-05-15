@@ -9,6 +9,9 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ArticleAdminController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PointController;
 use App\Http\Controllers\StudentController;
 
 /*
@@ -21,6 +24,10 @@ use App\Http\Controllers\StudentController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Route::get('/games/{}', function () {
+//     return view('Question.question1-1');
+// });
 
 // ALL
 Route::get('/login', function () {
@@ -62,9 +69,15 @@ Route::get('/learnStudent/cards/katakana', function () {
 Route::get('/learnStudent/cards/hiragana', function () {
     return view('student.learn.cards_hiragana',["title" => "learnStudent"]);
 });
-Route::get('/learnStudent/games', function () {
-    return view('student.learn.games',["title" => "learnStudent"]);
-});
+// Route::get('/learnStudent/games', function () {
+//     return view('student.learn.games',["title" => "learnStudent"]);
+// });
+
+// buat halaman games
+Route::resource('learnStudent/games', GameController::class);
+// buat questions
+Route::resource('/questions', PointController::class);
+Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
 
 Route::get('/teacher', function () {
     return view('teacher.teacher',["title" => "teacher"]);
