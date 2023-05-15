@@ -9,7 +9,16 @@
                 <li> <a class="nav-link {{ Request::is('teacherSchedule')? 'active' : '' }}" href="/teacherSchedule">Schedule</a></li>
                 <li> <a class="nav-link {{ Request::is('articleTeacher')? 'active' : '' }}" href="/articleTeacher">Article</a> </li>
             </ul>
-            <a href="/profileTeacher" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
+            {{-- <a href="/profileTeacher" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a> --}}
+            <div class="d-flex justify-content-end align-items-center">
+                @if (auth()->user())
 
+                        <a>Konnichiwa, {{ auth()->user()->name }}</a>
+
+                    <a href="/profileTeacher" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
+                    @else
+                    <a href="/profileTeacher/{{ auth()->user() }}" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
+                @endif
+            </div>
   </nav><!-- .navbar -->
 </header><!-- End Header -->
