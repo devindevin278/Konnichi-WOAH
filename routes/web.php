@@ -136,9 +136,9 @@ Route::get('/articleTeacher', function () {
 Route::get('/teacherSchedule', function () {
     return view('teacher.teacherSchedule',["title" => "teacherSchedule"]);
 });
-Route::get('/profileTeacher', function () {
-    return view('teacher.profileTeacher',["title" => "profileTeacher"]);
-});
+// Route::get('/profileTeacher', function () {
+//     return view('teacher.profileTeacher',["title" => "profileTeacher"]);
+// });
 Route::get('/viewTeacher', function () {
     return view('teacher.viewTeacher',["title" => "viewTeacher"]);
 });
@@ -181,7 +181,7 @@ Route::get('/profileStudent', [StudentController::class, 'index']);
 Route::get('/profileStudent/{user:id}/edit', [StudentController::class, 'edit']);
 Route::put('/profileStudent/{user:id}', [StudentController::class, 'update']);
 Route::delete('/profileStudent/{user:id}', [StudentController::class, 'destroy']);
-// Route::resource('/profileStudent', StudentController::class);
 
-// Route::get('/profileStudent', [StudentController::class,'index']);
-// Route::get('/profileStudent/{id}', [StudentController::class,'index'])->middleware('auth');
+Route::get('/profileTeacher', [StudentController::class, 'index']);
+Route::get('/profileTeacher/{user:id}/edit', [StudentController::class, 'edit']);
+Route::put('/profileTeacher/{user:id}', [StudentController::class, 'update']);
