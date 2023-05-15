@@ -1,0 +1,94 @@
+body{
+    height: 100%;
+    background-color: #FAEEE7;
+}
+
+.learningg{
+    width: 42vw;
+    margin-left: 20vw;
+}
+
+.chapter{
+    display: flex;
+    flex-direction: column;
+}
+
+.papan{
+    display: flex;
+    flex-direction: row;
+
+    background-color: #58CC02;
+    border-radius: 1vw;
+
+    align-items: center;
+    justify-content: space-around;
+}
+
+.judulbab{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.4vw;
+    padding: 1.5vw 0 2vw 0;
+
+    color: #FFFFFF;
+}
+
+.textjudul{
+    font-weight: 700;
+    font-size: 1.5vw;
+
+    color: #FFFFFF;
+}
+
+button{
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.juduldes{
+    font-weight: 500;
+    font-size: 1.5vw;
+    margin-bottom: 0;
+}
+
+.guidebook{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background: #58CC02;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 1vw;
+
+    padding: 1vw 1.5vw 1vw 1vw;
+    gap: 1vw;
+}
+
+.bookicon{
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+.notebook{
+    font-weight: 700;
+    font-size: 1vw;
+    color: #FFFFFF;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.layoutlevel{
+    /* height: 193.41px; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 2vw 0 1vw 0;
+}
+
+/* .lvl{
+    width: 70px;
+    height: 65px;
+} */
