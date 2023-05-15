@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Multiple Choice</title>
+@extends('Question.layouts.mainFillblank')
 
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="node_modules/@popperjs/core/dist/umd/popper.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{url('fillblank.css')}}">
+@section('content')
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
-</head>
-<body>
     {{-- @include('partials.navbarStudent') --}}
 
     <div class="greyy" id="barrier"></div>
@@ -58,7 +45,7 @@
             <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
         </svg>
         <h2 class="ann" style="color:#259559">Amazing!</h2>
-        <button class="continue">Continue</button>
+        <a href="/questions/{{  }}/{{  }}" class="continue">Continue</a>
     </div>
 
     <div class="wrronk" id="2" style="display: none">
@@ -73,15 +60,5 @@
 
     </div>
 
-    <script>
-        function showDiv(id) {
-        var div = document.getElementById(id);
-        var hidd = document.getElementById('5');
-        var barr = document.getElementById('barrier');
-        div.style.display = 'flex';
-        hidd.style.display = 'none';
-        barr.style.display = 'flex';
-        }
-    </script>
-</body>
-</html>
+
+@endsection

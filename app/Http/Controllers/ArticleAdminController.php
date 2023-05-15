@@ -135,8 +135,10 @@ class ArticleAdminController extends Controller
     // @param  \Illuminate\Http\Request  $request
     // @param  int  $id
     // @return \Illuminate\Http\Response
-    public function update(Request $request, Article $article)
+    public function update(Request $request, $slug)
     {
+        $article = Article::where('slug',$slug)->get();
+        $this->middleware('auth');
         $rules = [
             'title' => 'required|max:255',
             'author_id' => 'required',
@@ -145,20 +147,22 @@ class ArticleAdminController extends Controller
             'image' => 'image'
         ];
 
-        if($request->slug != $article->slug){
+        if($request->slug != $article[0]->slug){
             $rules['slug'] = 'required|unique:articles';
         }
-
-        $validatedData = $request->validate($rules);
 
         if($request->file('image')){
             if($request->oldImage){
                 Storage::delete($request->oldImage);
             }
-            $validatedData['iamge'] = $request->file('image')->storage('article-images');
+            $validatedData['image'] = $request->file('image')->storage('article-images');
         }
-
-        Article::where('id', $article->id)->update($validatedData);
+        try {
+            $validatedData = $request->validate($rules);
+            $article[0]->update($validatedData);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            dd($e->getMessage());
+        }
         return redirect('/admin')->with('success','Article has been updated!');
     }
 
@@ -172,6 +176,7 @@ class ArticleAdminController extends Controller
     {
         if($article->image){
             Storage::delete($article->image);
+            // dd( Storage::delete($article->image));
         }
         Article::destroy($article->id);
 

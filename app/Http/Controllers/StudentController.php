@@ -18,9 +18,11 @@ class StudentController extends Controller
     // }
     public function index()
     {
-        $id = intval(auth()->user()->id);
-        $user = User::findOrFail($id)->get();
-        // dd($user[0]);
+        // dd(auth()->user()->id);
+        $id = auth()->user()->id;
+        $user = User::where('id', $id)->get();
+        $this->middleware('auth');
+        // dd($this);
         return view('student.profileStudent', [
             'user' => $user[0]
         ]);
@@ -41,7 +43,24 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = auth()->user()->id;
+        $user = User::where('id', $id)->get();
+
+        $this->middleware('auth');
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'address' => 'required',
+            'phoneNumber' => 'required',
+            'photo' => 'image|file'
+        ]);
+
+        if ($request->file('photo')->isValid()) {
+            $validatedData['photo'] = $request->file('photo')->store('profile-images', 'public');
+        }
+
+        User::create($validatedData);
+
+        return redirect('/profileStudent')->with('success', 'Profile updated successfully');
     }
 
     /**
@@ -55,10 +74,16 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+
     public function edit( $id)
     {
-        $user = User::findOrFail($id)->get();
+        // $id = intval($id);
+        // $user = User::findOrFail($id)->get();
         // dd($user);
+        $id = auth()->user()->id;
+        $user = User::where('id', $id)->get();
+        $this->middleware('auth');
+
         return view('student.profileStudentEdit', [
             'user' => $user[0]
         ]);
@@ -67,30 +92,34 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
-        $user = User::findOrFail($id);
+
+        $id = auth()->user()->id;
+        $user = User::where('id', $id)->get();
+
+        $this->middleware('auth');
         $rules = [
             'name' => 'required|max:255',
-            // 'userIsTeacher' => 'required',
-            // 'username' => ['required', 'min:4', 'max:255', 'unique:users']
             'address' => 'required',
-            'phoneNumber' => 'required'
-            // 'password' => 'required|min:5|max:255',
-            // 'photo' => 'image|file'
+            'phoneNumber' => 'required',
+            'photo' => 'image|file'
         ];
 
-        if($request->email != $user->email) {
+        if($request->email != $user[0]->email) {
             $rules['email'] = 'required|email:dns|unique:users';
         }
 
         $validatedData = $request->validate($rules);
 
-        User::where('id', auth()->user()>$id)->update($validatedData);
+        if ($request->file('photo')->isValid()) {
+            $validatedData['photo'] = $request->file('photo')->store('profile-images', 'public');
+        }
+        $validatedData['id'] = auth()->user()->id;
+        $user = User::where('id', $id);
+        $user = $user->update($validatedData);
 
-        return redirect()->intended('/homeStudent');
-
+        return redirect('/profileStudent')->with('success', 'Profile updated successfully');
     }
 
     /**
@@ -99,5 +128,8 @@ class StudentController extends Controller
     public function destroy(User $user)
     {
         //
+        User::destroy($user->id);
+
+        return redirect('/login')->with('success','Account has been deleted!');
     }
 }

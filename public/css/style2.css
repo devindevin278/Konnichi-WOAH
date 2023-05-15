@@ -310,3 +310,24 @@ section.findTeacher{
     width: 100px;
     height: 40px;
 }
+
+/* profile */
+
+.photo-input {
+    text-align: center;
+    align-items: center;
+}
+
+.photo-input input[type="file"] {
+    display: none;
+}
+
+.photo-input label {
+    font-weight: 500;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}

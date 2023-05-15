@@ -39,17 +39,17 @@
 
         <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit">
             <div class="imgbox d-flex justify-content-center " style=" background: #FFC6C7; border-radius: 8px;" >
-                <div class="container row justify-content-around align-items-center" style=" height: 45.265vh;" >
+                <div class="container row justify-content-around align-items-center"  >
                     <img src="{{ asset('img/addimg.png') }}" alt="" style="width:45px; ">
                     @if ($articles->image)
-                    <img src="{{ asset('storage/' . $articles->image) }}" class="d-block img-preview img-fluid col-sm-5">
+                    <img src="{{ asset('storage/' . $articles->image) }}" class="img-preview img-fluid col-sm-5" >
                     @else
-                    <div class="mt-3 d-flex justify-content-start align-items-start float-left" style="height: 45.265vh;  overflow:hidden;">
-                        <img class="img-preview img-fluid " style="height: 45.265vh; overflow:hidden;">
+                    <div class="mt-3 d-flex justify-content-start align-items-start float-left" >
+                        <img class="img-preview img-fluid " style="max-height: 30vh; overflow:hidden;">
                     </div>
 
                     @endif
-                    <input class="form-control d-flex justify-content-center" style="height: 45.265vh;width: fit; top: 186px;
+                    <input class="form-control d-flex justify-content-center" style="max-height: 30vh; top: 186px;
                     background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()" >
 
                 </div>
@@ -60,7 +60,7 @@
 
         <div class="container mt-3 d-flex jusify-content-around">
             <div class="input-group date" style="width:17vw;">
-                <input type="date" class="form-control" id="date" name="date" style="background: #FFC6C7;" value="{{ old('date', $articles->date) }}">
+                <input type="date" class="form-control" id="date" name="articlepublish" style="background: #FFC6C7;" value="{{ old('date', $articles->date) }}">
             </div>
         </div>
 
@@ -122,8 +122,8 @@
                     </p>
 
                 @enderror
-                <input id="body" type="hidden" name="body" >
-                <trix-editor input="body" style="height: fit; word-wrap: break-word; " value="{{ old('body', $articles->body) }}"></trix-editor>
+                <input id="body" type="hidden" name="body" value="{{ old('body', $articles->body) }}">
+                <trix-editor input="body" style="height: fit; word-wrap: break-word; " ></trix-editor>
 
         </div>
 
