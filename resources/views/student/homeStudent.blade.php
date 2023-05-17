@@ -7,14 +7,15 @@
     <div class="landing-page-container">
       <div class="landing-page-landing-page">
         <div class="landing-page-header">
-            <button class="landing-page-button">
-            <img
-              src="img/home/kotakbutton2062-j0va-200h.png"
-              alt="kotakbutton2062"
-              class="landing-page-kotakbutton"
-            />
-            <span class="landing-page-text04"><span>Learn More</span></span>
-          </button>
+
+
+          <span class="landing-page-text08">
+            <span>
+              <span>Welcome to Konnichi-WOAH!</span>
+              <br />
+              <span>A captivating Japanese language learning platform!</span>
+            </span>
+          </span>
           <span class="landing-page-text06">
             <span>
               Are you looking for an easy and fun way to learn Japanese? Look
@@ -23,13 +24,14 @@
               effectiveness.
             </span>
           </span>
-          <span class="landing-page-text08">
-            <span>
-              <span>Welcome to Konnichi-WOAH!</span>
-              <br />
-              <span>A captivating Japanese language learning platform!</span>
-            </span>
-          </span>
+          <button class="landing-page-button">
+            <img
+              src="img/home/kotakbutton2062-j0va-200h.png"
+              alt="kotakbutton2062"
+              class="landing-page-kotakbutton"
+            />
+            <span class="landing-page-text04"><span>Learn More</span></span>
+          </button>
           <img
             src="img/home/kucing2062-wjq-500w.png"
             alt="kucing2062"
