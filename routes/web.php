@@ -13,6 +13,7 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PointController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -190,11 +191,13 @@ Route::get('/articleTeacher', [ArticleAdminController::class, 'indexTeacher']);
 Route::post('/admin', [ArticleAdminController::class, 'store']);
 Route::get('/addArticle', [ArticleAdminController::class, 'create']);
 Route::get('/author/{author:name}',[AuthorController::class, 'index']);
+
 Route::get('/profileStudent', [StudentController::class, 'index']);
 Route::get('/profileStudent/{user:id}/edit', [StudentController::class, 'edit']);
 Route::put('/profileStudent/{user:id}', [StudentController::class, 'update']);
 Route::delete('/profileStudent/{user:id}', [StudentController::class, 'destroy']);
 
-Route::get('/profileTeacher', [StudentController::class, 'index']);
-Route::get('/profileTeacher/{user:id}/edit', [StudentController::class, 'edit']);
-Route::put('/profileTeacher/{user:id}', [StudentController::class, 'update']);
+Route::get('/profileTeacher', [TeacherController::class, 'index']);
+Route::get('/profileTeacher/{user:id}/edit', [TeacherController::class, 'edit']);
+Route::put('/profileTeacher/{user:id}', [TeacherController::class, 'update']);
+Route::delete('/profileTeacher/{user:id}', [TeacherController::class, 'destroy']);
