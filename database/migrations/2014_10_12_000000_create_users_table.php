@@ -20,11 +20,12 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('phoneNumber')->nullable();
-            $table->string('gender')->nullable();
+            $table->tinyInteger('gender')->nullable();
             $table->date('DOB')->nullable();
             $table->text('address')->nullable();
             $table->string('certificate')->nullable();
             $table->string('photo')->nullable();
+            $table->text('descteacher')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

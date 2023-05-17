@@ -6,15 +6,15 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class StudentController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
      */
-
+    // @return \Illuminate\Http\Response
     public function index()
     {
-        // dd(auth()->user()->id);
         $this->middleware('auth');
 
         try {
@@ -24,17 +24,16 @@ class StudentController extends Controller
         }
 
         $user = User::where('id', $id)->get();
-        // dd($this);
-        return view('student.profileStudent', [
+        return view('teacher.profileTeacher', [
             'user' => $user[0]
         ]);
-
-
     }
 
     /**
      * Show the form for creating a new resource.
+     *
      */
+    // @return \Illuminate\Http\Response
     public function create()
     {
         //
@@ -42,7 +41,10 @@ class StudentController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *
      */
+    // @param  \Illuminate\Http\Request  $request
+    // @return \Illuminate\Http\Response
     public function store(Request $request)
     {
         $this->middleware('auth');
@@ -54,6 +56,7 @@ class StudentController extends Controller
             'address' => 'required',
             'phoneNumber' => 'required',
             'photo' => 'image|file',
+            'descteacher' => 'required|max:255',
             'DOB' => 'required',
             'gender' => 'required|in:0,1'
         ]);
@@ -64,41 +67,46 @@ class StudentController extends Controller
 
         User::create($validatedData);
 
-        return redirect('/profileStudent')->with('success', 'Profile updated successfully');
+        return redirect('/profileTeacher')->with('success', 'Profile updated successfully');
     }
 
     /**
      * Display the specified resource.
+     *
      */
-    public function show(User $user)
+    // @param  int  $id
+    // @return \Illuminate\Http\Response
+    public function show($id)
     {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
+     *
      */
-
+    // @param  int  $id
+    // @return \Illuminate\Http\Response
     public function edit($id)
     {
-        // $id = intval($id);
-        // $user = User::findOrFail($id)->get();
-        // dd($user);
         $this->middleware('auth');
         $id = auth()->user()->id;
         $user = User::where('id', $id)->get();
 
-        return view('student.profileStudentEdit', [
+        return view('teacher.profileTeacherEdit', [
             'user' => $user[0]
         ]);
     }
 
     /**
      * Update the specified resource in storage.
+     *
      */
+    // @param  \Illuminate\Http\Request  $request
+    // @param  int  $id
+    // @return \Illuminate\Http\Response
     public function update(Request $request, User $user)
     {
-
         $id = auth()->user()->id;
         $user = User::where('id', $id)->get();
 
@@ -107,9 +115,11 @@ class StudentController extends Controller
             'name' => 'required|max:255',
             'address' => 'required',
             'phoneNumber' => 'required',
-            'DOB' => 'required',
             'photo' => 'image|file',
+            'descteacher' => 'required|max:255',
+            'DOB' => 'required',
             'gender' => 'required|in:0,1'
+
         ];
 
         if($request->email != $user[0]->email) {
@@ -129,22 +139,24 @@ class StudentController extends Controller
             }
             $validatedData['photo'] = $request->file('photo')->store('profile-images', 'public');
         }
-
         $validatedData['id'] = auth()->user()->id;
         $user = User::where('id', $id);
         $user = $user->update($validatedData);
 
-        return redirect('/profileStudent')->with('success', 'Profile updated successfully');
+        return redirect('/profileTeacher')->with('success', 'Profile updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
+     *
      */
+    // @param  int  $id
+    // @return \Illuminate\Http\Response
     public function destroy(User $user)
     {
-        //
         User::destroy($user->id);
 
         return redirect('/login')->with('success','Account has been deleted!');
+
     }
 }

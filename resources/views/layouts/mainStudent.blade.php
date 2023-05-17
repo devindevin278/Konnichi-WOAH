@@ -9,11 +9,11 @@
     {{-- CSS --}}
     <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
-<<<<<<< HEAD
+
     <link rel="stylesheet" href="{{ asset('css/style4.css') }}">
-=======
+
     <link rel="stylesheet" href="{{ asset('css/style3.css') }}">
->>>>>>> 6dc894067dc9e58339bb4906f522e0ac878a80f1
+
     <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
     <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >

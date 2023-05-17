@@ -6,6 +6,7 @@ use App\Models\Author;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
 class ArticleAdminController extends Controller
 {
     /**
@@ -147,22 +148,32 @@ class ArticleAdminController extends Controller
             'image' => 'image'
         ];
 
+
         if($request->slug != $article[0]->slug){
             $rules['slug'] = 'required|unique:articles';
+        }
+
+        // dd($request);
+
+
+
+        // dd($request);
+        try {
+            $validatedData = $request->validate($rules);
+
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            dd($e->getMessage());
         }
 
         if($request->file('image')){
             if($request->oldImage){
                 Storage::delete($request->oldImage);
             }
-            $validatedData['image'] = $request->file('image')->storage('article-images');
+            $validatedData['image'] = $request->file('image')->store('article-images');
         }
-        try {
-            $validatedData = $request->validate($rules);
-            $article[0]->update($validatedData);
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            dd($e->getMessage());
-        }
+
+        $article[0]->update($validatedData);
+
         return redirect('/admin')->with('success','Article has been updated!');
     }
 

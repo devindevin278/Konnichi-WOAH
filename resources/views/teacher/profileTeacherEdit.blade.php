@@ -1,8 +1,9 @@
-@extends('layouts.mainStudent')
+@extends('layouts.mainTeacher')
 
 @section('content')
 
-<section class="profileStudent">
+
+<section class="profileTeacherEdit">
 
         <div class="mt-5">
 
@@ -22,7 +23,7 @@
 
         </div>
 
-        <div class="container col container-profileStudent bg-white mt-5 mb-5">
+        <div class="container col container-profileTeacherEdit bg-white mt-5 mb-5">
 
 
             <div class="row">
@@ -37,7 +38,7 @@
                         </div>
                         <div style="border: 1px solid #A08A8F;"></div>
 
-                    <form class="row mt-3" action="/profileStudent/{{ $user->id }}" method="post" id="form-control"  enctype="multipart/form-data">
+                    <form class="row mt-3" action="/profileTeacher/{{ $user->id }}" method="post" id="form-control"  enctype="multipart/form-data">
                         @method('PUT')
                             @csrf
 
@@ -75,9 +76,12 @@
 
 
 
-                                    <div class="container d-flex justify-content-center align-items-center mt-3">
+                                    <div class="container row d-flex justify-content-center align-items-center mt-3">
+
                                         <div class="photo-input">
                                             <input type="file" id="photo" name="photo" accept="image/*" class="photo" onchange="previewImage()" >
+
+
                                             <label for="photo">Choose a photo</label>
                                         </div>
                                     </div>
@@ -152,7 +156,6 @@
                                     </div>
                                 </div>
                             </div>
-s
 
                             {{-- DOB --}}
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
@@ -161,6 +164,24 @@ s
                                 </div>
                                 <input type="date" class="form-control" name="DOB" placeholder="Enter your date of birth" value="{{ old('DOB', $user->DOB) }}" style="border: solid #A08A8F;">
                             </div>
+
+
+                            {{-- desc teacher --}}
+
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Description</label>
+                                </div>
+
+
+                                {{-- <input type="text" class="form-control" name="descteacher" placeholder="Enter your description max 255 character" value="{{ old('descteacher', $user->descteacher)  }}" --}}
+
+
+                                <textarea class="form-control" name="descteacher" placeholder="Enter your description max 255 characters" style="border: solid #A08A8F; height: fit; word-wrap: break-word;" >{{ old('descteacher', $user->descteacher) }}</textarea>
+
+
+                            </div>
+
 
 
                         </div>
@@ -177,7 +198,6 @@ s
 
 
 </section>
-
 <script>
 
     function previewImage(){
@@ -186,7 +206,7 @@ s
         imgPreview.style.display = 'block';
         imgPreview.style.borderRadius = '50%';
         imgPreview.style.maxHeight = '100%';
-        // imgPreview.style.width = '300px';
+        imgPreview.style.overflow = 'hidden';
         const oFReader = new FileReader();
         oFReader.readAsDataURL(image.files[0]);
         oFReader.onload = function(oFRevent){
@@ -197,6 +217,5 @@ s
 
 
 </script>
-
 @endsection
 
