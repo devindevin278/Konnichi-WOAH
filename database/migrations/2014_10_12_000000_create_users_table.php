@@ -25,7 +25,7 @@ return new class extends Migration
             $table->text('address')->nullable();
             $table->string('province')->nullable();
             $table->string('city')->nullable();
-            $table->string('price')->nullable();
+            $table->integer('price')->nullable();
             $table->string('certificate')->nullable();
             $table->string('photo')->nullable();
             $table->text('descteacher')->nullable();

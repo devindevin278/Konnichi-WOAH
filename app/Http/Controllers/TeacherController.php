@@ -131,13 +131,13 @@ class TeacherController extends Controller
         if($request->email != $user[0]->email) {
             $rules['email'] = 'required|email:dns|unique:users';
         }
+        $validatedData = $request->validate($rules);
+        // try {
 
-        try {
-            $validatedData = $request->validate($rules);
 
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            dd($e->getMessage());
-        }
+        // } catch (\Illuminate\Validation\ValidationException $e) {
+        //     dd($e->getMessage());
+        // }
 
         if($request->file('photo')){
             if($request->oldImage){

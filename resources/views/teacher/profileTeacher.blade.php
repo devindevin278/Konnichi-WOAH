@@ -95,23 +95,9 @@
 
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
-                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Address</label>
-                                </div>
-                                <input type="text" class="form-control" name="address" placeholder="Enter your address" value="{{ old('address', $user->address) }}" style="border: solid #A08A8F;" readonly>
-                            </div>
-
-                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
-                                <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Email</label>
                                 </div>
                                 <input type="text" class="form-control" name="email" placeholder="Enter your email" value="{{ old('email', $user->email) }}" style="border: solid #A08A8F;" readonly>
-                            </div>
-
-                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
-                                <div class="d-flex">
-                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Phone Number</label>
-                                </div>
-                                <input type="text" class="form-control" name="phoneNumber" placeholder="Enter your phone number" value="{{ old('phoneNumber', $user->phoneNumber) }}" style="border: solid #A08A8F;" readonly>
                             </div>
 
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
@@ -127,6 +113,24 @@
                                 </div>
                                 <input type="text" class="form-control" name="city" placeholder="Enter your city" value="{{ old('city', $user->city) }}" style="border: solid #A08A8F;" readonly>
                             </div>
+
+
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Address</label>
+                                </div>
+                                <input type="text" class="form-control" name="address" placeholder="Enter your address" value="{{ old('address', $user->address) }}" style="border: solid #A08A8F;" readonly>
+                            </div>
+
+
+
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Phone Number</label>
+                                </div>
+                                <input type="text" class="form-control" name="phoneNumber" placeholder="Enter your phone number" value="{{ old('phoneNumber', $user->phoneNumber) }}" style="border: solid #A08A8F;" readonly>
+                            </div>
+
 
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">

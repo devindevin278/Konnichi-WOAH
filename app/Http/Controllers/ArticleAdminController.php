@@ -158,12 +158,13 @@ class ArticleAdminController extends Controller
 
 
         // dd($request);
-        try {
-            $validatedData = $request->validate($rules);
+        $validatedData = $request->validate($rules);
+        // try {
+        //     $validatedData = $request->validate($rules);
 
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            dd($e->getMessage());
-        }
+        // } catch (\Illuminate\Validation\ValidationException $e) {
+        //     dd($e->getMessage());
+        // }
 
         if($request->file('image')){
             if($request->oldImage){
