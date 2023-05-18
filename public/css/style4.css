@@ -20,7 +20,7 @@
     top: -2px;
     left: 0px;
     right: 0px;
-    width: 1440px;
+    /* width: 1440px; */
     height: 69px;
     margin: auto;
     display: flex;
@@ -699,7 +699,7 @@
     top: 69px;
     left: 0px;
     right: 0px;
-    width: 1440px;
+    /* width: 1440px; */
     height: 511px;
     margin: auto;
     display: flex;
@@ -711,10 +711,10 @@
   .landing-page-button {
     top: 405px;
     left: 198px;
-    width: 171px;
+    /* width: 171px; */
     height: 53px;
     display: flex;
-    position: absolute;
+    /* position: absolute; */
     align-items: flex-start;
     flex-shrink: 0;
   }
@@ -788,7 +788,7 @@
     top: 580px;
     left: 0px;
     right: 0px;
-    width: 1440px;
+    /* width: 1440px; */
     height: 378px;
     margin: auto;
     display: flex;
@@ -850,7 +850,7 @@
     top: 958px;
     left: 0px;
     right: 0px;
-    width: 1440px;
+    /* width: 1440px; */
     height: 444px;
     margin: auto;
     display: flex;
@@ -1026,7 +1026,7 @@
     top: 1402px;
     left: 0px;
     right: 0px;
-    width: 1440px;
+    /* width: 1440px; */
     height: 1459px;
     margin: auto;
     display: flex;
@@ -1229,7 +1229,7 @@
     top: 3137px;
     left: 0px;
     right: 0px;
-    width: 1440px;
+    /* width: 1440px; */
     height: 448px;
     margin: auto;
     display: flex;
