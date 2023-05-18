@@ -134,6 +134,30 @@
                                 <input type="text" class="form-control" name="phoneNumber" placeholder="Enter your phone number" value="{{ old('phoneNumber', $user->phoneNumber) }}" style="border: solid #A08A8F;">
                             </div>
 
+                            {{-- Province --}}
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Province</label>
+                                </div>
+                                <input type="text" class="form-control" name="province" placeholder="Enter your province" value="{{ old('province', $user->province) }}" style="border: solid #A08A8F;">
+                            </div>
+
+                            {{-- City --}}
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">City</label>
+                                </div>
+                                <input type="text" class="form-control" name="city" placeholder="Enter your city" value="{{ old('city', $user->city) }}" style="border: solid #A08A8F;">
+                            </div>
+
+                            {{-- Price --}}
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Price</label>
+                                </div>
+                                <input type="text" class="form-control" name="price" placeholder="Enter your price" value="{{ old('price', $user->price) }}" style="border: solid #A08A8F;">
+                            </div>
+
                             {{-- Gender --}}
                             <div class="d-flex align-item-center mt-4" style="gap:10px" >
                                 <div class="d-flex">
@@ -172,14 +196,7 @@
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Description</label>
                                 </div>
-
-
-                                {{-- <input type="text" class="form-control" name="descteacher" placeholder="Enter your description max 255 character" value="{{ old('descteacher', $user->descteacher)  }}" --}}
-
-
-                                <textarea class="form-control" name="descteacher" placeholder="Enter your description max 255 characters" style="border: solid #A08A8F; height: fit; word-wrap: break-word;" >{{ old('descteacher', $user->descteacher) }}</textarea>
-
-
+                                <textarea class="form-control" name="descteacher" placeholder="Enter your description" style="border: solid #A08A8F; height: fit; word-wrap: break-word;" >{{ old('descteacher', $user->descteacher) }}</textarea>
                             </div>
 
 

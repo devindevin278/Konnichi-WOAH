@@ -56,7 +56,10 @@ class TeacherController extends Controller
             'address' => 'required',
             'phoneNumber' => 'required',
             'photo' => 'image|file',
-            'descteacher' => 'required|max:255',
+            'descteacher' => 'required',
+            'province' => 'required',
+            'city' => 'required',
+            'price' => 'required',
             'DOB' => 'required',
             'gender' => 'required|in:0,1'
         ]);
@@ -116,7 +119,10 @@ class TeacherController extends Controller
             'address' => 'required',
             'phoneNumber' => 'required',
             'photo' => 'image|file',
-            'descteacher' => 'required|max:255',
+            'descteacher' => 'required',
+            'province' => 'required',
+            'city' => 'required',
+            'price' => 'required',
             'DOB' => 'required',
             'gender' => 'required|in:0,1'
 
