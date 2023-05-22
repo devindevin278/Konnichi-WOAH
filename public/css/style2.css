@@ -129,15 +129,27 @@ section.showArticle{
     color: #f48183;
 }
 
-/* .imgbox{
-    gap: 3vw;
-    background: #FFC6C7;
-    /* background: transparent;
-    height: 45.265vh;
-    top: 186px;
-    border-radius: 8px;
+.btn-view:hover{
+    background: linear-gradient(to right, #a3dfac, #a3dfac);
 }
-*/
+
+.filbut:hover{
+    background: linear-gradient(to right, #a3dfac, #a3dfac);
+}
+
+.refbut:hover{
+    background: #f48183;
+    background: linear-gradient(to right, #f48183, #f48183);
+    color: #f48183;
+}
+.filterbutton:hover{
+    background: linear-gradient(to right, #FFC6C7, #FFC6C7);
+}
+
+.filterbutton option {
+    border-radius: 5px; /* Adjust the value as needed */
+}
+
 .tgl{
     font-weight: 400;
     font-size: 12px;

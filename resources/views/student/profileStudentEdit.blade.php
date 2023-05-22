@@ -172,7 +172,6 @@
                                     </div>
                                 </div>
                             </div>
-s
 
                             {{-- DOB --}}
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">

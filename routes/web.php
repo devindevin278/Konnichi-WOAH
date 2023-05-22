@@ -9,6 +9,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ArticleAdminController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PointController;
@@ -80,9 +81,7 @@ Route::resource('learnStudent/games', GameController::class);
 Route::resource('/questions', PointController::class);
 Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
 
-Route::get('/teacher', function () {
-    return view('teacher.teacher',["title" => "teacher"]);
-});
+
 Route::get('/viewTeacher', function () {
     return view('viewTeacher',["title" => "viewTeacher"]);
 });
@@ -150,9 +149,8 @@ Route::get('/articleTeacher', function () {
 Route::get('/teacherSchedule', function () {
     return view('teacher.teacherSchedule',["title" => "teacherSchedule"]);
 });
-// Route::get('/profileTeacher', function () {
-//     return view('teacher.profileTeacher',["title" => "profileTeacher"]);
-// });
+
+
 Route::get('/viewTeacher', function () {
     return view('teacher.viewTeacher',["title" => "viewTeacher"]);
 });
@@ -201,3 +199,8 @@ Route::get('/profileTeacher', [TeacherController::class, 'index']);
 Route::get('/profileTeacher/{user:id}/edit', [TeacherController::class, 'edit']);
 Route::put('/profileTeacher/{user:id}', [TeacherController::class, 'update']);
 Route::delete('/profileTeacher/{user:id}', [TeacherController::class, 'destroy']);
+
+
+Route::get('/teacher', [TeacherController::class, 'showAllTeacher']);
+Route::get('/fetch-cities', [TeacherController::class, 'fetchCities']);
+Route::get('/viewTeacher/{user:name}', [TeacherController::class, 'viewTeacher']);
