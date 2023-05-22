@@ -26,17 +26,27 @@
         <div class="container container-profileTeacher bg-white mt-5 mb-5">
             <div class="row">
                 <div class="col border-right ms-5 me-5">
-                    <div class="d-flex justify-content-around mb-3">
 
-                        <img class="rounded-circle mt-5" style="
+                    @if ($user->photo)
+                        <div class="d-flex justify-content-around mb-3">
+                            <img class="rounded-circle mt-5" style="
                             background-color: solid #FF8BA7;
                             width: 150px;
                             height: 150px;
                             border-radius: 50%;
                             overflow:hidden;
                             " src="{{ asset('storage/'. $user->photo) }}">
+                        </div>
 
-                    </div>
+                    @else
+                        <div class="d-flex justify-content-around mb-3">
+                            <img class="rounded-circle mt-5" style="
+                            width: 150px;
+                            height: 150px;
+                            overflow:hidden;
+                            " src="{{ asset('img/profilespic.png') }}">
+                        </div>
+                    @endif
 
 
 
@@ -82,24 +92,53 @@
                                 </div>
                                 <input type="text" class="form-control" name="name" placeholder="Enter your name" value="{{ old('name', $user->name) }}" style="border: solid #A08A8F;" readonly>
                             </div>
-                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
-                                <div class="d-flex">
-                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Address</label>
-                                </div>
-                                <input type="text" class="form-control" name="address" placeholder="Enter your address" value="{{ old('address', $user->address) }}" style="border: solid #A08A8F;" readonly>
-                            </div>
+
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Email</label>
                                 </div>
                                 <input type="text" class="form-control" name="email" placeholder="Enter your email" value="{{ old('email', $user->email) }}" style="border: solid #A08A8F;" readonly>
                             </div>
+
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Province</label>
+                                </div>
+                                <input type="text" class="form-control" name="province" placeholder="Enter your province" value="{{ old('province', $user->province) }}" style="border: solid #A08A8F;" readonly>
+                            </div>
+
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">City</label>
+                                </div>
+                                <input type="text" class="form-control" name="city" placeholder="Enter your city" value="{{ old('city', $user->city) }}" style="border: solid #A08A8F;" readonly>
+                            </div>
+
+
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Address</label>
+                                </div>
+                                <input type="text" class="form-control" name="address" placeholder="Enter your address" value="{{ old('address', $user->address) }}" style="border: solid #A08A8F;" readonly>
+                            </div>
+
+
+
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Phone Number</label>
                                 </div>
                                 <input type="text" class="form-control" name="phoneNumber" placeholder="Enter your phone number" value="{{ old('phoneNumber', $user->phoneNumber) }}" style="border: solid #A08A8F;" readonly>
                             </div>
+
+
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Price</label>
+                                </div>
+                                <input type="text" class="form-control" name="price" placeholder="Enter your price" value="{{ old('price', $user->price) }}" style="border: solid #A08A8F;" readonly>
+                            </div>
+
                             <div class="d-flex align-item-center mt-4" style="gap:10px" >
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Gender</label>
@@ -125,10 +164,8 @@
                                     </div>
                                 </div>
 
-
-
-
                             </div>
+
 
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
@@ -141,8 +178,7 @@
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Description</label>
                                 </div>
-                                {{-- <input type="text" class="form-control" name="descteacher" placeholder="Enter your description max 255 character" value="{{ old('descteacher', $user->descteacher) }}" style="border: solid #A08A8F; height: fit; word-wrap: break-word;" readonly> --}}
-                                <textarea class="form-control" name="descteacher" placeholder="Enter your description max 255 characters" style="border: solid #A08A8F; height: fit; word-wrap: break-word;" readonly>{{ old('descteacher', $user->descteacher) }}</textarea>
+                                <textarea class="form-control" name="descteacher" placeholder="Enter your description " style="border: solid #A08A8F; height: fit; word-wrap: break-word;" readonly>{{ old('descteacher', $user->descteacher) }}</textarea>
 
                             </div>
 

@@ -56,15 +56,15 @@
 
         <div class="container mt-3 d-flex align-items-center">
             <div style="width: fit;">
-                <input type="text" class="form-control @error('title') is-invalid
+                <input type="text" class="form-control
 
-                @enderror" id="title" name="title" placeholder="Add title" required value="{{ old('title') }}"
+                @error('title') is-invalid @enderror"
+                id="title" name="title" placeholder="Add title" required value="{{ old('title') }}"
                 style="background: #FFC6C7;width:35vw;">
                 @error('title')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
-
                 @enderror
             </div>
         </div>

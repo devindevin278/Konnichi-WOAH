@@ -23,6 +23,9 @@ return new class extends Migration
             $table->tinyInteger('gender')->nullable();
             $table->date('DOB')->nullable();
             $table->text('address')->nullable();
+            $table->string('province')->nullable();
+            $table->string('city')->nullable();
+            $table->integer('price')->nullable();
             $table->string('certificate')->nullable();
             $table->string('photo')->nullable();
             $table->text('descteacher')->nullable();

@@ -29,6 +29,82 @@ class TeacherController extends Controller
         ]);
     }
 
+    public function showAllTeacher(){
+        $refresh = request('refresh');
+
+        if ($refresh) {
+            return redirect('/teacher');
+        }
+
+        $province = request('province');
+        $city = request('city');
+        $priceRange = request('price_range');
+
+        $minPrice = null;
+        $maxPrice = null;
+
+        if ($priceRange && strpos($priceRange, '-') !== false) {
+            [$minPrice, $maxPrice] = explode('-', $priceRange);
+        }
+
+        $filteredQuery = User::query();
+
+        $provinces = User::distinct('province')->pluck('province');
+
+        // Filter cities based on selected province
+        $cities = User::where('province', $province)->distinct('city')->pluck('city');
+
+        // $prices = User::whereBetween('price', [$minPrice, $maxPrice])->get();
+
+        if ($province) {
+            $filteredQuery->where('province', $province);
+        }
+
+        if ($city) {
+            $filteredQuery->where('city', $city);
+        }
+
+        if ($minPrice && $maxPrice) {
+            $filteredQuery->whereBetween('price', [$minPrice, $maxPrice]);
+        }// Retrieve the selected price range from the form submission
+
+
+
+        // Query the database using the price range
+
+
+        // if (request('search')) {
+        //     $filteredQuery->where(function ($query) {
+        //         $searchTerm = '%' . request('search') . '%';
+        //         $query->where('name', 'like', $searchTerm)
+        //             ->orWhere('price', 'like', $searchTerm)
+        //             ->orWhere('province', 'like', $searchTerm)
+        //             ->orWhere('city', 'like', $searchTerm);
+        //     });
+        // }
+
+        $filteredTeachers = $filteredQuery->get();
+
+        // Unfiltered Teachers
+        $unfilteredTeachers = User::query()->whereNotIn('id', $filteredTeachers->pluck('id'))->get();
+
+        return view('teacher.teacher', [
+            'filteredTeachers' => $filteredTeachers,
+            'unfilteredTeachers' => $unfilteredTeachers,
+            'provinces' => $provinces,
+            'cities' => $cities
+        ]);
+    }
+
+    public function viewTeacher(User $user)
+    {
+
+        return view('teacher.viewTeacher',[
+            'user' => $user
+        ]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -56,7 +132,10 @@ class TeacherController extends Controller
             'address' => 'required',
             'phoneNumber' => 'required',
             'photo' => 'image|file',
-            'descteacher' => 'required|max:255',
+            'descteacher' => 'required',
+            'province' => 'required',
+            'city' => 'required',
+            'price' => 'required',
             'DOB' => 'required',
             'gender' => 'required|in:0,1'
         ]);
@@ -76,6 +155,15 @@ class TeacherController extends Controller
      */
     // @param  int  $id
     // @return \Illuminate\Http\Response
+
+    public function fetchCities(Request $request)
+    {
+        $province = $request->input('province');
+        $cities = User::where('province', $province)->distinct('city')->pluck('city');
+
+        return response()->json(['cities' => $cities]);
+    }
+
     public function show($id)
     {
         //
@@ -116,7 +204,10 @@ class TeacherController extends Controller
             'address' => 'required',
             'phoneNumber' => 'required',
             'photo' => 'image|file',
-            'descteacher' => 'required|max:255',
+            'descteacher' => 'required',
+            'province' => 'required',
+            'city' => 'required',
+            'price' => 'required',
             'DOB' => 'required',
             'gender' => 'required|in:0,1'
 
@@ -125,13 +216,13 @@ class TeacherController extends Controller
         if($request->email != $user[0]->email) {
             $rules['email'] = 'required|email:dns|unique:users';
         }
+        $validatedData = $request->validate($rules);
+        // try {
 
-        try {
-            $validatedData = $request->validate($rules);
 
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            dd($e->getMessage());
-        }
+        // } catch (\Illuminate\Validation\ValidationException $e) {
+        //     dd($e->getMessage());
+        // }
 
         if($request->file('photo')){
             if($request->oldImage){

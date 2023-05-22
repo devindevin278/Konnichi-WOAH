@@ -31,5 +31,6 @@
     <script src="/main.js"></script>
     <script src="node_modules/aos/dist/aos.js"></script>
     <script> AOS.init(); </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
