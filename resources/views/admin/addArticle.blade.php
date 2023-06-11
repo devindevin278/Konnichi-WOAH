@@ -16,11 +16,6 @@
                 <div class="" style="">
                     <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/admin">Back</a>
                 </div>
-
-                {{-- <div class="" style="">
-                    <a class="col btn btn-save" style="background-color:#FF8BA7;" href="/showArticleAdmin">Save</a>
-                </div> --}}
-
             </div>
 
 
@@ -61,15 +56,15 @@
 
         <div class="container mt-3 d-flex align-items-center">
             <div style="width: fit;">
-                <input type="text" class="form-control @error('title') is-invalid
+                <input type="text" class="form-control
 
-                @enderror" id="title" name="title" placeholder="Add title" required value="{{ old('title') }}"
+                @error('title') is-invalid @enderror"
+                id="title" name="title" placeholder="Add title" required value="{{ old('title') }}"
                 style="background: #FFC6C7;width:35vw;">
                 @error('title')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
-
                 @enderror
             </div>
         </div>
@@ -77,7 +72,7 @@
         <div class="container mt-3 d-flex align-items-center">
             <div style="width: fit;">
                 <select class="form-select" name="author_id" value="Choose author name" required value="{{ old('author') }}" style="background: #FFC6C7;">
-                    <option selected>  Choose Author</option>
+                    <option selected>Choose Author</option>
                     @foreach ($authors as $author)
                         @if(old('author_id') == $author->id)
                             <option value="{{ $author->id }}" selected>{{ $author->name }}</option>

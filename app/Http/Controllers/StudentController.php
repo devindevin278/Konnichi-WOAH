@@ -4,23 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    // public function index()
-    // {
-    //     return view('student.profileStudent');
 
-
-    // }
     public function index()
     {
         // dd(auth()->user()->id);
-        // $this->middleware('auth');
-        $id = auth()->user()->id;
+
+        // // $this->middleware('auth');
+        // $id = auth()->user()->id;
+
+        $this->middleware('auth');
+
+        try {
+            $id = auth()->user()->id;
+        } catch (\Throwable $e) {
+            redirect()->to('/login')->send();
+        }
+
+
         $user = User::where('id', $id)->get();
         // dd($this);
         return view('student.profileStudent', [
@@ -43,15 +50,17 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        $this->middleware('auth');
         $id = auth()->user()->id;
         $user = User::where('id', $id)->get();
 
-        $this->middleware('auth');
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'address' => 'required',
             'phoneNumber' => 'required',
-            'photo' => 'image|file'
+            'photo' => 'image|file',
+            'DOB' => 'required',
+            'gender' => 'required|in:0,1'
         ]);
 
         if ($request->file('photo')->isValid()) {
@@ -75,14 +84,14 @@ class StudentController extends Controller
      * Show the form for editing the specified resource.
      */
 
-    public function edit( $id)
+    public function edit($id)
     {
         // $id = intval($id);
         // $user = User::findOrFail($id)->get();
         // dd($user);
+        $this->middleware('auth');
         $id = auth()->user()->id;
         $user = User::where('id', $id)->get();
-        $this->middleware('auth');
 
         return view('student.profileStudentEdit', [
             'user' => $user[0]
@@ -103,18 +112,29 @@ class StudentController extends Controller
             'name' => 'required|max:255',
             'address' => 'required',
             'phoneNumber' => 'required',
-            'photo' => 'image|file'
+            'DOB' => 'required',
+            'photo' => 'image|file',
+            'gender' => 'required|in:0,1'
         ];
 
         if($request->email != $user[0]->email) {
             $rules['email'] = 'required|email:dns|unique:users';
         }
-
         $validatedData = $request->validate($rules);
+        // try {
+        //     $validatedData = $request->validate($rules);
 
-        if ($request->file('photo')->isValid()) {
+        // } catch (\Illuminate\Validation\ValidationException $e) {
+        //     dd($e->getMessage());
+        // }
+
+        if($request->file('photo')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
             $validatedData['photo'] = $request->file('photo')->store('profile-images', 'public');
         }
+
         $validatedData['id'] = auth()->user()->id;
         $user = User::where('id', $id);
         $user = $user->update($validatedData);
