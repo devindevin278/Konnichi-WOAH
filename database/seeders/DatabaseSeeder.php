@@ -129,5 +129,8 @@ class DatabaseSeeder extends Seeder
             'page_name' => 'question1-10',
             'pointxp' => 10
         ]);
+
+        $this->call(ProvinceSeeder::class);
+        $this->call(CitySeeder::class);
     }
 }
