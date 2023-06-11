@@ -133,12 +133,25 @@
                                 <div class="d-flex">
                                     <label class="labels text-align-right @error('province') is-invalid @enderror" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Province</label>
                                 </div>
-                                <input type="text" class="form-control" name="province" placeholder="Enter your province" value="{{ old('province', $user->province) }}" style="border: solid #A08A8F;">
-                                @error('province')
+
+
+                                {{-- <input type="text" class="form-control" name="province" placeholder="Enter your province" value="{{ old('province', $user->province) }}" style="border: solid #A08A8F;"> --}}
+                                {{-- @error('province')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
-                                @enderror
+                                @enderror --}}
+
+                                <select class="form-control" name="province" style="border: solid #A08A8F;">
+                                    <option value="">Select Province</option>
+                                    @foreach (\App\Models\Province::all() as $province)
+                                        <option value="{{ $province->id }}" {{ old('province', $user->province) == $province->id ? 'selected' : '' }}>
+                                            {{ $province->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+
                             </div>
 
                             {{-- City --}}
@@ -146,12 +159,22 @@
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">City</label>
                                 </div>
-                                <input type="text" class="form-control @error('city') is-invalid @enderror" name="city" placeholder="Enter your city" value="{{ old('city', $user->city) }}" style="border: solid #A08A8F;">
+                                {{-- <input type="text" class="form-control @error('city') is-invalid @enderror" name="city" placeholder="Enter your city" value="{{ old('city', $user->city) }}" style="border: solid #A08A8F;">
                                 @error('city')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
-                                @enderror
+                                @enderror --}}
+
+                                <select class="form-control" name="city" style="border: solid #A08A8F;">
+                                    <option value="">Select City</option>
+                                    @foreach (\App\Models\City::all() as $city)
+                                        <option value="{{ $city->id }}" {{ old('city', $user->city) == $city->id ? 'selected' : '' }}>
+                                            {{ $city->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+
                             </div>
 
                             {{-- Address --}}
@@ -281,29 +304,39 @@
     }
 </script>
 
-{{-- <script>
-window.addEventListener('DOMContentLoaded', function() {
-  const priceInput = document.getElementById('priceInput');
 
-  priceInput.addEventListener('input', function () {
-    const cleanedValue = this.value.replace(/[^0-9]/g, '');
-    let parsedValue = parseInt(cleanedValue);
+<script>
+    function updateCities(provinceId) {
+        // Fetch cities based on the selected province ID via AJAX
+        // Replace the URL with the actual route or endpoint to fetch cities
+        const url = `/cities/${provinceId}`;
 
-    // Handle the case when the input value is empty
-    if (isNaN(parsedValue)) {
-      parsedValue = 0;
+        // Make an AJAX request to fetch the cities
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                // Get the cities dropdown element
+                const cityDropdown = document.getElementById('city');
+                // Clear the previous options
+                cityDropdown.innerHTML = '<option value="">Select City</option>';
+
+                // Iterate over the cities and add them as options to the dropdown
+                data.forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city.id;
+                    option.innerText = city.name;
+                    // Set the selected attribute if the city matches the user's existing value or the old input value
+                    if (city.id === {{ old('city', $user->city) }}) {
+                        option.setAttribute('selected', 'selected');
+                    }
+                    cityDropdown.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }
+</script>
 
-    const formattedValue = parsedValue.toLocaleString('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      minimumFractionDigits: 2,
-    });
-    this.value = formattedValue;
-  });
-});
-
-
-</script> --}}
 @endsection
 

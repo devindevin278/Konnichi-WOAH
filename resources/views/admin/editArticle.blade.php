@@ -57,11 +57,11 @@
 
         <div class="container mt-3 d-flex jusify-content-around">
             <div class="input-group date" style="width:17vw;">
-                <input type="date" class="form-control" id="date" name="articlepublish" style="background: #FFC6C7;" value="{{ old('date', $articles->date) }}">
+                <input type="date" class="form-control" id="date" name="articlepublish" style="background: #FFC6C7;" value="{{ old('date', $articles->articlepublish) }}">
             </div>
         </div>
 
-
+{{-- test --}}
 
         <div class="container mt-3 d-flex align-items-center">
             <div style="width: fit;">

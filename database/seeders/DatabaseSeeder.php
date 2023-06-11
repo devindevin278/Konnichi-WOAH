@@ -230,5 +230,8 @@ class DatabaseSeeder extends Seeder
             'pointxp' => 10,
             'correction' => 'He is Chris\'s brother, Ken'
         ]);
+
+        $this->call(ProvinceSeeder::class);
+        $this->call(CitySeeder::class);
     }
 }
