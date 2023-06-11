@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('temp_progress', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('point_id')->references('id')->on('points');
-            $table->string('page_name');
-            $table->string('correction')->nullable();
-            $table->integer('pointxp');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('page_id')->references('id')->on('pages');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('temp_progress');
     }
 };

@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\Unit;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 class GameController extends Controller
 {
     /**
@@ -14,8 +16,26 @@ class GameController extends Controller
     public function index()
     {
         //
+
+        $userPoint = DB::table('student_point_progresss')
+        ->select('point_id')->where('user_id', auth()->user()->id)
+        ->get();
+        // ->where('point_id', )
+        // $collectUP = collect($userPoints);
+        // dd($userPoint);
+        $temp = [];
+        $id = 0;
+        foreach($userPoint as $item) {
+            $temp[$id] = $item->point_id;
+            $id++;
+        }
+        $userPoints = collect($temp);
+
+        // dd($userPoints);
+
         return view('student.learn.games', [
-            'units' => unit::all()
+            'units' => unit::all(),
+            'userPoints' => $userPoints
         ]);
     }
 

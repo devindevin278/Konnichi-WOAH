@@ -19,9 +19,9 @@ class StudentController extends Controller
     public function index()
     {
         // dd(auth()->user()->id);
+        // $this->middleware('auth');
         $id = auth()->user()->id;
         $user = User::where('id', $id)->get();
-        $this->middleware('auth');
         // dd($this);
         return view('student.profileStudent', [
             'user' => $user[0]

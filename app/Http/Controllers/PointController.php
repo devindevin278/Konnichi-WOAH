@@ -13,7 +13,7 @@ class PointController extends Controller
     public function index()
     {
         //
-
+        return view('');
     }
 
     /**
@@ -40,10 +40,11 @@ class PointController extends Controller
         //
         $point = Point::where('id', $id)->get();
         $pages = $point[0]->pages;
-        // dd($pages);
+        // dd($pages);;
 
         return view('Question.' . $pages[0]->page_name, [
-            
+            'point' => $point[0],
+            'page' => $pages[0]
         ]);
     }
 
