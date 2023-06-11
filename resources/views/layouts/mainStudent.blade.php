@@ -10,13 +10,11 @@
     <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/style4.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/style3.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style4.css') }}">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('learn.css') }}">
-
-
 
     <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
     <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}">

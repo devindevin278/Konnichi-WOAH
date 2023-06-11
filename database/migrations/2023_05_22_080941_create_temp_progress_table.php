@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('temp_progress', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('page_id')->references('id')->on('pages');
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('page_id')->references('id')->on('pages');
             $table->timestamps();
         });
     }
