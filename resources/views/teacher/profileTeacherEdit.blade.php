@@ -189,7 +189,7 @@
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Price</label>
                                 </div>
-                                <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" placeholder="Enter your price" value="{{ old('price', $user->price) }}" style="border: solid #A08A8F;">
+                                <input type="text" id="priceInput" class="form-control @error('price') is-invalid @enderror" name="price" placeholder="Enter your price" value="{{ old('price', $user->price) }}" style="border: solid #A08A8F;">
                                 @error('price')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -279,9 +279,31 @@
             imgPreview.src = oFRevent.target.result;
         }
     }
-
-
-
 </script>
+
+{{-- <script>
+window.addEventListener('DOMContentLoaded', function() {
+  const priceInput = document.getElementById('priceInput');
+
+  priceInput.addEventListener('input', function () {
+    const cleanedValue = this.value.replace(/[^0-9]/g, '');
+    let parsedValue = parseInt(cleanedValue);
+
+    // Handle the case when the input value is empty
+    if (isNaN(parsedValue)) {
+      parsedValue = 0;
+    }
+
+    const formattedValue = parsedValue.toLocaleString('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+      minimumFractionDigits: 2,
+    });
+    this.value = formattedValue;
+  });
+});
+
+
+</script> --}}
 @endsection
 
