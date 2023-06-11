@@ -17,6 +17,7 @@
                             @foreach ($provinces as $province)
                             <option value="{{ $province }}" @if ($province == request('province')) selected @endif>{{ $province }}</option>
                             @endforeach
+
                         </select>
                     </div>
 
@@ -165,6 +166,7 @@
                     success: function(response) {
                         // Populate the city dropdown with the received cities
                         var cities = response.cities || [];
+                        console.log(cities)
                         $.each(cities, function(index, city) {
                             $('#city').append($('<option>', {
                                 value: city,

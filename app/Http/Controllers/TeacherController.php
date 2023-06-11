@@ -52,6 +52,7 @@ class TeacherController extends Controller
 
         $filteredQuery = User::query();
 
+        // dd($province);
         $provinces = User::distinct('province')->pluck('province');
 
         // Filter cities based on selected province
@@ -80,7 +81,7 @@ class TeacherController extends Controller
         return view('teacher.teacher', [
             'filteredTeachers' => $filteredTeachers,
             'unfilteredTeachers' => $unfilteredTeachers,
-            'provinces' => $provinces,
+            'provinces' => $provinces->skip(1),
             'cities' => $cities
         ]);
     }
@@ -149,6 +150,14 @@ class TeacherController extends Controller
     {
         $province = $request->input('province');
         $cities = User::where('province', $province)->distinct('city')->pluck('city');
+
+        return response()->json(['cities' => $cities]);
+    }
+    public function fetchAllCities(Request $request)
+    {
+        $province = $request->input('province');
+        $cities = Province::where('name', $province)->get()[0]->cities;
+        // dd($cities);
 
         return response()->json(['cities' => $cities]);
     }
