@@ -4,30 +4,47 @@
 
 <section class="profileStudent">
 
+        <div class="mt-5">
+
+            @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show col" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            @elseif(session()->has('error'))
+            <div class="alert alert-danger alert-dismissible fade show col" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            @endif
+
+        </div>
+
         <div class="container container-profileStudent bg-white mt-5 mb-5">
             <div class="row">
                 <div class="col border-right ms-5 me-5">
-                    <div class="d-flex justify-content-around mb-3">
-
-                        <img class="rounded-circle mt-5" style="
+                    @if ($user->photo)
+                        <div class="d-flex justify-content-around mb-3">
+                            <img class="rounded-circle mt-5" style="
                             background-color: solid #FF8BA7;
                             width: 150px;
                             height: 150px;
                             border-radius: 50%;
                             overflow:hidden;
                             " src="{{ asset('storage/'. $user->photo) }}">
+                        </div>
 
-                    </div>
-                    {{-- <div class="d-flex justify-content-around">
-                        <button class="chooseimgbut" type="button">Choose Image</button>
-                    </div>
-                    <div class="d-flex text-center justify-content-center mt-2" style="width: 200px; font-weight: 800; font-size: 12px;">
-                        File Extension: .JPG
-                    </div>
-                    <div class="d-flex text-center justify-content-center" style="width: 200px; font-weight: 800; font-size: 12px;">
-                        File Size: Max 2 Mb
-                    </div> --}}
-
+                    @else
+                        <div class="d-flex justify-content-around mb-3">
+                            <img class="rounded-circle mt-5" style="
+                            width: 150px;
+                            height: 150px;
+                            overflow:hidden;
+                            " src="{{ asset('img/profilespic.png') }}">
+                        </div>
+                    @endif
 
 
                     <div class="d-flex justify-content-around mt-3">
@@ -43,10 +60,6 @@
                     </div>
 
                     <div class="d-flex justify-content-around mt-3" >
-                        {{-- <a href=""
-                            style="background: #ef0c41; font-weight:500; border:none; color:white; border-radius: 10px;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);">
-                            Delete Account
-                        </a> --}}
 
                         <form action="/profileStudent/{{ $user->id }}" method="post" class="d-inline">
                             @method('delete')
@@ -69,9 +82,6 @@
                         </div>
                         <div style="border: 1px solid #A08A8F;"></div>
 
-                        {{-- <h1>{{ $user->name }} yeah</h1> --}}
-                    {{-- <form class="row mt-3" action="/profileStudent/{{ $user->id }}/edit" method="get" id="form-control"> --}}
-                        {{-- @method('PUT') --}}
                             @csrf
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
@@ -102,21 +112,26 @@
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Gender</label>
                                 </div>
 
+                                {{-- Gender --}}
+
+
+
                                 <div class="d-flex align-item-center " style="gap:10px">
                                     <div class="form-check">
-                                        <input class="form-check-input genderselect" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" style="border: solid #A08A8F;" readonly checked >
-                                        <label class="form-check-label" for="exampleRadios1">
+                                        <input class="form-check-input genderselect" type="radio" name="gender" id="gender" value="1" {{ $user->gender == 1 ? 'checked' : '' }} style="border: solid #A08A8F;"  >
+                                        <label class="form-check-label" for="gender">
                                         Male
                                         </label>
                                     </div>
 
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" style="border: solid #A08A8F;" readonly checked>
-                                        <label class="form-check-label" for="exampleRadios1">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender" value="0" {{ $user->gender == 0 ? 'checked' : '' }} style="border: solid #A08A8F;" >
+                                        <label class="form-check-label" for="gender">
                                         Female
                                         </label>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
@@ -126,7 +141,6 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-around  mb-5 text-center"><a href="/profileStudent/{{ $user->id }}/edit"  class="btnsave no-decoration-text" style="color: #33272A;">Edit</a></div>
-                    {{-- </form> --}}
 
 
                 </div>

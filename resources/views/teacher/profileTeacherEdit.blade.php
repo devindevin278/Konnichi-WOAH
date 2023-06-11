@@ -1,8 +1,9 @@
-@extends('layouts.mainStudent')
+@extends('layouts.mainTeacher')
 
 @section('content')
 
-<section class="profileStudent">
+
+<section class="profileTeacherEdit">
 
         <div class="mt-5">
 
@@ -22,7 +23,7 @@
 
         </div>
 
-        <div class="container col container-profileStudent bg-white mt-5 mb-5">
+        <div class="container col container-profileTeacherEdit bg-white mt-5 mb-5">
 
 
             <div class="row">
@@ -37,7 +38,7 @@
                         </div>
                         <div style="border: 1px solid #A08A8F;"></div>
 
-                    <form class="row mt-3" action="/profileStudent/{{ $user->id }}" method="post" id="form-control"  enctype="multipart/form-data">
+                    <form class="row mt-3" action="/profileTeacher/{{ $user->id }}" method="post" id="form-control"  enctype="multipart/form-data">
                         @method('PUT')
                             @csrf
 
@@ -75,9 +76,12 @@
 
 
 
-                                    <div class="container d-flex justify-content-center align-items-center mt-3">
+                                    <div class="container row d-flex justify-content-center align-items-center mt-3">
+
                                         <div class="photo-input">
                                             <input type="file" id="photo" name="photo" accept="image/*" class="photo" onchange="previewImage()" >
+
+
                                             <label for="photo">Choose a photo</label>
                                         </div>
                                     </div>
@@ -111,19 +115,6 @@
                                 @enderror
                             </div>
 
-                            {{-- Address --}}
-                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
-                                <div class="d-flex">
-                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Address</label>
-                                </div>
-                                <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" placeholder="Enter your address" value="{{ old('address', $user->address) }}" style="border: solid #A08A8F;">
-                                @error('address')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
                             {{-- Email --}}
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
@@ -137,13 +128,69 @@
                                 @enderror
                             </div>
 
+                            {{-- Province --}}
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right @error('province') is-invalid @enderror" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Province</label>
+                                </div>
+                                <input type="text" class="form-control" name="province" placeholder="Enter your province" value="{{ old('province', $user->province) }}" style="border: solid #A08A8F;">
+                                @error('province')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            {{-- City --}}
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">City</label>
+                                </div>
+                                <input type="text" class="form-control @error('city') is-invalid @enderror" name="city" placeholder="Enter your city" value="{{ old('city', $user->city) }}" style="border: solid #A08A8F;">
+                                @error('city')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            {{-- Address --}}
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Address</label>
+                                </div>
+                                <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" placeholder="Enter your address" value="{{ old('address', $user->address) }}" style="border: solid #A08A8F;">
+                                @error('address')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+
+
                             {{-- Phone --}}
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
                                     <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Phone Number</label>
                                 </div>
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phoneNumber" placeholder="Enter your phone number" value="{{ old('phoneNumber', $user->phoneNumber) }}" style="border: solid #A08A8F;">
-                                @error('phone')
+                                <input type="text" class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber" placeholder="Enter your phone number" value="{{ old('phoneNumber', $user->phoneNumber) }}" style="border: solid #A08A8F;">
+                                @error('phoneNumber')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+
+
+                            {{-- Price --}}
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Price</label>
+                                </div>
+                                <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" placeholder="Enter your price" value="{{ old('price', $user->price) }}" style="border: solid #A08A8F;">
+                                @error('price')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -187,6 +234,22 @@
                             </div>
 
 
+                            {{-- desc teacher --}}
+
+                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
+                                <div class="d-flex">
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Description</label>
+                                </div>
+                                <textarea class="form-control @error('descteacher') is-invalid @enderror" name="descteacher" placeholder="Enter your description" style="border: solid #A08A8F; height: fit; word-wrap: break-word;" >{{ old('descteacher', $user->descteacher) }}</textarea>
+                                @error('descteacher')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+
+
                         </div>
                         <div class="mb-5 text-center"><button class="btnsave" type="submit">Save</button></div>
                     </form>
@@ -201,7 +264,6 @@
 
 
 </section>
-
 <script>
 
     function previewImage(){
@@ -210,7 +272,7 @@
         imgPreview.style.display = 'block';
         imgPreview.style.borderRadius = '50%';
         imgPreview.style.maxHeight = '100%';
-        // imgPreview.style.width = '300px';
+        imgPreview.style.overflow = 'hidden';
         const oFReader = new FileReader();
         oFReader.readAsDataURL(image.files[0]);
         oFReader.onload = function(oFRevent){
@@ -221,6 +283,5 @@
 
 
 </script>
-
 @endsection
 

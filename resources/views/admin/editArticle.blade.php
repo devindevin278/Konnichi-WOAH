@@ -16,11 +16,6 @@
                 <div class="" style="">
                     <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/admin">Back</a>
                 </div>
-
-                {{-- <div class="" style="">
-                    <a class="col btn btn-save" style="background-color:#FF8BA7;" href="/showArticleAdmin">Save</a>
-                </div> --}}
-
             </div>
 
 
@@ -39,7 +34,9 @@
 
         <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit">
             <div class="imgbox d-flex justify-content-center " style=" background: #FFC6C7; border-radius: 8px;" >
+
                 <div class="container row justify-content-around align-items-center"  >
+                    <input type="hidden" name="oldImage" value="{{ $articles->image }}">
                     <img src="{{ asset('img/addimg.png') }}" alt="" style="width:45px; ">
                     @if ($articles->image)
                     <img src="{{ asset('storage/' . $articles->image) }}" class="img-preview img-fluid col-sm-5" >

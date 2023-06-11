@@ -14,8 +14,19 @@
                 @if (auth()->user())
 
                         <a>Konnichiwa, {{ auth()->user()->name }}</a>
+                        <a href="/profileTeacher" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" style="
+                            background-color: solid #FF8BA7;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            overflow:hidden;" ></a>
 
-                    <a href="/profileTeacher" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
+                    {{-- <a href="/profileTeacher" class="navbar-brand"  ><img src="{{ asset('storage/'. $user->photo) }}" style="
+                        background-color: solid #FF8BA7;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        overflow:hidden;" ></a> --}}
                     @else
                     <a href="/profileTeacher/{{ auth()->user() }}" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
                 @endif
