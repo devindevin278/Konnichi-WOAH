@@ -15,6 +15,10 @@ class StudentController extends Controller
     public function index()
     {
         // dd(auth()->user()->id);
+
+        // // $this->middleware('auth');
+        // $id = auth()->user()->id;
+
         $this->middleware('auth');
 
         try {
@@ -22,6 +26,7 @@ class StudentController extends Controller
         } catch (\Throwable $e) {
             redirect()->to('/login')->send();
         }
+
 
         $user = User::where('id', $id)->get();
         // dd($this);

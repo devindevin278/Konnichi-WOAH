@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\User;
+use App\Models\Province;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class TeacherController extends Controller
@@ -68,20 +71,6 @@ class TeacherController extends Controller
             $filteredQuery->whereBetween('price', [$minPrice, $maxPrice]);
         }// Retrieve the selected price range from the form submission
 
-
-
-        // Query the database using the price range
-
-
-        // if (request('search')) {
-        //     $filteredQuery->where(function ($query) {
-        //         $searchTerm = '%' . request('search') . '%';
-        //         $query->where('name', 'like', $searchTerm)
-        //             ->orWhere('price', 'like', $searchTerm)
-        //             ->orWhere('province', 'like', $searchTerm)
-        //             ->orWhere('city', 'like', $searchTerm);
-        //     });
-        // }
 
         $filteredTeachers = $filteredQuery->get();
 
@@ -180,9 +169,13 @@ class TeacherController extends Controller
         $this->middleware('auth');
         $id = auth()->user()->id;
         $user = User::where('id', $id)->get();
+        $provinces = Province::all();
+        $cities = City::all();
 
         return view('teacher.profileTeacherEdit', [
-            'user' => $user[0]
+            'user' => $user[0],
+            'province' => $provinces,
+            'cities' => $cities
         ]);
     }
 

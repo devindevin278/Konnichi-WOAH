@@ -3,13 +3,15 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+use App\Models\Page;
 
+use App\Models\Unit;
+use App\Models\User;
+use App\Models\Point;
 use App\Models\Author;
 use App\Models\Article;
-use App\Models\Unit;
-use App\Models\Point;
-use App\Models\Page;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +26,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        User::create([
+            'name' => 'devin',
+            'email' => 'student@gmail.com',
+            'password' => Hash::make('12345')
+        ]);
 
         Author::create([
             'name' => 'devin'
@@ -70,6 +77,12 @@ class DatabaseSeeder extends Seeder
             'unit_id' => 1
         ]);
         Point::create([
+            'unit_id' => 1
+        ]);
+        Point::create([
+            'unit_id' => 2
+        ]);
+        Point::create([
             'unit_id' => 2
         ]);
         Point::create([
@@ -77,57 +90,148 @@ class DatabaseSeeder extends Seeder
         ]);
         Point::create([
             'unit_id' => 2
+        ]);
+        Point::create([
+            'unit_id' => 3
+        ]);
+        Point::create([
+            'unit_id' => 3
+        ]);
+        Point::create([
+            'unit_id' => 3
+        ]);
+        Point::create([
+            'unit_id' => 3
         ]);
 
         Page::create([
             'point_id' => 1,
             'page_name' => 'question1-1',
-            'pointxp' => 10
+            'pointxp' => 10,
+            'correction' => 'こんにちわ (konnichiwa)'
         ]);
         Page::create([
             'point_id' => 1,
             'page_name' => 'question1-2',
-            'pointxp' => 10
+            'pointxp' => 10,
+            'correction' => ''
         ]);
         Page::create([
             'point_id' => 1,
             'page_name' => 'question1-3',
-            'pointxp' => 10
+            'pointxp' => 10,
+            'correction' => 'なまえ(namae)'
         ]);
         Page::create([
             'point_id' => 1,
             'page_name' => 'question1-4',
-            'pointxp' => 10
+            'pointxp' => 10,
+            'correction' => 'Nice to meet you'
         ]);
         Page::create([
             'point_id' => 1,
             'page_name' => 'question1-5',
-            'pointxp' => 10
+            'pointxp' => 10,
+            'correction' => 'See you tomorrow, Chris'
         ]);
         Page::create([
             'point_id' => 1,
             'page_name' => 'question1-6',
-            'pointxp' => 10
+            'pointxp' => 10,
+            'correction' => 'Ken is a kind guy'
         ]);
         Page::create([
             'point_id' => 1,
             'page_name' => 'question1-7',
-            'pointxp' => 10
+            'pointxp' => 10,
+            'correction' => ''
         ]);
         Page::create([
             'point_id' => 1,
             'page_name' => 'question1-8',
-            'pointxp' => 10
+            'pointxp' => 10,
+            'correction' => 'の (no)'
         ]);
         Page::create([
             'point_id' => 1,
             'page_name' => 'question1-9',
-            'pointxp' => 10
+            'pointxp' => 10,
+            'correction' => 'Good evening, my name is Chris'
         ]);
         Page::create([
             'point_id' => 1,
             'page_name' => 'question1-10',
-            'pointxp' => 10
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
         ]);
+        Page::create([
+            'point_id' => 2,
+            'page_name' => 'question1-10',
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
+        ]);
+        Page::create([
+            'point_id' => 3,
+            'page_name' => 'question1-10',
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
+        ]);
+        Page::create([
+            'point_id' => 4,
+            'page_name' => 'question1-10',
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
+        ]);
+        Page::create([
+            'point_id' => 5,
+            'page_name' => 'question1-10',
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
+        ]);
+        Page::create([
+            'point_id' => 6,
+            'page_name' => 'question1-10',
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
+        ]);
+        Page::create([
+            'point_id' => 7,
+            'page_name' => 'question1-10',
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
+        ]);
+        Page::create([
+            'point_id' => 8,
+            'page_name' => 'question1-10',
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
+        ]);
+        Page::create([
+            'point_id' => 9,
+            'page_name' => 'question1-10',
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
+        ]);
+        Page::create([
+            'point_id' => 10,
+            'page_name' => 'question1-10',
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
+        ]);
+        Page::create([
+            'point_id' => 11,
+            'page_name' => 'question1-10',
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
+        ]);
+        Page::create([
+            'point_id' => 12,
+            'page_name' => 'question1-10',
+            'pointxp' => 10,
+            'correction' => 'He is Chris\'s brother, Ken'
+        ]);
+
+        $this->call(ProvinceSeeder::class);
+        $this->call(CitySeeder::class);
     }
 }

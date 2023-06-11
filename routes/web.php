@@ -76,7 +76,8 @@ Route::get('/learnStudent/cards/hiragana', function () {
 // });
 
 // buat halaman games
-Route::resource('learnStudent/games', GameController::class);
+Route::resource('learnStudent/games', GameController::class)->middleware('auth');
+
 // buat questions
 Route::resource('/questions', PointController::class);
 Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
@@ -190,7 +191,11 @@ Route::post('/admin', [ArticleAdminController::class, 'store']);
 Route::get('/addArticle', [ArticleAdminController::class, 'create']);
 Route::get('/author/{author:name}',[AuthorController::class, 'index']);
 
+// Route::get('/profileStudent', [StudentController::class, 'index'])->middleware('auth');
+
+
 Route::get('/profileStudent', [StudentController::class, 'index']);
+
 Route::get('/profileStudent/{user:id}/edit', [StudentController::class, 'edit']);
 Route::put('/profileStudent/{user:id}', [StudentController::class, 'update']);
 Route::delete('/profileStudent/{user:id}', [StudentController::class, 'destroy']);
