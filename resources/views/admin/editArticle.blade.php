@@ -33,37 +33,40 @@
 
 
         <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit">
-            <div class="imgbox d-flex justify-content-center " style=" background: #FFC6C7; border-radius: 8px;" >
-
-                <div class="container row justify-content-around align-items-center"  >
+            <div class="imgbox d-flex justify-content-center" style="background: #FFC6C7; border-radius: 8px;">
+                <div class="container" style="background-image: url('{{ asset('img/addimg.png') }}'); background-size: 45px; background-position: center; background-repeat: no-repeat;">
+                    <div>
                     <input type="hidden" name="oldImage" value="{{ $articles->image }}">
-                    <img src="{{ asset('img/addimg.png') }}" alt="" style="width:45px; ">
-                    @if ($articles->image)
-                    <img src="{{ asset('storage/' . $articles->image) }}" class="img-preview img-fluid col-sm-5" >
-                    @else
-                    <div class="mt-3 d-flex justify-content-start align-items-start float-left" >
-                        <img class="img-preview img-fluid " style="max-height: 30vh; overflow:hidden;">
                     </div>
 
-                    @endif
+                    <div class="m-2 d-flex justify-content-center align-items-center" style="width: 100%; height: 30vh; overflow: hidden;">
+                    @if ($articles->image)
+                        <input class=" form-control d-flex justify-content-center mx-auto" style="max-height: 30vh; top: 186px; background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()">
+                        <div class="mb-2">
+                            <img src="{{ asset('storage/' . $articles->image) }}" class="img-preview img-fluid" style="max-width: 50vh; height: auto;">
+                        </div>
+                    @else
+                        <input class="form-control d-flex justify-content-center" style="max-height: 30vh; top: 186px; background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()">
 
+                        <div class="m-2 d-flex justify-content-start align-items-start float-left" style="max-width: 50vh; height: auto;">
+                            <img class="img-preview img-fluid " style="height: fit; overflow:hidden;">
+                        </div>
+                    @endif
+                    </div>
 
                 </div>
 
             </div>
-            <input class="form-control d-flex justify-content-center" style="max-height: 30vh; top: 186px;
-                    background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()" >
-
 
         </div>
+
+
 
         <div class="container mt-3 d-flex jusify-content-around">
             <div class="input-group date" style="width:17vw;">
                 <input type="date" class="form-control" id="date" name="articlepublish" style="background: #FFC6C7;" value="{{ old('date', $articles->articlepublish) }}">
             </div>
         </div>
-
-{{-- test --}}
 
         <div class="container mt-3 d-flex align-items-center">
             <div style="width: fit;">
@@ -127,8 +130,12 @@
             </div>
         </div>
 
-
-        <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit;">
+        <div class="container mt-5">
+            <h5>
+                Japanesse Body
+            </h5>
+        </div>
+        <div class="container row mt-1 d-flex m-auto justify-content-center" style="width: fit;">
 
                 @error('body')
                     <p class="text-danger">
@@ -141,7 +148,13 @@
 
         </div>
 
-        <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit;">
+        <div class="container mt-5">
+            <h5>
+                Japanesse Body
+            </h5>
+        </div>
+
+        <div class="container row mt-1 d-flex m-auto justify-content-center" style="width: fit;">
 
             @error('jpnbody')
                 <p class="text-danger">
@@ -187,6 +200,7 @@
         const image = document.querySelector('#image');
         const imgPreview = document.querySelector('.img-preview');
         imgPreview.style.display = 'block';
+        imgPreview.style.maxWidth = '30vh';
         const oFReader = new FileReader();
         oFReader.readAsDataURL(image.files[0]);
         oFReader.onload = function(oFRevent){
