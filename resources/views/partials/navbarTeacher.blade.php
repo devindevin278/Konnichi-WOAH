@@ -16,7 +16,7 @@
                         <a>Konnichiwa, {{ auth()->user()->name }}</a>
                         <a href="/profileTeacher" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" style="
                             background-color: solid #FF8BA7;
-                            width: 40px;
+
                             height: 40px;
                             border-radius: 50%;
                             overflow:hidden;" ></a>
