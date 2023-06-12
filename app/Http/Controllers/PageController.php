@@ -74,4 +74,8 @@ class PageController extends Controller
             'page' => $page[0]
         ]);
     }
+
+    public function succeed() {
+        return view('student.congrats');
+    }
 }

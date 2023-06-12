@@ -81,7 +81,7 @@ Route::resource('learnStudent/games', GameController::class)->middleware('auth')
 // buat questions
 Route::resource('/questions', PointController::class);
 Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
-
+Route::get('/completed', [PageController::class, 'succeed']);
 
 Route::get('/viewTeacher', function () {
     return view('viewTeacher',["title" => "viewTeacher"]);

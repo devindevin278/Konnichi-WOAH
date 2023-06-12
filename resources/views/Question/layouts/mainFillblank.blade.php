@@ -27,10 +27,10 @@
                 clip-rule="evenodd" />
         </svg>
         <h2 class="ann" style="color:#259559">Amazing!</h2>
-        <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}" class="continue">Continue</a>
         @if ($page->id % 10 == 0)
-            <a href="/learnStudent/games" class="continue">Continue</a>
+        <a href="/completed" class="continue">Continue</a>
         @else
+        <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}" class="continue">Continue</a>
             {{-- <h1>{{ $page->id }}</h1> --}}
             {{-- <form action="/" method="get"> --}}
                 {{-- @csrf --}}
@@ -53,7 +53,7 @@
         </div>
         {{-- <a href="/questions/{{ $point->id }}/{{ $page->id + 1}}"  class="continue" style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;;">Continue</a> --}}
         @if ($page->id % 10 == 0)
-            <a href="/learnStudent/games" class="continue"
+            <a href="/completed" class="continue"
                 style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;;">Continue</a>
         @else
             <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}" class="continue"
