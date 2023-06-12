@@ -127,6 +127,44 @@ class ArticleAdminController extends Controller
             'authors' => Author::all()
         ]);
     }
+
+
+    public function showstudent(Article $article)
+    {
+
+        return view('student.showArticle',[
+            'articles' => $article,
+            'authors' => Author::all()
+        ]);
+    }
+    public function showstudentjpn(Article $article)
+    {
+
+        return view('student.jpnshowArticle',[
+            'articles' => $article,
+            'authors' => Author::all()
+        ]);
+
+    }
+
+    public function showteacher(Article $article)
+    {
+
+        return view('teacher.showArticle',[
+            'articles' => $article,
+            'authors' => Author::all()
+        ]);
+    }
+    public function showteacherjpn(Article $article)
+    {
+
+        return view('teacher.jpnshowArticle',[
+            'articles' => $article,
+            'authors' => Author::all()
+        ]);
+
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

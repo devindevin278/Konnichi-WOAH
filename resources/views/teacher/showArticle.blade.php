@@ -1,4 +1,4 @@
-@extends('layouts.mainStudent')
+@extends('layouts.mainTeacher')
 
 @section('content')
 
@@ -8,7 +8,7 @@
 
             <div class="col d-flex m-0 p-0 gap-2" style=" width:200px">
                 <div class="" style="">
-                    <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/articleStudent">Back</a>
+                    <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/articleTeacher">Back</a>
                 </div>
 
                 {{-- <div class="" style="">
@@ -21,7 +21,7 @@
             <div class="linking" style="align-items: center">
                 <a href="#" style="color:black;">English</a>
                 <a style="color:black;">|</a>
-                <a href="/jpnstudent/{{ $articles->id }}" style="color:black;">Japanese</a>
+                <a href="/jpnteacher/{{ $articles->id }}" style="color:black;">Japanese</a>
             </div>
 		</div>
     </div>

@@ -72,7 +72,7 @@
 
                     <div class="card-body text-center ">
                     <h3 class="card-title ">
-                        <a href="/admin/{{ $articles[0]->slug }}" class="text-decoration-none text-dark">{{ $articles[0]->title }}</a></h3>
+                        <a href="/teacher/{{ $articles[0]->slug }}" class="text-decoration-none text-dark">{{ $articles[0]->title }}</a></h3>
                     <p>
                         <small class="text-muted">
                             By. <a class="card-title text-decoration-none"><a href="/author/{{ $articles[0]->author->name }}" style="color:black;">{{ $articles[0]->author->name }}</a></a>
@@ -96,7 +96,7 @@
 
 
                 <div class="card-body rounded-bottom border-0" style=" background-color:#ffffff;">
-                    <h5 class="card-title"><a href="/admin/{{ $article->slug }}" style="color:black;">{{ $article->title }}</a></h5>
+                    <h5 class="card-title"><a href="/teacher/{{ $article->slug }}" style="color:black;">{{ $article->title }}</a></h5>
                     <a class="card-title text-decoration-none"><a href="/author/{{ $article->author->name }}" style="color:black;">{{ $article->author->name }}</a></a>
                     <p class="card-text">{{ $article->created_at->diffForHumans() }}</p>
                 </div>
