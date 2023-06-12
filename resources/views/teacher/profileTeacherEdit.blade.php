@@ -83,7 +83,7 @@
 
                                     <div class="container row d-flex justify-content-center align-items-center mt-3">
 
-                                        <div class="photo-input">
+                                         <div class="photo-input">
                                             <input type="file" id="photo" name="photo" accept="image/*"
                                                 class="photo" onchange="previewImage()">
 
@@ -368,6 +368,26 @@
             $('#province').trigger('change');
         });
     </script>
+
+<script>
+
+    function previewImage(){
+        const image = document.querySelector('#photo');
+        const imgPreview = document.querySelector('.img-preview');
+        imgPreview.style.display = 'block';
+        imgPreview.style.borderRadius = '50%';
+        imgPreview.style.maxHeight = '100%';
+        // imgPreview.style.width = '300px';
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+        oFReader.onload = function(oFRevent){
+            imgPreview.src = oFRevent.target.result;
+        }
+    }
+
+
+
+</script>
 
     {{-- <script>
         // console.log('hiii');
