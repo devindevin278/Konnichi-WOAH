@@ -46,11 +46,13 @@
                     </div>
 
                     @endif
-                    <input class="form-control d-flex justify-content-center" style="max-height: 30vh; top: 186px;
-                    background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()" >
+
 
                 </div>
+
             </div>
+            <input class="form-control d-flex justify-content-center" style="max-height: 30vh; top: 186px;
+                    background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()" >
 
 
         </div>
@@ -70,6 +72,21 @@
                 @enderror" id="title" name="title" placeholder="Add title" value="{{ old('title', $articles->title) }}"
                 style="background: #FFC6C7;width:35vw;">
                 @error('title')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+
+                @enderror
+            </div>
+        </div>
+
+        <div class="container mt-3 d-flex align-items-center">
+            <div style="width: fit;">
+                <input type="text" class="form-control @error('jpntitle') is-invalid
+
+                @enderror" id="jpntitle" name="jpntitle" placeholder="Add jpntitle" value="{{ old('jpntitle', $articles->jpntitle) }}"
+                style="background: #FFC6C7;width:35vw;">
+                @error('jpntitle')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -121,6 +138,19 @@
                 @enderror
                 <input id="body" type="hidden" name="body" value="{{ old('body', $articles->body) }}">
                 <trix-editor input="body" style="height: fit; word-wrap: break-word; " ></trix-editor>
+
+        </div>
+
+        <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit;">
+
+            @error('jpnbody')
+                <p class="text-danger">
+                    {{ $message }}
+                </p>
+
+            @enderror
+            <input id="jpnbody" type="hidden" name="jpnbody" value="{{ old('jpnbody', $articles->jpnbody) }}">
+            <trix-editor input="jpnbody" style="height: fit; word-wrap: break-word; " ></trix-editor>
 
         </div>
 
