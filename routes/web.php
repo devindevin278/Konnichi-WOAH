@@ -15,6 +15,8 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PointController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use Illuminate\Contracts\Http\Middleware\Middleware;
+use App\Http\Kernel;
 
 /*
 |--------------------------------------------------------------------------
@@ -184,6 +186,10 @@ Route::delete('/admin/{article:slug}', [ArticleAdminController::class, 'destroy'
 Route::get('/admin/{article:slug}/edit', [ArticleAdminController::class, 'edit']);
 Route::put('/admin/{article:slug}', [ArticleAdminController::class, 'update']);
 Route::get('/admin/{article:slug}', [ArticleAdminController::class, 'show']);
+Route::get('/teacher/{article:slug}', [ArticleAdminController::class, 'showteacher']);
+Route::get('/student/{article:slug}', [ArticleAdminController::class, 'showstudent']);
+Route::get('/jpnstudent/{article:id}', [ArticleAdminController::class, 'showstudentjpn']);
+Route::get('/jpnteacher/{article:id}', [ArticleAdminController::class, 'showteacherjpn']);
 Route::get('/jpnadmin/{article:id}', [ArticleAdminController::class, 'jpnshow']);
 
 
