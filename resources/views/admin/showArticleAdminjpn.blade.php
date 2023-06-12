@@ -15,9 +15,9 @@
 
 
             <div class="linking" style="align-items: center">
-                <a href="#" style="color:black;">English</a>
+                <a href="/admin/{{ $articles->slug }}" style="color:black;">English</a>
                 <a style="color:black;">|</a>
-                <a href="/jpnadmin/{{ $articles->id }}" style="color:black;">Japanese</a>
+                <a href="#" style="color:black;">Japanese</a>
             </div>
 		</div>
     </div>
@@ -37,7 +37,7 @@
     </div>
 
     <div class="container mt-3 d-flex jusify-content-around align-items-center">
-        <div class="container titlearticle p-0">{{ $articles->title }}</div>
+        <div class="container titlearticle p-0">{{ $articles->jpntitle }}</div>
         <div class="d-flex justify-content-end m-1">
             {{-- <a href="#"><img  src="img/edit2.png" alt="edit2" style="width:45px; "></a> --}}
         </div>
@@ -52,7 +52,7 @@
 
     <div class="container mt-3 d-flex jusify-content-around">
         <article>
-            {!! $articles->body !!}
+            {!! $articles->jpnbody !!}
         </article>
     </div>
 {{--

@@ -12,6 +12,7 @@ use App\Models\Author;
 use App\Models\Article;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,12 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
         User::create([
             'name' => 'devin',
             'email' => 'student@gmail.com',
@@ -45,14 +41,15 @@ class DatabaseSeeder extends Seeder
             'name' => 'mike'
         ]);
 
-        Article::create([
-            'author_id' => '1',
-            'title' => 'test',
-            'articlepublish' => '2022-02-02',
-            'slug' => 'test',
-            'image' => 'post-images/lraBrlhW1pWbgOPgpqXfV4IQH7uGJRDbfxjSE3nn.png',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum officiis laboriosam repellendus eligendi accusamus, earum nemo hic, adipisci unde minima impedit labore assumenda voluptatem. Sequi dolorum libero similique consequuntur, sint in est eligendi ex rem eaque velit voluptates? Dignissimos assumenda, asperiores atque nostrum, nesciunt sint fugiat quasi ducimus dolores aut voluptatum ipsa enim. Cum porro fugit aspernatur, praesentium corporis laborum cupiditate temporibus laboriosam tempora facilis, natus aut magni saepe ipsum neque quisquam blanditiis nihil dolor adipisci maxime. Iure obcaecati consequatur saepe eos. Ullam accusantium officia non, cum dignissimos consectetur necessitatibus fugit alias eligendi ad. Iusto quia mollitia, sapiente, molestiae numquam veritatis molestias vel, atque illo hic corrupti modi saepe architecto tempora. Blanditiis impedit dolorem architecto ipsam dignissimos nemo ullam reiciendis, obcaecati sapiente similique aperiam fuga dolor beatae tenetur cupiditate nostrum at facilis! Laboriosam sint hic minima perferendis rem recusandae quia quo eaque. Amet numquam fugit ex at nulla nihil minus veritatis facilis quia earum reiciendis perferendis ipsam, natus quod doloribus omnis voluptate unde sequi sunt aliquid, quas laudantium quis tenetur! Corporis quaerat esse nihil consectetur dignissimos dolore ab delectus illo, nam sunt ipsa corrupti laborum amet voluptatem nemo quo cum, veniam, quam optio inventore repellendus voluptate voluptates quos ea. Ad fugiat voluptatem dicta rerum, pariatur earum. Provident quaerat quae eos nulla in corporis repellendus laboriosam sed deserunt illo iure repudiandae, exercitationem odit! Ea molestiae explicabo quae blanditiis ex, aliquam voluptatum obcaecati optio temporibus veniam quas sunt dignissimos sint tenetur iusto, suscipit inventore esse doloribus enim autem. Quisquam dolore optio tempora rem voluptatum maiores qui aspernatur at nostrum pariatur? Velit libero corporis dolore, enim aliquid distinctio non quas? Iste optio exercitationem fugit harum quod, mollitia eveniet illum accusantium sequi molestias ad deleniti odio recusandae autem incidunt consequuntur velit esse. Consequatur eum molestias saepe tempora cum ipsa voluptates sunt sed excepturi repellat?',
-        ]);
+        // Storage::move('public/img/hanabi.png', 'public/post-images/hanabi.png');
+        // Article::create([
+        //     'author_id' => '1',
+        //     'title' => 'test',
+        //     'articlepublish' => '2022-02-02',
+        //     'slug' => 'test',
+        //     'image' => 'storage/post-images/hanabi.png',
+        //     'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
+        // ]);
 
         Unit::create([
             'Content' => 'Greeting people and Introducing yourself',
