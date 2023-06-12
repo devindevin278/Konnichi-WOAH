@@ -184,6 +184,9 @@ Route::delete('/admin/{article:slug}', [ArticleAdminController::class, 'destroy'
 Route::get('/admin/{article:slug}/edit', [ArticleAdminController::class, 'edit']);
 Route::put('/admin/{article:slug}', [ArticleAdminController::class, 'update']);
 Route::get('/admin/{article:slug}', [ArticleAdminController::class, 'show']);
+Route::get('/jpnadmin/{article:id}', [ArticleAdminController::class, 'jpnshow']);
+
+
 Route::get('/admin', [ArticleAdminController::class, 'index']);
 Route::get('/articleStudent', [ArticleAdminController::class, 'indexStudent']);
 Route::get('/articleTeacher', [ArticleAdminController::class, 'indexTeacher']);

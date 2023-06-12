@@ -18,10 +18,13 @@ return new class extends Migration
             $table->id();
             $table->foreignid('author_id'); //foreign key untuk table author
             $table->string('title');
+            $table->string('jpntitle');
             $table->date('articlepublish');
             $table->string('slug')->unique(); //slug akan jadi url jadi hrs unik
+            // $table->string('jpnslug')->unique();
             $table->string('image')->nullable();
             $table->text('body');
+            $table->text('jpnbody');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
