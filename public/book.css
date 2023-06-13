@@ -1,0 +1,66 @@
+body{
+    height: 100%;
+    background-color: #FAEEE7;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+h1{
+    font-size: xx-large;
+}
+
+h2{
+    font-size: x-large;
+}
+
+h3{
+    font-size: x-large;
+}
+
+h4{
+    font-size: medium;
+}
+
+.note-page{
+    display: flex;
+    flex-direction: column;
+}
+
+.note-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1vw 2vw 2vw 2vw;
+
+    border-bottom: lightpink solid 2px;
+}
+
+.note-img{
+    height: 10vw;
+    width: 10vw;
+}
+
+.note-back-icon{
+    color: black;
+    height: 50px;
+    margin: 0;
+}
+
+.note-title{
+    text-align: center;
+}
+
+.note-list{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vw;
+}
+
+.note-cont{
+    text-align: center;
+}
