@@ -4,8 +4,9 @@ body{
 }
 
 .learningg{
-    width: 42vw;
-    margin-left: 20vw;
+    /* width: 42vw; */
+    /* margin-left: 20vw; */
+    background-color: #FAEEE7 ;
 }
 
 .chapter{
@@ -17,7 +18,7 @@ body{
     display: flex;
     flex-direction: row;
 
-    background-color: #58CC02;
+    /* background-color: #58CC02; */
     border-radius: 1vw;
 
     align-items: center;
@@ -57,7 +58,7 @@ button{
     flex-direction: row;
     align-items: center;
 
-    background: #58CC02;
+    /* background: #58CC02; */
     border: 2px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
     border-radius: 1vw;

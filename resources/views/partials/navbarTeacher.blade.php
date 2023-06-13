@@ -6,7 +6,7 @@
             <ul>
                 <li> <a class="nav-link {{ Request::is('homeTeacher')? 'active' : '' }}" href="/homeTeacher">Home</a> </li>
                 <li> <a class="nav-link {{ Request::is('notificationTeacher')? 'active' : '' }}" href="/notificationTeacher">Notification</a> </li>
-                <li> <a class="nav-link {{ Request::is('teacherSchedule')? 'active' : '' }}" href="/teacherSchedule">Schedule</a></li>
+                {{-- <li> <a class="nav-link {{ Request::is('teacherSchedule')? 'active' : '' }}" href="/teacherSchedule">Schedule</a></li> --}}
                 <li> <a class="nav-link {{ Request::is('articleTeacher')? 'active' : '' }}" href="/articleTeacher">Article</a> </li>
             </ul>
             {{-- <a href="/profileTeacher" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a> --}}
@@ -16,7 +16,7 @@
                         <a>Konnichiwa, {{ auth()->user()->name }}</a>
                         <a href="/profileTeacher" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" style="
                             background-color: solid #FF8BA7;
-                            width: 40px;
+
                             height: 40px;
                             border-radius: 50%;
                             overflow:hidden;" ></a>

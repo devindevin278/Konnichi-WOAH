@@ -15,6 +15,8 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PointController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use Illuminate\Contracts\Http\Middleware\Middleware;
+use App\Http\Kernel;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,11 +78,12 @@ Route::get('/learnStudent/cards/hiragana', function () {
 // });
 
 // buat halaman games
-Route::resource('learnStudent/games', GameController::class);
+Route::resource('learnStudent/games', GameController::class)->middleware('auth');
+
 // buat questions
 Route::resource('/questions', PointController::class);
 Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
-
+Route::get('/completed', [PageController::class, 'succeed']);
 
 Route::get('/viewTeacher', function () {
     return view('viewTeacher',["title" => "viewTeacher"]);
@@ -183,6 +186,13 @@ Route::delete('/admin/{article:slug}', [ArticleAdminController::class, 'destroy'
 Route::get('/admin/{article:slug}/edit', [ArticleAdminController::class, 'edit']);
 Route::put('/admin/{article:slug}', [ArticleAdminController::class, 'update']);
 Route::get('/admin/{article:slug}', [ArticleAdminController::class, 'show']);
+Route::get('/teacher/{article:slug}', [ArticleAdminController::class, 'showteacher']);
+Route::get('/student/{article:slug}', [ArticleAdminController::class, 'showstudent']);
+Route::get('/jpnstudent/{article:id}', [ArticleAdminController::class, 'showstudentjpn']);
+Route::get('/jpnteacher/{article:id}', [ArticleAdminController::class, 'showteacherjpn']);
+Route::get('/jpnadmin/{article:id}', [ArticleAdminController::class, 'jpnshow']);
+
+
 Route::get('/admin', [ArticleAdminController::class, 'index']);
 Route::get('/articleStudent', [ArticleAdminController::class, 'indexStudent']);
 Route::get('/articleTeacher', [ArticleAdminController::class, 'indexTeacher']);
@@ -190,7 +200,11 @@ Route::post('/admin', [ArticleAdminController::class, 'store']);
 Route::get('/addArticle', [ArticleAdminController::class, 'create']);
 Route::get('/author/{author:name}',[AuthorController::class, 'index']);
 
+// Route::get('/profileStudent', [StudentController::class, 'index'])->middleware('auth');
+
+
 Route::get('/profileStudent', [StudentController::class, 'index']);
+
 Route::get('/profileStudent/{user:id}/edit', [StudentController::class, 'edit']);
 Route::put('/profileStudent/{user:id}', [StudentController::class, 'update']);
 Route::delete('/profileStudent/{user:id}', [StudentController::class, 'destroy']);
@@ -203,4 +217,5 @@ Route::delete('/profileTeacher/{user:id}', [TeacherController::class, 'destroy']
 
 Route::get('/teacher', [TeacherController::class, 'showAllTeacher']);
 Route::get('/fetch-cities', [TeacherController::class, 'fetchCities']);
+Route::get('/fetchcities', [TeacherController::class, 'fetchAllCities']);
 Route::get('/viewTeacher/{user:name}', [TeacherController::class, 'viewTeacher']);

@@ -4,6 +4,7 @@ function dragNdrop(event) {
     var preview = document.getElementById("preview");
     var previewImg = document.createElement("img");
     previewImg.setAttribute("src", fileName);
+    previewImg.setAttribute("class", 'img-fluid');
     preview.innerHTML = "";
     preview.appendChild(previewImg);
 }

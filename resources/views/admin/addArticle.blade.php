@@ -19,11 +19,11 @@
             </div>
 
 
-            <div class="linking" style="align-items: center">
+            {{-- <div class="linking" style="align-items: center">
                 <a href="#" style="color:black;">English</a>
                 <a style="color:black;">|</a>
                 <a href="#" style="color:black;">Japanese</a>
-            </div>
+            </div> --}}
 		</div>
     </div>
 
@@ -71,6 +71,21 @@
 
         <div class="container mt-3 d-flex align-items-center">
             <div style="width: fit;">
+                <input type="text" class="form-control
+
+                @error('jpntitle') is-invalid @enderror"
+                id="jpntitle" name="jpntitle" placeholder="Add Japanesse title" required value="{{ old('jpntitle') }}"
+                style="background: #FFC6C7;width:35vw;">
+                @error('jpntitle')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+        </div>
+
+        <div class="container mt-3 d-flex align-items-center">
+            <div style="width: fit;">
                 <select class="form-select" name="author_id" value="Choose author name" required value="{{ old('author') }}" style="background: #FFC6C7;">
                     <option selected>Choose Author</option>
                     @foreach ($authors as $author)
@@ -102,6 +117,22 @@
             </div>
         </div>
 
+        {{-- <div class="container mt-3 d-flex align-items-center">
+            <div style="width: fit;">
+                <input type="text" class="form-control @error('jpnslug') is-invalid
+
+                 @enderror" id="jpnslug" name="jpnslug" placeholder="Japanesse Slug Auto generated" required value="{{ old('jpnslug') }}"
+                style="background: #FFC6C7;width:35vw;">
+
+                @error('jpnslug')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+
+            </div>
+        </div> --}}
+
 
         <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit;">
 
@@ -116,6 +147,22 @@
 
         </div>
 
+        <div class="container mt-5" >
+            <h5>Japanesse Body</h5>
+        </div>
+
+        <div class="container row mt-1 d-flex m-auto justify-content-center" style="width: fit;">
+
+            @error('jpnbody')
+                <p class="text-danger">
+                    {{ $message }}
+                </p>
+
+            @enderror
+            <input id="jpnbody" type="hidden" name="jpnbody" >
+            <trix-editor input="jpnbody" style="height: fit; word-wrap: break-word; " required></trix-editor>
+
+        </div>
 
         <div class="container mt-5 d-flex justify-content-around" style="width: 200px;">
             <button class="col btn btn-back" type="submit" style="background-color:#FF8BA7;" >Save</button>
@@ -126,12 +173,19 @@
 <script>
     const title = document.querySelector('#title');
     const slug = document.querySelector('#slug');
+    // const jpnslug = document.querySelector('#jpnslug');
 
     title.addEventListener('change', function(){
         fetch('/admin/checkSlug?title=' + title.value)
             .then(response => response.json())
             .then(data => slug.value = data.slug)
     });
+
+    // title.addEventListener('change', function(){
+    //     fetch('/admin/jpncheckSlug?title=' + jpntitle.value)
+    //         .then(response => response.json())
+    //         .then(data => jpnslug.value = data.jpnslug)
+    // });
 
     document.addEventListener('trix-file-accept', function(e){
         e.preventDefault()

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Point;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -37,7 +38,7 @@ class PageController extends Controller
     public function show(Page $page)
     {
         //
-        return view('')
+        return view('');
     }
 
     /**
@@ -64,8 +65,17 @@ class PageController extends Controller
         //
     }
 
-    public function showNext($id) {
-        Page::where('id', $id)->get();
-        Point::where('id', )
+    public function showNext($point_id, $page_id) {
+        $page = Page::where('id', $page_id)->get();
+        $point = Point::where('id', $point_id)->get();
+        // dd($page[0]);
+        return view('Question.' . $page[0]->page_name, [
+            'point' => $point[0],
+            'page' => $page[0]
+        ]);
+    }
+
+    public function succeed() {
+        return view('student.congrats');
     }
 }

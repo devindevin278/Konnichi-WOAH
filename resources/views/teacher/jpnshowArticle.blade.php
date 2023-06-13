@@ -1,4 +1,4 @@
-@extends('layouts.mainStudent')
+@extends('layouts.mainTeacher')
 
 @section('content')
 
@@ -8,20 +8,16 @@
 
             <div class="col d-flex m-0 p-0 gap-2" style=" width:200px">
                 <div class="" style="">
-                    <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/articleStudent">Back</a>
+                    <a class="col btn btn-back" style="background-color:#FFC6C7;" href="/articleTeacher">Back</a>
                 </div>
-
-                {{-- <div class="" style="">
-                    <a class="col btn btn-save" style="background-color:#FF8BA7;" href="/showArticleAdmin">Save</a>
-                </div> --}}
 
             </div>
 
 
             <div class="linking" style="align-items: center">
-                <a href="#" style="color:black;">English</a>
+                <a href="/teacher/{{ $articles->slug }}" style="color:black;">English</a>
                 <a style="color:black;">|</a>
-                <a href="/jpnstudent/{{ $articles->id }}" style="color:black;">Japanese</a>
+                <a href="/jpnteacher/{{ $articles->id }}" style="color:black;">Japanese</a>
             </div>
 		</div>
     </div>
@@ -41,14 +37,14 @@
     </div>
 
     <div class="container mt-3 d-flex jusify-content-around align-items-center">
-        <div class="container titlearticle p-0">{{ $articles->title }}</div>
+        <div class="container titlearticle p-0">{{ $articles->jpntitle }}</div>
         <div class="d-flex justify-content-end m-1">
             {{-- <a href="#"><img  src="img/edit2.png" alt="edit2" style="width:45px; "></a> --}}
         </div>
     </div>
 
     <div class="container mt-3 d-flex jusify-content-around">
-        {!! $articles->body !!}
+        {!! $articles->jpnbody !!}
     </div>
 
 

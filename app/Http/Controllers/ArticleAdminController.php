@@ -24,7 +24,7 @@ class ArticleAdminController extends Controller
         }
 
         return view('admin.articleAdmin',[
-            'articles' => $articles->paginate(2),
+            'articles' => $articles->paginate(4),
             'authors' => Author::all()
         ]);
     }
@@ -39,7 +39,7 @@ class ArticleAdminController extends Controller
         }
 
         return view('student.articleStudent',[
-            'articles' => $articles->paginate(2),
+            'articles' => $articles->paginate(4),
             'authors' => Author::all()
         ]);
     }
@@ -54,7 +54,7 @@ class ArticleAdminController extends Controller
         }
 
         return view('teacher.articleTeacher',[
-            'articles' => $articles->paginate(2),
+            'articles' => $articles->paginate(4),
             'authors' => Author::all()
         ]);
     }
@@ -81,10 +81,13 @@ class ArticleAdminController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            'jpntitle' => 'required|max:255',
             'title' => 'required|max:255',
             'author_id' => 'required',
             'articlepublish' => 'required',
             'slug' => 'required|unique:articles',
+            // 'jpnslug' => 'required|unique:articles',
+            'jpnbody' => 'required',
             'body' => 'required',
             'image' => 'image'
         ]);
@@ -115,6 +118,53 @@ class ArticleAdminController extends Controller
             'authors' => Author::all()
         ]);
     }
+
+    public function jpnshow(Article $article)
+    {
+
+        return view('admin.showArticleAdminjpn',[
+            'articles' => $article,
+            'authors' => Author::all()
+        ]);
+    }
+
+
+    public function showstudent(Article $article)
+    {
+
+        return view('student.showArticle',[
+            'articles' => $article,
+            'authors' => Author::all()
+        ]);
+    }
+    public function showstudentjpn(Article $article)
+    {
+
+        return view('student.jpnshowArticle',[
+            'articles' => $article,
+            'authors' => Author::all()
+        ]);
+
+    }
+
+    public function showteacher(Article $article)
+    {
+
+        return view('teacher.showArticle',[
+            'articles' => $article,
+            'authors' => Author::all()
+        ]);
+    }
+    public function showteacherjpn(Article $article)
+    {
+
+        return view('teacher.jpnshowArticle',[
+            'articles' => $article,
+            'authors' => Author::all()
+        ]);
+
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -141,10 +191,12 @@ class ArticleAdminController extends Controller
         $article = Article::where('slug',$slug)->get();
         $this->middleware('auth');
         $rules = [
+            'jpntitle' => 'required|max:255',
             'title' => 'required|max:255',
             'author_id' => 'required',
             'articlepublish' => 'required',
             'body' => 'required',
+            'jpnbody' => 'required',
             'image' => 'image'
         ];
 
@@ -199,4 +251,9 @@ class ArticleAdminController extends Controller
         $slug = SlugService::createSlug(Article::class,'slug',$request->title);
         return response()->json(['slug' => $slug]);
     }
+
+    // public function jpncheckSlug(Request $request){
+    //     $jpnslug = SlugService::createSlug(Article::class,'jpnslug',$request->jpntitle);
+    //     return response()->json(['jpnslug' => $jpnslug]);
+    // }
 }
