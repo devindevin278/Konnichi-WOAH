@@ -28,7 +28,17 @@
             <a href="/completed"  class="continue">Continue</a>
         @else
         {{-- <h1>{{ $page->id }}</h1> --}}
-            <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}"  class="continue">Continue</a>
+            {{-- <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}"  class="continue">Continue</a>
+             --}}
+             <form action="/saveTemp" method="post">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                <input type="hidden" name="page_id" value="{{ $page->id }}">
+                <input type="hidden" name="point_id" value="{{ $point->id }}">
+                <input type="hidden" name="correct" value="1">
+                <button class="continue" type="submit">Continue</button>
+
+            </form>
         @endif
     </div>
 
@@ -41,9 +51,18 @@
             <h3 style="color: #EE282D; font-size: 1.5vw;">{{ $page->correction }}</h3>
         </div>
         @if ( $page->id % 10 == 0)
-            <a href="/completed"  class="continue" style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;;">Continue</a>
+            <a href="/completed/{{ $point->id }}"  class="continue" style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;;">Continue</a>
         @else
-            <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}"  class="continue" style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;;">Continue</a>
+            {{-- <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}"  class="continue" style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;;">Continue</a> --}}
+            <form action="/saveTemp" method="post">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                <input type="hidden" name="page_id" value="{{ $page->id }}">
+                <input type="hidden" name="point_id" value="{{ $point->id }}">
+                <input type="hidden" name="correct" value="0">
+                <button class="continue" style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;" type="submit">Continue</button>
+
+            </form>
         @endif
 
     </div>

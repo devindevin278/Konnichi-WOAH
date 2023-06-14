@@ -47,7 +47,13 @@
         </div>
 
         <div class="congrats-footer">
-            <a href="/learnStudent/games" class="congrats-button">Continue</a>
+            <form action="/XPscore" method="post">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                <input type="hidden" name="point_id" value="{{ $point_id }}">
+                <input type="hidden" name="correct_count" value="10">
+                <button type="submit" class="congrats-button">Continue</button>
+            </form>
         </div>
     </div>
 </body>

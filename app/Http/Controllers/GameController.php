@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StudentPointProgress;
+use App\Models\TempProgress;
 use App\Models\User;
 use App\Models\Unit;
 use Illuminate\Http\Request;
@@ -53,6 +55,38 @@ class GameController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
+
+        // $progress = new TempProgress;
+
+
+        // dd($progress);
+        $data['user_id'] = $request->user_id;
+        $data['point_id'] = $request->point_id;
+        $data['correct_count'] = $request->correct_count;
+
+        StudentPointProgress::create($data);
+
+        return redirect('/learnStudent/games');
+
+    }
+
+    public function storeTemp(Request $request) {
+        $data['user_id'] = $request->user_id;
+        $data['point_id'] = $request->point_id;
+        $data['page_id'] = $request->page_id;
+        $data['correct'] = $request->correct;
+
+        TempProgress::create($data);
+
+        if ((($request->page_id % 10 == 0))) {
+            return view('Question.' . $page->page_name, [
+                'point' => $point,
+                'page' => $page
+            ]);
+        }
+
+
     }
 
     /**

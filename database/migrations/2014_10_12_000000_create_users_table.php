@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('certificate')->nullable();
             $table->string('photo')->nullable();
             $table->text('descteacher')->nullable();
+            $table->integer('pointxp')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -75,7 +75,22 @@ class PageController extends Controller
         ]);
     }
 
-    public function succeed() {
-        return view('student.congrats');
+    public function showPage(Request $request) {
+        // dd($request);
+        $page = Page::where('id', $request->page_id)->get();
+        $point = Point::where('id', $request->point_id)->get();
+
+        return view('Question.' . $request->page_name, [
+            'point' => $point,
+            'page' => $page
+        ]);
+    }
+
+    public function succeed($point_id) {
+        // $point = Point::where('id', $point_id)
+
+        return view('student.congrats', [
+            'point_id' => $point_id
+        ]);
     }
 }

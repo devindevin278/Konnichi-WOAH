@@ -27,6 +27,36 @@ class DatabaseSeeder extends Seeder
             'email' => 'student@gmail.com',
             'password' => Hash::make('12345')
         ]);
+        User::create([
+            'name' => 'hasna',
+            'email' => 'student2@gmail.com',
+            'password' => Hash::make('12345')
+        ]);
+        User::create([
+            'name' => 'mike',
+            'email' => 'student3@gmail.com',
+            'password' => Hash::make('12345')
+        ]);
+        User::create([
+            'name' => 'hansen',
+            'email' => 'student4@gmail.com',
+            'password' => Hash::make('12345')
+        ]);
+        User::create([
+            'name' => 'naruto',
+            'email' => 'student5@gmail.com',
+            'password' => Hash::make('12345')
+        ]);
+        User::create([
+            'name' => 'sasuke',
+            'email' => 'student6@gmail.com',
+            'password' => Hash::make('12345')
+        ]);
+        User::create([
+            'name' => 'Mochi',
+            'email' => 'student7@gmail.com',
+            'password' => Hash::make('12345')
+        ]);
 
         Author::create([
             'name' => 'devin'

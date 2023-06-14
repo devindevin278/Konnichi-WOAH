@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
     @yield('content')
     <div class="corr" id="1" style="display: none">
         <svg class="correctsign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -30,13 +29,17 @@
         @if ($page->id % 10 == 0)
         <a href="/completed" class="continue">Continue</a>
         @else
-        <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}" class="continue">Continue</a>
+        {{-- <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}" class="continue">Continue</a> --}}
             {{-- <h1>{{ $page->id }}</h1> --}}
-            {{-- <form action="/" method="get"> --}}
-                {{-- @csrf --}}
-                {{-- <button class="continue">Continue</button> --}}
+            <form action="/saveTemp" method="post">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                <input type="hidden" name="page_id" value="{{ $page->id }}">
+                <input type="hidden" name="point_id" value="{{ $point->id }}">
+                <input type="hidden" name="correct" value="1">
+                <button class="continue" type="submit">Continue</button>
 
-            {{-- </form> --}}
+            </form>
         @endif
     </div>
 
@@ -52,12 +55,21 @@
             <h3 style="color: #EE282D; font-size: 1.5vw;">{{ $page->correction }}</h3>
         </div>
         {{-- <a href="/questions/{{ $point->id }}/{{ $page->id + 1}}"  class="continue" style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;;">Continue</a> --}}
-        @if ($page->id % 10 == 0)
+        @if ($page % 10 == 0)
             <a href="/completed" class="continue"
                 style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;;">Continue</a>
         @else
-            <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}" class="continue"
-                style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;;">Continue</a>
+            {{-- <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}" class="continue"
+                style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;;">Continue</a> --}}
+                <form action="/saveTemp" method="post">
+                    @csrf
+                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                    <input type="hidden" name="page_id" value="{{ $page->id }}">
+                    <input type="hidden" name="point_id" value="{{ $point->id }}">
+                    <input type="hidden" name="correct" value="0">
+                    <button class="continue" style="background: #FF4347; box-shadow: 0px 4px 0px #EE282D;" type="submit">Continue</button>
+
+                </form>
         @endif
     </div>
 
