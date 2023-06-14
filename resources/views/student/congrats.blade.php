@@ -18,9 +18,9 @@
     <div>
         <div class="congrats-container">
             <div class="congrats-gif">
-                <img src="/Assets/spark.gif" class="spark">
-                <img src="/Assets/katakana.png" class="mocchi-png-congrats">
-                <img src="/Assets/spark.gif" class="spark">
+                <img src="{{ asset('/Assets/spark.gif') }}" class="spark">
+                <img src="{{ asset('/Assets/katakana.png') }}" class="mocchi-png-congrats">
+                <img src="{{ asset('/Assets/spark.gif') }}" class="spark">
             </div>
 
             <h1 class="congrats-clear">Level Clear!</h1>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="congrats-footer">
-            <button class="congrats-button">Continue</button>
+            <a href="/learnStudent/games" class="congrats-button">Continue</a>
         </div>
     </div>
 </body>
