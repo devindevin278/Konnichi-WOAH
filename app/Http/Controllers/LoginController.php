@@ -25,6 +25,9 @@ class LoginController extends Controller
             if($match_user[0]->userIsTeacher) {
                 $request->session()->regenerate();
                 return redirect()->intended('/homeTeacher');
+            } elseif($match_user[0]->userIsAdmin){
+                $request->session()->regenerate();
+                return redirect()->intended('/homeAdmin');
             } else {
                 $request->session()->regenerate();
                 return redirect()->intended('/homeStudent');

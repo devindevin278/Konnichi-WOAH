@@ -1,22 +1,25 @@
 <?php
+use App\Http\Kernel;
 use App\Models\Author;
 use App\Models\Article;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\RegisterTeacherController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\ArticleAdminController;
-use App\Http\Controllers\AuthorController;
-use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PointController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\ArticleAdminController;
+use App\Http\Controllers\AcceptedStudentController;
+use App\Http\Controllers\RegisterTeacherController;
 use Illuminate\Contracts\Http\Middleware\Middleware;
-use App\Http\Kernel;
+use App\Http\Controllers\TeacherNotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +32,6 @@ use App\Http\Kernel;
 |
 */
 
-// Route::get('/games/{}', function () {
-//     return view('Question.question1-1');
-// });
 
 // ALL
 Route::get('/login', function () {
@@ -73,9 +73,7 @@ Route::get('/learnStudent/cards/katakana', function () {
 Route::get('/learnStudent/cards/hiragana', function () {
     return view('student.learn.cards_hiragana',["title" => "learnStudent"]);
 });
-// Route::get('/learnStudent/games', function () {
-//     return view('student.learn.games',["title" => "learnStudent"]);
-// });
+
 
 // buat halaman games
 Route::resource('learnStudent/games', GameController::class)->middleware('auth');
@@ -90,9 +88,9 @@ Route::post('/XPscore', [GameController::class, 'store']);
 Route::post('/saveTemp', [GameController::class, 'storeTemp']);
 
 
-Route::get('/viewTeacher', function () {
-    return view('viewTeacher',["title" => "viewTeacher"]);
-});
+// Route::get('/viewTeacher', function () {
+//     return view('teacher.viewTeacher',["title" => "viewTeacher"]);
+// });
 
 
 Route::get('/findTeacher', function () {
@@ -133,19 +131,20 @@ Route::get('/10', function () {
 Route::get('/learnStudent/studentLeaderboard', [StudentController::class, 'leaderboard']);
 
 
+// Request Teacher
+// Route::resource('/signUpTeacher', RegisterTeacherController::class);
+Route::get('/viewTeacher/{user:name}', [TeacherController::class, 'viewTeacher']);
+
+
+Route::resource('/notificationTeacher', TeacherNotificationController::class);
+Route::resource('/requestTeacher', TeacherNotificationController::class);
+Route::resource('/acceptedstudent', AcceptedStudentController::class);
+
 
 // TEACHER
 
-// Route::get('/signUpTeacher', function () {
-//     return view('teacher.signUpTeacher',["title" => "signUpTeacher"]);
-// });
-
 Route::resource('/signUpTeacher', RegisterTeacherController::class);
-// Route::post('/signUpTeacher', [RegisterTeacherController::class, 'store']);
-
 Route::resource('/certificate', CertificateController::class);
-
-
 Route::get('/homeTeacher', function () {
     return view('teacher.homeTeacher',["title" => "homeTeacher"]);
 });
@@ -157,12 +156,6 @@ Route::get('/teacherSchedule', function () {
 });
 
 
-Route::get('/viewTeacher', function () {
-    return view('teacher.viewTeacher',["title" => "viewTeacher"]);
-});
-Route::get('/notificationTeacher', function () {
-    return view('teacher.notificationTeacher',["title" => "notificationTeacher"]);
-});
 
 
 // ADMIN
@@ -179,9 +172,7 @@ Route::get('/addArticle', function () {
 Route::get('/verifyPayment', [PaymentController::class, 'index']);
 Route::resource('/verifyTeacher', CertificateController::class);
 
-Route::get('/profileAdmin', function () {
-    return view('admin.profileAdmin',["title" => "profileAdmin"]);
-});
+
 
 
 Route::get('/admin/checkSlug',[ArticleAdminController::class, 'checkSlug']);
@@ -203,11 +194,9 @@ Route::post('/admin', [ArticleAdminController::class, 'store']);
 Route::get('/addArticle', [ArticleAdminController::class, 'create']);
 Route::get('/author/{author:name}',[AuthorController::class, 'index']);
 
-// Route::get('/profileStudent', [StudentController::class, 'index'])->middleware('auth');
 
 
 Route::get('/profileStudent', [StudentController::class, 'index']);
-
 Route::get('/profileStudent/{user:id}/edit', [StudentController::class, 'edit']);
 Route::put('/profileStudent/{user:id}', [StudentController::class, 'update']);
 Route::delete('/profileStudent/{user:id}', [StudentController::class, 'destroy']);
@@ -217,8 +206,13 @@ Route::get('/profileTeacher/{user:id}/edit', [TeacherController::class, 'edit'])
 Route::put('/profileTeacher/{user:id}', [TeacherController::class, 'update']);
 Route::delete('/profileTeacher/{user:id}', [TeacherController::class, 'destroy']);
 
+Route::get('/profileAdmin', [AdminController::class, 'index']);
+Route::get('/profileAdmin/{user:id}/edit', [AdminController::class, 'edit']);
+Route::put('/profileAdmin/{user:id}', [AdminController::class, 'update']);
+Route::delete('/profileAdmin/{user:id}', [AdminController::class, 'destroy']);
+
 
 Route::get('/teacher', [TeacherController::class, 'showAllTeacher']);
 Route::get('/fetch-cities', [TeacherController::class, 'fetchCities']);
 Route::get('/fetchcities', [TeacherController::class, 'fetchAllCities']);
-Route::get('/viewTeacher/{user:name}', [TeacherController::class, 'viewTeacher']);
+

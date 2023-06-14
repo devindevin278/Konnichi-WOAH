@@ -43,22 +43,8 @@ class CertificateController extends Controller
         ]);
 
         if($request->file('image')){
-            // dd('ada image');
             $validatedData['image'] = $request->file('image')->store('post-images');
         }
-
-        // if($request['userIsTeacher'] == true) {
-        //     $validatedData['userIsTeacher'] = 1;
-        // } else {
-        //     $validatedData['userIsTeacher'] = 0;
-        // }
-
-        // dd($validatedData);
-
-
-        // klo di atas lolos, maka akan jalanin yg di bawah
-
-        // $validatedData['password'] = bcrypt($validatedData['password']);
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         Certificate::create($validatedData);

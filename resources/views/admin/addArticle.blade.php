@@ -18,12 +18,6 @@
                 </div>
             </div>
 
-
-            {{-- <div class="linking" style="align-items: center">
-                <a href="#" style="color:black;">English</a>
-                <a style="color:black;">|</a>
-                <a href="#" style="color:black;">Japanese</a>
-            </div> --}}
 		</div>
     </div>
 
@@ -33,16 +27,17 @@
 
         <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit">
             <div class="imgbox d-flex justify-content-center " style=" background: #FFC6C7; border-radius: 8px;" >
-                <div class="container justify-content-around align-items-center" style=" height: 45.265vh;" >
-                    <img src="img/addimg.png" alt="" style="width:45px; ">
-                    <input class="form-control d-flex justify-content-center" style="height: 45.265vh;width: fit; top: 186px;
-                    background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()" />
+                <div class="container justify-content-around align-items-center"
+                style="height: 45vh;
+                background-image: url('{{ asset('img/addimg.png') }}'); background-size: 45px; background-position: center; background-repeat: no-repeat;">
+                    <div class="container m-2 d-flex justify-content-start" style="max-width: 50vh; height: auto;">
+                      <img class="img-preview" style="height: fit; overflow: hidden;">
+                    </div>
+                    <input class="form-control d-flex justify-content-center" style="height: 45vh; width: fit; top: 186px; background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()" />
+                  </div>
 
-                </div>
             </div>
-            <div class="mt-3 d-flex justify-content-start align-items-start float-left" style="width: fit;  ">
-                <img class="img-preview img-fluid " style="height: fit; overflow:hidden;">
-            </div>
+
 
         </div>
 
@@ -117,24 +112,13 @@
             </div>
         </div>
 
-        {{-- <div class="container mt-3 d-flex align-items-center">
-            <div style="width: fit;">
-                <input type="text" class="form-control @error('jpnslug') is-invalid
+        <div class="container mt-5">
+            <h5>
+                English Body
+            </h5>
+        </div>
 
-                 @enderror" id="jpnslug" name="jpnslug" placeholder="Japanesse Slug Auto generated" required value="{{ old('jpnslug') }}"
-                style="background: #FFC6C7;width:35vw;">
-
-                @error('jpnslug')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-                @enderror
-
-            </div>
-        </div> --}}
-
-
-        <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit;">
+        <div class="container row mt-1 d-flex m-auto justify-content-center" style="width: fit;">
 
                 @error('body')
                     <p class="text-danger">
@@ -173,7 +157,6 @@
 <script>
     const title = document.querySelector('#title');
     const slug = document.querySelector('#slug');
-    // const jpnslug = document.querySelector('#jpnslug');
 
     title.addEventListener('change', function(){
         fetch('/admin/checkSlug?title=' + title.value)
@@ -181,11 +164,6 @@
             .then(data => slug.value = data.slug)
     });
 
-    // title.addEventListener('change', function(){
-    //     fetch('/admin/jpncheckSlug?title=' + jpntitle.value)
-    //         .then(response => response.json())
-    //         .then(data => jpnslug.value = data.jpnslug)
-    // });
 
     document.addEventListener('trix-file-accept', function(e){
         e.preventDefault()
@@ -201,8 +179,6 @@
             imgPreview.src = oFRevent.target.result;
         }
     }
-
-
 
 </script>
 
