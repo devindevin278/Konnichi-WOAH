@@ -17,8 +17,8 @@
         is-invalid
         @enderror" id="floatingInput" placeholder="Fullname" value="{{ old('name') }}">
         @error('name')
-        <p class="mb-0" style="color: red;">{{ $message }}</p>
-     @enderror
+            <p class="mb-0" style="color: red;">{{ $message }}</p>
+        @enderror
       </div>
 
       <div class="form-floating">
@@ -26,8 +26,8 @@
         is-invalid
         @enderror" id="floatingInput" placeholder="Email" value="{{ old('email') }}">
         @error('email')
-        <p class="mb-0" style="color: red;">{{ $message }}</p>
-     @enderror
+            <p class="mb-0" style="color: red;">{{ $message }}</p>
+        @enderror
       </div>
 
       <div class="form-floating">
@@ -54,13 +54,6 @@
         <div id="preview"></div>
       </div>
 
-      {{-- <div class="mb-3">
-        <label for="image" class="form-label">Certificate</label>
-        <img src="" alt="" class="img-preview img-fluid mb-3">
-        <input class="form-control certif_input" type="file" id="image" name="image" onchange="previewImage()">
-    </div> --}}
-
-      {{-- <input type="checkbox" name="userIsTeacher" value="true" checked> --}}
 
       <button class="w-100 btn btn-lg btn-primary submit" type="submit">Sign Up</button>
 

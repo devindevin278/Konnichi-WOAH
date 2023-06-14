@@ -64,25 +64,33 @@
                 </div>
 
                 @if (count($articles) > 0)
-                <div class="card mb-3 mt-5 col-md-10">
-                    <div class="d-flex justify-content-center" style="max-height:200px; width:fit; overflow:hiden;">
-                        <img src="{{ asset('storage/'. $articles[0]->image) }}" class="img-fluid mt-3 mb-3" alt="" style="max-height:200px; width:fit; overflow:hiden;">
+                <div class="ps-4 pe-4">
+                        <div class=" card mb-3 mt-3 ">
+                            <div class="d-flex justify-content-center" style="">
+                                <img src="{{ asset('storage/'. $articles[0]->image) }}" class="img-fluid mt-3 mb-3" alt=""  style="max-height:200px; overflow:hiden;">
+                            </div>
+
+
+                            <div class="card-body text-center ">
+                            <h3 class="card-title ">
+                                <a href="/teacher/{{ $articles[0]->slug }}" class="text-decoration-none text-dark">{{ $articles[0]->title }}</a></h3>
+                            <p>
+                                <small class="text-muted">
+                                    By. <a class="card-title text-decoration-none"><a href="/author/{{ $articles[0]->author->name }}" style="color:black;">{{ $articles[0]->author->name }}</a></a>
+                                    {{ $articles[0]->created_at->diffForHumans() }}
+                                </small>
+                            </p>
+
+                            <p class="card-text">{{ $articles[0]->excerpt }}</p>
+                            <a href="/teacher/{{ $articles[0]->slug }}/edit" class="badge bg-warning">Edit</a>
+                            <form action="/teacher/{{ $articles[0]->slug }}" method="post" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="badge bg-danger border-0" onclick="return confirm('Are you sure u wanna delete?')">Delete</button>
+                            </form>
+                        </div>
                     </div>
-
-
-                    <div class="card-body text-center ">
-                    <h3 class="card-title ">
-                        <a href="/teacher/{{ $articles[0]->slug }}" class="text-decoration-none text-dark">{{ $articles[0]->title }}</a></h3>
-                    <p>
-                        <small class="text-muted">
-                            By. <a class="card-title text-decoration-none"><a href="/author/{{ $articles[0]->author->name }}" style="color:black;">{{ $articles[0]->author->name }}</a></a>
-                            {{ $articles[0]->created_at->diffForHumans() }}
-                        </small>
-                    </p>
-
-                    <p class="card-text">{{ $articles[0]->excerpt }}</p>
                 </div>
-            </div>
 
             @foreach ( $articles->skip(1) as $article )
 
