@@ -86,7 +86,7 @@ class TeacherController extends Controller
         ]);
     }
 
-    public function viewTeacher(User $user)
+    public function viewTeacher(User $user, Request $request)
     {
 
         return view('teacher.viewTeacher',[

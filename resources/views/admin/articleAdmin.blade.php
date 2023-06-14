@@ -9,7 +9,7 @@
     <div class="container row mt-5 d-flex justify-content-around">
 
 
-        <div class="mt-5">
+        <div class="">
 
             @if(session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show col" role="alert">
