@@ -33,6 +33,13 @@ class TeacherController extends Controller
     }
 
     public function showAllTeacher(){
+        $this->middleware('auth');
+
+        try {
+            $id = auth()->user()->id;
+        } catch (\Throwable $e) {
+            redirect()->to('/login')->send();
+        }
         $refresh = request('refresh');
 
         if ($refresh) {
@@ -235,6 +242,10 @@ class TeacherController extends Controller
             $validatedData['photo'] = $request->file('photo')->store('profile-images', 'public');
         }
         $validatedData['id'] = auth()->user()->id;
+
+        $user = User::where('id', $id);
+        // dd($user[0]);
+
         $user = User::find($id);
         // dd($id);
         $user = $user->update($validatedData);

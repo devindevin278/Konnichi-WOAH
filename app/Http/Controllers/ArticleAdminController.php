@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Article;
+use App\Models\User;
 use App\Models\Author;
-use Cviebrock\EloquentSluggable\Services\SlugService;
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class ArticleAdminController extends Controller
 {
@@ -14,8 +15,15 @@ class ArticleAdminController extends Controller
      *
      */
     // @return \Illuminate\Http\Response
-    public function index()
+    public function index(User $id)
     {
+        $this->middleware('auth');
+
+        try {
+            $id = auth()->user()->id;
+        } catch (\Throwable $e) {
+            redirect()->to('/login')->send();
+        }
         $articles = Article::latest();
 
         if(request('search')){
@@ -31,6 +39,13 @@ class ArticleAdminController extends Controller
 
     public function indexStudent()
     {
+        $this->middleware('auth');
+
+        try {
+            $id = auth()->user()->id;
+        } catch (\Throwable $e) {
+            redirect()->to('/login')->send();
+        }
         $articles = Article::latest();
 
         if(request('search')){
@@ -46,7 +61,15 @@ class ArticleAdminController extends Controller
 
     public function indexTeacher()
     {
+        $this->middleware('auth');
+
+        try {
+            $id = auth()->user()->id;
+        } catch (\Throwable $e) {
+            redirect()->to('/login')->send();
+        }
         $articles = Article::latest();
+
 
         if(request('search')){
             $articles->where('title','like','%'.request('search').'%')

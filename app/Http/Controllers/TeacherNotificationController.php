@@ -15,6 +15,13 @@ class TeacherNotificationController extends Controller
      */
     public function index()
     {
+        $this->middleware('auth');
+
+        try {
+            $id = auth()->user()->id;
+        } catch (\Throwable $e) {
+            redirect()->to('/login')->send();
+        }
         $teacherNotifications = TeacherNotification::where('teacherid', auth()->user()->id)->get();
 
         return view('teacher.notificationTeacher', [
