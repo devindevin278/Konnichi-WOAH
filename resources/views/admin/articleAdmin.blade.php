@@ -6,26 +6,29 @@
 
 
 <section class="article">
+
     <div class="container mt-5 d-flex justify-content-around">
 
-
-        <div class="">
-
-            @if(session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show col" role="alert">
-                {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-
-            @elseif(session()->has('error'))
-            <div class="alert alert-danger alert-dismissible fade show col" role="alert">
-                {{ session('error') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-
-            @endif
-
+        @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show col" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+
+        @elseif(session()->has('error'))
+        <div class="alert alert-danger alert-dismissible fade show col" role="alert">
+            {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        @endif
+
+    </div>
+
+    <div class="container mt-1 d-flex justify-content-around">
+
+
+
 
         <div class="container row mt-5  d-flex align-items-center ">
             <div class="col container mt-3 d-flex align-items-center justify-content-around" >

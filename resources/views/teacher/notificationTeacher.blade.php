@@ -84,12 +84,12 @@
                         <input type="email" name="email" class="form-control" id="recipient-email" value="{{ $TeacherNotification->email }}" readonly required>
                     </div>
                     <div class="mt-1 d-flex">
-                        <label for="recipient-email" class="col-form-label">Teacher ID</label><p>:</p>
-                        <input type="text" name="teacherid" class="form-control" id="recipient-teacherid" value="{{ $TeacherNotification->teacherid }}" readonly required>
+                        {{-- <label for="recipient-email" class="col-form-label">Teacher ID</label><p>:</p> --}}
+                        <input type="hidden" name="teacherid" class="form-control" id="recipient-teacherid" value="{{ $TeacherNotification->teacherid }}" readonly required>
                     </div>
                     <div class="mt-1 d-flex">
-                        <label for="recipient-email" class="col-form-label">Student ID</label><p>:</p>
-                        <input type="text" name="studentid" class="form-control" id="recipient-studentid" value="{{ $TeacherNotification->studentid }}" readonly required>
+                        {{-- <label for="recipient-email" class="col-form-label">Student ID</label><p>:</p> --}}
+                        <input type="hidden" name="studentid" class="form-control" id="recipient-studentid" value="{{ $TeacherNotification->studentid }}" readonly required>
                     </div>
                 </form>
             </div>
