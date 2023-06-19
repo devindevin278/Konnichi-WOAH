@@ -18,11 +18,11 @@ h2{
 }
 
 h3{
-    font-size: x-large;
+    font-size: 20px;
 }
 
 h4{
-    font-size: medium;
+    font-size: 15px;
 }
 
 .note-page{
@@ -55,12 +55,58 @@ h4{
 }
 
 .note-list{
-    margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2vw;
+    margin: 1rem 5vw 0 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.note-dialog-chapter{
+    border-bottom: lightpink solid 2px;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.note-span{
+    float: left;
+    align-items: center;
+    display: inline-flex;
+    margin: 0 5px 0 0;
+}
+
+.note-button{
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.note-button-icon{
+    width: 25px;
+    height: 25px;
+}
+
+.note-button-icon:hover{
+    fill: lightpink;
 }
 
 .note-cont{
+    display: grid;
+    justify-content: start;
+}
+
+.a{
+    justify-content: flex-start;
+}
+
+.b{
+    justify-content: flex-end;
+    margin-top: -10px;
+}
+
+.note-text-dialog{
+    padding: 15px 16px 20px;
+    border: black solid 2px;
+    border-radius: 15px;
+    background-color: #C3F0CA;
     text-align: center;
 }
