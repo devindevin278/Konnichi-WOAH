@@ -6,7 +6,7 @@
 
 
 <section class="article">
-    <div class="container row  d-flex justify-content-around">
+    <div class="container mt-5 d-flex justify-content-around" >
 
 
         <div class="mt-1">
@@ -27,8 +27,8 @@
 
         </div>
 
-        <div class="container row d-flex align-items-center ">
-            <div class="col container mt-3 d-flex align-items-center justify-content-around" >
+        <div class=" row d-flex align-items-center ">
+            <div class="col  mt-3 d-flex align-items-center justify-content-around" >
                 <div class="container m-0 p-0">
                     <div style=" justify-content:start; width:500px;">
                         <h2 style="font-weight:600;">Want to know more about Japan?</h2>
@@ -38,7 +38,7 @@
             </div>
 
 
-            <div class="container row row-md-5 d-flex justify-content-around align-items-center">
+            <div class=" row row-md-5 d-flex justify-content-around align-items-center">
 
                 <div class="row justify-content-center align-items-center mb-3 mt-5">
                     <div class="col">
@@ -82,12 +82,7 @@
                             </p>
 
                             <p class="card-text">{{ $articles[0]->excerpt }}</p>
-                            <a href="/student/{{ $articles[0]->slug }}/edit" class="badge bg-warning">Edit</a>
-                            <form action="/student/{{ $articles[0]->slug }}" method="post" class="d-inline">
-                                @method('delete')
-                                @csrf
-                                <button class="badge bg-danger border-0" onclick="return confirm('Are you sure u wanna delete?')">Delete</button>
-                            </form>
+
                         </div>
                     </div>
                 </div>

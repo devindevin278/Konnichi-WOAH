@@ -6,7 +6,7 @@
 
 
 <section class="article">
-    <div class="container row mt-5 d-flex justify-content-around">
+    <div class="container mt-5 d-flex justify-content-around">
 
 
         <div class="">
@@ -95,7 +95,7 @@
 
             @foreach ( $articles->skip(1) as $article )
 
-            <div class="container col justify-content-around">
+            <div class=" col justify-content-around">
 
 
                 <div class="card  mt-5 col-md-4 d-flex p-0 justify-content-around " style="width: 15rem; background-color:#ffffff;">

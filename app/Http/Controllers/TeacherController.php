@@ -33,6 +33,13 @@ class TeacherController extends Controller
     }
 
     public function showAllTeacher(){
+        $this->middleware('auth');
+
+        try {
+            $id = auth()->user()->id;
+        } catch (\Throwable $e) {
+            redirect()->to('/login')->send();
+        }
         $refresh = request('refresh');
 
         if ($refresh) {
@@ -200,6 +207,8 @@ class TeacherController extends Controller
         $id = auth()->user()->id;
         $user = User::where('id', $id)->get();
 
+        // dd($request);
+
         $this->middleware('auth');
         $rules = [
             'name' => 'required|max:255',
@@ -234,6 +243,7 @@ class TeacherController extends Controller
         }
         $validatedData['id'] = auth()->user()->id;
         $user = User::where('id', $id);
+        // dd($user[0]);
         $user = $user->update($validatedData);
 
         return redirect('/profileTeacher')->with('success', 'Profile updated successfully');

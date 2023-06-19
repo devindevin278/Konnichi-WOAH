@@ -1,15 +1,11 @@
 <?php
-use App\Http\Kernel;
-use App\Models\Author;
-use App\Models\Article;
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CityController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PointController;
 use App\Http\Controllers\AuthorController;
-use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\AdminController;
@@ -18,7 +14,6 @@ use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ArticleAdminController;
 use App\Http\Controllers\AcceptedStudentController;
 use App\Http\Controllers\RegisterTeacherController;
-use Illuminate\Contracts\Http\Middleware\Middleware;
 use App\Http\Controllers\TeacherNotificationController;
 
 /*
@@ -32,8 +27,15 @@ use App\Http\Controllers\TeacherNotificationController;
 |
 */
 
+// Sign Up
+Route::get('/signUpStudent', function () {
+    return view('student.signUpStudent',["title" => "signUpStudent"]);
+});
+Route::post('/signUpStudent', [RegisterController::class, 'store']);
+Route::resource('/signUpTeacher', RegisterTeacherController::class);
+Route::resource('/certificate', CertificateController::class);
 
-// ALL
+// Login
 Route::get('/login', function () {
     return view('login',["title" => "login"]);
 })->name('login');
@@ -41,57 +43,18 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
-// STUDENT
-
-Route::get('/', function () {
-    return view('student.homeStudent',["title" => "homeStudent"]);
-});
-
-
-Route::get('/signUpStudent', function () {
-    return view('student.signUpStudent',["title" => "signUpStudent"]);
-});
-
-// Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-Route::post('/signUpStudent', [RegisterController::class, 'store']);
-
-
-Route::get('/homeStudent', function () {
-    return view('student.homeStudent',["title" => "homeStudent"]);
-});
-
-Route::get('/articleStudent', function () {
-    return view('student.articleStudent',["title" => "articleStudent"]);
-});
-Route::get('/showArticle', function () {
-    return view('student.showArticle',["title" => "showArticle"]);
-});
-
+// Learn
 Route::get('/learnStudent/cards/katakana', function () {
     return view('student.learn.cards_katakana',["title" => "learnStudent"]);
 });
 Route::get('/learnStudent/cards/hiragana', function () {
     return view('student.learn.cards_hiragana',["title" => "learnStudent"]);
 });
-
-
 // buat halaman games
-Route::resource('learnStudent/games', GameController::class)->middleware('auth');
-
+Route::resource('learnStudent/games', GameController::class);
 // buat questions
 Route::resource('/questions', PointController::class);
 Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
-
-
-// Route::get('/viewTeacher', function () {
-//     return view('teacher.viewTeacher',["title" => "viewTeacher"]);
-// });
-
-
-Route::get('/findTeacher', function () {
-    return view('findTeacher',["title" => "findTeacher"]);
-});
-
 // GAMES
 Route::get('/1', function () {
     return view('1',["title" => "1"]);
@@ -128,49 +91,37 @@ Route::get('/learnStudent/studentLeaderboard', function () {
 });
 
 
-// Request Teacher
-// Route::resource('/signUpTeacher', RegisterTeacherController::class);
+
+// Find Teacher
+Route::get('/findTeacher', function () {
+    return view('findTeacher',["title" => "findTeacher"]);
+});
 Route::get('/viewTeacher/{user:name}', [TeacherController::class, 'viewTeacher']);
 
 
+// Teacher Notification
 Route::resource('/notificationTeacher', TeacherNotificationController::class);
 Route::resource('/requestTeacher', TeacherNotificationController::class);
 Route::resource('/acceptedstudent', AcceptedStudentController::class);
+Route::resource('/verifyTeacher', CertificateController::class);
 
-
-// TEACHER
-
-Route::resource('/signUpTeacher', RegisterTeacherController::class);
-Route::resource('/certificate', CertificateController::class);
+// Home
+Route::get('/', function () {
+    return view('student.homeStudent',["title" => "homeStudent"]);
+});
+Route::get('/homeStudent', function () {
+    return view('student.homeStudent',["title" => "homeStudent"]);
+});
 Route::get('/homeTeacher', function () {
     return view('teacher.homeTeacher',["title" => "homeTeacher"]);
 });
-Route::get('/articleTeacher', function () {
-    return view('teacher.articleTeacher',["title" => "articleTeacher"]);
-});
-Route::get('/teacherSchedule', function () {
-    return view('teacher.teacherSchedule',["title" => "teacherSchedule"]);
-});
-
-
-
-
-// ADMIN
 Route::get('/homeAdmin', function () {
     return view('admin.homeAdmin',["title" => "homeAdmin"]);
 });
-Route::get('/showArticleAdmin', function () {
-    return view('admin.showArticleAdmin',["title" => "showArticleAdmin"]);
-});
-Route::get('/addArticle', function () {
-    return view('admin.addArticle',["title" => "addArticle"]);
-});
-
-Route::get('/verifyPayment', [PaymentController::class, 'index']);
-Route::resource('/verifyTeacher', CertificateController::class);
 
 
 
+// Article
 
 Route::get('/admin/checkSlug',[ArticleAdminController::class, 'checkSlug']);
 Route::delete('/admin/{article:slug}', [ArticleAdminController::class, 'destroy']);
@@ -182,8 +133,6 @@ Route::get('/student/{article:slug}', [ArticleAdminController::class, 'showstude
 Route::get('/jpnstudent/{article:id}', [ArticleAdminController::class, 'showstudentjpn']);
 Route::get('/jpnteacher/{article:id}', [ArticleAdminController::class, 'showteacherjpn']);
 Route::get('/jpnadmin/{article:id}', [ArticleAdminController::class, 'jpnshow']);
-
-
 Route::get('/admin', [ArticleAdminController::class, 'index']);
 Route::get('/articleStudent', [ArticleAdminController::class, 'indexStudent']);
 Route::get('/articleTeacher', [ArticleAdminController::class, 'indexTeacher']);
@@ -192,6 +141,8 @@ Route::get('/addArticle', [ArticleAdminController::class, 'create']);
 Route::get('/author/{author:name}',[AuthorController::class, 'index']);
 
 
+
+// Profile
 
 Route::get('/profileStudent', [StudentController::class, 'index']);
 Route::get('/profileStudent/{user:id}/edit', [StudentController::class, 'edit']);
