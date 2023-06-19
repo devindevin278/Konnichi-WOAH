@@ -49,7 +49,7 @@
                         <input class="form-control d-flex justify-content-center" style="max-height: 30vh; top: 186px; background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()">
 
                         <div class="m-2 d-flex justify-content-start align-items-start float-left" style="max-width: 50vh; height: auto;">
-                            <img class="img-preview img-fluid " style="height: fit; overflow:hidden;">
+                            <img class="img-preview " style="object-fit: cover; width: 100%;">
                         </div>
                     @endif
                     </div>
@@ -200,7 +200,9 @@
         const image = document.querySelector('#image');
         const imgPreview = document.querySelector('.img-preview');
         imgPreview.style.display = 'block';
-        imgPreview.style.maxWidth = '30vh';
+        imgPreview.style.width = '100%';
+        imgPreview.style.objectFit = 'cover';
+
         const oFReader = new FileReader();
         oFReader.readAsDataURL(image.files[0]);
         oFReader.onload = function(oFRevent){
