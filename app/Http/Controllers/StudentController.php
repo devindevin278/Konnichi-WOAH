@@ -152,4 +152,13 @@ class StudentController extends Controller
 
         return redirect('/login')->with('success','Account has been deleted!');
     }
+
+    public function leaderboard() {
+
+        $students = User::where('userisTeacher', 0)->orderBy('pointxp', 'desc')->take(5)->get();
+
+        return view('student.learn.leaderboard', [
+            'students' => $students
+        ]);
+    }
 }

@@ -197,16 +197,38 @@ main.form-login form {
 }
 
 nav#sidebarMenu a.nav-link.active {
-    background-color: #DDF4FF;
-    border: 2px solid #84D8FF;
-    color: #1CB0F6;
+    background-color: #f3dde2;
+    border: 2px solid #FF8BA7;
+    color: #FF8BA7;
     border-radius: 1rem;
+    /* padding-left: 12px; */
+    padding-right: 0;
 }
 
 #progress_sidebar {
     background-color: #FAEEE7;
-    position: sticky;
+    /* position: sticky; */
     right: 0;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  /* rtl:raw:
+  right: 0;
+  */
+  bottom: 0;
+  /* rtl:remove */
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 5rem 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+svg.fireStreak {
+    width: 2rem;
+    height: 2rem;
 }
 
 /* learn end */

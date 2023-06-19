@@ -19,6 +19,13 @@ body{
     justify-content: center;
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.back-button-out {
+    border: none;
+    background-color: none;
+    height: fit-content;
 }
 
 .back-button{

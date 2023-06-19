@@ -55,7 +55,7 @@
                                     <div class="mt-1 d-flex justify-content-around align-items-center ">
 
 
-                                        <input type="hidden" name="oldImage" value="{{ $user->photo }}">
+                                        <input type="hidden" name="oldimage" value="{{ $user->photo }}">
 
                                         @if ($user->photo)
                                             <div style="display: flex; justify-content:center;">
@@ -84,8 +84,7 @@
                                     <div class="container row d-flex justify-content-center align-items-center mt-3">
 
                                          <div class="photo-input">
-                                            <input type="file" id="photo" name="photo" accept="image/*"
-                                                class="photo" onchange="previewImage()">
+                                            <input type="file" id="photo" name="photo" accept="image/*" class="photo" onchange="previewImage()">
 
 
                                             <label for="photo">Choose a photo</label>

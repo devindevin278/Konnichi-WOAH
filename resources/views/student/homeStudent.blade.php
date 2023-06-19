@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class=" d-block">
+<div class="d-block margin-top">
 
 <section class="banner">
     <div class="row d-flex">
