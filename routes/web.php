@@ -55,6 +55,20 @@ Route::resource('learnStudent/games', GameController::class);
 // buat questions
 Route::resource('/questions', PointController::class);
 Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
+
+
+Route::get('/completed', [PageController::class, 'succeed']);
+
+// Route::get('/viewTeacher', function () {
+//     return view('teacher.viewTeacher',["title" => "viewTeacher"]);
+// });
+
+
+Route::get('/findTeacher', function () {
+    return view('findTeacher',["title" => "findTeacher"]);
+});
+
+
 // GAMES
 Route::get('/1', function () {
     return view('1',["title" => "1"]);
