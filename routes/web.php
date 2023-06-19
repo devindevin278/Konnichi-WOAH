@@ -81,9 +81,11 @@ Route::resource('learnStudent/games', GameController::class)->middleware('auth')
 // buat questions
 // Route::resource('/questions', PointController::class);
 Route::post('/questions', [PageController::class, 'showPage']);
+Route::post('/questions/cancel', [PageController::class, 'cancel']);
 
 Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
-Route::get('/completed/{point_id}', [PageController::class, 'succeed']);
+// Route::get('/completed/{point_id}', [PageController::class, 'succeed']);
+Route::post('/completed', [GameController::class, 'succeed']);
 Route::post('/XPscore', [GameController::class, 'store']);
 Route::post('/saveTemp', [GameController::class, 'storeTemp']);
 

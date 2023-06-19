@@ -24,6 +24,13 @@ h1,h2,h3,h4,h5,h6 {
     justify-content: center;
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.back-button-out {
+    border: none;
+    background-color: none;
+    height: fit-content;
 }
 
 .back-button{
@@ -31,6 +38,8 @@ h1,h2,h3,h4,h5,h6 {
     width: 1.5vw;
     margin-right: 1vw;
     stroke-width: 3;
+    /* margin-top: auto;
+    margin-bottom: auto; */
 }
 
 #process-bar{
@@ -130,9 +139,11 @@ h1,h2,h3,h4,h5,h6 {
     box-shadow: 0px 2px 0px #E1E1E1;
     border-radius: 16px;
 
-    margin-top: 6vw;
-    position: absolute;
-    right: 20vw;
+    margin-top: 2vw;
+    margin-left: auto;
+    margin-right: 5rem;
+    /* position: absolute;
+    right: 20vw; */
 }
 
 .continue{
@@ -182,9 +193,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .ann{
-    position: absolute;
+    /* position: absolute; */
     font-size: 1.9vw;
-    left: 29vw;
+    /* left: 29vw; */
 }
 
 @media screen and (max-width: 800px) {

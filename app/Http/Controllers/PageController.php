@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Page;
 use App\Models\Point;
+use App\Models\TempProgress;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -76,14 +77,21 @@ class PageController extends Controller
     }
 
     public function showPage(Request $request) {
-        // dd($request);
         $page = Page::where('id', $request->page_id)->get();
         $point = Point::where('id', $request->point_id)->get();
+        // dd($request);
 
         return view('Question.' . $request->page_name, [
-            'point' => $point,
-            'page' => $page
+            'point' => $point[0],
+            'page' => $page[0],
+            'prevStreak' => 0
         ]);
+    }
+
+    public function cancel(Request $request) {
+        TempProgress::where('user_id', auth()->user()->id)->where('point_id', $request->point_id)->delete();
+
+        return redirect('/learnStudent/games');
     }
 
     public function succeed($point_id) {

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('point_id')->references('id')->on('points');
             $table->integer('correct_count');
+            $table->integer('total_xp');
             $table->timestamps();
         });
     }

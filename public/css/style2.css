@@ -341,9 +341,9 @@ section.findTeacher{
     align-items: center;
 }
 
-.photo-input input[type="file"] {
+/* .photo-input input[type="file"] {
     display: none;
-}
+} */
 
 .photo-input label {
     font-weight: 500;
