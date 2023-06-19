@@ -24,7 +24,7 @@ class ArticleAdminController extends Controller
         }
 
         return view('admin.articleAdmin',[
-            'articles' => $articles->paginate(4),
+            'articles' => $articles->paginate(5),
             'authors' => Author::all()
         ]);
     }
@@ -39,7 +39,7 @@ class ArticleAdminController extends Controller
         }
 
         return view('student.articleStudent',[
-            'articles' => $articles->paginate(4),
+            'articles' => $articles->paginate(5),
             'authors' => Author::all()
         ]);
     }
@@ -54,7 +54,7 @@ class ArticleAdminController extends Controller
         }
 
         return view('teacher.articleTeacher',[
-            'articles' => $articles->paginate(4),
+            'articles' => $articles->paginate(5),
             'authors' => Author::all()
         ]);
     }

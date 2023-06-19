@@ -24,6 +24,13 @@ h1,h2,h3,h4,h5,h6 {
     justify-content: center;
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.back-button-out {
+    border: none;
+    background-color: none;
+    height: fit-content;
 }
 
 .back-button{

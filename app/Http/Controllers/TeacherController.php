@@ -86,7 +86,7 @@ class TeacherController extends Controller
         ]);
     }
 
-    public function viewTeacher(User $user)
+    public function viewTeacher(User $user, Request $request)
     {
 
         return view('teacher.viewTeacher',[
@@ -200,6 +200,8 @@ class TeacherController extends Controller
         $id = auth()->user()->id;
         $user = User::where('id', $id)->get();
 
+        // dd($request);
+
         $this->middleware('auth');
         $rules = [
             'name' => 'required|max:255',
@@ -222,9 +224,9 @@ class TeacherController extends Controller
         // try {
 
 
-        // } catch (\Illuminate\Validation\ValidationException $e) {
-        //     dd($e->getMessage());
-        // }
+            // } catch (\Illuminate\Validation\ValidationException $e) {
+                //     dd($e->getMessage());
+                // }
 
         if($request->file('photo')){
             if($request->oldImage){
@@ -233,7 +235,8 @@ class TeacherController extends Controller
             $validatedData['photo'] = $request->file('photo')->store('profile-images', 'public');
         }
         $validatedData['id'] = auth()->user()->id;
-        $user = User::where('id', $id);
+        $user = User::find($id);
+        // dd($id);
         $user = $user->update($validatedData);
 
         return redirect('/profileTeacher')->with('success', 'Profile updated successfully');

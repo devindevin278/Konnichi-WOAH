@@ -1,4 +1,4 @@
-@extends('layouts.mainTeacher')
+@extends('layouts.mainAdmin')
 
 @php
     $provinces = \App\Models\Province::all();
@@ -7,7 +7,7 @@
 @endphp
 
 @section('content')
-    <section class="profileTeacherEdit">
+    <section class="profileAdminEdit">
 
         <div class="mt-5">
 
@@ -25,7 +25,7 @@
 
         </div>
 
-        <div class="container col container-profileTeacherEdit bg-white mt-5 mb-5">
+        <div class="container col container-profileAdminEdit bg-white mt-5 mb-5">
 
 
             <div class="row">
@@ -41,7 +41,7 @@
                         </div>
                         <div style="border: 1px solid #A08A8F;"></div>
 
-                        <form class="row mt-3" action="/profileTeacher/{{ $user->id }}" method="post" id="form-control"
+                        <form class="row mt-3" action="/profileAdmin/{{ $user->id }}" method="post" id="form-control"
                             enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
@@ -55,7 +55,7 @@
                                     <div class="mt-1 d-flex justify-content-around align-items-center ">
 
 
-                                        <input type="hidden" name="oldimage" value="{{ $user->photo }}">
+                                        <input type="hidden" name="oldImage" value="{{ $user->photo }}">
 
                                         @if ($user->photo)
                                             <div style="display: flex; justify-content:center;">
@@ -84,7 +84,8 @@
                                     <div class="container row d-flex justify-content-center align-items-center mt-3">
 
                                          <div class="photo-input">
-                                            <input type="file" id="photo" name="photo" accept="image/*" class="photo" onchange="previewImage()">
+                                            <input type="file" id="photo" name="photo" accept="image/*"
+                                                class="photo" onchange="previewImage()">
 
 
                                             <label for="photo">Choose a photo</label>
@@ -141,76 +142,6 @@
                                 @enderror
                             </div>
 
-                            {{-- Province --}}
-                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
-                                <div class="d-flex">
-                                    <label class="labels text-align-right @error('province') is-invalid @enderror"
-                                        style="height:fit-content; width: 120px; margin:auto; text-align: right;">Province</label>
-                                </div>
-
-
-                                {{-- <input type="text" class="form-control" name="province" placeholder="Enter your province" value="{{ old('province', $user->province) }}" style="border: solid #A08A8F;"> --}}
-                                {{-- @error('province')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror --}}
-
-                                <select class="form-control" name="province" style="border: solid #A08A8F;" id="province">
-                                    <option value="">Select Province</option>
-                                    @foreach ($provinces as $province)
-                                        <option value="{{ $province->name }}" data="{{ $province->id }}"
-                                            {{ old('province', $user->province) == $province->name ? 'selected' : '' }}>
-                                            {{ $province->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-
-
-                            </div>
-
-                            {{-- City --}}
-                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
-                                <div class="d-flex">
-                                    <label class="labels text-align-right"
-                                        style="height:fit-content; width: 120px; margin:auto; text-align: right;">City</label>
-                                </div>
-                                {{-- <input type="text" class="form-control @error('city') is-invalid @enderror" name="city" placeholder="Enter your city" value="{{ old('city', $user->city) }}" style="border: solid #A08A8F;">
-                                @error('city')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror --}}
-
-                                <select class="form-control" name="city" style="border: solid #A08A8F;" id="city">
-                                    <option value="">Select City</option>
-                                    {{-- @foreach (\App\Models\City::all() as $city)
-                                        <option value="{{ $city->id }}"
-                                            {{ old('city', $user->city) == $city->id ? 'selected' : '' }}>
-                                            {{ $city->name }}
-                                        </option>
-                                    @endforeach --}}
-                                </select>
-
-                            </div>
-
-                            {{-- Address --}}
-                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
-                                <div class="d-flex">
-                                    <label class="labels text-align-right"
-                                        style="height:fit-content; width: 120px; margin:auto; text-align: right;">Address</label>
-                                </div>
-                                <input type="text" class="form-control @error('address') is-invalid @enderror"
-                                    name="address" placeholder="Enter your address"
-                                    value="{{ old('address', $user->address) }}" style="border: solid #A08A8F;">
-                                @error('address')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-
 
                             {{-- Phone --}}
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
@@ -229,24 +160,6 @@
                                 @enderror
                             </div>
 
-
-
-                            {{-- Price --}}
-                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
-                                <div class="d-flex">
-                                    <label class="labels text-align-right"
-                                        style="height:fit-content; width: 120px; margin:auto; text-align: right;">Price</label>
-                                </div>
-                                <input type="text" id="priceInput"
-                                    class="form-control @error('price') is-invalid @enderror" name="price"
-                                    placeholder="Enter your price" value="{{ old('price', $user->price) }}"
-                                    style="border: solid #A08A8F;">
-                                @error('price')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
 
                             {{-- Gender --}}
                             <div class="d-flex align-item-center mt-4" style="gap:10px">
@@ -284,23 +197,6 @@
                                     name="DOB" placeholder="Enter your date of birth"
                                     value="{{ old('DOB', $user->DOB) }}" style="border: solid #A08A8F;">
                                 @error('DOB')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-
-                            {{-- desc teacher --}}
-
-                            <div class="d-flex align-item-center mt-4" style="gap: 10px;">
-                                <div class="d-flex">
-                                    <label class="labels text-align-right"
-                                        style="height:fit-content; width: 120px; margin:auto; text-align: right;">Description</label>
-                                </div>
-                                <textarea class="form-control @error('descteacher') is-invalid @enderror" name="descteacher"
-                                    placeholder="Enter your description" style="border: solid #A08A8F; height: fit; word-wrap: break-word;">{{ old('descteacher', $user->descteacher) }}</textarea>
-                                @error('descteacher')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

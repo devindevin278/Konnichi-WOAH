@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('page_id')->references('id')->on('pages');
+            $table->foreignId('point_id')->references('id')->on('points');
+            $table->boolean('correct');
+            $table->integer('streak')->default(0);
+            $table->integer('bonusxp')->default(0);
             $table->timestamps();
         });
     }

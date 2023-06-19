@@ -22,9 +22,10 @@
 
         </div>
 
-        <div class="container container-profileStudent bg-white mt-5 mb-5">
+        <div class="container container-profileTeacher bg-white mt-5 mb-5">
             <div class="row">
                 <div class="col border-right ms-5 me-5">
+
                     @if ($user->photo)
                         <div class="d-flex justify-content-around mb-3">
                             <img class="rounded-circle mt-5" style="

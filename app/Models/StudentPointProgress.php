@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TempProgress extends Model
+class StudentPointProgress extends Model
 {
     use HasFactory;
 
-    public $table = 'temp_progress';
+    public $table = 'student_point_progresss';
 
     public $guarded = ['id'];
-
 }

@@ -23,34 +23,21 @@
                         style="width:200px; height:200px; border-radius: 50%; overflow:hidden;">
                         </div>
 
-                        <button class="reqteacher mt-5" type="button" style="width:50%; ">Request Teacher</button>
+
+                        <form class="d-flex mt-2 justify-content-center align-items-center" action="/requestTeacher" method="post" >
+                            @csrf
+                            <input type="hidden" name="name" value="{{ auth()->user()->name }}">
+                            <input type="hidden" name="email" value="{{ auth()->user()->email }}">
+                            <input type="hidden" name="teacherid" value="{{ $user->id }}">
+                            <input type="hidden" name="studentid" value="{{ auth()->user()->id }}">
+                            <button type="submit" id="requestTeacherButton" class="reqteacher" style="width:50%;">Request Teacher</button>
+                        </form>
+
                     </div>
 
                 </div>
             </div>
         </div>
-
-
-            {{-- <div style="font-weight: 600; font-size: 26px;">
-                Performance Rating
-            </div> --}}
-
-            {{-- <div class="col d-flex ">
-                <div class="rate d-flex justify-content-start" style="width:65%;">
-                    <div class="rating">
-                        <input type="radio" name="rating" value="5" id="5">
-                        <label for="5">☆</label>
-                        <input type="radio" name="rating" value="4" id="4">
-                        <label for="4">☆</label>
-                        <input type="radio" name="rating" value="3" id="3">
-                        <label for="3">☆</label>
-                        <input type="radio" name="rating" value="2" id="2">
-                        <label for="2">☆</label>
-                        <input type="radio" name="rating" value="1" id="1">
-                        <label for="1">☆</label>
-                    </div>
-                </div>
-            </div> --}}
 
         <div class="container d-flex justify-content-start row mt-3 p-3" style="border-radius:30px; height=743px;">
             <div class="col d-flex justify-content-start" style="font-weight: 600; font-size: 26px;">

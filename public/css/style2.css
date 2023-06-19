@@ -213,10 +213,21 @@ section.profileStudent{
 }
 
 /* Leaderboard Student */
-section.studentLeaderboard{
+.studentLeaderboard{
     background-color: #FAEEE7;
     font-family: "Poppins", sans-serif;
 }
+
+.leaderboardText {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.leaderboardBox {
+    border-radius:30px;
+}
+
+
 
 /* view teacher */
 section.viewTeacher{
@@ -330,9 +341,9 @@ section.findTeacher{
     align-items: center;
 }
 
-.photo-input input[type="file"] {
+/* .photo-input input[type="file"] {
     display: none;
-}
+} */
 
 .photo-input label {
     font-weight: 500;
