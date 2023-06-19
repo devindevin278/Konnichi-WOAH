@@ -17,31 +17,35 @@ class GameController extends Controller
     /**
      * Display a lististireng of the resource.
      */
-    public function index()
-    {
-        //
+    /**
+ * Display a listing of the resource.
+ */
+public function index()
+{
+    $this->middleware('auth');
 
-        $userPoint = DB::table('student_point_progresss')
+    if (!auth()->check()) {
+        return redirect()->to('/login');
+    }
+
+    $userPoint = DB::table('student_point_progresss')
         ->select('point_id')->where('user_id', auth()->user()->id)
         ->get();
-        // ->where('point_id', )
-        // $collectUP = collect($userPoints);
-        // dd($userPoint);
-        $temp = [];
-        $id = 0;
-        foreach($userPoint as $item) {
-            $temp[$id] = $item->point_id;
-            $id++;
-        }
-        $userPoints = collect($temp);
 
-        // dd($userPoints);
-
-        return view('student.learn.games', [
-            'units' => unit::all(),
-            'userPoints' => $userPoints
-        ]);
+    $temp = [];
+    $id = 0;
+    foreach($userPoint as $item) {
+        $temp[$id] = $item->point_id;
+        $id++;
     }
+    $userPoints = collect($temp);
+
+    return view('student.learn.games', [
+        'units' => Unit::all(),
+        'userPoints' => $userPoints
+    ]);
+}
+
 
     /**
      * Show the form for creating a new resource.

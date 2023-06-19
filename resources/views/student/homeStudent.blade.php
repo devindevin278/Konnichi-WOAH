@@ -7,6 +7,9 @@
 <section class="banner">
     <div class="row d-flex">
         <div class="col-md-7">
+            @if (Auth::check())
+                Tes
+            @endif
             <h1 class="fs-2">Welcome to Konnichi-WOAH!</h1>
             <h1 class="fs-2">A captivating Japanese language learning platform!</h1>
             <p>Are you looking for an easy and fun way to learn Japanese? Look no further than Konnichiwoah! We offer a wide range of exciting features to help you master the Japanese language with ease and effectiveness.</p>

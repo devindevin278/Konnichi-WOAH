@@ -26,6 +26,7 @@
                             background-color: solid #FF8BA7;
 
                             height: 40px;
+                            width: 40px;
                             border-radius: 50%;
                             overflow:hidden;" ></a>
 

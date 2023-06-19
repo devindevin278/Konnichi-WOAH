@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Certificate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -11,9 +12,15 @@ class CertificateController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(User $id)
     {
-        //
+        $this->middleware('auth');
+
+        try {
+            $id = auth()->user()->id;
+        } catch (\Throwable $e) {
+            redirect()->to('/login')->send();
+        }
         return view('admin.verifyTeacher', [
             'certificates' => Certificate::all()
         ]);

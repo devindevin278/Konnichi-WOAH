@@ -6,7 +6,7 @@
 
 
 <section class="article">
-    <div class="container row  d-flex justify-content-around">
+    <div class="container mt-5 d-flex justify-content-around">
 
 
         <div class="mt-5">
@@ -82,12 +82,12 @@
                             </p>
 
                             <p class="card-text">{{ $articles[0]->excerpt }}</p>
-                            <a href="/teacher/{{ $articles[0]->slug }}/edit" class="badge bg-warning">Edit</a>
-                            <form action="/teacher/{{ $articles[0]->slug }}" method="post" class="d-inline">
+                            {{-- <a href="/teacher/{{ $articles[0]->slug }}/edit" class="badge bg-warning">Edit</a> --}}
+                            {{-- <form action="/teacher/{{ $articles[0]->slug }}" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger border-0" onclick="return confirm('Are you sure u wanna delete?')">Delete</button>
-                            </form>
+                            </form> --}}
                         </div>
                     </div>
                 </div>
