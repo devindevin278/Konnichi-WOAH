@@ -34,7 +34,7 @@
                             width: 150px;
                             height: 150px;
                             border-radius: 50%;
-                            overflow:hidden;
+                            overflow:hidden; object-fit: cover;
                             " src="{{ asset('storage/'. $user->photo) }}">
                         </div>
 
