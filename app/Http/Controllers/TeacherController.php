@@ -80,14 +80,14 @@ class TeacherController extends Controller
         }// Retrieve the selected price range from the form submission
 
 
-        $filteredTeachers = $filteredQuery->get();
+        $filteredTeachers = $filteredQuery->where('userIsTeacher', 1)->get();
 
         // Unfiltered Teachers
-        $unfilteredTeachers = User::query()->whereNotIn('id', $filteredTeachers->pluck('id'))->get();
+        // $unfilteredTeachers = User::query()->whereNotIn('id', $filteredTeachers->pluck('id'))->get();
 
         return view('teacher.teacher', [
             'filteredTeachers' => $filteredTeachers,
-            'unfilteredTeachers' => $unfilteredTeachers,
+            // 'unfilteredTeachers' => $unfilteredTeachers,
             'provinces' => $provinces->skip(1),
             'cities' => $cities
         ]);

@@ -71,7 +71,7 @@
                 <div class="ps-4 pe-4">
                         <div class=" card mb-3 mt-3 ">
                             <div class="d-flex justify-content-center" style="">
-                                <img src="{{ asset('storage/'. $articles[0]->image) }}" class="img-fluid mt-3 mb-3" alt=""  style="max-height:200px; overflow:hiden;">
+                                <img src="{{ asset('storage/'. $articles[0]->image) }}" class="img-fluid mt-3 mb-3 m-3" alt=""  style="max-height:200px; object-fit: cover; width: 100%;">
                             </div>
 
 
