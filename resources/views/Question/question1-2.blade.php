@@ -24,10 +24,7 @@
               </div>
             </div>
         </div>
-        <div class="downer" id="5">
-            {{-- <button id="reset">Reset</button> --}}
-            <button class="skib" onclick="showDiv('2')">SKIP</button>
-        </div>
+      
 
         {{-- <div class="corr" id="1" style="display: none">
             <svg class="correctsign"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">

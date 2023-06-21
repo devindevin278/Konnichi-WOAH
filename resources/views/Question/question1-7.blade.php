@@ -21,9 +21,6 @@
               </div>
             </div>
         </div>
-        <div class="downer" id="5">
-            {{-- <button id="reset">Reset</button> --}}
-            <button class="skib" onclick="showDiv('2')">SKIP</button>
-        </div>
+
 
 @endsection

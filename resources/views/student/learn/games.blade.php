@@ -398,6 +398,7 @@
                     @endforeach
 
 
+                    {{-- locked treasure --}}
                     <button>
                         <svg width="80" height="90" viewBox="0 0 80 90" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -471,6 +472,11 @@
                                 </clipPath>
                             </defs>
                         </svg>
+                    </button>
+
+                    {{-- unlocked treasure --}}
+                    <button>
+                        
                     </button>
                 </div>
             </div>
