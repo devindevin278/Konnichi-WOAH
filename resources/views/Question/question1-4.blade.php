@@ -1,35 +1,27 @@
-@extends('Question.layouts.mainMulti')
+@extends('Question.layouts.mainPairs')
 
 @section('content')
+    @include('Question.layouts.progress')
 
-
-@include('Question.layouts.progress')
-
-<div class="maincont">
-    <h3 class="question">どうぞよろしく</h3>
-    <h3 class="question2">douzo yoroshiku</h3>
-    <div class="choices">
-        <button class="ans" onclick="showDiv('2')">
-            <h5 class="num">1</h5>
-            <h4 class="answer">Hello</h4>
-            <h5 class="num" style="display: none">1</h5>
-        </button>
-
-        <button class="ans" onclick="showDiv('2')">
-            <h5 class="num">2</h5>
-            <h4 class="answer">Please help</h4>
-            <h5 class="num" style="display: none">1</h5>
-        </button>
-
-        <button class="ans" onclick="showDiv('1')">
-            <h5 class="num">3</h5>
-            <h4 class="answer">Nice to meet you</h4>
-            <h5 class="num" style="display: none">1</h5>
-        </button>
-    </div>
-
-</div>
-
-
+    <div id="game">
+        <h3 class="theme">Select the Matching Pairs</h3>
+        <div id="boards">
+            <div id="board-left">
+                <div class="card" data-card="1">おはよう </div>
+                <div class="card" data-card="2">こんばんわ </div>
+                <div class="card" data-card="3">こんにちわ </div>
+                <div class="card" data-card="4">はじめまして </div>
+              </div>
+              <div id="board-right">
+                  <div class="card" data-card="1">Ohayou</div>
+                <div class="card" data-card="2">Konbanwa </div>
+                <div class="card" data-card="3">Konnichiwa</div>
+                <div class="card" data-card="4">Hajimemashite</div>
+              </div>
+            </div>
+        </div>
+        <div class="downer" id="5">
+            <button class="skib" onclick="showDiv('2')">SKIP</button>
+        </div>
 
 @endsection

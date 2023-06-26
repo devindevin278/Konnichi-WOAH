@@ -1,32 +1,32 @@
-@extends('Question.layouts.mainFillblank')
+@extends('Question.layouts.mainMulti')
 
 @section('content')
 
-    @include('Question.layouts.progress')
 
+@include('Question.layouts.progress')
 
-    <div class="maincont">
-        <h3 class="theme">Fill in The Blank</h3>
-        <h4 class="question">..... , くりす です</h4>
-        <h3 class="question2">....., kurisu desu </h3>
-        <div class="choices">
-            <button class="ans" onclick="showDiv('1')">
-                <h4 class="answer">こんにちわ (konnichiwa)</h4>
-            </button>
+<div class="maincont">
+    <h3 class="question">Good Morning </h3>
+    <!-- <h3 class="question2">douzo yoroshiku</h3> -->
+    <div class="choices">
+        <button class="ans" onclick="showDiv('2')">
+            <h4 class="answer">こんにちわ</h4>
+        </button>
 
-            <button class="ans" onclick="showDiv('2')">
-                <h4 class="answer">あした(ashita)</h4>
-            </button>
+        <button class="ans" onclick="showDiv('2')">
+            <h4 class="answer">こんばんわ</h4>
+        </button>
 
-            <button class="ans" onclick="showDiv('2')">
-                <h4 class="answer">さよなら(sayonara)</h4>
-            </button>
-        </div>
-
+        <button class="ans" onclick="showDiv('1')">
+            <h4 class="answer">おはよう</h4>
+        </button>
     </div>
 
- 
+</div>
 
+<div class="downer" id="5">
+    <button class="skib" onclick="showDiv('2')">SKIP</button>
+</div>
 
 
 @endsection

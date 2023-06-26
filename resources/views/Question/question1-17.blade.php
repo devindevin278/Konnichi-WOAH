@@ -6,19 +6,19 @@
 @include('Question.layouts.progress')
 
 <div class="maincont">
-    <h3 class="question">おやすみなさい</h3>
-    <h3 class="question2">Oyasuminasai</h3>
+    <h3 class="question">ただいま</h3>
     <div class="choices">
-        <button class="ans" onclick="showDiv('1')">
-            <h4 class="answer">Good night</h4>
-        </button>
-        
+
         <button class="ans" onclick="showDiv('2')">
-            <h4 class="answer">Good morning</h4>
+            <h4 class="answer">I'm leaving</h4>
         </button>
 
         <button class="ans" onclick="showDiv('2')">
-            <h4 class="answer">How are you?</h4>
+            <h4 class="answer">I'm back</h4>
+        </button>
+
+        <button class="ans" onclick="showDiv('1')">
+            <h4 class="answer">Welcome</h4>
         </button>
     </div>
 
@@ -30,3 +30,4 @@
 
 
 @endsection
+
