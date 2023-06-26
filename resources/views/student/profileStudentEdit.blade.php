@@ -49,7 +49,7 @@
                                     <div class="mt-1 d-flex justify-content-around align-items-center ">
 
 
-                                        <input type="hidden" name="oldImage" value="{{ $user->photo }}">
+                                        <input type="hidden" name="oldImage" value="tes">
 
                                         @if ($user->photo)
                                             <div style="display: flex; justify-content:center;">
@@ -58,7 +58,7 @@
                                                 style="display:block; border-radius: 50%; max-height: 100%;width: 200px;
                                                 height: 200px;
                                                 border-radius: 50%;
-                                                border:solid #A08A8F;">
+                                                border:solid #A08A8F; overflow:hidden; object-fit: cover; ">
 
                                             </div>
 

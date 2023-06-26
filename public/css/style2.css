@@ -354,3 +354,30 @@ section.findTeacher{
     cursor: pointer;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
+/* card teacher */
+
+
+.reqteacher:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+}
+.teachphoto:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+}
+.viewbt:hover{
+    background-color: #FF8BA7;
+    opacity: 1;
+}
+.imgcards:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.02);
+}
+.idxz{
+    z-index: 2;
+}
+
+#other-teachers-container {
+    display: none;
+  }

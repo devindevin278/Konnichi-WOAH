@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\StudentPointProgress;
-use App\Models\TempProgress;
-use App\Models\User;
-use App\Models\Unit;
 use App\Models\Page;
+use App\Models\Unit;
+use App\Models\User;
 use App\Models\Point;
+use App\Models\TempProgress;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Carbon;
+use App\Models\StudentPointProgress;
 
 class GameController extends Controller
 {
@@ -42,7 +44,8 @@ public function index()
 
     return view('student.learn.games', [
         'units' => Unit::all(),
-        'userPoints' => $userPoints
+        'userPoints' => $userPoints,
+        'user_id' => auth()->user()->id
     ]);
 }
 
@@ -157,6 +160,38 @@ public function index()
             ]);
         }
 
+    }
+
+    public function weekChart() {
+        // dd($request);
+        // Log::debug('eror');
+        $user_id = auth()->user()->id;
+        // $date = Carbon::parse();
+        $week = StudentPointProgress::whereRaw('user_id = ? and YEARWEEK(created_at)=YEARWEEK(NOW())', $user_id)->selectRaw('sum(total_xp), date(created_at)')->groupByRaw('date(created_at)')->orderByRaw('date(created_at)')->get();
+
+
+        // dd($test);
+        return response()->json($week);
+    }
+
+    public function monthChart() {
+        $user_id = auth()->user()->id;
+        // $date = Carbon::parse();
+        $month = StudentPointProgress::whereRaw('user_id = ? and EXTRACT(YEAR_MONTH FROM created_at) =  EXTRACT(YEAR_MONTH FROM now())', $user_id)->selectRaw('sum(total_xp), date(created_at)')->groupByRaw('date(created_at)')->orderByRaw('date(created_at)')->get();
+
+
+        // dd($test);
+        return response()->json($month);
+    }
+
+    public function yearChart() {
+        $user_id = auth()->user()->id;
+        // $date = Carbon::parse();
+        $year = StudentPointProgress::whereRaw('user_id = ? and YEAR(created_at) = YEAR(NOW())', $user_id)->selectRaw('sum(total_xp), month(created_at)')->groupByRaw('month(created_at)')->orderByRaw('month(created_at)')->get();
+
+
+        // dd($test);
+        return response()->json($year);
     }
 
     public function succeed(Request $request) {

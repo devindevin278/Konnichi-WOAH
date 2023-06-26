@@ -80,14 +80,14 @@ class TeacherController extends Controller
         }// Retrieve the selected price range from the form submission
 
 
-        $filteredTeachers = $filteredQuery->get();
+        $filteredTeachers = $filteredQuery->where('userIsTeacher', 1)->get();
 
         // Unfiltered Teachers
-        $unfilteredTeachers = User::query()->whereNotIn('id', $filteredTeachers->pluck('id'))->get();
+        // $unfilteredTeachers = User::query()->whereNotIn('id', $filteredTeachers->pluck('id'))->get();
 
         return view('teacher.teacher', [
             'filteredTeachers' => $filteredTeachers,
-            'unfilteredTeachers' => $unfilteredTeachers,
+            // 'unfilteredTeachers' => $unfilteredTeachers,
             'provinces' => $provinces->skip(1),
             'cities' => $cities
         ]);
@@ -227,13 +227,13 @@ class TeacherController extends Controller
         if($request->email != $user[0]->email) {
             $rules['email'] = 'required|email:dns|unique:users';
         }
-        $validatedData = $request->validate($rules);
-        // try {
+        try {
+            $validatedData = $request->validate($rules);
 
 
-            // } catch (\Illuminate\Validation\ValidationException $e) {
-                //     dd($e->getMessage());
-                // }
+            } catch (\Illuminate\Validation\ValidationException $e) {
+                    dd($e->getMessage());
+                }
 
         if($request->file('photo')){
             if($request->oldImage){
