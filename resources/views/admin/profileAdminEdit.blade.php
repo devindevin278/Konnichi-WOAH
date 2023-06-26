@@ -57,6 +57,7 @@
 
                                         <input type="hidden" name="oldImage" value="{{ $user->photo }}">
 
+
                                         @if ($user->photo)
                                             <div style="display: flex; justify-content:center;">
 
@@ -65,7 +66,7 @@
                                                     style="display:block; border-radius: 50%; max-height: 100%;width: 200px;
                                                 height: 200px;
                                                 border-radius: 50%;
-                                                border:solid #A08A8F;">
+                                                border:solid #A08A8F;object-fit: cover;">
 
                                             </div>
                                         @else
@@ -87,7 +88,11 @@
                                             <input type="file" id="photo" name="photo" accept="image/*"
                                                 class="photo" onchange="previewImage()">
 
-
+                                            @error('photo')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                             <label for="photo">Choose a photo</label>
                                         </div>
                                     </div>
@@ -113,12 +118,9 @@
                             {{-- Name --}}
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
-                                    <label class="labels text-align-right"
-                                        style="height:fit-content; width: 120px; margin:auto; text-align: right;">Name</label>
+                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Name</label>
                                 </div>
-                                <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" placeholder="Enter your name" value="{{ old('name', $user->name) }}"
-                                    style="border: solid #A08A8F;">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Enter your name" value="{{ old('name', $user->name) }}" style="border: solid #A08A8F;">
                                 @error('name')
                                     <div class="invalid-feedback">
                                         {{ $message }}

@@ -58,7 +58,7 @@ class StudentController extends Controller
             'name' => 'required|max:255',
             'address' => 'required',
             'phoneNumber' => 'required',
-            'photo' => 'image|file',
+            'photo' => 'image|mimes:jpeg,jpg|max:2048',
             'DOB' => 'required',
             'gender' => 'required|in:0,1'
         ]);
@@ -113,7 +113,7 @@ class StudentController extends Controller
             'address' => 'required',
             'phoneNumber' => 'required',
             'DOB' => 'required',
-            'photo' => 'image|file',
+            'photo' => 'image|mimes:jpeg,jpg|max:2048',
             'gender' => 'required|in:0,1'
         ];
 
