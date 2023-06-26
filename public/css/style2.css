@@ -362,13 +362,26 @@ section.findTeacher{
     transition: transform 0.3s ease;
     transform: scale(1.05);
 }
+.addarticle:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+}
 .teachphoto:hover{
     transition: transform 0.3s ease;
     transform: scale(1.05);
 }
+
 .viewbt:hover{
     background-color: #FF8BA7;
     opacity: 1;
+}
+.btnback:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+}
+.logoutedit:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
 }
 .imgcards:hover{
     transition: transform 0.3s ease;
