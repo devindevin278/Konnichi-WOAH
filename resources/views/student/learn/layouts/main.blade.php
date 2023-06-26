@@ -28,7 +28,7 @@
 
     @include('partials.navbarStudent')
 
-    <div id="user_id" data-data="{{ auth()->user()->id }}"></div>
+    {{-- <div id="user_id" data-data="{{ auth()->user()->id }}"></div> --}}
 
     <div class="container-fluid margin-top">
         <div class="row">
