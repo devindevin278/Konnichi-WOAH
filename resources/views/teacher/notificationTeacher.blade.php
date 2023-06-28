@@ -73,6 +73,7 @@
 
             </div>
             <div class="modal-body">
+                @foreach ($TeacherNotifications as $TeacherNotification)
                 <form action="/acceptedstudent" method="post" id="verify_student" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-1 d-flex">
@@ -92,6 +93,7 @@
                         <input type="hidden" name="studentid" class="form-control" id="recipient-studentid" value="{{ $TeacherNotification->studentid }}" readonly required>
                     </div>
                 </form>
+                @endforeach
             </div>
 
             <div class="line m-auto mb-4" style="height: 1px; width: 80%"></div>

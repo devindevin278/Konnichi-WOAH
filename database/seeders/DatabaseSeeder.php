@@ -23,6 +23,12 @@ class DatabaseSeeder extends Seeder
     {
 
         User::create([
+            'name' => 'master',
+            'userIsAdmin' => 1,
+            'email' => 'master@gmail.com',
+            'password' => Hash::make('12345')
+        ]);
+        User::create([
             'name' => 'student1',
             'email' => 'student1@gmail.com',
             'password' => Hash::make('12345')
@@ -59,80 +65,29 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Sensei',
+            'name' => 'teacher1',
             'userIsTeacher' => 1,
-            'email' => 'teacher@gmail.com',
+            'email' => 'teacher1@gmail.com',
             'password' => Hash::make('12345')
         ]);
         User::create([
-            'name' => 'Master',
+            'name' => 'teacher2',
             'userIsTeacher' => 1,
             'email' => 'teacher2@gmail.com',
             'password' => Hash::make('12345')
         ]);
 
         Author::create([
-            'name' => 'devin'
+            'name' => 'Devin Wong'
         ]);
         Author::create([
-            'name' => 'hasna'
+            'name' => 'Hasna Chan'
         ]);
         Author::create([
-            'name' => 'hansen'
+            'name' => 'Hansen'
         ]);
         Author::create([
-            'name' => 'mike'
-        ]);
-
-        // Storage::move('public/img/hanabi.png', 'public/post-images/hanabi.png');
-        Article::create([
-            'author_id' => '1',
-            'title' => 'hi1',
-            'jpntitle' => 'konichiwa',
-            'articlepublish' => '2022-02-02',
-            'slug' => 'hi1',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
-            'jpnbody' => 'JPN Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
-        ]);
-
-        Article::create([
-            'author_id' => '2',
-            'title' => 'hi2',
-            'jpntitle' => 'konichiwa',
-            'articlepublish' => '2022-02-02',
-            'slug' => 'hi2',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
-            'jpnbody' => 'JPN Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
-        ]);
-
-        Article::create([
-            'author_id' => '3',
-            'title' => 'hi3',
-            'jpntitle' => 'konichiwa',
-            'articlepublish' => '2022-02-02',
-            'slug' => 'hi3',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
-            'jpnbody' => 'JPN Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
-        ]);
-
-        Article::create([
-            'author_id' => '4',
-            'title' => 'hi4',
-            'jpntitle' => 'konichiwa',
-            'articlepublish' => '2022-02-02',
-            'slug' => 'hi4',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
-            'jpnbody' => 'JPN Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
-        ]);
-
-        Article::create([
-            'author_id' => '2',
-            'title' => 'hi5',
-            'jpntitle' => 'konichiwa',
-            'articlepublish' => '2022-02-02',
-            'slug' => 'hi5',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
-            'jpnbody' => 'JPN Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+            'name' => 'Mikey Gozal'
         ]);
 
         Unit::create([
@@ -312,6 +267,7 @@ class DatabaseSeeder extends Seeder
             'correction' => 'He is Chris\'s brother, Ken'
         ]);
 
+        $this->call(ArticleSeeder::class);
         $this->call(ProvinceSeeder::class);
         $this->call(CitySeeder::class);
     }

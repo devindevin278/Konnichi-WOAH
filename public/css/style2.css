@@ -134,13 +134,13 @@ section.showArticle{
 }
 
 .filbut:hover{
-    background: linear-gradient(to right, #a3dfac, #a3dfac);
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
 }
 
 .refbut:hover{
-    background: #f48183;
-    background: linear-gradient(to right, #f48183, #f48183);
-    color: #f48183;
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
 }
 .filterbutton:hover{
     background: linear-gradient(to right, #FFC6C7, #FFC6C7);
