@@ -21,8 +21,8 @@
 
                         <a>Konnichiwa, {{ auth()->user()->name }}</a>
 
-                        @if (asset(auth()->user()->photo))
-                        <a href="/profileAdmin" class="navbar-brand"  ><img src="{{ asset('storage/'.auth()->user()->photo) }}" style="
+                        @if (auth()->user()->photo)
+                        <a href="/profileStudent" class="navbar-brand"  ><img src="{{ asset('storage/'.auth()->user()->photo) }}" style="
                             background-color: solid #FF8BA7;
 
                             height: 40px;
@@ -31,12 +31,13 @@
                             overflow:hidden;" ></a>
 
                         @else
-                        <a href="/profileAdmin" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" style="
+                        <a href="/profileStudent" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" style="
                             background-color: solid #FF8BA7;
 
                             height: 40px;
                             border-radius: 50%;
                             overflow:hidden;" ></a>
+
                         @endif
                 @else
                     <a href="/profileAdmin/{{ auth()->user() }}" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
