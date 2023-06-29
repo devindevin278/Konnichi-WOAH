@@ -19,13 +19,6 @@ body{
     justify-content: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
-}
-
-.back-button-out {
-    border: none;
-    background-color: none;
-    height: fit-content;
 }
 
 .back-button{
@@ -127,6 +120,11 @@ body{
     border-top: #A6A6A6;
     justify-content: space-around;
     padding: 1vw 0 1vw 0;
+}
+
+.continue:active, .ans:active, .skib:active{
+    box-shadow: none;
+    transform: translateY(4px);
 }
 
 #reset:hover, .skib:hover {

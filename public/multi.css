@@ -24,13 +24,6 @@ h1,h2,h3,h4,h5,h6 {
     justify-content: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
-}
-
-.back-button-out {
-    border: none;
-    background-color: none;
-    height: fit-content;
 }
 
 .back-button{
@@ -93,21 +86,13 @@ h1,h2,h3,h4,h5,h6 {
     box-shadow: 0px 2px 0px #E5E5E5;
     border-radius: 12px;
 
-    width: 41vw;
+    width: 35vw;
     margin-top: 0.6vw;
 }
 
-.num{
-    font-family: 'Inter';
-    font-size: 1.3vw;
-    line-height: 21px;
-    margin: 0 0.7vw;
-    padding: 0.4vw 1vw;
-    border: 2px solid #E5E5E5;
-    border-radius: 1vw;
-
-    color: #AFAFAF;
-    margin-bottom: 0;
+.continue:active, .ans:active, .skib:active{
+    box-shadow: none;
+    transform: translateY(4px);
 }
 
 .answer{

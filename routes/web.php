@@ -57,6 +57,12 @@ Route::resource('learnStudent/games', GameController::class);
 Route::post('/questions', [PageController::class, 'showPage']);
 Route::post('/questions/cancel', [PageController::class, 'cancel']);
 
+// Buat Graph
+Route::get('/weekChart', [GameController::class, 'weekChart']);
+Route::get('/monthChart', [GameController::class, 'monthChart']);
+Route::get('/yearChart', [GameController::class, 'yearChart']);
+
+
 Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
 
 
@@ -181,6 +187,7 @@ Route::delete('/profileAdmin/{user:id}', [AdminController::class, 'destroy']);
 
 
 Route::get('/teacher', [TeacherController::class, 'showAllTeacher']);
-Route::get('/fetch-cities', [TeacherController::class, 'fetchCities']);
+Route::get('/fetch-cities', [TeacherController::class, 'fetcgahCities']);
 Route::get('/fetchcities', [TeacherController::class, 'fetchAllCities']);
 
+// Route::get('/test', [GameController::class, 'weekChart']);

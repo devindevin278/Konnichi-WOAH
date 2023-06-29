@@ -1,29 +1,31 @@
-@extends('Question.layouts.mainPairs')
+@extends('Question.layouts.mainMulti')
 
 @section('content')
 
 @include('Question.layouts.progress')
 
-    <div id="game">
-        <h3 class="theme">Select the Matching Pairs</h3>
-        <div id="boards">
-            <div id="board-left">
-                <div class="card" data-card="1">さよなら </div>
-                <div class="card" data-card="2">よろしく </div>
-                <div class="card" data-card="3">すみません </div>
-                <div class="card" data-card="4">ただいま </div>
-              </div>
-              <div id="board-right">
-                  <div class="card" data-card="1">Sayonara </div>
-                <div class="card" data-card="2">Yoroshiku </div>
-                <div class="card" data-card="3">Sumimasen </div>
-                <div class="card" data-card="4">Tadaima </div>
-              </div>
-            </div>
-        </div>
-        <div class="downer" id="5">
-            {{-- <button id="reset">Reset</button> --}}
-            <button class="skib" onclick="showDiv('2')">SKIP</button>
-        </div>
+<div class="maincont">
+    <h3 class="question">I'm Sorry</h3>
+    <div class="choices">
+
+        <button class="ans" onclick="showDiv('1')">
+            <h4 class="answer">ごめんなさい</h4>
+        </button>
+
+        <button class="ans" onclick="showDiv('2')">
+            <h4 class="answer">お願いします</h4>
+        </button>
+
+        <button class="ans" onclick="showDiv('2')">
+            <h4 class="answer">ありがと ございます</h4>
+        </button>
+    </div>
+
+</div>
+
+<div class="downer" id="5">
+    <button class="skib" onclick="showDiv('2')">SKIP</button>
+</div>
 
 @endsection
+
