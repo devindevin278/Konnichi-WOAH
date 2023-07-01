@@ -40,7 +40,7 @@ class AdminController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'phoneNumber' => 'required',
-            'photo' => 'image|file',
+            'photo' => 'image|mimes:jpeg,jpg|max:2048',
             'DOB' => 'required',
             'gender' => 'required|in:0,1'
         ]);
@@ -82,7 +82,7 @@ class AdminController extends Controller
         $rules = [
             'name' => 'required|max:255',
             'phoneNumber' => 'required',
-            'photo' => 'image|file',
+            'photo' => 'image|mimes:jpeg,jpg|max:2048',
             'DOB' => 'required',
             'gender' => 'required|in:0,1'
 
