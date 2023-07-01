@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('bubblechats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('point_id')->references('id')->on('points');
-            $table->string('page_name');
-            $table->string('correction')->nullable();
+            $table->foreignId('notebook_id')->references('id')->on('notebooks');
+            $table->string('kanji');
+            $table->string('japan');
+            $table->string('english');
+            $table->string('position');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('bubblechats');
     }
 };

@@ -21,6 +21,12 @@ body{
     flex-direction: row;
 }
 
+.back-button-out {
+    border: none;
+    background-color: none;
+    height: fit-content;
+}
+
 .back-button{
     color: #BABABA;
     width: 1.5vw;
@@ -143,6 +149,10 @@ body{
     color: white;
     font-size: 1.3vw;
     padding: 0.9vw 2vw;
+}
+
+.fireStreak {
+    width: 2rem;
 }
 
 .corr, .wrronk{

@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Carbon;
 use App\Models\StudentPointProgress;
+use App\Models\StudentUnitProgress;
+
+use function PHPUnit\Framework\isEmpty;
+use function PHPUnit\Framework\isNull;
 
 class GameController extends Controller
 {
@@ -34,6 +38,9 @@ public function index()
         ->select('point_id')->where('user_id', auth()->user()->id)
         ->get();
 
+
+    $userUnits = StudentUnitProgress::where('user_id', auth()->user()->id)->get();
+
     $temp = [];
     $id = 0;
     foreach($userPoint as $item) {
@@ -42,10 +49,27 @@ public function index()
     }
     $userPoints = collect($temp);
 
+    $daily = StudentPointProgress::whereRaw('user_id = ? and day(created_at) = day(CURRENT_DATE)', auth()->user()->id)->selectRaw('sum(total_xp)')->groupByRaw('date(created_at)')->orderByRaw('date(created_at)')->get();
+
+    if($daily->isEmpty()) {
+        // dd($daily);
+        $dailyXp = 0;
+    } else {
+        $dailyXp = $daily[0]['sum(total_xp)'];
+        // $dailyXp = 0;
+    }
+
+        // dd(Unit::first()->points->last());
+        // dd($userPoints->contains(Unit::first()->points->last()));
+
+        // dd($userUnits);
+
     return view('student.learn.games', [
         'units' => Unit::all(),
         'userPoints' => $userPoints,
-        'user_id' => auth()->user()->id
+        'userUnits' => $userUnits,
+        'user_id' => auth()->user()->id,
+        'daily' => $dailyXp
     ]);
 }
 
@@ -63,6 +87,7 @@ public function index()
      */
     public function store(Request $request)
     {
+        // dd($request);
 
         $data['user_id'] = $request->user_id;
         $data['point_id'] = $request->point_id;
@@ -78,7 +103,17 @@ public function index()
 
         // delete from temp progress
 
-        TempProgress::where('user_id', $request->user_id)->delete();
+        TempProgress::where('user_id',$request->user_id)->delete();
+
+        // jika point ke 4 maka simpan ke unit progress
+        if($request->point_id % 4 == 0) {
+            $unit['user_id'] = $request->user_id;
+            $unit['unit_id'] = $request->unit_id;
+            // $unit['unit_id'] = $request->user_id;
+
+            StudentUnitProgress::create($unit);
+        }
+
 
         return redirect('/learnStudent/games');
 
@@ -148,6 +183,8 @@ public function index()
 
             $totalxp = $bonusxp + ($correctCount*3);
 
+            $unit_id = $point->unit_id;
+            // dd($unit_id);
             // dd($totalxp);
             // total perolehan xp
 
@@ -155,11 +192,25 @@ public function index()
                 'point' => $point,
                 'maxStreak' => $maxStreak,
                 'totalxp' => $totalxp,
-                'correctCount' => $correctCount
+                'correctCount' => $correctCount,
+                'unit_id' => $unit_id
                 // 'page' => $page
             ]);
         }
 
+    }
+
+    public function openChest(Request $request) {
+        // buka chest
+        $userUnit = StudentUnitProgress::where('user_id', auth()->user()->id)->where('unit_id', $request->unit_id);
+        $data['unit_id'] = $request->unit_id;
+        $data['opened'] = 1;
+        $userUnit->update($data);
+
+        // add 15 xp ke student
+        User::where('id', auth()->user()->id)->increment('pointxp', 15);
+
+        return redirect('/learnStudent/games');
     }
 
     public function weekChart() {

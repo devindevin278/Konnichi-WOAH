@@ -19,14 +19,14 @@
         <button class="ans" onclick="showDiv('1')">
             <h4 class="answer">お久しぶり です</h4>
         </button>
-        
+
     </div>
 
 </div>
 
-<div class="downer" id="5">
+{{-- <div class="downer" id="5">
     <button class="skib" onclick="showDiv('2')">SKIP</button>
-</div>
+</div> --}}
 
 
 @endsection
