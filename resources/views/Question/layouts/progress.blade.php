@@ -10,7 +10,7 @@
         </form>
 
         <div class="progress" id="process-bar">
-            <div class="progress-bar" id="processing" role="progressbar" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="0" style="width: {{ $page->id * 10 }}%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" id="processing" role="progressbar" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="0" style="width: {{ ($page->id % 10) * 10 }}%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
                 <div id="process2"></div>
             </div>
         </div>

@@ -334,7 +334,7 @@
                 // Clear the city dropdown
                 $('#city').empty().append('<option value="">City</option>');
 
-                console.log('succ')
+                // console.log('succ')
                 // If a province is selected
                 if (province) {
                     // Fetch the cities for the selected province via AJAX

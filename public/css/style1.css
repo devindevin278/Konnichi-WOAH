@@ -207,17 +207,18 @@ nav#sidebarMenu a.nav-link.active {
 
 #progress_sidebar {
     background-color: #FAEEE7;
-    /* position: sticky; */
+    position: fixed;
+    top: 0;
     right: 0;
+    bottom: 0;
+    padding: 5rem 0 0 0;
+    box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
+    z-index: 100; /* Behind the navbar */
 }
-
 
 .sidebar {
   position: fixed;
   top: 0;
-  /* rtl:raw:
-  right: 0;
-  */
   bottom: 0;
   /* rtl:remove */
   left: 0;
@@ -229,6 +230,7 @@ nav#sidebarMenu a.nav-link.active {
 svg.fireStreak {
     width: 2rem;
     height: 2rem;
+    background-color: #88bffa;
 }
 
 /* learn end */
