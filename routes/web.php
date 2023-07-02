@@ -146,7 +146,7 @@ Route::get('/homeAdmin', function () {
 });
 
 
-
+//test
 // Article
 
 Route::get('/admin/checkSlug',[ArticleAdminController::class, 'checkSlug']);
