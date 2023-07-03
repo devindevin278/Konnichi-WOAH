@@ -279,7 +279,7 @@
                         <div class="card border-0 shadow-none">
                             <div class="card-body text-center d-flex flex-column align-items-center p-0"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-hasna.svg') }}" style="margin-top: 30px;">
                                 <h1 style="font-size: 20px;"><strong>Hasna Salsabilla</strong></h1>
-                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);"></span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
+                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Konnichi-Woah!</span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
                             </div>
                         </div>
                     </div>
@@ -287,7 +287,7 @@
                         <div class="card border-0 shadow-none">
                             <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-hansen.svg') }}">
                                 <h1 style="font-size: 20px;"><strong>Hansen</strong></h1>
-                                <p class="text-muted card-text mb-2" style="padding-left: 20px;padding-right: 20px;"><br><strong><span style="color: rgb(0, 0, 0);"></span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
+                                <p class="text-muted card-text mb-2" style="padding-left: 20px;padding-right: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Konnichi-Woah!</span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
                             </div>
                         </div>
                     </div>
@@ -295,7 +295,7 @@
                         <div class="card border-0 shadow-none">
                             <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-mike.svg') }}">
                                 <h1 style="font-size: 20px;"><strong>Michael Baptista</strong></h1>
-                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);"></span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
+                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Konnichi-Woah!</span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
                             </div>
                         </div>
                     </div>
