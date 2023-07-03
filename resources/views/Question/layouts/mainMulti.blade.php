@@ -8,10 +8,8 @@
     <title>Multiple Choice</title>
 
     <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
-    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="node_modules/@popperjs/core/dist/umd/popper.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('fillblank.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('multi.css') }}">
+
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
@@ -24,7 +22,7 @@
         <button class="skib" onclick="showDiv('2')">SKIP</button>
     </div>
 
-    <div class="corr" id="1" style="display: none">
+    <div class="corr" id="1" style="display: none;">
         <svg class="correctsign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
             class="w-6 h-6">
             <path fill-rule="evenodd"
@@ -42,7 +40,8 @@
             @if (($prevStreak + 1) > 2)
             <div class="d-block">
                 <div class="d-flex align-items-center">
-                        <?xml version="1.0" encoding="utf-8"?><svg class="fireStreak" viewBox="-33 0 255 255" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg class="fireStreak" viewBox="-33 0 255 255" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
                         <defs>
                           <style>
 
@@ -70,10 +69,10 @@
                           <path d="M95.000,183.812 C104.250,183.812 104.250,200.941 116.000,223.812 C123.824,239.041 112.121,254.812 95.000,254.812 C77.879,254.812 69.000,240.933 69.000,223.812 C69.000,206.692 85.750,183.812 95.000,183.812 Z" id="path-3" class="cls-5" fill-rule="evenodd"/>
                         </g>
                       </svg>
-                      <h2 class="ann">{{ $prevStreak + 1 }}</h2>
+                      {{-- <h2 class="">{{ $prevStreak + 1 }}</h2> --}}
                 </div>
 
-                    <h2 class="ann">+{{ $prevStreak - 1 }} xp</h2>
+                    {{-- <h2 class="ann">+{{ $prevStreak - 1 }} xp</h2> --}}
             </div>
             @endif
             <form action="/saveTemp" method="post">
@@ -95,7 +94,7 @@
                 d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
                 clip-rule="evenodd" />
         </svg>
-        <div class="ann">
+        <div class="correction">
             <h2 style="color: #EE282D; font-size: 1.9vw;">Correct Solution :</h2>
             <h3 style="color: #EE282D; font-size: 1.5vw;">{{ $page->correction }}</h3>
         </div>
@@ -124,7 +123,9 @@
     </div>
 
     <script src="{{ asset('node_modules/aos/dist/aos.js') }}"></script>
-
+    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="node_modules/@popperjs/core/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         function showDiv(id) {
             var div = document.getElementById(id);

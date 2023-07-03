@@ -26,6 +26,8 @@
 
 <body>
 
+    <div class="greyy" id="barrier"></div>
+
     @include('partials.navbarStudent')
 
     {{-- <div id="user_id" data-data="{{ auth()->user()->id }}"></div> --}}
@@ -101,9 +103,7 @@
     //     }
     })
 
-    // let userid = document.getElementById('user_id');
-    // let user_id = JSON.parse(userid.dataset.data);
-    // console.log(user_id)
+
 
     let weekBtn = document.getElementById('weekBtn');
     let monthBtn = document.getElementById('monthBtn');
@@ -113,9 +113,9 @@
 
         $('#weekBtn').on('click', function() {
 
-            weekBtn.classList.add('btn-primary');
-            monthBtn.classList.remove('btn-primary');
-            yearBtn.classList.remove('btn-primary');
+            weekBtn.classList.add('timeActive');
+            monthBtn.classList.remove('timeActive');
+            yearBtn.classList.remove('timeActive');
 
                 $.ajax({
                     url: '/weekChart',
@@ -197,10 +197,10 @@
                                     data: data_xp   ,
                                     fill: true,
                                     lineTension: 0,
-                                    backgroundColor: '#88bffa',
-                                    borderColor: '#007bff',
+                                    backgroundColor: 'rgba(255, 200, 0, .1)',
+                                    borderColor: '#FFC800',
                                     borderWidth: 2,
-                                    pointBackgroundColor: '#007bff'
+                                    pointBackgroundColor: 'rgba(255, 200, 0, .5)'
                                 }]
                             },
                             options: {
@@ -229,9 +229,9 @@
         $('#monthBtn').on('click', function() {
             // console.log("month")
             // var csrfToken = $('meta[name="csrf-token"]').attr('content');
-            weekBtn.classList.remove('btn-primary');
-            monthBtn.classList.add('btn-primary');
-            yearBtn.classList.remove('btn-primary');
+            weekBtn.classList.remove('timeActive');
+            monthBtn.classList.add('timeActive');
+            yearBtn.classList.remove('timeActive');
             // if (value) {
                 $.ajax({
                     url: '/monthChart',
@@ -286,13 +286,13 @@
                             data: {
                                 labels: labels,
                                 datasets: [{
-                                    data: data_xp,
+                                    data: data_xp   ,
                                     fill: true,
                                     lineTension: 0,
-                                    backgroundColor: '#88bffa',
-                                    borderColor: '#007bff',
+                                    backgroundColor: 'rgba(255, 200, 0, .1)',
+                                    borderColor: '#FFC800',
                                     borderWidth: 2,
-                                    pointBackgroundColor: '#007bff'
+                                    pointBackgroundColor: 'rgba(255, 200, 0, .5)'
                                 }]
                             },
                             options: {
@@ -319,9 +319,9 @@
         });
 
         $('#yearBtn').on('click', function() {
-            weekBtn.classList.remove('btn-primary');
-            monthBtn.classList.remove('btn-primary');
-            yearBtn.classList.add('btn-primary');
+            weekBtn.classList.remove('timeActive');
+            monthBtn.classList.remove('timeActive');
+            yearBtn.classList.add('timeActive');
             $.ajax({
                     url: '/yearChart',
                     method: 'GET',
@@ -402,13 +402,13 @@
                                     'December'
                                 ],
                                 datasets: [{
-                                    data: data_xp   ,
+                                    data: data_xp,
                                     fill: true,
                                     lineTension: 0,
-                                    backgroundColor: '#88bffa',
-                                    borderColor: '#007bff',
+                                    backgroundColor: 'rgba(255, 200, 0, .1)',
+                                    borderColor: '#FFC800',
                                     borderWidth: 2,
-                                    pointBackgroundColor: '#007bff'
+                                    pointBackgroundColor: 'rgba(255, 200, 0, .5)'
                                 }]
                             },
                             options: {
@@ -441,6 +441,25 @@
 
         return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
     }
+
+
+
+    // buat chest pop up
+
+    function showDiv(id) {
+        var div = document.getElementById(id);
+        var barr = document.getElementById('barrier');
+        div.style.display = 'flex';
+        barr.style.display = 'flex';
+    }
+
+    function HidDiv(id){
+        var div = document.getElementById(id);
+        var barr = document.getElementById('barrier');
+        div.style.display = 'none';
+        barr.style.display = 'none';
+    }
+
 </script>
 
 </html>

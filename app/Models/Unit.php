@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Point;
+use App\Models\Notebook;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Unit extends Model
 {
@@ -13,5 +15,9 @@ class Unit extends Model
 
     public function points() {
         return $this->hasMany(Point::class);
+    }
+
+    public function notebooks() {
+        return $this->hasMany(Notebook::class);
     }
 }

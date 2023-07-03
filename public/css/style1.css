@@ -213,7 +213,7 @@ nav#sidebarMenu a.nav-link.active {
     bottom: 0;
     padding: 5rem 0 0 0;
     box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
-    z-index: 100; /* Behind the navbar */
+    z-index: 90; /* Behind the navbar */
 }
 
 .sidebar {
@@ -222,9 +222,24 @@ nav#sidebarMenu a.nav-link.active {
   bottom: 0;
   /* rtl:remove */
   left: 0;
-  z-index: 100; /* Behind the navbar */
+  z-index: 90; /* Behind the navbar */
   padding: 5rem 0 0; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.btn.timeBtn {
+    border: 2px solid #fc9502;
+    color: #fc9502;
+}
+
+.btn.timeBtn:hover {
+    background-color: #fc9502;
+    color: white;
+}
+
+.btn.timeBtn.timeActive {
+    background-color: #fc9502;
+    color: white;
 }
 
 svg.fireStreak {
@@ -234,6 +249,17 @@ svg.fireStreak {
 }
 
 /* learn end */
+
+/* leaderboard starts */
+
+.leaderboard_photo {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    margin-left: 0;
+}
+
+/* leaderboard ends */
 
 /* STUDENTS end */
 

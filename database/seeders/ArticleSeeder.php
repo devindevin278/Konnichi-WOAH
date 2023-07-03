@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Article;
-
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ArticleSeeder extends Seeder
 {
@@ -16,6 +15,38 @@ class ArticleSeeder extends Seeder
      */
     public function run()
     {
+
+        //
+
+        // Article::create([
+        //     'author_id' => '1',
+        //     'title' => 'hi1',
+        //     'jpntitle' => 'konichiwa',
+        //     'articlepublish' => '2022-02-02',
+        //     'slug' => 'hi1',
+        //     'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
+        //     'jpnbody' => 'JPN Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+        // ]);
+
+        // Article::create([
+        //     'author_id' => '2',
+        //     'title' => 'hi2',
+        //     'jpntitle' => 'konichiwa',
+        //     'articlepublish' => '2022-02-02',
+        //     'slug' => 'hi2',
+        //     'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
+        //     'jpnbody' => 'JPN Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+        // ]);
+
+        // Article::create([
+        //     'author_id' => '3',
+        //     'title' => 'hi3',
+        //     'jpntitle' => 'konichiwa',
+        //     'articlepublish' => '2022-02-02',
+        //     'slug' => 'hi3',
+        //     'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
+        //     'jpnbody' => 'JPN Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+
         Article::create([
             'author_id' => '2',
             'title' => 'Exploring the Rich Culture of Japan',
@@ -84,6 +115,14 @@ class ArticleSeeder extends Seeder
 
         Article::create([
             'author_id' => '4',
+
+            // 'title' => 'hi4',
+            // 'jpntitle' => 'konichiwa',
+            // 'articlepublish' => '2022-02-02',
+            // 'slug' => 'hi4',
+            // 'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
+            // 'jpnbody' => 'JPN Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+
             'title' => 'The Art of Japanese Tea Ceremony: A Window into Japan is  Soul',
             'jpntitle' => '日本の茶道の芸術： 日本の心を知る窓',
             'articlepublish' => '2022-02-02',
@@ -117,6 +156,15 @@ class ArticleSeeder extends Seeder
 
         Article::create([
             'author_id' => '2',
+
+        //     'title' => 'hi5',
+        //     'jpntitle' => 'konichiwa',
+        //     'articlepublish' => '2022-02-02',
+        //     'slug' => 'hi5',
+        //     'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...',
+        //     'jpnbody' => 'JPN Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+        // ]);
+
             'title' => 'Japanese Gardens: Beauty, Harmony, and Serenity',
             'jpntitle' => '日本の庭園： 美、調和、そして安らぎ',
             'articlepublish' => '2022-02-02',
@@ -517,7 +565,6 @@ class ArticleSeeder extends Seeder
             伏見稲荷大社を訪れて数分後、神社の敷地内にキツネの像が数多くあることに気付くでしょう。なぜでしょうか？キツネまたは日本語で「キツネ」と呼ばれるものは、奈良公園の鹿と同じく、神様の使いとして崇められています。石のキツネの中には、口に鍵をくわえているものがあります。これらの鍵は、キツネが守る米倉の鍵です。
             '
         ]);
-
 
     }
 }
