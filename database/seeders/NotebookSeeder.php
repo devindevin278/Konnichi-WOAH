@@ -76,5 +76,11 @@ class NotebookSeeder extends Seeder
         ]);
 
 
+        for($i=0; $i<10; $i++) {
+            Notebook::create([
+                'unit_id' => 2
+            ]);
+        }
+
     }
 }
