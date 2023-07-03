@@ -147,7 +147,7 @@ Route::get('/homeAdmin', function () {
 });
 
 
-
+//test
 // Article
 
 Route::get('/admin/checkSlug',[ArticleAdminController::class, 'checkSlug']);
@@ -191,4 +191,6 @@ Route::get('/teacher', [TeacherController::class, 'showAllTeacher']);
 Route::get('/fetch-cities', [TeacherController::class, 'fetcgahCities']);
 Route::get('/fetchcities', [TeacherController::class, 'fetchAllCities']);
 
-// Route::get('/test', [GameController::class, 'weekChart']);
+Route::get('/test', function () {
+    return view('student.learn.learnpage');
+});
