@@ -64,7 +64,7 @@
                     </div>
 
                     @if (count($articles) > 0)
-                        <div class="ps-4 pe-4">
+                        <div class="ps-4 pe-4" style="padding-bottom: 30px;" data-aos="fade-up" data-aos-duration="1000">
                             <div class=" card mb-3 mt-3 ">
                                 <div class="d-flex justify-content-center" style="">
                                     <img src="{{ asset('storage/' . $articles[0]->image) }}" class="img-fluid mt-3 mb-3 m-3"
@@ -92,7 +92,7 @@
                             </div>
                         </div>
 
-                        <div class="container">
+                        <div class="container" style="padding-bottom: 30px;" data-aos="fade-up" data-aos-duration="1000">
                             <div class="row justify-content-around">
                                 @foreach ($articles->skip(1) as $article)
                                     <div class="col-md-3">
