@@ -45,4 +45,9 @@
     </script>
 </body>
 {{-- <script> AOS.init(); </script> --}}
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // Inisialisasi AOS setelah halaman dimuat
+    AOS.init();
+</script>
 </html>
