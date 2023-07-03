@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('points', function (Blueprint $table) {
             $table->id();
             $table->foreignId('unit_id')->references('id')->on('units');
+            $table->string('title');
             $table->timestamps();
         });
     }

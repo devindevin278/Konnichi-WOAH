@@ -166,11 +166,54 @@ class PageSeeder extends Seeder
             'page_name' => 'question1-30',
             'correction' => 'はい、 どうぞ [hai, douzo]'
         ]);
+
+
         Page::create([
             'point_id' => 4,
-            'page_name' => 'question1-30',
-            'correction' => 'はい、 どうぞ [hai, douzo]'
+            'page_name' => 'question1-31',
+            'correction' => ''
         ]);
+        Page::create([
+            'point_id' => 4,
+            'page_name' => 'question1-32',
+            'correction' => ''
+        ]);
+        Page::create([
+            'point_id' => 4,
+            'page_name' => 'question1-33',
+            'correction' => ''
+        ]);
+        Page::create([
+            'point_id' => 4,
+            'page_name' => 'question1-34',
+            'correction' => 'はい、よろしく お願いします [Hai, yoroshiku onegaishimasu]'
+        ]);Page::create([
+            'point_id' => 4,
+            'page_name' => 'question1-35',
+            'correction' => '大丈夫です、どうぞ [daijobudesu, douzo]'
+        ]);Page::create([
+            'point_id' => 4,
+            'page_name' => 'question1-36',
+            'correction' => 'いってらっしゃい, 途中 で 気をつけて ください [Itterashai, Tochū de kiwotsuketekudasai]'
+        ]);Page::create([
+            'point_id' => 4,
+            'page_name' => 'question1-37',
+            'correction' => '帰り道で気をつけてください。[Kaeri michi de ki o tsukete kudasai.]'
+        ]);Page::create([
+            'point_id' => 4,
+            'page_name' => 'question1-38',
+            'correction' => 'どういたしまして。また書きますね。[どういたしまして。また書きますね。]'
+        ]);Page::create([
+            'point_id' => 4,
+            'page_name' => 'question1-39',
+            'correction' => '久しぶりですね、元気でしたよ。[Hisashiburidesu ne, genkideshita yo.]'
+        ]);Page::create([
+            'point_id' => 4,
+            'page_name' => 'question1-40',
+            'correction' => 'はい、 ありがとう ございます [Hai, arigatōgozaimasu]'
+        ]);
+
+
         Page::create([
             'point_id' => 5,
             'page_name' => 'question1-30',
@@ -178,6 +221,21 @@ class PageSeeder extends Seeder
         ]);
         Page::create([
             'point_id' => 9,
+            'page_name' => 'question1-30',
+            'correction' => 'はい、 どうぞ [hai, douzo]'
+        ]);
+        Page::create([
+            'point_id' => 10,
+            'page_name' => 'question1-30',
+            'correction' => 'はい、 どうぞ [hai, douzo]'
+        ]);
+        Page::create([
+            'point_id' => 11,
+            'page_name' => 'question1-30',
+            'correction' => 'はい、 どうぞ [hai, douzo]'
+        ]);
+        Page::create([
+            'point_id' => 12,
             'page_name' => 'question1-30',
             'correction' => 'はい、 どうぞ [hai, douzo]'
         ]);
