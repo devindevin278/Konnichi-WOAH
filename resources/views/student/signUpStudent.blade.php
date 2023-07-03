@@ -49,6 +49,8 @@
       </div>
 
       <p class="mt-4 mb-3 text-body-secondary" style="opacity: 70%;">Already have an account? <a href="/login" style="font-weight:500;">Login</a></p>
+      <a class="mt-4 mb-3 text-body-secondary" style="opacity: 70%; font-weight:500;" href="{{ route('register.google') }}">Sign Up with Google</a>
+
     </form>
 
 </main>

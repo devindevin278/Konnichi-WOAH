@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
+// use App\Http\Controllers\Auth\LoginController;
+
 use App\Http\Controllers\PointController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\StudentController;
@@ -42,6 +44,18 @@ Route::get('/login', function () {
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
+// Google Authentication
+Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
+// Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
+
+Route::get('register/google', [RegisterController::class, 'redirectToGoogle'])->name('register.google');
+// Route::get('register/google/callback', [RegisterController::class, 'handleGoogleCallback']);
+
+// Route::get('/register/google/callback', [RegisterController::class, 'handleGoogleCallback']);
+Route::get('/login/google/callback', [LoginController::class, 'handleGoogleCallback']);
+
+
+
 
 // Learn
 Route::get('/learnStudent/cards/katakana', function () {
