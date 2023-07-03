@@ -525,10 +525,11 @@
 
 
 
-    // buat chest pop up
+    // chest pop up level
 
-    function showDiv(id) {
-        var div = document.getElementById(id);
+    function showDiv(id, int) {
+        console.log(int);
+        var div = document.getElementById(id + ' ' + int);
         var barr = document.getElementById('barrier');
         div.style.display = 'flex';
         barr.style.display = 'flex';
@@ -540,7 +541,31 @@
         div.style.display = 'none';
         barr.style.display = 'none';
     }
+
+    // chest pop up ends
+
+
+    // level pop up starts
+        function levelshow(id, int) {
+            var div = document.getElementById(id + ' ' + int);
+            var barr = document.getElementById('barrier');
+            div.style.display = 'flex';
+            barr.style.display = 'flex';
+        }
+
+        function levelhide(id, int){
+            var div = document.getElementById(id + ' ' + int);
+            var barr = document.getElementById('barrier');
+            div.style.display = 'none';
+            barr.style.display = 'none';
+        }
+
+        // level pop up ends
+
+
 </script>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
