@@ -48,7 +48,7 @@ button{
 }
 
 .chest-popup{
-    /* top: 5vw; */
+    top: 5vw;
     left: 35%;
     width: 30%;
     /* display: none; */
