@@ -21,6 +21,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;400&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
 </head>
 
@@ -525,10 +526,11 @@
 
 
 
-    // buat chest pop up
+    // chest pop up level
 
-    function showDiv(id) {
-        var div = document.getElementById(id);
+    function showDiv(id, int) {
+        console.log(int);
+        var div = document.getElementById(id + ' ' + int);
         var barr = document.getElementById('barrier');
         div.style.display = 'flex';
         barr.style.display = 'flex';
@@ -540,7 +542,31 @@
         div.style.display = 'none';
         barr.style.display = 'none';
     }
+
+    // chest pop up ends
+
+
+    // level pop up starts
+        function levelshow(id, int) {
+            var div = document.getElementById(id + ' ' + int);
+            var barr = document.getElementById('barrier');
+            div.style.display = 'flex';
+            barr.style.display = 'flex';
+        }
+
+        function levelhide(id, int){
+            var div = document.getElementById(id + ' ' + int);
+            var barr = document.getElementById('barrier');
+            div.style.display = 'none';
+            barr.style.display = 'none';
+        }
+
+        // level pop up ends
+
+
 </script>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">

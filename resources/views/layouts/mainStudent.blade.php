@@ -8,7 +8,7 @@
 
     {{-- CSS --}}
     <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/style2.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style3.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style4.css') }}">
 
@@ -45,4 +45,9 @@
     </script>
 </body>
 {{-- <script> AOS.init(); </script> --}}
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    // Inisialisasi AOS setelah halaman dimuat
+    AOS.init();
+</script>
 </html>

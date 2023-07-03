@@ -7,7 +7,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .container{
-    display: flex;
+    /* display: flex; */
     justify-content: flex;
     color: #33272A;
 }
