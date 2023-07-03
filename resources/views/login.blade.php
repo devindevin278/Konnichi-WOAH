@@ -30,6 +30,7 @@
       <a class="forget text-decoration-underline" href="">Forgot Password?</a>
 
       <p class="mt-4 mb-3 text-body-secondary" style="opacity: 70%;">Don't have an account yet? <a href="/signUpStudent" style="font-weight:500;">Sign Up</a></p>
+      <a class="mt-4 mb-3 text-body-secondary" style="opacity: 70%; font-weight:500;" href="{{ route('login.google') }}">Login with Google</a>
     </form>
     </div>
 
