@@ -17,7 +17,7 @@
 </div> --}}
 
 
-<div class="learningg col-md-6 margin-top pt-4">
+<div class="learningg col-md-6 pt-4 mt-0">
 
 
 
@@ -159,7 +159,7 @@
                                         <button id="3" class="continue2 mt-3" style="background: {{ $unit->color }};" onclick="levelhide('3')">Start Lesson!</button>
                                     </form>
                                 </div>
-                                
+
 
                                 {{-- popup nya, ambil data dari classnya, masukin ke dalamnya --}}
 

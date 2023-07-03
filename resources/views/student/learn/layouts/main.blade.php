@@ -34,7 +34,7 @@
 
     {{-- <div id="user_id" data-data="{{ auth()->user()->id }}"></div> --}}
 
-    <div class="container-fluid margin-top">
+    <div class="container-fluid">
         <div class="row">
             @include('student.learn.layouts.sidebar')
 

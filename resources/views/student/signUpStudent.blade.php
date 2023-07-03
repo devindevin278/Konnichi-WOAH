@@ -13,7 +13,7 @@
       </div>
 
       <div class="form-floating rounded">
-        <input type="text" name="name" class="is-invalid w-100 @error('name')
+        <input type="text" name="name" class="w-100 @error('name')
         is-invalid
         @enderror" id="floatingInput" placeholder="Fullname"  value="{{ old('name') }}">
         @error('name')

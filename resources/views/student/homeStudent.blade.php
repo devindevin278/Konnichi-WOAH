@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="d-block margin-top">
+<div class="d-block">
 
 <section class="banner">
     <div class="row d-flex">
@@ -18,8 +18,7 @@
         </div>
 
         <div class="col-md-5">
-            <img src="{{ asset('img/home/kucing2062-wjq-500w.png') }}" alt="kotakbutton2062" class="img-fluid"
-            />
+            <img src="{{ asset('img/home/kucing.svg') }}" alt="kotakbutton2062" class="img-fluid"/>
         </div>
     </div>
 </section>
