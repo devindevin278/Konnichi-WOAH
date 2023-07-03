@@ -14,7 +14,7 @@
                                 <h1 style="font-size: 30px;"><strong>Welcome to Konnichi-WOAH!&nbsp;</strong><br><strong>A captivating Japanese language learning platform!</strong></h1>
                                 <p>Are you looking for an easy and fun way to learn Japanese? Look no further than Konnichiwoah! We offer a wide range of exciting features to help you master the Japanese language with ease and effectiveness.</p>
                             </div>
-                            <div class="col-md-6 d-xl-flex justify-content-center justify-content-xl-center align-items-xl-center"><img class="d-xl-flex align-items-center align-items-xl-center" src="assets/img/kucing.svg"></div>
+                            <div class="col-md-6 d-xl-flex justify-content-center justify-content-xl-center align-items-xl-center"><img class="d-xl-flex align-items-center align-items-xl-center" src="{{ asset('img/home/kucing.svg') }}"></div>
                         </div>
                     </div><!-- End: 1 Row 2 Columns -->
                 </div>
@@ -22,7 +22,7 @@
                     <!-- Start: 1 Row 2 Columns -->
                     <div class="container d-xl-flex justify-content-xl-center align-items-xl-center">
                         <div class="row d-xl-flex justify-content-xl-center align-items-xl-center" style="padding-top: 0;margin-top: 0;margin-right: 96px;margin-left: 6px;">
-                            <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center"><img class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" width="340" height="340" src="assets/img/kucing2.svg"></div>
+                            <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center"><img class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" width="340" height="340" src="{{ asset('img/home/kucing2.svg') }}"></div>
                             <div class="col-md-6" style="margin-top: 0;padding-right: 0;padding-left: 0;">
                                 <h1 style="font-size: 30px;"><strong>Why should we learn about Japanese language?</strong></h1>
                                 <p>Learning Japanese allows for a deeper understanding of Japan's culture and provides practical career advantages. It opens doors to engaging with Japanese literature, media, and society, while expanding professional prospects.</p>
@@ -38,7 +38,7 @@
                                 <h1 style="font-size: 30px;"><strong>Don't worry if you're struggling with your learning!</strong></h1>
                                 <p>Here, you can learn Japanese in a variety of ways. For those of you who like games, this application is perfect for you because we provide games as a learning media too.</p>
                             </div>
-                            <div class="col-md-6 d-xl-flex justify-content-center justify-content-xl-center align-items-xl-center"><img class="d-xl-flex align-items-center align-items-xl-center" src="assets/img/kucing3.svg"></div>
+                            <div class="col-md-6 d-xl-flex justify-content-center justify-content-xl-center align-items-xl-center"><img class="d-xl-flex align-items-center align-items-xl-center" src="{{ asset('img/home/kucing3.svg') }}""></div>
                         </div>
                     </div><!-- End: 1 Row 2 Columns -->
                 </div>
@@ -69,7 +69,7 @@
             <div class="row gy-1 row-cols-1 row-cols-md-2 row-cols-xl-3">
                 <div class="col">
                     <div class="card" style="background: rgba(243,241,241,0);">
-                        <div class="d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center"><img src="assets/img/game.svg" style="padding-bottom: 20px;padding-top: 10px;"></div>
+                        <div class="d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center"><img src="{{ asset('img/home/game.svg') }}" style="padding-bottom: 20px;padding-top: 10px;"></div>
                         <div class="card-body p-4">
                             <h4 class="card-title" style="text-align: center;"><strong>GAMES</strong></h4>
                             <p class="card-text" style="text-align: center;">Konnichiwoah! offers Hiragana and Katakana Cards, as well as language games, to make learning Japanese characters and language skills easy and enjoyable.<br><br></p>
@@ -79,7 +79,7 @@
                 <div class="col" style="text-align: center;">
                     <div class="card" style="text-align: center;background: rgba(255,255,255,0);">
                         <div class="card-body p-4" style="text-align: center;">
-                            <div class="d-xl-flex justify-content-xl-center align-items-xl-center"><img src="assets/img/article.svg" style="padding-bottom: 20px;padding-top: 10px;"></div>
+                            <div class="d-xl-flex justify-content-xl-center align-items-xl-center"><img src="{{ asset('img/home/article.svg') }}" style="padding-bottom: 20px;padding-top: 10px;"></div>
                             <h4 class="card-title" style="text-align: center;"><strong>ARTICLE</strong></h4>
                             <p class="card-text" style="text-align: center;">Konnichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.<br><br></p>
                         </div>
@@ -88,7 +88,7 @@
                 <div class="col" style="text-align: center;">
                     <div class="card" style="text-align: center;background: rgba(255,255,255,0);">
                         <div class="card-body p-4" style="text-align: center;">
-                            <div class="d-xl-flex justify-content-xl-center align-items-xl-center"><img src="assets/img/teacher.svg" style="padding-bottom: 20px;padding-top: 10px;"></div>
+                            <div class="d-xl-flex justify-content-xl-center align-items-xl-center"><img src="{{ asset('img/home/teacher.svg') }}" style="padding-bottom: 20px;padding-top: 10px;"></div>
                             <h4 class="card-title" style="text-align: center;"><strong>TEACHER</strong></h4>
                             <p class="card-text" style="text-align: center;">For those serious about improving their Japanese language skills, Konichiwoah! provides a list of qualified teachers who can assist with Japanese grammar and offer additional lessons</p>
                         </div>
@@ -270,7 +270,7 @@
                 <div class="row gy-4 row-cols-2 row-cols-md-4">
                     <div class="col">
                         <div class="card border-0 shadow-none">
-                            <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="assets/img/img-devin.svg">
+                            <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-devin.svg') }}">
                                 <h1 style="font-size: 20px;"><strong>Devin Wong</strong></h1>
                                 <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Lorem Ipsum</span></strong><span style="color: rgb(0, 0, 0);">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</span><br><br></p>
                             </div>
@@ -278,7 +278,7 @@
                     </div>
                     <div class="col">
                         <div class="card border-0 shadow-none">
-                            <div class="card-body text-center d-flex flex-column align-items-center p-0"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="assets/img/img-devin.svg" style="margin-top: 30px;">
+                            <div class="card-body text-center d-flex flex-column align-items-center p-0"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-devin.svg') }}" style="margin-top: 30px;">
                                 <h1 style="font-size: 20px;"><strong>Devin Wong</strong></h1>
                                 <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Lorem Ipsum</span></strong><span style="color: rgb(0, 0, 0);">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</span><br><br></p>
                             </div>
@@ -286,7 +286,7 @@
                     </div>
                     <div class="col">
                         <div class="card border-0 shadow-none">
-                            <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="assets/img/img-devin.svg">
+                            <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-devin.svg') }}">
                                 <h1 style="font-size: 20px;"><strong>Devin Wong</strong></h1>
                                 <p class="text-muted card-text mb-2" style="padding-left: 20px;padding-right: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Lorem Ipsum</span></strong><span style="color: rgb(0, 0, 0);">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</span><br><br></p>
                             </div>
@@ -294,7 +294,7 @@
                     </div>
                     <div class="col">
                         <div class="card border-0 shadow-none">
-                            <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="assets/img/img-devin.svg">
+                            <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-devin.svg') }}">
                                 <h1 style="font-size: 20px;"><strong>Devin Wong</strong></h1>
                                 <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Lorem Ipsum</span></strong><span style="color: rgb(0, 0, 0);">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</span><br><br></p>
                             </div>
@@ -304,7 +304,6 @@
             </div><!-- End: Team -->
         </div>
     </section><!-- End: about-us -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- end aos -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
