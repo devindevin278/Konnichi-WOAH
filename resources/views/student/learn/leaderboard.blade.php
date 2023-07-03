@@ -40,7 +40,7 @@
                             </div>
                         @else
                             <div class="leaderboardText ms-5 text-center align-items-center"
-                                style="color:#00B91D; width:50px;">
+                                style="color:#00B91D; width:45px;">
                                 {{ $loop->iteration }}
                             </div>
                         @endif
@@ -48,7 +48,11 @@
 
                         @if (auth()->user()->id == $student->id)
                             <div class="ms-4">
-                                <img src="{{ asset('img/pp.png') }}" alt="crown">
+                                @if ($student->photo)
+                                <img class="leaderboard_photo" src="{{ asset('storage/'.$student->photo) }}" alt="crown">
+                                @else
+                                <img class="leaderboard_photo" src="{{ asset('img/pp4.png') }}" alt="crown">
+                                @endif
                             </div>
                             <div class="leaderboardText justify-content-around ms-5" style="color:#00B91D;">
                                 {{ $student->name }}
@@ -58,7 +62,12 @@
                             </div>
                         @else
                             <div class="ms-4">
-                                <img src="{{ asset('img/pp2.png') }}" alt="crown">
+                                @if ($student->photo)
+
+                                <img class="leaderboard_photo" src="{{ asset('storage/'.$student->photo) }}" alt="crown">
+                                @else
+                                <img class="leaderboard_photo" src="{{ asset('img/pp2.png') }}" alt="crown">
+                                @endif
                             </div>
                             <div class="leaderboardText justify-content-around ms-5" style="color:#A08A8F;">
                                 {{ $student->name }}
@@ -110,7 +119,7 @@
 
 
 
-        </section>
+    </section>
 
 
 

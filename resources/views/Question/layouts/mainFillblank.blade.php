@@ -8,10 +8,10 @@
     <title>Fill in the Blank</title>
 
     <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('multi.css') }} ">
     <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="node_modules/@popperjs/core/dist/umd/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('fillblank.css') }} ">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
@@ -23,7 +23,7 @@
         <button class="skib" onclick="showDiv('2')">SKIP</button>
     </div>
 
-    <div class="corr" id="1" style="display: none">
+    <div class="corr" id="1" style="">
         <svg class="correctsign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
             class="w-6 h-6">
             <path fill-rule="evenodd"
@@ -31,11 +31,7 @@
                 clip-rule="evenodd" />
         </svg>
         <h2 class="ann" style="color:#259559">Amazing!</h2>
-        {{-- @if ($page->id % 10 == 0)
-        <a href="/completed" class="continue">Continue</a>
-        @else --}}
-        {{-- <a href="/questions/{{ $point->id }}/{{ $page->id + 1 }}" class="continue">Continue</a> --}}
-            {{-- <h1>{{ $page->id }}</h1> --}}
+
             @if (($prevStreak + 1) > 2)
             <div class="d-block">
                 <h2 class="ann"><?xml version="1.0" encoding="utf-8"?>

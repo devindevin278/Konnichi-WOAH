@@ -54,6 +54,7 @@ Route::get('/learnStudent/cards/hiragana', function () {
 Route::resource('learnStudent/games', GameController::class);
 // buat questions
 // Route::resource('/questions', PointController::class);
+Route::get('/notebook/{unit_id}', [PageController::class, 'showNote']);
 Route::post('/questions', [PageController::class, 'showPage']);
 Route::post('/questions/cancel', [PageController::class, 'cancel']);
 
@@ -63,7 +64,7 @@ Route::get('/monthChart', [GameController::class, 'monthChart']);
 Route::get('/yearChart', [GameController::class, 'yearChart']);
 
 
-Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
+// Route::get('/questions/{point_id}/{page_id}', [PageController::class, 'showNext']);
 
 
 Route::get('/completed', [PageController::class, 'succeed']);
@@ -72,7 +73,7 @@ Route::get('/completed', [PageController::class, 'succeed']);
 Route::post('/completed', [GameController::class, 'succeed']);
 Route::post('/XPscore', [GameController::class, 'store']);
 Route::post('/saveTemp', [GameController::class, 'storeTemp']);
-
+Route::put('/openChest', [GameController::class, 'openChest']);
 // Route::get('/viewTeacher', function () {
 //     return view('teacher.viewTeacher',["title" => "viewTeacher"]);
 // });
@@ -133,7 +134,7 @@ Route::resource('/verifyTeacher', CertificateController::class);
 
 // Home
 Route::get('/', function () {
-    return view('student.homeStudent',["title" => "homeStudent"]);
+    return view('student.homeStudent3',["title" => "homeStudent"]);
 });
 Route::get('/homeStudent', function () {
     return view('student.homeStudent',["title" => "homeStudent"]);
@@ -146,7 +147,7 @@ Route::get('/homeAdmin', function () {
 });
 
 
-
+//test
 // Article
 
 Route::get('/admin/checkSlug',[ArticleAdminController::class, 'checkSlug']);
@@ -190,4 +191,6 @@ Route::get('/teacher', [TeacherController::class, 'showAllTeacher']);
 Route::get('/fetch-cities', [TeacherController::class, 'fetcgahCities']);
 Route::get('/fetchcities', [TeacherController::class, 'fetchAllCities']);
 
-// Route::get('/test', [GameController::class, 'weekChart']);
+Route::get('/test', function () {
+    return view('student.learn.learnpage');
+});

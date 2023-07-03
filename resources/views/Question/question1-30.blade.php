@@ -10,7 +10,7 @@
     <h3 class="question2">reply the dialog</h3>
     <div class="choices">
         <button class="ans" onclick="showDiv('1')">
-            <h4 class="answer">はじめまして、 よろしく お願いします</h4>
+            <h4 class="answer">はい、 どうぞ</h4>
         </button>
 
         <button class="ans" onclick="showDiv('2')">
@@ -24,9 +24,9 @@
 
 </div>
 
-<div class="downer" id="5">
+{{-- <div class="downer" id="5">
     <button class="skib" onclick="showDiv('2')">SKIP</button>
-</div>
+</div> --}}
 
 
 @endsection

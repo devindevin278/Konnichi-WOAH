@@ -1,5 +1,5 @@
 <footer class="m-0">
-    <div class="row">
+    <div class="row ">
       <div class="footerbox col-6 col-md-3 mb-3">
         <h5 class="mb-3">Konnichi-Woah</h5>
         <ul class="nav flex-column">

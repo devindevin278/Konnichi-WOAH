@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('point_id')->references('id')->on('points');
             $table->string('page_name');
             $table->string('correction')->nullable();
-            $table->integer('pointxp');
             $table->timestamps();
         });
     }

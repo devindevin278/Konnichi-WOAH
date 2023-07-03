@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Unit;
 use App\Models\Point;
+use App\Models\Notebook;
 use App\Models\TempProgress;
 use Illuminate\Http\Request;
 
@@ -66,25 +68,34 @@ class PageController extends Controller
         //
     }
 
-    public function showNext($point_id, $page_id) {
-        $page = Page::where('id', $page_id)->get();
-        $point = Point::where('id', $point_id)->get();
-        // dd($page[0]);
-        return view('Question.' . $page[0]->page_name, [
-            'point' => $point[0],
-            'page' => $page[0]
-        ]);
-    }
+    // public function showNext($point_id, $page_id) {
+    //     $page = Page::where('id', $page_id)->get();
+    //     $point = Point::where('id', $point_id)->get();
+    //     // dd($page[0]);
+    //     return view('Question.' . $page[0]->page_name, [
+    //         'point' => $point[0],
+    //         'page' => $page[0]
+    //     ]);
+    // }
 
     public function showPage(Request $request) {
         $page = Page::where('id', $request->page_id)->get();
         $point = Point::where('id', $request->point_id)->get();
-        // dd($request);
+        // dd($page);
 
         return view('Question.' . $request->page_name, [
             'point' => $point[0],
             'page' => $page[0],
             'prevStreak' => 0
+        ]);
+    }
+
+    public function showNote($unit_id) {
+        $notebooks = Unit::find($unit_id)->notebooks;
+        // dd($notebooks);
+
+        return view('student.notebook1', [
+            'notebooks' => $notebooks
         ]);
     }
 

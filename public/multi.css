@@ -26,6 +26,12 @@ h1,h2,h3,h4,h5,h6 {
     flex-direction: row;
 }
 
+.back-button-out {
+    border: none;
+    background-color: none;
+    height: fit-content;
+}
+
 .back-button{
     color: #BABABA;
     width: 1.5vw;
@@ -143,6 +149,10 @@ h1,h2,h3,h4,h5,h6 {
     padding: 0.9vw 2vw;
 }
 
+.fireStreak {
+    width: 2rem;
+}
+
 .downer{
     display: flex;
     flex-direction: row-reverse;
@@ -176,9 +186,16 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .ann{
-    position: absolute;
+    /* position: absolute; */
     font-size: 1.9vw;
-    left: 29vw;
+    /* left: 25vw; */
+}
+
+.correction {
+    /* position: absolute; */
+    font-size: 1.9vw;
+    /* left: 27vw; */
+    /* margin-left: 1px; */
 }
 
 @media screen and (max-width: 800px) {

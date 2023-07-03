@@ -87,28 +87,28 @@
                     </div>
                 </div>
 
-            @foreach ( $articles->skip(1) as $article )
+                <div class="container">
+                    <div class="row justify-content-around">
+                        @foreach ( $articles->skip(1) as $article )
+                            <div class="col-md-3">
+                                <div class="card mt-5 d-flex p-0 justify-content-around" style="width: 15rem; background-color: #ffffff;">
+                                    <div class="container d-flex imgcard m-0 p-0">
+                                        <div class="imgcard d-flex" style="overflow: hidden;">
+                                            <img class="card-img-top" src="{{ asset('storage/'. $article->image) }}" alt="" style="object-fit: cover; width: 100%; height: 15rem;">
+                                        </div>
+                                    </div>
+                                    <div class="card-body rounded-bottom border-0" style="background-color: #ffffff;">
+                                        <h5 class="card-title"><a href="/admin/{{ $article->slug }}" style="color: black;">{{ $article->title }}</a></h5>
+                                        <a class="card-title text-decoration-none"><a href="/author/{{ $article->author->name }}" style="color: black;">{{ $article->author->name }}</a></a>
+                                        <p class="card-text">{{ $article->created_at->diffForHumans() }}</p>
 
-            <div class="card  mt-5 col-md-5 d-flex p-0 justify-content-around " style="width: 15rem; background-color:#ffffff;">
-                <div class="container d-flex imgcard m-0 p-0">
-                    <div class="imgcard d-flex" style="overflow:hiden;">
-                        <img class="card-img-top " src="{{ asset('storage/'. $article->image) }}" alt="" >
+                           
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-
                 </div>
-
-
-                <div class="card-body rounded-bottom border-0" style=" background-color:#ffffff;">
-                    <h5 class="card-title"><a href="/student/{{ $article->slug }}" style="color:black;">{{ $article->title }}</a></h5>
-
-                    <a class="card-title text-decoration-none"><a href="/author/{{ $article->author->name }}" style="color:black;">{{ $article->author->name }}</a></a>
-                    <p class="card-text">{{ $article->created_at->diffForHumans() }}</p>
-                </div>
-            </div>
-
-
-
-            @endforeach
 
             @else
             <h1>No Article Yet</h1>
