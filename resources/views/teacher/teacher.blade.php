@@ -20,7 +20,7 @@
         @endif
 
     </div>
-    <div class="row d-flex justify-content-center m-auto container">
+    <div class="row d-flex justify-content-center m-auto container" >
 
         <div class="col d-flex justify-content-around " style="font-weight:600; ">
             <div class="d-flex align-items-center" style="width:50%;" >
@@ -108,7 +108,7 @@
 
 
     {{-- show --}}
-    <div class="row d-flex justify-content-center m-auto mt-5 container">
+    <div class="row d-flex justify-content-center m-auto mt-5 container" style="padding-bottom: 30px;" data-aos="fade-up" data-aos-duration="1000">
         <div class="col d-flex justify-content-center" style="background-color: white; border-radius: 30px;">
             <div class="row d-flex justify-content-around mt-5">
                 <div class="col-12 d-flex justify-content-center">

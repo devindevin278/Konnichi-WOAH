@@ -17,14 +17,14 @@
 </div> --}}
 
 
-<div class="learningg col-md-6 margin-top pt-4">
+<div class="learningg col-md-6 margin-top pt-4" >
 
 
 
         @foreach ($units as $unit)
 
 
-            <div class="chapter mb-5">
+            <div class="chapter mb-5" style="padding-bottom: 30px;" data-aos="fade-up" data-aos-duration="1000">
                 <div class="papan" style="background-color: {{ $unit->color }}">
                     <div class="judulbab">
                         <h3 class="textjudul">{{ 'Unit ' . $unit->id }}</h3>
@@ -59,7 +59,7 @@
                     </a>
                 </div>
 
-                <div class="layoutlevel">
+                <div class="layoutlevel" >
                     {{-- start --}}
 
 
@@ -159,7 +159,7 @@
                                         <button id="3" class="continue2 mt-3" style="background: {{ $unit->color }};" onclick="levelhide('3')">Start Lesson!</button>
                                     </form>
                                 </div>
-                                
+
 
                                 {{-- popup nya, ambil data dari classnya, masukin ke dalamnya --}}
 
@@ -766,4 +766,9 @@
     <div class="col-md-4 px-3" id="progress_sidebar">
         @include('student.learn.layouts.progress')
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Inisialisasi AOS setelah halaman dimuat
+        AOS.init();
+    </script>
 @endsection

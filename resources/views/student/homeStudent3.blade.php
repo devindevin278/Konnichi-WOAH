@@ -54,7 +54,7 @@
             </ol>
         </div>
     </header><!-- Start: keterangan -->
-    <section>
+    <section style="padding-bottom: 30px;" data-aos="fade-up" data-aos-duration="1000">
         <div style="background: #ffd0d1;padding-top: 40px;padding-bottom: 40px;padding-left: 200px;padding-right: 200px;">
             <h5 style="font-weight: bold;color: rgba(0,0,0,0.45);">WHO ARE WE?</h5>
             <h4><strong>We are the team behind Konnichi-WOAH! - a leading platform for learning the Japanese language.</strong></h4>
@@ -187,7 +187,7 @@
             </div><!-- End: 2 Rows 1+1 Columns -->
         </div>
     </section><!-- End: mengapa -->
-    <!-- Start: Pricing Duo -->
+    {{-- <!-- Start: Pricing Duo -->
     <div class="container py-4 py-xl-5">
         <div class="row mb-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
@@ -256,15 +256,15 @@
                 </div>
             </div>
         </div>
-    </div><!-- End: Pricing Duo -->
+    </div><!-- End: Pricing Duo --> --}}
     <!-- Start: about-us -->
-    <section style="padding-top: 0;margin-top: 30px;">
-        <div style="background: #594a4e;margin-bottom: 0;padding-bottom: 50px;">
+    <section style="padding-top: 0;margin-top: 30px;" style="padding-bottom: 30px;" data-aos="fade-up" data-aos-duration="1000">
+        <div margin-bottom: 0;padding-bottom: 50px;">
             <!-- Start: Team -->
             <div class="container py-4 py-xl-5">
                 <div class="row mb-4 mb-lg-5">
                     <div class="col-md-8 col-xl-6 text-center mx-auto">
-                        <h2 style="color: rgb(255,255,255);"><strong>Our Team</strong></h2>
+                        <h2><strong>Our Team</strong></h2>
                     </div>
                 </div>
                 <div class="row gy-4 row-cols-2 row-cols-md-4">
@@ -272,31 +272,31 @@
                         <div class="card border-0 shadow-none">
                             <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-devin.svg') }}">
                                 <h1 style="font-size: 20px;"><strong>Devin Wong</strong></h1>
-                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Lorem Ipsum</span></strong><span style="color: rgb(0, 0, 0);">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</span><br><br></p>
+                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Konnichi-Woah!</span></span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0 shadow-none">
-                            <div class="card-body text-center d-flex flex-column align-items-center p-0"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-devin.svg') }}" style="margin-top: 30px;">
-                                <h1 style="font-size: 20px;"><strong>Devin Wong</strong></h1>
-                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Lorem Ipsum</span></strong><span style="color: rgb(0, 0, 0);">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</span><br><br></p>
+                            <div class="card-body text-center d-flex flex-column align-items-center p-0"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-hasna.svg') }}" style="margin-top: 30px;">
+                                <h1 style="font-size: 20px;"><strong>Hasna Salsabilla</strong></h1>
+                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);"></span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0 shadow-none">
-                            <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-devin.svg') }}">
-                                <h1 style="font-size: 20px;"><strong>Devin Wong</strong></h1>
-                                <p class="text-muted card-text mb-2" style="padding-left: 20px;padding-right: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Lorem Ipsum</span></strong><span style="color: rgb(0, 0, 0);">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</span><br><br></p>
+                            <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-hansen.svg') }}">
+                                <h1 style="font-size: 20px;"><strong>Hansen</strong></h1>
+                                <p class="text-muted card-text mb-2" style="padding-left: 20px;padding-right: 20px;"><br><strong><span style="color: rgb(0, 0, 0);"></span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0 shadow-none">
-                            <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-devin.svg') }}">
-                                <h1 style="font-size: 20px;"><strong>Devin Wong</strong></h1>
-                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Lorem Ipsum</span></strong><span style="color: rgb(0, 0, 0);">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</span><br><br></p>
+                            <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-mike.svg') }}">
+                                <h1 style="font-size: 20px;"><strong>Michael Baptista</strong></h1>
+                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);"></span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
                             </div>
                         </div>
                     </div>
