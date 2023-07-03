@@ -134,7 +134,7 @@ Route::resource('/verifyTeacher', CertificateController::class);
 
 // Home
 Route::get('/', function () {
-    return view('student.homeStudent',["title" => "homeStudent"]);
+    return view('student.homeStudent3',["title" => "homeStudent"]);
 });
 Route::get('/homeStudent', function () {
     return view('student.homeStudent',["title" => "homeStudent"]);
