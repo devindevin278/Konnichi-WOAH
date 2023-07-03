@@ -7,6 +7,17 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: 600;
 }
 
+#body {
+    background-color: #FAEEE7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    animation: fadeOut 3s;
+}
+
 .greyy{
     display: none;
     background-color: grey;

@@ -2,8 +2,11 @@
 
 @section('content')
 
-
 @include('Question.layouts.progress')
+
+<div id="loader">
+    @include('student.learn.loadingpage1')
+</div>
 
 <div class="maincont">
     <h3 class="question">Good Morning </h3>
@@ -30,3 +33,4 @@
 
 
 @endsection
+

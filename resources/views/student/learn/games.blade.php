@@ -651,8 +651,8 @@
                                 </div>
                             </button>
 
-                            <div class="chest-popup rounded border border-3" id="2 {{ $userUnit->unit_id }}" style="display: none">
-                                <img src="/Assets/SVG assets/chest_open.gif" class="chest-gif" alt="">
+                            <div class="chest-popup rounded-4 border" id="2 {{ $userUnit->unit_id }}" style="display: none; overflow: hidden">
+                                <img src="{{ asset('/Assets/SVG assets/chest_open.gif') }}" class="chest-gif" alt="">
                                 <h4>You earned 15 EXP!</h4>
                                 <form action="/openChest" method="post">
                                     @method('PUT')
