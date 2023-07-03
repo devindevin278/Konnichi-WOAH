@@ -33,7 +33,7 @@
     <p>Our mission is to provide a user-friendly platform that caters to different learning styles, levels, and preferences. We are committed to helping our users achieve their language learning goals with ease and effectiveness.</p>
 </section>
 
-<section class=" threeItems m-0">
+<section class="threeItems m-0">
     <div class="row mb-5">
         <div class="col-md-4 text-center item-box">
             <img src="{{ asset('img/home/imggames2062-wls.svg') }}" alt="">

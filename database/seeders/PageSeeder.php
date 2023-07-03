@@ -224,5 +224,20 @@ class PageSeeder extends Seeder
             'page_name' => 'question1-30',
             'correction' => 'はい、 どうぞ [hai, douzo]'
         ]);
+        Page::create([
+            'point_id' => 10,
+            'page_name' => 'question1-30',
+            'correction' => 'はい、 どうぞ [hai, douzo]'
+        ]);
+        Page::create([
+            'point_id' => 11,
+            'page_name' => 'question1-30',
+            'correction' => 'はい、 どうぞ [hai, douzo]'
+        ]);
+        Page::create([
+            'point_id' => 12,
+            'page_name' => 'question1-30',
+            'correction' => 'はい、 どうぞ [hai, douzo]'
+        ]);
     }
 }

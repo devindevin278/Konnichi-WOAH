@@ -39,17 +39,26 @@ public function index()
         ->get();
 
 
-    $userUnits = StudentUnitProgress::where('user_id', auth()->user()->id)->get();
 
-    $temp = [];
-    $id = 0;
-    foreach($userPoint as $item) {
-        $temp[$id] = $item->point_id;
-        $id++;
-    }
-    $userPoints = collect($temp);
+        $temp = [];
+        $id = 0;
+        foreach($userPoint as $item) {
+            $temp[$id] = $item->point_id;
+            $id++;
+        }
+        $userPoints = collect($temp);
 
-    $daily = StudentPointProgress::whereRaw('user_id = ? and day(created_at) = day(CURRENT_DATE)', auth()->user()->id)->selectRaw('sum(total_xp)')->groupByRaw('date(created_at)')->orderByRaw('date(created_at)')->get();
+        $userUnits = StudentUnitProgress::where('user_id', auth()->user()->id)->get();
+
+        $temp = [];
+        $id = 0;
+        foreach($userUnits as $item) {
+            $temp[$id] = $item->unit_id;
+            $id++;
+        }
+        $userUnitId = collect($temp);
+
+        $daily = StudentPointProgress::whereRaw('user_id = ? and day(created_at) = day(CURRENT_DATE)', auth()->user()->id)->selectRaw('sum(total_xp)')->groupByRaw('date(created_at)')->orderByRaw('date(created_at)')->get();
 
     if($daily->isEmpty()) {
         // dd($daily);
@@ -68,6 +77,7 @@ public function index()
         'units' => Unit::all(),
         'userPoints' => $userPoints,
         'userUnits' => $userUnits,
+        'userUnitId' => $userUnitId,
         'user_id' => auth()->user()->id,
         'daily' => $dailyXp
     ]);
@@ -206,6 +216,18 @@ public function index()
         $data['unit_id'] = $request->unit_id;
         $data['opened'] = 1;
         $userUnit->update($data);
+
+        // cari point id pertama dari unit id
+        $firstPoint = Unit::find($request->unit_id)->points->first();
+
+        // dd($firstPoint);
+        $dataxp['user_id'] = $request->user_id;
+        $dataxp['point_id'] = $firstPoint->id;
+        $dataxp['total_xp'] = 15;
+        $dataxp['correct_count'] = 0;
+
+        // store to student page progress
+        StudentPointProgress::create($dataxp);
 
         // add 15 xp ke student
         User::where('id', auth()->user()->id)->increment('pointxp', 15);
