@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div class="container mt-3 d-flex jusify-content-around">
+    <div class="container mt-5 d-flex jusify-content-around">
         <article>
             {!! $articles->body !!}
         </article>

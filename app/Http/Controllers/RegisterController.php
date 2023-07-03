@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 
 class RegisterController extends Controller
 {
-    //
+
 
     public function index() {
         return view('student.signUpStudent', [
@@ -20,7 +24,7 @@ class RegisterController extends Controller
     public function store(Request $request) {
 
         // dd('test');
-
+        // $user = Socialite::driver('google')->user();
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             // 'username' => ['required', 'min:4', 'max:255', 'unique:users'],
