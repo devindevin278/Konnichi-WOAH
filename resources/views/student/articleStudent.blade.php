@@ -102,6 +102,7 @@
                                         <a class="card-title text-decoration-none"><a href="/author/{{ $article->author->name }}" style="color: black;">{{ $article->author->name }}</a></a>
                                         <p class="card-text">{{ $article->created_at->diffForHumans() }}</p>
 
+                           
                                     </div>
                                 </div>
                             </div>
