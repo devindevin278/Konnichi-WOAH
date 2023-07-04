@@ -17,14 +17,14 @@
 </div> --}}
 
 
-<div class="learningg col-md-6 margin-top pt-4">
-
+<div class="learningg col-md-6 pt-4">
 
 
 
         @foreach ($units as $unit)
 
-            <div class="chapter mb-5">
+
+            <div class="chapter mb-5" style="padding-bottom: 30px;" data-aos="fade-up" data-aos-duration="1000">
                 <div class="papan" style="background-color: {{ $unit->color }}">
                     <div class="judulbab">
                         <h3 class="textjudul">{{ 'Unit ' . $unit->id }}</h3>
@@ -59,7 +59,7 @@
                     </a>
                 </div>
 
-                <div class="layoutlevel">
+                <div class="layoutlevel" >
                     {{-- start --}}
 
 
@@ -72,8 +72,9 @@
                         {{-- if point pertama dan id dari pointnya belum ada di progress user --}}
                         @if (($point->id%4 == 1) && !$userPoints->contains($point->id))
 
-{{--
-                                <button type="button" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" class="{{ $point->id }} {{ $point->pages->first()->id }} {{ $unit->id }} {{ $point->pages->first()->page_name }}" id="condition1">
+
+                        {{-- <button type="button" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" class="{{ $point->id }} {{ $point->pages->first()->id }} {{ $unit->id }} {{ $point->pages->first()->page_name }}" id="condition1"> --}}
+                                <button onclick="levelshow('3', {{ $point->id }})">
                                     <svg width="82" height="114" viewBox="0 0 82 114" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <rect x="6" y="77.5" width="70" height="8" fill="#58CC02" />
@@ -130,11 +131,42 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                </button> --}}
+                                </button>
+
+                                <div class="level-popup pb-5" id="3 {{ $point->id }}" style="display: none;">
+                                    <div class="level-popup-exit mt-2 mb-2">
+                                        <button class="exit-popup" onclick="levelhide('3', {{ $point->id }})"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                      </svg>
+                                      </button>
+                                    </div>
+
+                                    <div class="img-fluid d-flex">
+                                        <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup4.svg') }}" alt="">
+                                    </div>
+
+                                    <h2 class="fs-3" id="judulLevel">{{ $point->title }}</h2>
+                                    <h3 class="fs-5 mt-2" id="progressLevel">Lesson @if ( $point->id % 4 != 0 )
+                                        {{ $point->id % 4 }}
+                                    @else 4
+                                    @endif/4</h3>
+                                    <form action="/questions" method="post">
+                                        @csrf
+                                        <input type="hidden" id="point_id" name="point_id" value="{{ $point->id }}">
+                                        <input type="hidden" id="page_id" name="page_id" value="{{ $point->pages->first()->id }}">
+                                        <input type="hidden" id="unit_id" name="unit_id" value="{{ $unit->id }}">
+                                        <input type="hidden" id="page_name" name="page_name" value="{{ $point->pages->first()->page_name }}">
+                                        <button id="3" class="continue2 mt-3" style="background: {{ $unit->color }};" onclick="levelhide('3')">Start Lesson!</button>
+                                    </form>
+                                </div>
 
 
 
-                            <form action="/questions" method="post">
+                                {{-- popup nya, ambil data dari classnya, masukin ke dalamnya --}}
+
+
+
+                            {{-- <form action="/questions" method="post">
                                 @csrf
                                 <input type="hidden" name="point_id" value="{{ $point->id }}">
                                 <input type="hidden" name="page_id" value="{{ $point->pages->first()->id }}">
@@ -198,7 +230,7 @@
                                         </defs>
                                     </svg>
                                 </button>
-                            </form>
+                            </form> --}}
 
                             {{-- if pointnya udh ada di progress user maka tampilin yang emas --}}
                         @elseif ($userPoints->contains($point->id))
@@ -214,7 +246,49 @@
                             </svg>
                         </a> --}}
 
-                        <form action="/questions" method="post">
+                        <button onclick="levelshow('emas', {{ $point->id }})">
+                            <svg width="80" height="77" viewBox="0 0 80 77" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="80" height="76.16" fill="url(#pattern0)"/>
+                                <defs>
+                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_1003_6399" transform="scale(0.008 0.00840336)"/>
+                                </pattern>
+                                <image id="image0_1003_6399" width="125" height="119" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                                </svg>
+                            </button>
+
+
+                            <div class="level-popup pb-5" id="emas {{ $point->id }}" style="display: none">
+                                <div class="level-popup-exit mt-2 mb-2">
+                                    <button class="exit-popup" onclick="levelhide('emas', {{ $point->id }})"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                  </button>
+                                </div>
+
+
+
+                                <div class="img-fluid d-flex">
+                                    <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup3.svg') }}" alt="">
+                                </div>
+
+                                <h2 class="fs-3" id="judulLevel">{{ $point->title }}</h2>
+                                <h3 class="fs-5 mt-2" id="progressLevel">Lesson @if ( $point->id % 4 != 0 )
+                                    {{ $point->id % 4 }}
+                                @else 4
+                                @endif/4</h3>
+                                <form action="/questions" method="post">
+                                    @csrf
+                                    <input type="hidden" id="point_id" name="point_id" value="{{ $point->id }}">
+                                    <input type="hidden" id="page_id" name="page_id" value="{{ $point->pages->first()->id }}">
+                                    <input type="hidden" id="unit_id" name="unit_id" value="{{ $unit->id }}">
+                                    <input type="hidden" id="page_name" name="page_name" value="{{ $point->pages->first()->page_name }}">
+                                    <button id="3" class="continue2 mt-3" style="background: {{ $unit->color }};" onclick="levelhide('emas', {{ $point->id }})">Start Review!</button>
+                                </form>
+                            </div>
+
+                        {{-- <form action="/questions" method="post">
                             @csrf
                             <input type="hidden" name="point_id" value="{{ $point->id }}" id="">
                             <input type="hidden" name="page_id" value="{{ $point->pages[0]->id }}" id="">
@@ -230,7 +304,7 @@
                                     </defs>
                                     </svg>
                             </button>
-                        </form>
+                        </form> --}}
 
                         @elseif ($userPoints->contains($point->id-1) && $userPoints != $unit->points->last())
                             {{-- <a href="/questions/{{ $point->id }}/{{ $point->pages[0]->id }}">
@@ -294,71 +368,93 @@
                             </button>
                             </a> --}}
 
-                            <form action="/questions" method="post">
-                                @csrf
-                                <input type="hidden" name="point_id" value="{{ $point->id }}">
-                                <input type="hidden" name="page_id" value="{{ $point->pages->first()->id }}">
-                                <input type="hidden" name="unit_id" value="{{ $unit->id }}">
-                                <input type="hidden" name="page_name" value="{{ $point->pages->first()->page_name }}">
-                                <button type="submit">
-                                    <svg width="82" height="114" viewBox="0 0 82 114" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="6" y="77.5" width="70" height="8" fill="#58CC02" />
-                                        <rect x="6" y="77.5" width="70" height="8" fill="black"
-                                            fill-opacity="0.2" />
-                                        <g filter="url(#filter0_dd_206_3644)">
-                                            <rect x="6" y="49" width="70" height="57" rx="28.5"
-                                                fill="#58CC02" />
-                                        </g>
-                                        <g clip-path="url(#clip0_206_3644)">
-                                            <mask id="mask0_206_3644" style="mask-type:luminance" maskUnits="userSpaceOnUse"
-                                                x="26" y="63" width="30" height="29">
-                                                <path d="M56 63.5H26V91.5H56V63.5Z" fill="white" />
-                                            </mask>
-                                            <g mask="url(#mask0_206_3644)">
-                                                <path
-                                                    d="M38.7521 64.9116C39.6598 63.0295 42.3402 63.0295 43.2479 64.9116L45.8539 70.3152C46.225 71.0847 46.9639 71.6109 47.8125 71.7099L53.7906 72.4076C55.9269 72.6569 56.7684 75.3114 55.1658 76.7459L50.8845 80.5785C50.224 81.1697 49.9267 82.067 50.1035 82.9357L51.2468 88.553C51.6684 90.624 49.4857 92.2487 47.6228 91.2506L42.1786 88.3339C41.4424 87.9395 40.5576 87.9395 39.8214 88.3339L34.3772 91.2506C32.5143 92.2487 30.3316 90.624 30.7532 88.553L31.8965 82.9357C32.0733 82.067 31.776 81.1697 31.1155 80.5785L26.8342 76.7459C25.2316 75.3114 26.0731 72.6569 28.2094 72.4076L34.1875 71.7099C35.0361 71.6109 35.775 71.0847 36.1461 70.3152L38.7521 64.9116Z"
-                                                    fill="white" />
-                                            </g>
-                                        </g>
-                                        <rect x="1.5" y="1.85156" width="79" height="43" rx="9"
-                                            fill="white" />
-                                        <path
-                                            d="M22.1459 20.5799C22.1033 20.1502 21.9204 19.8164 21.5973 19.5785C21.2741 19.3406 20.8356 19.2216 20.2816 19.2216C19.9052 19.2216 19.5873 19.2749 19.3281 19.3814C19.0689 19.4844 18.87 19.6282 18.7315 19.8129C18.5966 19.9975 18.5291 20.207 18.5291 20.4414C18.522 20.6367 18.5628 20.8072 18.6516 20.9528C18.7439 21.0984 18.87 21.2244 19.0298 21.331C19.1896 21.4339 19.3743 21.5245 19.5838 21.6026C19.7933 21.6772 20.017 21.7411 20.2549 21.7944L21.2351 22.0288C21.7109 22.1353 22.1477 22.2773 22.5454 22.4549C22.9432 22.6325 23.2876 22.8509 23.5788 23.1101C23.87 23.3693 24.0955 23.6747 24.2553 24.0263C24.4187 24.3778 24.5021 24.7809 24.5057 25.2354C24.5021 25.9031 24.3317 26.4819 23.9943 26.9719C23.6605 27.4585 23.1775 27.8366 22.5454 28.1065C21.9169 28.3729 21.1587 28.506 20.2709 28.506C19.3902 28.506 18.6232 28.3711 17.9698 28.1012C17.3199 27.8313 16.8121 27.4318 16.4464 26.9027C16.0841 26.37 15.8942 25.7113 15.8764 24.9265H18.1083C18.1331 25.2923 18.2379 25.5977 18.4226 25.8427C18.6108 26.0842 18.8611 26.267 19.1736 26.3913C19.4897 26.5121 19.8466 26.5724 20.2443 26.5724C20.6349 26.5724 20.9741 26.5156 21.2617 26.402C21.5529 26.2884 21.7784 26.1303 21.9382 25.9279C22.098 25.7255 22.1779 25.4929 22.1779 25.2301C22.1779 24.9851 22.1051 24.7791 21.9595 24.6122C21.8174 24.4453 21.6079 24.3033 21.3309 24.1861C21.0575 24.0689 20.7219 23.9624 20.3242 23.8665L19.1363 23.5682C18.2166 23.3445 17.4904 22.9947 16.9577 22.5188C16.425 22.043 16.1605 21.402 16.164 20.5959C16.1605 19.9354 16.3363 19.3583 16.6914 18.8647C17.05 18.3711 17.5419 17.9858 18.1669 17.7088C18.7919 17.4318 19.5021 17.2933 20.2976 17.2933C21.1072 17.2933 21.8139 17.4318 22.4176 17.7088C23.0248 17.9858 23.4971 18.3711 23.8345 18.8647C24.1718 19.3583 24.3459 19.93 24.3565 20.5799H22.1459ZM26.1516 19.3441V17.4425H35.1111V19.3441H31.7712V28.3516H29.4914V19.3441H26.1516ZM37.6439 28.3516H35.1723L38.9383 17.4425H41.9106L45.6713 28.3516H43.1997L40.4671 19.9354H40.3818L37.6439 28.3516ZM37.4894 24.0636H43.3275V25.864H37.4894V24.0636ZM47.4943 28.3516V17.4425H51.7983C52.6221 17.4425 53.3253 17.5898 53.9076 17.8846C54.4936 18.1758 54.9392 18.5895 55.2446 19.1257C55.5536 19.6584 55.7081 20.2852 55.7081 21.006C55.7081 21.7305 55.5518 22.3537 55.2393 22.8757C54.9268 23.3942 54.474 23.7919 53.881 24.0689C53.2915 24.3459 52.5777 24.4844 51.7397 24.4844H48.8579V22.6307H51.3668C51.8071 22.6307 52.1729 22.5703 52.4641 22.4496C52.7553 22.3288 52.9719 22.1477 53.114 21.9062C53.2596 21.6648 53.3324 21.3647 53.3324 21.006C53.3324 20.6438 53.2596 20.3384 53.114 20.0898C52.9719 19.8413 52.7535 19.6531 52.4588 19.5252C52.1676 19.3938 51.8 19.3281 51.3561 19.3281H49.8007V28.3516H47.4943ZM53.3856 23.3871L56.0969 28.3516H53.5507L50.8981 23.3871H53.3856ZM57.4326 19.3441V17.4425H66.3921V19.3441H63.0522V28.3516H60.7724V19.3441H57.4326Z"
+                            <button onclick="levelshow('green', {{ $point->id }})">
+                                <svg width="82" height="114" viewBox="0 0 82 114" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="6" y="77.5" width="70" height="8" fill="#58CC02" />
+                                    <rect x="6" y="77.5" width="70" height="8" fill="black"
+                                        fill-opacity="0.2" />
+                                    <g filter="url(#filter0_dd_206_3644)">
+                                        <rect x="6" y="49" width="70" height="57" rx="28.5"
                                             fill="#58CC02" />
-                                        <rect x="1.5" y="1.85156" width="79" height="43" rx="9"
-                                            stroke="#E5E5E5" stroke-width="2" />
-                                        <defs>
-                                            <filter id="filter0_dd_206_3644" x="6" y="49" width="70"
-                                                height="65" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                                <feColorMatrix in="SourceAlpha" type="matrix"
-                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                                <feOffset dy="8" />
-                                                <feComposite in2="hardAlpha" operator="out" />
-                                                <feColorMatrix type="matrix"
-                                                    values="0 0 0 0 0.345098 0 0 0 0 0.8 0 0 0 0 0.00784314 0 0 0 1 0" />
-                                                <feBlend mode="normal" in2="BackgroundImageFix"
-                                                    result="effect1_dropShadow_206_3644" />
-                                                <feColorMatrix in="SourceAlpha" type="matrix"
-                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                                <feOffset dy="8" />
-                                                <feComposite in2="hardAlpha" operator="out" />
-                                                <feColorMatrix type="matrix"
-                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
-                                                <feBlend mode="normal" in2="effect1_dropShadow_206_3644"
-                                                    result="effect2_dropShadow_206_3644" />
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_206_3644"
-                                                    result="shape" />
-                                            </filter>
-                                            <clipPath id="clip0_206_3644">
-                                                <rect width="42" height="34" fill="white"
-                                                    transform="translate(20 60.5)" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                            </form>
+                                    </g>
+                                    <g clip-path="url(#clip0_206_3644)">
+                                        <mask id="mask0_206_3644" style="mask-type:luminance" maskUnits="userSpaceOnUse"
+                                            x="26" y="63" width="30" height="29">
+                                            <path d="M56 63.5H26V91.5H56V63.5Z" fill="white" />
+                                        </mask>
+                                        <g mask="url(#mask0_206_3644)">
+                                            <path
+                                                d="M38.7521 64.9116C39.6598 63.0295 42.3402 63.0295 43.2479 64.9116L45.8539 70.3152C46.225 71.0847 46.9639 71.6109 47.8125 71.7099L53.7906 72.4076C55.9269 72.6569 56.7684 75.3114 55.1658 76.7459L50.8845 80.5785C50.224 81.1697 49.9267 82.067 50.1035 82.9357L51.2468 88.553C51.6684 90.624 49.4857 92.2487 47.6228 91.2506L42.1786 88.3339C41.4424 87.9395 40.5576 87.9395 39.8214 88.3339L34.3772 91.2506C32.5143 92.2487 30.3316 90.624 30.7532 88.553L31.8965 82.9357C32.0733 82.067 31.776 81.1697 31.1155 80.5785L26.8342 76.7459C25.2316 75.3114 26.0731 72.6569 28.2094 72.4076L34.1875 71.7099C35.0361 71.6109 35.775 71.0847 36.1461 70.3152L38.7521 64.9116Z"
+                                                fill="white" />
+                                        </g>
+                                    </g>
+                                    <rect x="1.5" y="1.85156" width="79" height="43" rx="9"
+                                        fill="white" />
+                                    <path
+                                        d="M22.1459 20.5799C22.1033 20.1502 21.9204 19.8164 21.5973 19.5785C21.2741 19.3406 20.8356 19.2216 20.2816 19.2216C19.9052 19.2216 19.5873 19.2749 19.3281 19.3814C19.0689 19.4844 18.87 19.6282 18.7315 19.8129C18.5966 19.9975 18.5291 20.207 18.5291 20.4414C18.522 20.6367 18.5628 20.8072 18.6516 20.9528C18.7439 21.0984 18.87 21.2244 19.0298 21.331C19.1896 21.4339 19.3743 21.5245 19.5838 21.6026C19.7933 21.6772 20.017 21.7411 20.2549 21.7944L21.2351 22.0288C21.7109 22.1353 22.1477 22.2773 22.5454 22.4549C22.9432 22.6325 23.2876 22.8509 23.5788 23.1101C23.87 23.3693 24.0955 23.6747 24.2553 24.0263C24.4187 24.3778 24.5021 24.7809 24.5057 25.2354C24.5021 25.9031 24.3317 26.4819 23.9943 26.9719C23.6605 27.4585 23.1775 27.8366 22.5454 28.1065C21.9169 28.3729 21.1587 28.506 20.2709 28.506C19.3902 28.506 18.6232 28.3711 17.9698 28.1012C17.3199 27.8313 16.8121 27.4318 16.4464 26.9027C16.0841 26.37 15.8942 25.7113 15.8764 24.9265H18.1083C18.1331 25.2923 18.2379 25.5977 18.4226 25.8427C18.6108 26.0842 18.8611 26.267 19.1736 26.3913C19.4897 26.5121 19.8466 26.5724 20.2443 26.5724C20.6349 26.5724 20.9741 26.5156 21.2617 26.402C21.5529 26.2884 21.7784 26.1303 21.9382 25.9279C22.098 25.7255 22.1779 25.4929 22.1779 25.2301C22.1779 24.9851 22.1051 24.7791 21.9595 24.6122C21.8174 24.4453 21.6079 24.3033 21.3309 24.1861C21.0575 24.0689 20.7219 23.9624 20.3242 23.8665L19.1363 23.5682C18.2166 23.3445 17.4904 22.9947 16.9577 22.5188C16.425 22.043 16.1605 21.402 16.164 20.5959C16.1605 19.9354 16.3363 19.3583 16.6914 18.8647C17.05 18.3711 17.5419 17.9858 18.1669 17.7088C18.7919 17.4318 19.5021 17.2933 20.2976 17.2933C21.1072 17.2933 21.8139 17.4318 22.4176 17.7088C23.0248 17.9858 23.4971 18.3711 23.8345 18.8647C24.1718 19.3583 24.3459 19.93 24.3565 20.5799H22.1459ZM26.1516 19.3441V17.4425H35.1111V19.3441H31.7712V28.3516H29.4914V19.3441H26.1516ZM37.6439 28.3516H35.1723L38.9383 17.4425H41.9106L45.6713 28.3516H43.1997L40.4671 19.9354H40.3818L37.6439 28.3516ZM37.4894 24.0636H43.3275V25.864H37.4894V24.0636ZM47.4943 28.3516V17.4425H51.7983C52.6221 17.4425 53.3253 17.5898 53.9076 17.8846C54.4936 18.1758 54.9392 18.5895 55.2446 19.1257C55.5536 19.6584 55.7081 20.2852 55.7081 21.006C55.7081 21.7305 55.5518 22.3537 55.2393 22.8757C54.9268 23.3942 54.474 23.7919 53.881 24.0689C53.2915 24.3459 52.5777 24.4844 51.7397 24.4844H48.8579V22.6307H51.3668C51.8071 22.6307 52.1729 22.5703 52.4641 22.4496C52.7553 22.3288 52.9719 22.1477 53.114 21.9062C53.2596 21.6648 53.3324 21.3647 53.3324 21.006C53.3324 20.6438 53.2596 20.3384 53.114 20.0898C52.9719 19.8413 52.7535 19.6531 52.4588 19.5252C52.1676 19.3938 51.8 19.3281 51.3561 19.3281H49.8007V28.3516H47.4943ZM53.3856 23.3871L56.0969 28.3516H53.5507L50.8981 23.3871H53.3856ZM57.4326 19.3441V17.4425H66.3921V19.3441H63.0522V28.3516H60.7724V19.3441H57.4326Z"
+                                        fill="#58CC02" />
+                                    <rect x="1.5" y="1.85156" width="79" height="43" rx="9"
+                                        stroke="#E5E5E5" stroke-width="2" />
+                                    <defs>
+                                        <filter id="filter0_dd_206_3644" x="6" y="49" width="70"
+                                            height="65" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                            <feOffset dy="8" />
+                                            <feComposite in2="hardAlpha" operator="out" />
+                                            <feColorMatrix type="matrix"
+                                                values="0 0 0 0 0.345098 0 0 0 0 0.8 0 0 0 0 0.00784314 0 0 0 1 0" />
+                                            <feBlend mode="normal" in2="BackgroundImageFix"
+                                                result="effect1_dropShadow_206_3644" />
+                                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                            <feOffset dy="8" />
+                                            <feComposite in2="hardAlpha" operator="out" />
+                                            <feColorMatrix type="matrix"
+                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
+                                            <feBlend mode="normal" in2="effect1_dropShadow_206_3644"
+                                                result="effect2_dropShadow_206_3644" />
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_206_3644"
+                                                result="shape" />
+                                        </filter>
+                                        <clipPath id="clip0_206_3644">
+                                            <rect width="42" height="34" fill="white"
+                                                transform="translate(20 60.5)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+
+                            <div class="level-popup pb-5" id="green {{ $point->id }}" style="display: none">
+                                <div class="level-popup-exit mt-2 mb-2">
+                                    <button class="exit-popup" onclick="levelhide('green', {{ $point->id }})"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                  </button>
+                                </div>
+
+                                <div class="img-fluid d-flex">
+                                    <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup2.svg') }}" alt="">
+                                </div>
+
+
+
+                                <h2 class="fs-3" id="judulLevel">{{ $point->title }}</h2>
+                                <h3 class="fs-5 mt-2" id="progressLevel">Lesson @if ( $point->id % 4 != 0 )
+                                    {{ $point->id % 4 }}
+                                @else 4
+                                @endif/4</h3>
+                                <form action="/questions" method="post">
+                                    @csrf
+                                    <input type="hidden" id="point_id" name="point_id" value="{{ $point->id }}">
+                                    <input type="hidden" id="page_id" name="page_id" value="{{ $point->pages->first()->id }}">
+                                    <input type="hidden" id="unit_id" name="unit_id" value="{{ $unit->id }}">
+                                    <input type="hidden" id="page_name" name="page_name" value="{{ $point->pages->first()->page_name }}">
+                                    <button id="3" class="continue2 mt-3" style="background: {{ $unit->color }};" onclick="levelhide('green', {{ $point->id }})">Start Lesson!</button>
+                                </form>
+                            </div>
 
                         @else
                         {{-- if id dari pointnya blm ada di progress user, tampilin lock --}}
@@ -410,6 +506,7 @@
                         {{-- </a> --}}
                         @endif
                     @endforeach
+
 
 
                     {{-- locked treasure --}}
@@ -495,14 +592,16 @@
 
 
                     {{-- --}}
-                    @elseif ($userUnits->contains($unit->id))
+                    @elseif ($userUnitId->contains($unit->id))
+
+                    {{-- {{ 'hiii' }} --}}
 
                     @foreach ($userUnits as $userUnit)
-                        @if ($userUnit->id == $unit->id && !($userUnit->opened))
+                        @if ($userUnit->unit_id == $unit->id && !($userUnit->opened))
 
 
                             {{-- <input type="hidden" name="unit_id" value="{{ $userUnit->id }}"> --}}
-                            <button class="chest" onclick="showDiv('2')">
+                            <button class="chest" onclick="showDiv('2', {{ $unit->id }})">
                                 <div class="img-fluid justify-content-center my-auto">
                                     <svg width="65" height="65" viewBox="0 0 123 123" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M117.49 62.3055H5.34033V122.831H117.49V62.3055Z" fill="#AA572A"/>
@@ -552,13 +651,13 @@
                                 </div>
                             </button>
 
-                            <div class="chest-popup rounded border border-3" id="2" style="display: none">
+                            <div class="chest-popup rounded border border-3" id="2 {{ $userUnit->unit_id }}" style="display: none">
                                 <img src="/Assets/SVG assets/chest_open.gif" class="chest-gif" alt="">
                                 <h4>You earned 15 EXP!</h4>
                                 <form action="/openChest" method="post">
                                     @method('PUT')
                                     @csrf
-                                    <input type="hidden" name="unit_id" value="{{ $userUnit->id }}" id="">
+                                    <input type="hidden" name="unit_id" value="{{ $userUnit->unit_id }}" id="">
                                     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}" id="">
                                     <button type="submit" id="2" class="continue" style="background: #42C62F" onclick="HidDiv('2')">Continue</button>
                                 </form>
@@ -569,7 +668,7 @@
 
 
 
-                        @elseif ($userUnit->id == $unit->id && $userUnit->opened)
+                        @elseif ($userUnit->unit_id == $unit->id && $userUnit->opened)
 
                         <svg width="70" height="75" viewBox="0 0 130 149" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.62646 79H123.82V148.415H5.62646V79Z" fill="#AA562A"/>
@@ -659,7 +758,6 @@
 
 
 
-
                     @endif
                 </div>
             </div>
@@ -669,4 +767,9 @@
     <div class="col-md-4 px-3" id="progress_sidebar">
         @include('student.learn.layouts.progress')
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Inisialisasi AOS setelah halaman dimuat
+        AOS.init();
+    </script>
 @endsection

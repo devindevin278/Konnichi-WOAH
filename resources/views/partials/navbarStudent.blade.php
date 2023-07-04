@@ -1,5 +1,5 @@
 
-<header id="header" class="fixed-top justify-content-center align-items-center">
+<header id="header" class="justify-content-center align-items-center">
     <nav id="navbar" class="navbar" >
 
             <a class="navbar-brand text-center justify-content-around" href="/"> <img src="{{ asset('img/logo.png') }}" alt="logo"> </a>
