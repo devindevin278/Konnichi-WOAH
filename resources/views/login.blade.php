@@ -25,12 +25,17 @@
         {{-- <label for="floatingPassword">Password</label> --}}
       </div>
 
-      <button class="w-100 btn btn-lg btn-primary submit mb-3" type="submit">Login</button>
+      <button class="w-100 btn btn-lg btn-primary submit" type="submit">Login</button>
 
+      <img src="{{ asset('img/Text Line.png') }}" style="widht:20px; height:20px;" class="mt-3">
+      <a  href="{{ route('login.google') }}">
+        <h5 class="d-flex justify-content-center gap-2 align-items-center text-center fs-6 mt-3 bg-white signupgoogle pt-2 pb-2" style="font-weight:400;"><img src="{{ asset('img/google.png') }}" style="widht:20px; height:20px;" > Sign Up with Google </h5>
+      </a>
       <a class="forget text-decoration-underline" href="">Forgot Password?</a>
 
       <p class="mt-4 mb-3 text-body-secondary" style="opacity: 70%;">Don't have an account yet? <a href="/signUpStudent" style="font-weight:500;">Sign Up</a></p>
-      <a class="mt-4 mb-3 text-body-secondary" style="opacity: 70%; font-weight:500;" href="{{ route('login.google') }}">Login with Google</a>
+      {{-- <a class="mt-4 mb-3 text-body-secondary" style="opacity: 70%; font-weight:500;" href="{{ route('login.google') }}">Login with Google</a> --}}
+
     </form>
     </div>
 
