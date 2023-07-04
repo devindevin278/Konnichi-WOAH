@@ -41,6 +41,8 @@
 
     <input type="text" name="isTeacher" value="0" class="d-none">
         {{-- OAUTH --}}
+        {{-- OAUTH --}}
+
       <button class="w-100 mt-3 btn btn-lg btn-primary submit" type="submit">Sign Up</button>
       <img src="{{ asset('img/Text Line.png') }}" style="widht:20px; height:20px;" class="mt-3">
       <a  href="{{ route('register.google') }}">
