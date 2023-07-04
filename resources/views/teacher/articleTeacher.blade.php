@@ -97,7 +97,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body rounded-bottom border-0" style="background-color: #ffffff;">
-                                        <h5 class="card-title"><a href="/admin/{{ $article->slug }}" style="color: black;">{{ $article->title }}</a></h5>
+                                        <h5 class="card-title"><a href="/teacher/{{ $article->slug }}" style="color: black;">{{ $article->title }}</a></h5>
                                         <a class="card-title text-decoration-none"><a href="/author/{{ $article->author->name }}" style="color: black;">{{ $article->author->name }}</a></a>
                                         <p class="card-text">{{ $article->created_at->diffForHumans() }}</p>
                                     </div>
