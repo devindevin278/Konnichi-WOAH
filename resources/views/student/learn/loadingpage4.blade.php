@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
 </head>
 <body>
-    <div class="load-container">
-        <img src="/Assets/4.gif" alt="">
+    <div id="body" class="load-container">
+        <img src="{{ asset('/Assets/4.gif') }}" alt="">
         <br>
         <div class="wrapper ten">
             <div>
@@ -34,5 +34,20 @@
         </div>
         <h4>Need some help learning words? Get a teacher or read more.</h4>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </body>
+
+<script>
+    // console.log('hi')
+    let tbody = document.getElementById('body')
+    $(document).ready(function () {
+    // Handler for .ready() called.
+    window.setTimeout(function () {
+        console.log('time up')
+        $('#body').fadeOut();
+    }, 4000);
+});
+</script>
+
 </html>

@@ -16,4 +16,23 @@
         </div>
     </div>
 
+    {{-- {{ mt_rand(1,4) }} --}}
+    @if ($page->id == $point->pages->first()->id)
+
+    <div id="loader">
+        @if (mt_rand(1,4) == 1)
+        @include('student.learn.loadingpage1')
+        @elseif(mt_rand(1,4) == 2)
+        @include('student.learn.loadingpage2')
+        @elseif(mt_rand(1,4) == 3)
+        @include('student.learn.loadingpage3')
+        @elseif(mt_rand(1,4) == 4)
+        @include('student.learn.loadingpage4')
+        @else
+        @include('student.learn.loadingpage4')
+        @endif
+
+    </div>
+    @endif
+
 

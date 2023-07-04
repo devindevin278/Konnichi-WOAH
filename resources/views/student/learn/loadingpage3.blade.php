@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" >
 </head>
 <body>
-    <div class="load-container">
-        <img src="/Assets/3.gif" alt="">
+    <div id="body" class="load-container">
+        <img src="{{ asset('/Assets/3.gif') }}" alt="">
         <br>
         <div class="wrapper eight">
             <h3 class="smoke">
@@ -32,5 +32,20 @@
         </div>
         <h4>You can learn hiragana and katakana from the Cards section on the sidebar at the learn feature. Try to click the cards</h4>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </body>
+
+<script>
+    // console.log('hi')
+    let tbody = document.getElementById('body')
+    $(document).ready(function () {
+    // Handler for .ready() called.
+    window.setTimeout(function () {
+        console.log('time up')
+        $('#body').fadeOut();
+    }, 4000);
+});
+</script>
+
 </html>

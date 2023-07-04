@@ -133,7 +133,7 @@
                                     </svg>
                                 </button>
 
-                                <div class="level-popup pb-5" id="3 {{ $point->id }}" style="display: none;">
+                                <div class="level-popup pb-5 px-2 text-center" id="3 {{ $point->id }}" style="display: none;">
                                     <div class="level-popup-exit mt-2 mb-2">
                                         <button class="exit-popup" onclick="levelhide('3', {{ $point->id }})"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -142,7 +142,7 @@
                                     </div>
 
                                     <div class="img-fluid d-flex">
-                                        <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup4.svg') }}" alt="">
+                                        <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup'.mt_rand(2,4).'.svg') }}" alt="">
                                     </div>
 
                                     <h2 class="fs-3" id="judulLevel">{{ $point->title }}</h2>
@@ -259,7 +259,7 @@
                             </button>
 
 
-                            <div class="level-popup pb-5" id="emas {{ $point->id }}" style="display: none">
+                            <div class="level-popup pb-5 px-2 text-center" id="emas {{ $point->id }}" style="display: none">
                                 <div class="level-popup-exit mt-2 mb-2">
                                     <button class="exit-popup" onclick="levelhide('emas', {{ $point->id }})"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -270,7 +270,7 @@
 
 
                                 <div class="img-fluid d-flex">
-                                    <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup3.svg') }}" alt="">
+                                    <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup'.mt_rand(2,4).'.svg') }}" alt="">
                                 </div>
 
                                 <h2 class="fs-3" id="judulLevel">{{ $point->title }}</h2>
@@ -427,7 +427,7 @@
                                 </svg>
                             </button>
 
-                            <div class="level-popup pb-5" id="green {{ $point->id }}" style="display: none">
+                            <div class="level-popup pb-5 px-1 text-center" id="green {{ $point->id }}" style="display: none">
                                 <div class="level-popup-exit mt-2 mb-2">
                                     <button class="exit-popup" onclick="levelhide('green', {{ $point->id }})"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -436,7 +436,7 @@
                                 </div>
 
                                 <div class="img-fluid d-flex">
-                                    <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup2.svg') }}" alt="">
+                                    <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup'.mt_rand(2,4).'.svg') }}" alt="">
                                 </div>
 
 

@@ -1,7 +1,7 @@
 @extends('layouts.mainStudent')
 
 @section('content')
-    <main class="form-login margin-top">
+    <main class="form-login">
     <div class=" m-auto" >
 
         @if(session()->has('success'))
