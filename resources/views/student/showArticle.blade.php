@@ -23,7 +23,7 @@
                 <a style="color:black;">|</a>
                 <a href="/jpnstudent/{{ $articles->id }}" style="color:black;">Japanese</a>
             </div>
-		</div>`
+        </div>`
     </div>
 
     <div class="container mt-5 d-flex jusify-content-around">

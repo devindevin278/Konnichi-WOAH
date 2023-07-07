@@ -54,33 +54,33 @@ class ArticleSeeder extends Seeder
             'articlepublish' => '2022-02-02',
             'slug' => 'exploring-the-rich-culture-of-japan',
             'image' => 'article-images/Seeder1.jpg',
-            'body' => 'Japan is a country rich in history, tradition, and culture. From its cuisine and art to its religion and festivals, there are countless aspects of Japanese culture that make it unique and fascinating.
+            'body' => '<p>Japan is a country rich in history, tradition, and culture. From its cuisine and art to its religion and festivals, there are countless aspects of Japanese culture that make it unique and fascinating.</p>
 
-            One of the most well-known aspects of Japanese culture is its cuisine. Japanese food is famous for its emphasis on fresh, seasonal ingredients and simple, elegant preparation. Some of the most popular Japanese dishes include sushi, tempura, udon, and ramen. These dishes are enjoyed not only in Japan but also around the world.
+            <p>One of the most well-known aspects of Japanese culture is its cuisine. Japanese food is famous for its emphasis on fresh, seasonal ingredients and simple, elegant preparation. Some of the most popular Japanese dishes include sushi, tempura, udon, and ramen. These dishes are enjoyed not only in Japan but also around the world.</p>
 
-            Another important aspect of Japanese culture is its art. Japanese art is characterized by its attention to detail, minimalist aesthetic, and use of natural materials. Traditional Japanese art includes calligraphy, painting, ceramics, and woodblock printing. Many of these art forms have a long and rich history in Japan, dating back centuries.
+            <p>Another important aspect of Japanese culture is its art. Japanese art is characterized by its attention to detail, minimalist aesthetic, and use of natural materials. Traditional Japanese art includes calligraphy, painting, ceramics, and woodblock printing. Many of these art forms have a long and rich history in Japan, dating back centuries.</p>
 
-            Religion also plays an important role in Japanese culture. Shintoism is the indigenous religion of Japan, and it centers around the worship of kami, or spirits that are believed to inhabit natural objects and phenomena. Buddhism, which was introduced to Japan in the 6th century, also has a significant presence in Japanese culture. Many Japanese people practice a blend of Shintoism and Buddhism, and these religions influence many aspects of daily life in Japan.
+            <p>Religion also plays an important role in Japanese culture. Shintoism is the indigenous religion of Japan, and it centers around the worship of kami, or spirits that are believed to inhabit natural objects and phenomena. Buddhism, which was introduced to Japan in the 6th century, also has a significant presence in Japanese culture. Many Japanese people practice a blend of Shintoism and Buddhism, and these religions influence many aspects of daily life in Japan.</p>
 
-            Festivals are also an important part of Japanese culture. There are many festivals throughout the year, each with its own unique customs and traditions. Some of the most famous festivals include the cherry blossom festival, held in the spring when the cherry trees bloom, and the Gion Festival in Kyoto, which is one of the largest and most popular festivals in Japan.
+            <p>Festivals are also an important part of Japanese culture. There are many festivals throughout the year, each with its own unique customs and traditions. Some of the most famous festivals include the cherry blossom festival, held in the spring when the cherry trees bloom, and the Gion Festival in Kyoto, which is one of the largest and most popular festivals in Japan.</p>
 
-            Another interesting aspect of Japanese culture is its etiquette and social customs. Japanese society places a high value on respect and courtesy, and there are many customs and traditions that reflect this. For example, it is customary to remove one shoes before entering a Japanese home, and there are specific rules for bowing when greeting someone.
+            <p>Another interesting aspect of Japanese culture is its etiquette and social customs. Japanese society places a high value on respect and courtesy, and there are many customs and traditions that reflect this. For example, it is customary to remove one shoes before entering a Japanese home, and there are specific rules for bowing when greeting someone.</p>
 
-            In addition to these aspects of Japanese culture, there are many other interesting and unique elements that make Japan a fascinating country. Whether it is the traditional arts and crafts, the modern pop culture, or the stunning natural beauty, there is something for everyone to appreciate and admire in Japanese culture.
+            <p>In addition to these aspects of Japanese culture, there are many other interesting and unique elements that make Japan a fascinating country. Whether it is the traditional arts and crafts, the modern pop culture, or the stunning natural beauty, there is something for everyone to appreciate and admire in Japanese culture.</p>
             ',
-            'jpnbody' => '日本は、歴史、伝統、文化が豊かな国です。料理や芸術、宗教や祭りに至るまで、日本文化にはユニークで魅力的な要素が数え切れないほどあります。
+            'jpnbody' => '<p>日本は、歴史、伝統、文化が豊かな国です。料理や芸術、宗教や祭りに至るまで、日本文化にはユニークで魅力的な要素が数え切れないほどあります。</p>
 
-            日本文化の最もよく知られた側面のひとつが料理です。日本料理は、新鮮な旬の食材とシンプルで上品な調理法を重視することで有名です。代表的な日本料理には、寿司、天ぷら、うどん、ラーメンがあります。これらの料理は、日本だけでなく、世界中で楽しまれています。
+            <p>日本文化の最もよく知られた側面のひとつが料理です。日本料理は、新鮮な旬の食材とシンプルで上品な調理法を重視することで有名です。代表的な日本料理には、寿司、天ぷら、うどん、ラーメンがあります。これらの料理は、日本だけでなく、世界中で楽しまれています。</p>
 
-            日本文化のもう一つの重要な側面は、芸術です。日本の芸術は、細部へのこだわり、ミニマリズムの美学、自然素材の使用などが特徴です。日本の伝統的な芸術には、書道、絵画、陶芸、木版画などがあります。これらの芸術の多くは、日本では何世紀にもわたる長く豊かな歴史を持っています。
+            <p>日本文化のもう一つの重要な側面は、芸術です。日本の芸術は、細部へのこだわり、ミニマリズムの美学、自然素材の使用などが特徴です。日本の伝統的な芸術には、書道、絵画、陶芸、木版画などがあります。これらの芸術の多くは、日本では何世紀にもわたる長く豊かな歴史を持っています。</p>
 
-            また、宗教も日本文化において重要な役割を担っています。神道は日本固有の宗教であり、神や自然物や現象に宿ると信じられている霊を崇拝することを中心に据えています。また、6世紀に日本に伝来した仏教も、日本文化の中で重要な存在感を示しています。多くの日本人は神道と仏教を融合させた宗教を信仰しており、これらの宗教は日本での日常生活の多くの側面に影響を与えています。
+            <p>また、宗教も日本文化において重要な役割を担っています。神道は日本固有の宗教であり、神や自然物や現象に宿ると信じられている霊を崇拝することを中心に据えています。また、6世紀に日本に伝来した仏教も、日本文化の中で重要な存在感を示しています。多くの日本人は神道と仏教を融合させた宗教を信仰しており、これらの宗教は日本での日常生活の多くの側面に影響を与えています。</p>
 
-            また、祭りも日本文化の重要な一部です。一年を通して多くの祭りがあり、それぞれに独自の習慣や伝統があります。最も有名な祭りには、桜が咲く春に行われる桜祭りや、京都の祇園祭などがあります。
+            <p>また、祭りも日本文化の重要な一部です。一年を通して多くの祭りがあり、それぞれに独自の習慣や伝統があります。最も有名な祭りには、桜が咲く春に行われる桜祭りや、京都の祇園祭などがあります。</p>
 
-            日本文化のもう一つの興味深い側面は、そのエチケットや社会習慣です。日本社会は尊敬と礼儀を重んじ、それを反映した多くの習慣や伝統があります。例えば、日本では家に入る前に靴を脱ぐ習慣がありますし、挨拶をするときのお辞儀の仕方にも決まりがあります。
+            <p>日本文化のもう一つの興味深い側面は、そのエチケットや社会習慣です。日本社会は尊敬と礼儀を重んじ、それを反映した多くの習慣や伝統があります。例えば、日本では家に入る前に靴を脱ぐ習慣がありますし、挨拶をするときのお辞儀の仕方にも決まりがあります。</p>
 
-            このような日本文化に加え、日本を魅力的な国にしている興味深いユニークな要素は他にもたくさんあります。伝統的な芸術や工芸品、現代のポップカルチャー、そして美しい自然など、日本文化には誰にとっても魅力的なものがあります。
+            <p>このような日本文化に加え、日本を魅力的な国にしている興味深いユニークな要素は他にもたくさんあります。伝統的な芸術や工芸品、現代のポップカルチャー、そして美しい自然など、日本文化には誰にとっても魅力的なものがあります。</p>
             '
         ]);
 

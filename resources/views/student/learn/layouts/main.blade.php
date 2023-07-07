@@ -96,7 +96,7 @@
     $(document).ready(function() {
 
         $('#weekBtn').on('click', function() {
-
+ 
             weekBtn.classList.add('timeActive');
             monthBtn.classList.remove('timeActive');
             yearBtn.classList.remove('timeActive');
