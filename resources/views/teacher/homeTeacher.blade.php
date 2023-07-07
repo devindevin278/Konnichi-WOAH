@@ -2,9 +2,6 @@
 
 @section('content')
 
-@extends('layouts.mainStudent')
-
-@section('content')
 
 <div class="d-block margin-top">
 
@@ -85,4 +82,4 @@
 
 
 
-@endsection
+
