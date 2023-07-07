@@ -2,10 +2,6 @@
 
 @section('content')
 
-@extends('layouts.mainStudent')
-
-@section('content')
-
 <div class=" d-block">
 
 <section class="banner">
@@ -84,5 +80,3 @@
 @endsection
 
 
-
-@endsection
