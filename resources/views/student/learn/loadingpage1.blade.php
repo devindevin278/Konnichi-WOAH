@@ -16,7 +16,8 @@
 </head>
 <body >
     <div id="body" class="load-container">
-        <img src="{{ asset('/Assets/2.gif') }}" alt="">
+        <div class="inner">
+            <img src="{{ asset('/Assets/2.gif') }}" alt="" class="">
         <br>
         <div class="wrapper one">
             <div class="drop-main">
@@ -31,6 +32,7 @@
             </div>
         </div>
         <h4>You can read articles in Konnichi-WOAH to spend time and train your reading ability.</h4>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -40,11 +42,10 @@
     // console.log('hi')
     let tbody = document.getElementById('body')
     $(document).ready(function () {
-    // Handler for .ready() called.
-    window.setTimeout(function () {
-        console.log('time up')
-        $('#body').fadeOut();
-    }, 4000);
+
+        window.setTimeout(function () {
+            $('#body').fadeOut();
+        }, 4000);
 });
 </script>
 

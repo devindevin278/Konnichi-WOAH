@@ -7,7 +7,17 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5vw;
+    /* margin-top: 5vw; */
+    /* padding-top: 10%; */
+}
+
+.inner {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* background-color: black; */
+    justify-content: center;
+    align-items: center;
 }
 
 img{

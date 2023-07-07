@@ -1,11 +1,11 @@
 @extends('layouts.mainStudent')
 
 @section('content')
-<section class="viewTeacher m-auto">
+<section class="viewTeacher pt-1 m-auto">
 
-    <div class=" container row mt-3 d-flex justify-content-center p-5 m-auto" style="border-radius:30px; width:100%;">
+    <div class=" container row d-flex  p-5 pt-0 m-auto" style="border-radius:30px; width:100%;">
+        <a class="btn btn-back" style="background-color:#FFC6C7; width: fit-content" href="/teacher">Back</a>
         <div class="d-flex justify-content-around row mt-2" >
-
 
 
             <div class="col d-flex mt-3 ">

@@ -4,7 +4,7 @@
 
 <section class="profileStudent">
 
-        <div class="mt-5">
+        <div class="">
 
             @if(session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show col" role="alert">
@@ -22,7 +22,7 @@
 
         </div>
 
-        <div class="container d-flex container-profileTeacher bg-white mt-5 mb-5">
+        <div class="container d-flex container-profileTeacher bg-white mb-5">
             <div class="row">
                 <div class="col border-right ms-5 me-5">
 

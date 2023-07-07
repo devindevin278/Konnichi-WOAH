@@ -16,7 +16,8 @@
 </head>
 <body>
     <div id="body" class="load-container">
-        <img src="{{ asset('/Assets/3.gif') }}" alt="">
+        <div class="inner">
+            <img src="{{ asset('/Assets/3.gif') }}" alt="">
         <br>
         <div class="wrapper eight">
             <h3 class="smoke">
@@ -31,6 +32,7 @@
             </h3>
         </div>
         <h4>You can learn hiragana and katakana from the Cards section on the sidebar at the learn feature. Try to click the cards</h4>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

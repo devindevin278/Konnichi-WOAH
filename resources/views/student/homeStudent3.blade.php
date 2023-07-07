@@ -4,7 +4,7 @@
 
 <body style="background: #faeee7;font-family: Poppins, sans-serif;">
     <header>
-        <div class="carousel slide d-flex justify-content-center" data-bs-ride="false" id="carousel-1" style="margin-top: 34px;padding-bottom: 90px;">
+        <div class="carousel slide d-flex justify-content-center" data-bs-ride="false" id="carousel-1" style="margin-top: 114px;padding-bottom: 90px;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <!-- Start: 1 Row 2 Columns -->
@@ -67,10 +67,19 @@
         <div class="container py-4 py-xl-5">
             <h3 style="text-align: center;padding-bottom: 25px;"><strong>FEATURES</strong></h3>
             <div class="row gy-1 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                <div class="col">
+                {{-- <div class="col">
                     <div class="card" style="background: rgba(243,241,241,0);">
                         <div class="d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center"><img src="{{ asset('img/home/game.svg') }}" style="padding-bottom: 20px;padding-top: 10px;"></div>
                         <div class="card-body p-4">
+                            <h4 class="card-title" style="text-align: center;"><strong>GAMES</strong></h4>
+                            <p class="card-text" style="text-align: center;">Konnichiwoah! offers Hiragana and Katakana Cards, as well as language games, to make learning Japanese characters and language skills easy and enjoyable.<br><br></p>
+                        </div>
+                    </div>
+                </div> --}}
+                <div class="col" style="text-align: center;">
+                    <div class="card" style="text-align: center;background: rgba(255,255,255,0);">
+                        <div class="card-body p-4" style="text-align: center;">
+                            <div class="d-xl-flex justify-content-xl-center align-items-xl-center"><img src="{{ asset('img/home/game.svg') }}" style="padding-bottom: 20px;padding-top: 10px;"></div>
                             <h4 class="card-title" style="text-align: center;"><strong>GAMES</strong></h4>
                             <p class="card-text" style="text-align: center;">Konnichiwoah! offers Hiragana and Katakana Cards, as well as language games, to make learning Japanese characters and language skills easy and enjoyable.<br><br></p>
                         </div>

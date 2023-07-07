@@ -46,7 +46,7 @@ button{
 }
 
 .chest-popup{
-    top: 11%;
+    top: 20%;
     left: 35%;
     width: 30%;
     /* display: none; */
@@ -65,7 +65,7 @@ button{
 }
 
 .level-popup{
-    top: 11%;
+    top: 18%;
     left: 35%;
     width: 30%;
     /* display: none; */

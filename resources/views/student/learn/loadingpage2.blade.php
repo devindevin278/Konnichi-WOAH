@@ -16,7 +16,8 @@
 </head>
 <body>
     <div id="body" class="load-container">
-        <img src="{{ asset('Assets/1.gif') }}" alt="">
+        <div class="inner">
+            <img src="{{ asset('Assets/1.gif') }}" alt="">
         <br>
         <div class="wrapper four">
             <div class="type">
@@ -24,6 +25,7 @@
             </div>
         </div>
         <h4>Notebook consists of dialogs and vocabularies you might need to know to do the lessons for the Unit.</h4>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

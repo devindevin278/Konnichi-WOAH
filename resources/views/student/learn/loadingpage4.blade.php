@@ -16,7 +16,8 @@
 </head>
 <body>
     <div id="body" class="load-container">
-        <img src="{{ asset('/Assets/4.gif') }}" alt="">
+        <div class="inner">
+            <img src="{{ asset('/Assets/4.gif') }}" alt="">
         <br>
         <div class="wrapper ten">
             <div>
@@ -33,6 +34,7 @@
             </div>
         </div>
         <h4>Need some help learning words? Get a teacher or read more.</h4>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

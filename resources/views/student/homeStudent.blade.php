@@ -3,7 +3,7 @@
 @section('content')
 <body style="background: #faeee7;font-family: Poppins, sans-serif;">
     <header>
-        <div class="carousel slide d-flex justify-content-center" data-bs-ride="false" id="carousel-1" style="margin-top: 74px;padding-bottom: 90px;">
+        <div class="carousel slide d-flex justify-content-center" data-bs-ride="false" id="carousel-1" style="margin-top: 114px;padding-bottom: 90px;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <!-- Start: 1 Row 2 Columns -->
