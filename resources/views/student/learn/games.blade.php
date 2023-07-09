@@ -25,10 +25,10 @@
 
 
             <div class="chapter mb-5" style="padding-bottom: 30px;" data-aos="fade-up" data-aos-duration="1000">
-                <div class="papan" style="background-color: {{ $unit->color }}">
+                <div class="papan justify-content-between px-4" style="background-color: {{ $unit->color }}">
                     <div class="judulbab">
                         <h3 class="textjudul">{{ 'Unit ' . $unit->id }}</h3>
-                        <h4 class="juduldes">{{ $unit->Content }}</h4>
+                        <h6 class="juduldes fs-6" style="">{{ $unit->Content }}</h6>
                     </div>
                     <a href="/notebook/{{ $unit->id }}">
                         <button class="guidebook" style="background-color: {{ $unit->color }}">
@@ -762,7 +762,9 @@
                 </div>
             </div>
         @endforeach
-        </section>
+
+        @include('partials.footer')
+</div>
 
     <div class="col-md-4 px-3" id="progress_sidebar">
         @include('student.learn.layouts.progress')

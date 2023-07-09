@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Learn</title>
 
     <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
@@ -46,7 +46,7 @@
 
 <button type="button" class="btn btn-primary" data-bs-toggle="popover" title="Popover 3" data-content="Content for Popover 3">Open Popover 3</button> --}}
 
-            @include('partials.footer')
+            
 
         </div>
     </div>
@@ -96,7 +96,7 @@
     $(document).ready(function() {
 
         $('#weekBtn').on('click', function() {
- 
+
             weekBtn.classList.add('timeActive');
             monthBtn.classList.remove('timeActive');
             yearBtn.classList.remove('timeActive');

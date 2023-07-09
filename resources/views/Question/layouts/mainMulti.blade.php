@@ -136,6 +136,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
+        const audio = new Audio('/Assets/wrongchoice.mp3');
+        // const hehe = new Audio{{ asset('Assets/rightchoice.mp3') }};
+        const hehe = new Audio('/Assets/rightchoice.mp3');
+
         function showDiv(id) {
             var div = document.getElementById(id);
             var hidd = document.getElementById('5');
@@ -143,20 +147,27 @@
             div.style.display = 'flex';
             hidd.style.display = 'none';
             barr.style.display = 'flex';
+
+            if (id == 1) {
+                hehe.play()
+            } else {
+                audio.play()
+            }
         }
 
 
 
 
         window.addEventListener('keydown', function(event) {
-                // Check for the F5 key (key code 116) or the refresh button (key code 82) in combination with the Ctrl key
+            // Check for the F5 key (key code 116) or the refresh button (key code 82) in combination with the Ctrl key
             if (event.keyCode === 116 || (event.keyCode === 82 && (event.ctrlKey || event.metaKey))) {
 
-                const confirmationMessage = 'Are you sure you want to refresh this page? Your progress won\'t be saved';
-                event.returnValue = confirmationMessage;  // For older browsers
+                const confirmationMessage =
+                    'Are you sure you want to refresh this page? Your progress won\'t be saved';
+                event.returnValue = confirmationMessage; // For older browsers
                 event.preventDefault();
 
-                if(!confirm(confirmationMessage)) {
+                if (!confirm(confirmationMessage)) {
                     event.preventDefault();
                 } else {
                     window.location.href = '/learnStudent/games';
@@ -216,81 +227,88 @@
         //     }
         // });
 
-//         window.addEventListener('unload', function(event) {
-//     if (event.clientX < 40 && event.clientY < 0) {
-//         // The user clicked the browser's back button
-//         alert("Browser back button is clicked.");
-//     } else {
-//         // The user refreshed the page
-//         alert("Browser refresh button is clicked.");
-//     }
-// });
+        //         window.addEventListener('unload', function(event) {
+        //     if (event.clientX < 40 && event.clientY < 0) {
+        //         // The user clicked the browser's back button
+        //         alert("Browser back button is clicked.");
+        //     } else {
+        //         // The user refreshed the page
+        //         alert("Browser refresh button is clicked.");
+        //     }
+        // });
 
-// window.addEventListener('unload', function(event) {
-//     if (event.currentTarget.performance && event.currentTarget.performance.navigation) {
-//         if (event.currentTarget.performance.navigation.type === PerformanceNavigation.TYPE_RELOAD) {
-//             // The user refreshed the page
-//             alert("Browser refresh button is clicked.");
-//         } else if (event.currentTarget.performance.navigation.type === PerformanceNavigation.TYPE_BACK_FORWARD) {
-//             // The user clicked the browser's back button
-//             alert("Browser back button is clicked.");
-//         }
-//     } else {
-//         if (event.clientX < 40 && event.clientY < 0) {
-//             // The user clicked the browser's back button
-//             alert("Browser back button is clicked.");
-//         } else {
-//             // The user refreshed the page
-//             alert("Browser refresh button is clicked.");
-//         }
-//     }
-// });
+        // window.addEventListener('unload', function(event) {
+        //     if (event.currentTarget.performance && event.currentTarget.performance.navigation) {
+        //         if (event.currentTarget.performance.navigation.type === PerformanceNavigation.TYPE_RELOAD) {
+        //             // The user refreshed the page
+        //             alert("Browser refresh button is clicked.");
+        //         } else if (event.currentTarget.performance.navigation.type === PerformanceNavigation.TYPE_BACK_FORWARD) {
+        //             // The user clicked the browser's back button
+        //             alert("Browser back button is clicked.");
+        //         }
+        //     } else {
+        //         if (event.clientX < 40 && event.clientY < 0) {
+        //             // The user clicked the browser's back button
+        //             alert("Browser back button is clicked.");
+        //         } else {
+        //             // The user refreshed the page
+        //             alert("Browser refresh button is clicked.");
+        //         }
+        //     }
+        // });
 
 
 
-if(window.history && history.pushState){ // check for history api support
-	window.addEventListener('load', function(){
-		// // create history states
-		history.pushState(-1, null); // back state
-		history.pushState(0, null); // main state
-		history.pushState(1, null); // forward state
-		history.go(-1); // start in main state
+        if (window.history && history.pushState) { // check for history api support
+            window.addEventListener('load', function() {
+                // // create history states
+                history.pushState(-1, null); // back state
+                history.pushState(0, null); // main state
+                history.pushState(1, null); // forward state
+                history.go(-1); // start in main state
 
-        console.log(history);
+                console.log(history);
 
-		this.addEventListener('popstate', function(event, state){
-			// check history state and fire custom events
-			// if(state = event.state){
+                this.addEventListener('popstate', function(event, state) {
+                    // check history state and fire custom events
+                    // if(state = event.state){
 
-			// 	// event = document.createEvent('Event');
-            //     let event = new CustomEvent(state > 0 ? 'next' : 'previous', { bubbles: true, cancelable: true })
-            //     console.log(event);
-			// 	// event.initEvent(state > 0 ? 'next' : 'previous', true, true);
-			// 	this.dispatchEvent(event);
+                    // 	// event = document.createEvent('Event');
+                    //     let event = new CustomEvent(state > 0 ? 'next' : 'previous', { bubbles: true, cancelable: true })
+                    //     console.log(event);
+                    // 	// event.initEvent(state > 0 ? 'next' : 'previous', true, true);
+                    // 	this.dispatchEvent(event);
 
-			// 	// // reset state
-			// 	history.go(-state);
-			// }
-            console.log(event.state);
+                    // 	// // reset state
+                    // 	history.go(-state);
+                    // }
+                    console.log(event.state);
 
-            if(history.state < 0) {
-                window.location.href = 'learnStudent/games';
-                console.log(history.state);
+                    if (history.state < 0) {
+                        window.location.href = 'learnStudent/games';
+                        console.log(history.state);
+                    }
+                }, false);
+            }, false);
+        }
+
+        window.addEventListener('next', function() {
+            console.log('forward button clicked');
+        }, false);
+
+        window.addEventListener('previous', function() {
+            console.log('back button clicked');
+        }, false);
+
+        function confirmback() {
+            // e.preventDefault();
+            if (confirm('Are you sure you want to cancel? Your progress won\'t be saved')) {
+                return true
+            } else {
+                return false
             }
-		}, false);
-	}, false);
-}
 
-window.addEventListener('next', function(){
- 	    console.log('forward button clicked');
- 	}, false);
-
- 	window.addEventListener('previous', function(){
- 		console.log('back button clicked');
- 	}, false);
-
-
-
+        }
     </script>
 </body>
 

@@ -122,11 +122,15 @@
                         <select class="form-select filterbutton rounded-5" name="price_range" id="price-range-select"
                             style="background-color: #FFC6C7; width: 170px;">
                             <option value="">Price</option>
+                            <option value="0-100000" style="border-radius: 5px;">under 100k</option>
                             <option value="100000-200000" style="border-radius: 5px;">100k - 200k</option>
                             <option value="201000-300000" style="border-radius: 5px;">201k - 300k</option>
                             <option value="301000-400000" style="border-radius: 5px;">301k - 400k</option>
                         </select>
                     </div>
+
+                    {{-- <label for="customRange2" class="form-label">Price</label>
+<input type="range" class="form-range" min="0" max="100000" id="customRange2"> --}}
 
 
 
@@ -243,12 +247,12 @@
 
                                         <div class="card-body idxz d-flex gap-2 row shadow rounded-4 justify-content-center"
                                             style="background-color: #fff;">
-                                            <h5 class="mb-0" style="">{{ $teacher->name }}</h5>
+                                            <h5 class="mb-0" style="height: 3.2vw;">{{ $teacher->name }}</h5>
                                             <h5 class="" style="font-size: 12px">{{ $teacher->city }},
                                                 {{ $teacher->province }}</h5>
                                             <div style="background-color: black; height: 1px; width: 100%;"></div>
                                             <div class="d">
-                                                <p class="" style=" height: 2vw">
+                                                <p class="" style=" height: 2.5vw">
                                                     @if (strlen($teacher->descteacher) > 30)
                                                         {{ \Illuminate\Support\Str::limit($teacher->descteacher, 30) }}
                                                     @else

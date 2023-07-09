@@ -60,6 +60,7 @@ public function index()
 
         $daily = StudentPointProgress::whereRaw('user_id = ? and day(created_at) = day(CURRENT_DATE)', auth()->user()->id)->selectRaw('sum(total_xp)')->groupByRaw('date(created_at)')->orderByRaw('date(created_at)')->get();
 
+        // dd(Carbon::now());
     if($daily->isEmpty()) {
         // dd($daily);
         $dailyXp = 0;

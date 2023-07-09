@@ -202,7 +202,7 @@ Route::delete('/profileAdmin/{user:id}', [AdminController::class, 'destroy']);
 
 
 Route::get('/teacher', [TeacherController::class, 'showAllTeacher']);
-Route::get('/fetch-cities', [TeacherController::class, 'fetcgahCities']);
+Route::get('/fetch-cities', [TeacherController::class, 'fetchCities']);
 Route::get('/fetchcities', [TeacherController::class, 'fetchAllCities']);
 
 Route::get('/test', function () {

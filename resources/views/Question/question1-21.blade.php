@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 @include('Question.layouts.progress')
 
 <div class="maincont">
