@@ -3,11 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Learn</title>
 
     <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
@@ -21,7 +20,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;400&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"> --}}
 
 </head>
 
@@ -35,7 +34,7 @@
 
     {{-- <div id="user_id" data-data="{{ auth()->user()->id }}"></div> --}}
 
-    <div class="container-fluid margin-top">
+    <div class="container-fluid">
         <div class="row">
             @include('student.learn.layouts.sidebar')
 
@@ -47,7 +46,7 @@
 
 <button type="button" class="btn btn-primary" data-bs-toggle="popover" title="Popover 3" data-content="Content for Popover 3">Open Popover 3</button> --}}
 
-            @include('partials.footer')
+            
 
         </div>
     </div>
@@ -64,80 +63,10 @@
     <script src="dashboard.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    {{-- <script     src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> --}}
 
-
-    {{-- <script src="{{ asset('js/graph.js') }}"></script> --}}
 </body>
 
-<script type="text/javascript">
-    $("#subscribe").popover({
-        title: '<h4>Newsletter Subscription</h4>',
-        container: 'body',
-        placement: 'bottom',
-        html: true,
-        content: function(){
-              return $('#popover-form').html();
-        }
-    });
-    </script>
-
-{{-- buat popover points --}}
-{{-- <script>
-    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-
-    // console.log($('#example'));
-    var popString = "";
-    popString = `<h3 class="text-center"></h3>`
-    popString = popString + "<a href='#' class='continue-popover' id='cont-popover'>Continue</a>";
-
-    let condition1 = document.querySelectorAll('#condition1');
-    // console.log(condition1);
-
-    for(var element of condition1) {
-        // console.log(element.classList[0])
-        popString = `<h3 class="text-center">`+ element.classList[0] +`</h3>`
-        popString = popString + `\n<form action="/questions" method="post">
-                                @csrf
-                                \n<input type="hidden" name="point_id" value="`+ element.classList[0] +`">
-                                \n<input type="hidden" name="page_id" value="`+ element.classList[1] +`">
-                                \n<input type="hidden" name="unit_id" value="`+ element.classList[2] +`">
-                                \n<input type="hidden" name="page_name" value="`+ element.classList[3] +`">
-                                \n<a type='submit' class='continue-popover' id='cont-popover'>Start lesson</a></form>`;
-        // console.log(popString);
-        element.setAttribute('data-bs-content', popString);
-        // console.log(element)
-    }
-
-    // document.getElementsByClassName('condition1')[0].setAttribute('data-bs-content', popString);
-
-    $(document).ready(function() {
-        $('[data-bs-toggle="popover"]').popover();
-    });
-
-    // console.log($('[data-bs-toggle="popover"]'))
-    for(var element of $('[data-bs-toggle="popover"]')) {
-        $(function() {
-            $(this).popover({
-                html: true,
-                placement:"bottom",
-                content: function() {
-                var content = $(this).attr("data-popover-content");
-                return $(content).children(".popover-body").html();
-                },
-                title: function() {
-                var title = $(this).attr("data-popover-content");
-                return $(title).children(".popover-heading").html();
-                }
-            });
-});
-    }
-
-
-    //         $(function () {
-    //   $('[data-bs-toggle="popover"]').popover();
-    // });
-</script> --}}
 
 <script>
     // Graphs
@@ -155,34 +84,7 @@
                 'Friday',
                 'Saturday'
             ]
-            //         datasets: [{
-            //             data: [
-            //                 15339,
-            //                 21345,
-            //                 18483,
-            //                 24003,
-            //                 23489,
-            //                 24092,
-            //                 12034
-            //             ],
-            //             fill: true,
-            //             lineTension: 0,
-            //             backgroundColor: '#88bffa',
-            //             borderColor: '#007bff',
-            //             borderWidth: 4,
-            //             pointBackgroundColor: '#007bff'
-            //         }]
         }
-        //     options: {
-        //         plugins: {
-        //             legend: {
-        //                 display: false
-        //             },
-        //             tooltip: {
-        //                 boxPadding: 3
-        //             }
-        //         }
-        //     }
     })
 
 

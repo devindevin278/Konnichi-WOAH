@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
+// use App\Http\Controllers\Auth\LoginController;
+
 use App\Http\Controllers\PointController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\StudentController;
@@ -42,6 +44,18 @@ Route::get('/login', function () {
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
+// Google Authentication
+Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
+// Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
+
+Route::get('register/google', [RegisterController::class, 'redirectToGoogle'])->name('register.google');
+// Route::get('register/google/callback', [RegisterController::class, 'handleGoogleCallback']);
+
+// Route::get('/register/google/callback', [RegisterController::class, 'handleGoogleCallback']);
+Route::get('/login/google/callback', [LoginController::class, 'handleGoogleCallback']);
+
+
+
 
 // Learn
 Route::get('/learnStudent/cards/katakana', function () {
@@ -137,7 +151,7 @@ Route::get('/', function () {
     return view('student.homeStudent3',["title" => "homeStudent"]);
 });
 Route::get('/homeStudent', function () {
-    return view('student.homeStudent',["title" => "homeStudent"]);
+    return view('student.homeStudent3',["title" => "homeStudent"]);
 });
 Route::get('/homeTeacher', function () {
     return view('teacher.homeTeacher',["title" => "homeTeacher"]);
@@ -188,9 +202,9 @@ Route::delete('/profileAdmin/{user:id}', [AdminController::class, 'destroy']);
 
 
 Route::get('/teacher', [TeacherController::class, 'showAllTeacher']);
-Route::get('/fetch-cities', [TeacherController::class, 'fetcgahCities']);
+Route::get('/fetch-cities', [TeacherController::class, 'fetchCities']);
 Route::get('/fetchcities', [TeacherController::class, 'fetchAllCities']);
 
 Route::get('/test', function () {
-    return view('student.learn.learnpage');
+    return view('student.learn.loadingpage1');
 });

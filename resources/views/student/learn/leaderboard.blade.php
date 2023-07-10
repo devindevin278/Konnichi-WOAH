@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div class="row container mt-5 gap-4 d-flex justify-content-center">
+        <div class="row container mt-5 gap-4 d-flex justify-content-center mb-5">
 
             @foreach ($students as $student)
                 <div class="row px-5">
@@ -118,8 +118,8 @@
         </div>
 
 
-
-    </section>
+        @include('partials.footer')
+    </div>
 
 
 

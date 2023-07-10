@@ -31,4 +31,23 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URI')
+    ],
+
+    // 'google1' => [
+    //     'client_id' => env('GOOGLE_CLIENT_ID'),
+    //     'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+    //     'redirect' => env('GOOGLE_REDIRECT_URI_LOGIN'),
+    //     ],
+
+    // 'google' => [
+    //     'client_id' => env('GOOGLE_CLIENT_ID'),
+    //     'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+    //     'redirect_uri_register' => env('GOOGLE_REDIRECT_URI_REGISTER'),
+    //     'redirect_uri_login' => env('GOOGLE_REDIRECT_URI_LOGIN'),
+    // ],
+
 ];

@@ -17,7 +17,7 @@
 </div> --}}
 
 
-<div class="learningg col-md-6 margin-top pt-4" >
+<div class="learningg col-md-6 pt-4">
 
 
 
@@ -25,10 +25,10 @@
 
 
             <div class="chapter mb-5" style="padding-bottom: 30px;" data-aos="fade-up" data-aos-duration="1000">
-                <div class="papan" style="background-color: {{ $unit->color }}">
+                <div class="papan justify-content-between px-4" style="background-color: {{ $unit->color }}">
                     <div class="judulbab">
                         <h3 class="textjudul">{{ 'Unit ' . $unit->id }}</h3>
-                        <h4 class="juduldes">{{ $unit->Content }}</h4>
+                        <h6 class="juduldes fs-6" style="">{{ $unit->Content }}</h6>
                     </div>
                     <a href="/notebook/{{ $unit->id }}">
                         <button class="guidebook" style="background-color: {{ $unit->color }}">
@@ -133,7 +133,7 @@
                                     </svg>
                                 </button>
 
-                                <div class="level-popup pb-5" id="3 {{ $point->id }}" style="display: none;">
+                                <div class="level-popup pb-5 px-2 text-center" id="3 {{ $point->id }}" style="display: none;">
                                     <div class="level-popup-exit mt-2 mb-2">
                                         <button class="exit-popup" onclick="levelhide('3', {{ $point->id }})"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -142,7 +142,7 @@
                                     </div>
 
                                     <div class="img-fluid d-flex">
-                                        <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup4.svg') }}" alt="">
+                                        <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup'.mt_rand(2,4).'.svg') }}" alt="">
                                     </div>
 
                                     <h2 class="fs-3" id="judulLevel">{{ $point->title }}</h2>
@@ -159,6 +159,7 @@
                                         <button id="3" class="continue2 mt-3" style="background: {{ $unit->color }};" onclick="levelhide('3')">Start Lesson!</button>
                                     </form>
                                 </div>
+
 
 
                                 {{-- popup nya, ambil data dari classnya, masukin ke dalamnya --}}
@@ -258,7 +259,7 @@
                             </button>
 
 
-                            <div class="level-popup pb-5" id="emas {{ $point->id }}" style="display: none">
+                            <div class="level-popup pb-5 px-2 text-center" id="emas {{ $point->id }}" style="display: none">
                                 <div class="level-popup-exit mt-2 mb-2">
                                     <button class="exit-popup" onclick="levelhide('emas', {{ $point->id }})"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -269,7 +270,7 @@
 
 
                                 <div class="img-fluid d-flex">
-                                    <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup3.svg') }}" alt="">
+                                    <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup'.mt_rand(2,4).'.svg') }}" alt="">
                                 </div>
 
                                 <h2 class="fs-3" id="judulLevel">{{ $point->title }}</h2>
@@ -426,7 +427,7 @@
                                 </svg>
                             </button>
 
-                            <div class="level-popup pb-5" id="green {{ $point->id }}" style="display: none">
+                            <div class="level-popup pb-5 px-1 text-center" id="green {{ $point->id }}" style="display: none">
                                 <div class="level-popup-exit mt-2 mb-2">
                                     <button class="exit-popup" onclick="levelhide('green', {{ $point->id }})"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -435,7 +436,7 @@
                                 </div>
 
                                 <div class="img-fluid d-flex">
-                                    <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup2.svg') }}" alt="">
+                                    <img class="w-50 mx-auto" src="{{ asset('Assets/SVG assets/level-popup'.mt_rand(2,4).'.svg') }}" alt="">
                                 </div>
 
 
@@ -650,8 +651,8 @@
                                 </div>
                             </button>
 
-                            <div class="chest-popup rounded border border-3" id="2 {{ $userUnit->unit_id }}" style="display: none">
-                                <img src="/Assets/SVG assets/chest_open.gif" class="chest-gif" alt="">
+                            <div class="chest-popup rounded-4 border" id="2 {{ $userUnit->unit_id }}" style="display: none; overflow: hidden">
+                                <img src="{{ asset('/Assets/SVG assets/chest_open.gif') }}" class="chest-gif" alt="">
                                 <h4>You earned 15 EXP!</h4>
                                 <form action="/openChest" method="post">
                                     @method('PUT')
@@ -761,7 +762,9 @@
                 </div>
             </div>
         @endforeach
-        </section>
+
+        @include('partials.footer')
+</div>
 
     <div class="col-md-4 px-3" id="progress_sidebar">
         @include('student.learn.layouts.progress')

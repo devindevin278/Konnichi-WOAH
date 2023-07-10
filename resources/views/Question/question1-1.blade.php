@@ -2,8 +2,9 @@
 
 @section('content')
 
-
 @include('Question.layouts.progress')
+
+
 
 <div class="maincont">
     <h3 class="question">Good Morning </h3>
@@ -30,3 +31,4 @@
 
 
 @endsection
+

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('japan');
             $table->string('english');
             $table->string('position');
+            $table->string('audio');
             $table->timestamps();
         });
     }

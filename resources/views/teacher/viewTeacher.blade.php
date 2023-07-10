@@ -1,11 +1,11 @@
 @extends('layouts.mainStudent')
 
 @section('content')
-<section class="viewTeacher m-auto">
+<section class="viewTeacher pt-1 m-auto">
 
-    <div class=" container row mt-3 d-flex justify-content-center p-5 m-auto" style="border-radius:30px; width:100%;">
+    <div class=" container row d-flex  p-5 pt-0 m-auto" style="border-radius:30px; width:100%;">
+        <a class="btn btn-back" style="background-color:#FFC6C7; width: fit-content" href="/teacher">Back</a>
         <div class="d-flex justify-content-around row mt-2" >
-
 
 
             <div class="col d-flex mt-3 ">
@@ -72,7 +72,7 @@
 
                         </div>
 
-                        <form class="d-flex justify-content-center align-items-center" action="/requestTeacher" method="post" >
+                        <form class="d-flex justify-content-center align-items-center" id="submitrequest" action="/requestTeacher" method="post" >
                             @csrf
                             <input type="hidden" name="name" value="{{ auth()->user()->name }}">
                             <input type="hidden" name="email" value="{{ auth()->user()->email }}">
@@ -84,19 +84,87 @@
 
                                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 16H4V4H20V6M7 18.5V21L12 16H20V10" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                                 </div>
-                                <button type="submit" id="requestTeacherButton"  style="width:60%; height: 40px; font-weight:600;" >Request Teacher</button>
+                                <button type="submit"  id="requestTeacherButton"  style="width:60%; height: 40px; font-weight:600;" >Request Teacher</button>
                             </div>
                         </form>
+
+
 
                     </div>
 
                 </div>
+                <div id="popup_confirmrequest" class="popup_confirmrequest">
+                    @if (!auth()->user()->address)
+                    <div class="popup_confirmrequest-content d-flex flex-column">
+                        <span class="popup_confirmrequest-close ms-auto" onclick="closePopup()">&times;</span>
+                        <div class="img-fluid d-flex">
+                            <img class="w-50 mx-auto" src="{{ asset('Assets/notecat.png') }}" alt="">
+                        </div>
+                        <h5 class="mt-3">Profile not completed yet</h5>
+                        <p>Fill your profile picture, address and phone number to request teacher now!</p>
+                        {{-- <a class="button-back" href="/profileStudent">Go to profile</a> --}}
+                        <a class="btn btn-back ms-auto rounded-5" style="background-color:#FFC6C7; width: fit-content" href="/profileStudent">Go to profile</a>
+                    </div>
+                    @else
+                    <div class="popup_confirmrequest-content d-flex flex-column">
+                        <span class="popup_confirmrequest-close ms-auto" onclick="closePopup()">&times;</span>
+                        <div class="img-fluid d-flex">
+                            <img class="w-50 mx-auto" src="{{ asset('Assets/breadcat.png') }}" alt="">
+                        </div>
+                        <h5>Send request to {{ $user->name }}?</h5>
+                        <p class="m-0">Make sure your personal information is correct.</p>
+                        <label class="text-secondary mt-1" style="font-size: 12px">Address:</label>
+                        <p class="m-0">{{ auth()->user()->address }}</p>
+                        <label class="text-secondary" style="font-size: 12px">Phone:</label>
+                        {{-- <label>Phone:</label> --}}
+                        <p>{{ auth()->user()->phoneNumber }}</p>
+
+                        <div class="button ms-auto">
+                            <a class="btn btn-back ms-auto rounded-5" style="border: 2px solid #FFC6C7; width: fit-content" href="/profileStudent">Edit profile</a>
+                        <button class="btn btn-back ms-auto rounded-5" onclick="return form_submit.submit()" style="background-color:#FFC6C7; width: fit-content">Send request</button>
+                        </div>
+                      </div>
+                    @endif
+                  </div>
             </div>
         </div>
 
     </div>
 
 </section>
+
+<script>
+
+    // function confirmrequest(event) {
+        // event.preventDefault();
+        // return false;
+        // }
+
+        let form_submit = document.getElementById('submitrequest')
+        form_submit.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Perform your custom form submission logic here
+            showPopup();
+        // ...
+
+        // Example: Display a success message
+        // alert('Form submitted successfully!');
+    });
+
+
+function showPopup() {
+  var popup = document.getElementById('popup_confirmrequest');
+  popup.style.display = 'block';
+//   return false;
+}
+
+function closePopup() {
+  var popup = document.getElementById('popup_confirmrequest');
+  popup.style.display = 'none';
+}
+
+</script>
 
 
 

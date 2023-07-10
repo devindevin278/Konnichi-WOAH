@@ -140,7 +140,7 @@
         // const audio = new Audio{{ asset('Assets/wrongchoice.mp3')}};
         const audio = new Audio('/Assets/wrongchoice.mp3');
         // const hehe = new Audio{{ asset('Assets/rightchoice.mp3')}};
-        const hehe = new Audio('Assets/rightchoice.mp3');
+        const hehe = new Audio('/Assets/rightchoice.mp3');
 
         const cards = document.querySelectorAll('.card');
         let firstCard, secondCard;
@@ -203,10 +203,26 @@
         });
 
         function showDiv(id) {
-        var div = document.getElementById(id);
-        div.style.display = 'flex';
-        hidd.style.display = 'none';
-        barr.style.display = 'flex';
+            var div = document.getElementById(id);
+            div.style.display = 'flex';
+            hidd.style.display = 'none';
+            barr.style.display = 'flex';
+
+            if(id == 1) {
+                hehe.play()
+            } else {
+                audio.play()
+            }
+        }
+
+        function confirmback() {
+            // e.preventDefault();
+            if (confirm('Are you sure you want to cancel? Your progress won\'t be saved')) {
+                return true
+            } else {
+                return false
+            }
+
         }
       </script>
 </body>

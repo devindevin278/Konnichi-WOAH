@@ -2,14 +2,57 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 
 class RegisterController extends Controller
 {
-    //
 
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleGoogleCallback()
+    {
+        $user = Socialite::driver('google')->user();
+
+        // Check if the user exists in the database
+        $existingUser = User::where('email', $user->email)->first();
+
+        if ($existingUser) {
+            // User exists, log them in
+            Auth::login($existingUser);
+
+            // Redirect the user to the appropriate home page based on their role
+            if ($existingUser->userIsTeacher) {
+                return redirect('/homeTeacher');
+            } elseif ($existingUser->userIsAdmin) {
+                return redirect('/homeAdmin');
+            } else {
+                return redirect('/homeStudent');
+            }
+        } else {
+            // User does not exist, create a new user in the database
+            $validatedData = [
+                'name' => $user->name,
+                'email' => $user->email,
+                // 'password' => 'required|min:5|max:255'
+                'password' => bcrypt($user->password),
+                // Add other required fields for registration
+            ];
+
+            $validatedData['password'] = Hash::make($validatedData['password']);
+
+            User::create($validatedData);
+            return redirect('/login')->with('success', 'Registration Success. Please Login');
+        }
+    }
     public function index() {
         return view('student.signUpStudent', [
             'title' => 'signUpStudent',
@@ -20,7 +63,7 @@ class RegisterController extends Controller
     public function store(Request $request) {
 
         // dd('test');
-
+        // $user = Socialite::driver('google')->user();
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             // 'username' => ['required', 'min:4', 'max:255', 'unique:users'],

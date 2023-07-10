@@ -775,8 +775,8 @@
         </div>
     </div>
 
-    {{-- @include('partials.footer') --}}
-</section>
+    @include('partials.footer')
+    </div>
 
     <script>
     const audioButtons = document.querySelectorAll('button');

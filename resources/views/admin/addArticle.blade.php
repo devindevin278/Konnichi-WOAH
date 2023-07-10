@@ -26,15 +26,15 @@
 
 
         <div class="container row mt-5 d-flex m-auto justify-content-center" style="width: fit">
-            <div class="imgbox d-flex justify-content-center " style=" background: #FFC6C7; border-radius: 8px;" >
-                <div class="container justify-content-around align-items-center"
+            <div class="imgbox d-flex justify-content-center " style=" background: #FFC6C7; border-radius: 8px; object-fit: cover;" >
+                <div class="container d-flex justify-content-around align-items-center"
                 style="height: 45vh;
                 background-image: url('{{ asset('img/addimg.png') }}'); background-size: 45px; background-position: center; background-repeat: no-repeat;">
-                    <div class="container m-2 d-flex justify-content-start" style="max-width: 50vh; height: auto;">
-                      <img class="img-preview" style="height: fit; overflow: hidden;">
+                    <div class="container m-2 d-flex justify-content-start" style="max-width: 50vh; max-height: fit;  object-fit: cover;">
+                      <img class="d-flex img-preview container " style="height: fit; overflow: hidden; ">
                     </div>
-                    <input class="form-control d-flex justify-content-center" style="height: 45vh; width: fit; top: 186px; background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()" />
-                  </div>
+                    <input class="container mt-5 m-auto form-control p-auto d-flex align-items-center" style="height: 45vh; width: fit; top: 186px; background: #FFC6C7;" type="file" id="image" name="image" onchange="previewImage()" />
+                </div>
 
             </div>
 
@@ -172,7 +172,6 @@
     function previewImage(){
         const image = document.querySelector('#image');
         const imgPreview = document.querySelector('.img-preview');
-        imgPreview.style.display = 'block';
         const oFReader = new FileReader();
         oFReader.readAsDataURL(image.files[0]);
         oFReader.onload = function(oFRevent){

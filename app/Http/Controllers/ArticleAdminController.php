@@ -154,18 +154,22 @@ class ArticleAdminController extends Controller
 
     public function showstudent(Article $article)
     {
+        $author = $article->author;
 
         return view('student.showArticle',[
-            'articles' => $article,
-            'authors' => Author::all()
+            'article' => $article,
+            'author' => $author
         ]);
+
     }
     public function showstudentjpn(Article $article)
     {
 
+        $author = $article->author;
+
         return view('student.jpnshowArticle',[
-            'articles' => $article,
-            'authors' => Author::all()
+            'article' => $article,
+            'author' => $author
         ]);
 
     }

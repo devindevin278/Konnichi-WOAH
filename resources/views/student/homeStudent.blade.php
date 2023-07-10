@@ -1,9 +1,10 @@
 @extends('layouts.mainStudent')
 
 @section('content')
+
 <body style="background: #faeee7;font-family: Poppins, sans-serif;">
     <header>
-        <div class="carousel slide d-flex justify-content-center" data-bs-ride="false" id="carousel-1" style="margin-top: 74px;padding-bottom: 90px;">
+        <div class="carousel slide d-flex justify-content-center" data-bs-ride="false" id="carousel-1" style="margin-top: 114px;padding-bottom: 90px;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <!-- Start: 1 Row 2 Columns -->
@@ -279,7 +280,7 @@
                         <div class="card border-0 shadow-none">
                             <div class="card-body text-center d-flex flex-column align-items-center p-0"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-hasna.svg') }}" style="margin-top: 30px;">
                                 <h1 style="font-size: 20px;"><strong>Hasna Salsabilla</strong></h1>
-                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Konnichi-Woah!</span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
+                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);"></span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
                             </div>
                         </div>
                     </div>
@@ -287,7 +288,7 @@
                         <div class="card border-0 shadow-none">
                             <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-hansen.svg') }}">
                                 <h1 style="font-size: 20px;"><strong>Hansen</strong></h1>
-                                <p class="text-muted card-text mb-2" style="padding-left: 20px;padding-right: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Konnichi-Woah!</span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
+                                <p class="text-muted card-text mb-2" style="padding-left: 20px;padding-right: 20px;"><br><strong><span style="color: rgb(0, 0, 0);"></span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
                             </div>
                         </div>
                     </div>
@@ -295,7 +296,7 @@
                         <div class="card border-0 shadow-none">
                             <div class="card-body text-center d-flex flex-column align-items-center p-0" style="margin-top: 30px;"><img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{ asset('img/home/img-mike.svg') }}">
                                 <h1 style="font-size: 20px;"><strong>Michael Baptista</strong></h1>
-                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);">Konnichi-Woah!</span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
+                                <p class="text-muted card-text mb-2" style="padding-right: 20px;padding-left: 20px;"><br><strong><span style="color: rgb(0, 0, 0);"></span></strong><span style="color: rgb(0, 0, 0);">&nbsp; also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan. Konichiwoah! also offers captivating articles on Japanese culture and history, enabling learners to gain insights and enrich their knowledge about Japan.</span><br><br></p>
                             </div>
                         </div>
                     </div>
@@ -309,5 +310,17 @@
         // Inisialisasi AOS setelah halaman dimuat
         AOS.init();
     </script>
+    <!-- buat auto carousel -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      // Enable automatic sliding for the carousel
+      $(document).ready(function() {
+        $('.carousel').carousel({
+          interval: 2000 // Set the time interval in milliseconds (e.g., 2000 for 2 seconds)
+        });
+      });
+    </script> -->
 
 @endsection
