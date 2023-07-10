@@ -51,7 +51,7 @@
                     </div>
                 </div>
 
-                <div class="row d-flex align-items-start justify-content-around" style="width:30%; height: 400px;">
+                <div class="row d-flex align-items-start justify-content-around" style="width:30%; height: 480px;">
                     <div class="row d-flex justify-content-center bg-white p-3 shadow" style="border-radius: 30px; height: 100%; ">
                         <div class="d-flex justify-content-center mt-2">
                             <img class="shadow teachphoto" src="{{ asset('storage/'. $user->photo) }} " alt=""
@@ -64,13 +64,12 @@
                             </h4>
                         </div>
                         <div class="row d-flex justify-content-center text-center align-items-center p-0" style="width:60%;">
-
-                               Tuition fee:
-                               <small style="font-weight: 600">
-                                Rp {{ $user->price }}/Week
-                                </small>
-
+                            Tuition fee:
+                            <small style="font-weight: 600">
+                                Rp {{ number_format($user->price, 0, ',', '.') }}/Week
+                            </small>
                         </div>
+
 
                         <form class="d-flex justify-content-center align-items-center" id="submitrequest" action="/requestTeacher" method="post" >
                             @csrf

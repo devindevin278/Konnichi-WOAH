@@ -138,9 +138,11 @@
 
                             <div class="d-flex align-item-center mt-4" style="gap: 10px;">
                                 <div class="d-flex">
-                                    <label class="labels text-align-right" style="height:fit-content; width: 120px; margin:auto; text-align: right;">Price</label>
+                                    <label class="labels text-align-right"
+                                        style="height:fit-content; width: 120px; margin:auto; text-align: right;">Price</label>
                                 </div>
-                                <input type="text" class="form-control" name="price" placeholder="Enter your price" value="{{ old('price', $user->price) }}" style="border: solid #A08A8F;" readonly>
+                                <input type="text" class="form-control" name="price" placeholder="Enter your price"
+                                    value="{{ old('price', $user->price) }}" style="border: solid #A08A8F;" readonly>
                             </div>
 
                             <div class="d-flex align-item-center mt-4" style="gap:10px" >
@@ -203,6 +205,13 @@
 
 </section>
 
+@php
+    $formattedPrice = number_format($user->price, 0, ',', '.');
+@endphp
+
+<script>
+    document.querySelector('input[name="price"]').value = 'Rp {{ $formattedPrice }}';
+</script>
 
 @endsection
 
