@@ -29,7 +29,7 @@
 
       <img src="{{ asset('img/Text Line.png') }}" style="widht:20px; height:20px;" class="mt-3">
       <a  href="{{ route('login.google') }}">
-        <h5 class="d-flex justify-content-center gap-2 align-items-center text-center fs-6 mt-3 bg-white signupgoogle pt-2 pb-2" style="font-weight:400;"><img src="{{ asset('img/google.png') }}" style="widht:20px; height:20px;" > Sign Up with Google </h5>
+        <h5 class="d-flex justify-content-center gap-2 align-items-center text-center fs-6 mt-3 bg-white signupgoogle pt-2 pb-2" style="font-weight:400;"><img src="{{ asset('img/google.png') }}" style="widht:20px; height:20px;" > Sign In with Google </h5>
       </a>
       <a class="forget text-decoration-underline" href="">Forgot Password?</a>
 
