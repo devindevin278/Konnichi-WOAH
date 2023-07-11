@@ -120,13 +120,16 @@ class StudentController extends Controller
         if($request->email != $user[0]->email) {
             $rules['email'] = 'required|email:dns|unique:users';
         }
-        // dd($request->file('photo'));
-        // $validatedData = $request->validate($rules);
-        try {
-            $validatedData = $request->validate($rules);
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            dd($e->getMessage());
-        }
+
+        $validatedData = $request->validate($rules);
+        // try {
+        //     $validatedData = $request->validate($rules);
+        // } catch (\Illuminate\Validation\ValidationException $e) {
+
+        //     return redirect('/profileStudent')
+        //     ->withErrors($e->getMessage())
+        //     ->withInput();
+        // }
 
         if($request->file('photo')) {
             if($request->oldImage) {
@@ -139,7 +142,11 @@ class StudentController extends Controller
         $user = User::where('id', $id);
         $user = $user->update($validatedData);
 
-        return redirect('/profileStudent')->with('success', 'Profile updated successfully');
+        return redirect('/profileStudent')->with([
+            'success' => 'Profile updated successfully',
+            'error' => 'Check your profile again'
+        ]);
+
     }
 
     /**

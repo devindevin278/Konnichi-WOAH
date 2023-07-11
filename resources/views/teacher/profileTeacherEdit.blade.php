@@ -324,6 +324,15 @@
 
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    @php
+        $formattedPrice = number_format($user->price, 0, ',', '.');
+    @endphp
+
+    <script>
+        document.getElementById('priceInput').value = 'Rp {{ $formattedPrice }}';
+    </script>
+
     <script>
         $(document).ready(function() {
             $('#province').on('change', function() {

@@ -122,7 +122,7 @@
                         <select class="form-select filterbutton rounded-5" name="price_range" id="price-range-select"
                             style="background-color: #FFC6C7; width: 170px;">
                             <option value="">Price</option>
-                            <option value="0-100000" style="border-radius: 5px;">under 100k</option>
+                            {{-- <option value="0-100000" style="border-radius: 5px;">under 100k</option> --}}
                             <option value="100000-200000" style="border-radius: 5px;">100k - 200k</option>
                             <option value="201000-300000" style="border-radius: 5px;">201k - 300k</option>
                             <option value="301000-400000" style="border-radius: 5px;">301k - 400k</option>
@@ -264,11 +264,10 @@
                                             {{-- <div class="d-flex viewbt justify-content-center mt-2 align-items-center" style="width: 100px;">
                                             <a class="col d-flex justify-content-around btn rounded-5 viewbt" style="background-color: #C3F0CA;" href="/viewTeacher/{{ $teacher->name }}">View</a>
                                         </div> --}}
-                                            <div class="viewbt rounded-5 d-flex px-2 py-1 me-auto"
-                                                style="width: fit-content">
-                                                <p class="m-auto" style="font-size: 14px">Rp {{ $teacher->price }}/week
-                                                </p>
-                                            </div>
+                                        <div class="viewbt rounded-5 d-flex px-2 py-1 me-auto" style="width: fit-content">
+                                            <p class="m-auto" style="font-size: 14px">Rp {{ number_format($teacher->price, 0, ',', '.') }}/week</p>
+                                        </div>
+
                                         </div>
                                     </div>
                                 </a>
