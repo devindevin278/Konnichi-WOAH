@@ -29,6 +29,35 @@ Konnichi-WOAH! is an online Japanese language learning platform designed for stu
 - Article section with full control for adding and editing content.
 - Profile section for managing personal information securely.
 
+## Documentation
+
+### Home
+
+![home](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/home.png "Home")
+
+### Games
+
+![Games](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/game.png "Game")
+
+### Notebook
+
+![Notebook](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/notebook.png "Notebook")
+
+### Flash Card
+
+![flashcard](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/hira.png "Flashcard")
+
+### Leaderboard
+
+![leaderboard](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/leaderboard.png "Leaderoard")
+
+### Article
+
+![Article](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/article1.png "Article")
+
+### Teacher
+![teacher](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/teacher.png "Teacher")
+
 ## Technologies Used
 
 - Laravel : PHP framework for backend development.
@@ -36,6 +65,7 @@ Konnichi-WOAH! is an online Japanese language learning platform designed for stu
 - Bootstrap : Frontend CSS framework.
 - Socialite : Authentication library for social logins.
 - Other dependencies as listed in the project's `composer.json` and `package.json` files.
+
 
 # Website Installation Guide
 
