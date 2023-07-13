@@ -22,7 +22,7 @@ Please follow the steps below to install and run your Konnichi-WOAH! website:
 1. **Clone the Repository:** Clone the repository containing your Konnichi-WOAH! website project to your local machine using Git or download it as a ZIP file and extract it to your desired location.
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/devindevin278/Konnichi-WOAH.git
 
 2. **Open the Project in VSCode:** Launch VSCode and open the project folder by selecting "Open Folder" from the "File" menu. Navigate to the folder where you cloned or extracted the project.
 
