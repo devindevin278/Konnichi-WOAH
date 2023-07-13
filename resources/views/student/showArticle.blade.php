@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="showArticle pt-4 row d-flex">
+<section class="showArticle pt-4 p-0 row m-0 d-flex">
 
     <div class="col-md-11 mx-auto d-flex justify-content-between p-0 m-0">
 
