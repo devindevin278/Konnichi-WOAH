@@ -94,7 +94,7 @@
                                                     style="color: black;">{{ $article->title }}</a>
                                             </h5>
                                             <a class="card-title text-decoration-none"
-                                                href="/author/{{ $article->author->name }}"
+                                                href=""
                                                 style="color: black;">{{ $article->author->name }}</a>
                                             <p class="card-text">{{ $article->created_at->diffForHumans() }}</p>
                                         </div>
