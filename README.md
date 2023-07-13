@@ -3,6 +3,40 @@ Welcome to Konnichi-WOAH!
 A captivating Japanese language learning platform!
 Are you looking for an easy and fun way to learn Japanese? Look no further than Konnichiwoah! We offer a wide range of exciting features to help you master the Japanese language with ease and effectiveness.
 
+Konnichi-WOAH! is an online Japanese language learning platform designed for students, teachers, and administrators. This README provides an overview of the website's features and functionality.
+
+## Key Features
+
+### For Students
+
+- Accessible home page with easy navigation.
+- Learn page featuring interactive games, a notebook for conversational Japanese, flashcards for hiragana and katakana, and a leaderboard to track progress.
+- Article page offering a wide range of articles in English and Japanese for reading practice.
+- Teacher page to find qualified instructors for advanced language learning.
+- Profile section for personalizing user information.
+
+### For Teachers
+
+- Accessible home page with easy navigation.
+- Notification section to manage student registrations efficiently.
+- Article section providing teaching resources and materials.
+- Profile section for maintaining and updating personal information.
+
+### For Administrators
+
+- Accessible home page with easy navigation.
+- Verify Teacher section to review and verify qualifications of potential instructors.
+- Article section with full control for adding and editing content.
+- Profile section for managing personal information securely.
+
+## Technologies Used
+
+- Laravel : PHP framework for backend development.
+- MySQL : Database management system.
+- Bootstrap : Frontend CSS framework.
+- Socialite : Authentication library for social logins.
+- Other dependencies as listed in the project's `composer.json` and `package.json` files.
+
 # Website Installation Guide
 
 This guide provides step-by-step instructions on how to install and set up your Konnichi-WOAH! website, a Japanese language learning website, using Visual Studio Code (VSCode) and Laravel framework. It assumes that you have already installed XAMPP, Laravel, and have a basic understanding of Laravel's directory structure and concepts.
