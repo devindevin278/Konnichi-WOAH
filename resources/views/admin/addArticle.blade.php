@@ -8,8 +8,8 @@
 
 </style>
 
-<section class="addArticle">
-    <div class="container mt-5 d-flex justify-content-around">
+<section class="addArticle p-0">
+    <div class="container d-flex justify-content-around">
         <div class="col " style="display: flex; justify-content:space-between; width: fit-content">
 
             <div class="col d-flex m-0 p-0 gap-2" style=" width:200px">
