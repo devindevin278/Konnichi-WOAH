@@ -1,66 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Konnichi-WOAH! [Japanese Learning Website]
+Welcome to Konnichi-WOAH! 
+A captivating Japanese language learning platform!
+Are you looking for an easy and fun way to learn Japanese? Look no further than Konnichiwoah! We offer a wide range of exciting features to help you master the Japanese language with ease and effectiveness.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"> hiii</a>
-</p>
+# Website Installation Guide
 
-## About Laravel
+This guide provides step-by-step instructions on how to install and set up your Konnichi-WOAH! website, a Japanese language learning website, using Visual Studio Code (VSCode) and Laravel framework. It assumes that you have already installed XAMPP, Laravel, and have a basic understanding of Laravel's directory structure and concepts.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Prerequisites
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Before proceeding with the installation, make sure you have the following software installed on your system:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [XAMPP](https://www.apachefriends.org/index.html) : A local development environment that includes Apache, MySQL, and PHP.
+- [Composer](https://getcomposer.org/) : A dependency manager for PHP.
+- [Node.js and npm](https://nodejs.org/) : Required for frontend asset management.
 
-## Learning Laravel
+## Installation Steps
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Please follow the steps below to install and run your Konnichi-WOAH! website:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. **Clone the Repository:** Clone the repository containing your Konnichi-WOAH! website project to your local machine using Git or download it as a ZIP file and extract it to your desired location.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    ```bash
+    git clone <repository_url>
 
-## Laravel Sponsors
+2. **Open the Project in VSCode:** Launch VSCode and open the project folder by selecting "Open Folder" from the "File" menu. Navigate to the folder where you cloned or extracted the project.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+3. **Install Dependencies:** Open the integrated terminal in VSCode by selecting "View" -> "Terminal" from the menu. In the terminal, navigate to the project's root directory (where the `composer.json` file is located) and run the following command to install the required dependencies:
 
-### Premium Partners
+    ```bash
+    composer install
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+4. **Install Frontend Dependencies:** Still in the terminal, run the following command to install the frontend dependencies using npm:
+    ```bash
+    npm install
+    
+5. **Set Up Environment Variables:** Copy the `.env.example` file in the project root directory and rename the copy to `.env`. Open the `.env` file and update the configuration options such as database connection details according to your local environment:
+    ```bash
+    cp .env.example .env
 
-## Contributing
+6. **Generate Application Key:** In the VSCode terminal, run the following command to generate an application key:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    ```bash
+    php artisan key:generate
 
-## Code of Conduct
+7. **Create Symbolic Link for Storage:** To access files stored in the Laravel `storage` directory, you need to create a symbolic link. Run the following command in the VSCode terminal:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ```bash
+    php artisan storage:link
 
-## Security Vulnerabilities
+8. **Database Setup:** Start XAMPP and ensure that Apache and MySQL are running. Create a new MySQL database for your Konnichi-WOAH! application. Open the `.env` file and update the database configuration options (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`) with your database details.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+9. **Run Migrations:** In the VSCode terminal, run the following command to run the database migrations and set up the required tables:
 
-## License
+    ```bash
+    php artisan migrate
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+10. **Set Up Google OAuth Credentials:** To enable Google login using Socialite, you need to set up OAuth credentials from the Google Developer Console. Follow these steps:
+    - Go to the [Google Developer Console](https://console.developers.google.com/) and create a new project.
+    - Enable the Google+ API for your project.
+    - Under the "Credentials" tab, create a new OAuth client ID.
+    - Set the authorized redirect URI to `http://localhost:8000/login/google/callback`.
+    - Copy the client ID and client secret.
+    - Open the `.env` file in your project and add the following lines, replacing `<YOUR_CLIENT_ID>` and         `<YOUR_CLIENT_SECRET>` with your actual values:
+      
+      ```
+      GOOGLE_CLIENT_ID=<YOUR_CLIENT_ID>
+      GOOGLE_CLIENT_SECRET=<YOUR_CLIENT_SECRET>
+      GOOGLE_REDIRECT_URI=http://localhost:8000/login/google/callback
+      ```
+  
+11. **Build Frontend Assets:** In the VSCode terminal, run the following command to build the frontend assets:
+    
+     ```
+     npm run build
+     ```
+
+12. **Start the Development Server:** In the VSCode terminal, run the following command to start the Laravel development server:
+    
+     ```
+     php artisan serve
+     ```
+
+14. **Access Your Website:** Open a web browser and visit `http://localhost:8000` to access your Konnichi-WOAH! website. If everything is set up correctly, you should see your application running.
+
+## Additional Information
+
+- To make changes to your Konnichi-WOAH! website, you can edit the relevant files in the project's directory structure. Routes are defined in the `routes/web.php` file, controllers can be found in the `app/Http/Controllers` directory, and views are located in the `resources/views` directory.
+
+- For more information on Laravel and its features, refer to the official [Laravel documentation](https://laravel.com/docs).
+
+- If you encounter any issues during the installation process or while running your Konnichi-WOAH! website, consult the error messages in the VSCode terminal, Laravel documentation, or search for solutions on Laravel forums or Stack Overflow.
+
+- Remember to secure your Laravel application in production environments by following best practices such as setting up proper file permissions, configuring HTTPS, and protecting sensitive data.
+
+That's it! You have successfully installed and set up your Konnichi-WOAH! website using Visual Studio Code. Happy coding!
+
