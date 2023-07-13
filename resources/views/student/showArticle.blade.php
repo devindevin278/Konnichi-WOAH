@@ -59,34 +59,34 @@
             @if ($articl->slug != $article->slug)
 
 
-        <div class="col-md-4">
-            <div class="card d-flex p-0 justify-content-around"
-                style=" background-color: #ffffff;">
-                <div class="container d-flex imgcard m-0 p-0">
-                    <div class="imgcard d-flex" style="overflow: hidden;">
-                        <img class="card-img-top"
-                            src="{{ asset('storage/' . $articl->image) }}" alt=""
-                            style="object-fit: cover; width: 100%; height: 15rem;">
+                <div class="col-md-4">
+                    <div class="card d-flex p-0 justify-content-around"
+                        style=" background-color: #ffffff;">
+                        <div class="container d-flex imgcard m-0 p-0">
+                            <div class="imgcard d-flex" style="overflow: hidden;">
+                                <img class="card-img-top"
+                                    src="{{ asset('storage/' . $articl->image) }}" alt=""
+                                    style="object-fit: cover; width: 100%; height: 15rem;">
+                            </div>
+                        </div>
+                        <div class="card-body rounded-bottom border-0"
+                            style="background-color: #ffffff;">
+                            <h5 class="card-title " style="height: 8vw">
+                                <a href="/student/{{ $articl->slug }}"
+                                    style="color: black;">{{ $articl->title }}</a>
+                            </h5>
+                            {{-- <a class="card-title text-decoration-none"
+                                href="/author/{{ $article->author->name }}"
+                                style="color: black;">{{ $article->author->name }}</a> --}}
+                            <p class="card-text">{{ $articl->created_at->diffForHumans() }}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="card-body rounded-bottom border-0"
-                    style="background-color: #ffffff;">
-                    <h5 class="card-title " style="height: 8vw">
-                        <a href="/student/{{ $articl->slug }}"
-                            style="color: black;">{{ $articl->title }}</a>
-                    </h5>
-                    {{-- <a class="card-title text-decoration-none"
-                        href="/author/{{ $article->author->name }}"
-                        style="color: black;">{{ $article->author->name }}</a> --}}
-                    <p class="card-text">{{ $articl->created_at->diffForHumans() }}</p>
-                </div>
-            </div>
-        </div>
         @endif
-        @if ($loop->iteration > 3)
-            @break
-        @endif
-        @endforeach
+            @if ($loop->iteration >= 3)
+                @break
+            @endif
+            @endforeach
         </div>
 
     </div>

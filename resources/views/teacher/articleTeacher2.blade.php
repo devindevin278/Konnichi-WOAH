@@ -1,4 +1,4 @@
-@extends('layouts.mainStudent')
+@extends('layouts.mainTeacher')
 
 @section('content')
     <section class="article pt-2">
@@ -57,7 +57,7 @@
 
                             <div class="card-body text-center">
                                 <h3 class="card-title">
-                                    <a href="/student/{{ $articles[0]->slug }}"
+                                    <a href="/teacher/{{ $articles[0]->slug }}"
                                         class="text-decoration-none text-dark">{{ $articles[0]->title }}</a>
                                 </h3>
                                 <p>
@@ -94,7 +94,7 @@
                                                     style="color: black;">{{ $article->title }}</a>
                                             </h5>
                                             <a class="card-title text-decoration-none"
-                                                href=""
+                                                href="/author/{{ $article->author->name }}"
                                                 style="color: black;">{{ $article->author->name }}</a>
                                             <p class="card-text">{{ $article->created_at->diffForHumans() }}</p>
                                         </div>
