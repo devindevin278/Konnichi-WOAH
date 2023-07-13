@@ -27,9 +27,6 @@
 
     <div class="container mt-1 d-flex justify-content-around">
 
-
-
-
         <div class="container row mt-5  d-flex align-items-center ">
             <div class="col container mt-3 d-flex align-items-center justify-content-around" >
                 <div class="container m-0 p-0">

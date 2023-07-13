@@ -31,7 +31,7 @@ class ArticleAdminController extends Controller
             ->orWhere('body','like','%'.request('search').'%');
         }
 
-        return view('admin.articleAdmin',[
+        return view('admin.articleAdmin2',[
             'articles' => $articles->paginate(5),
             'authors' => Author::all()
         ]);
@@ -76,7 +76,7 @@ class ArticleAdminController extends Controller
             ->orWhere('body','like','%'.request('search').'%');
         }
 
-        return view('teacher.articleTeacher',[
+        return view('teacher.articleTeacher2',[
             'articles' => $articles->paginate(5),
             'authors' => Author::all()
         ]);
@@ -136,18 +136,23 @@ class ArticleAdminController extends Controller
     public function show(Article $article)
     {
 
+        $author = $article->author;
+
+
         return view('admin.showArticleAdmin',[
-            'articles' => $article,
-            'authors' => Author::all()
+            'article' => $article,
+            // 'author' => Author::all()
+            'author' => $author
         ]);
     }
 
     public function jpnshow(Article $article)
     {
+        $author = $article->author;
 
         return view('admin.showArticleAdminjpn',[
-            'articles' => $article,
-            'authors' => Author::all()
+            'article' => $article,
+            'author' => $author
         ]);
     }
 
@@ -176,18 +181,21 @@ class ArticleAdminController extends Controller
 
     public function showteacher(Article $article)
     {
+        $author = $article->author;
 
         return view('teacher.showArticle',[
-            'articles' => $article,
-            'authors' => Author::all()
+            'article' => $article,
+            'author' => $author
         ]);
     }
     public function showteacherjpn(Article $article)
     {
 
+        $author = $article->author;
+
         return view('teacher.jpnshowArticle',[
-            'articles' => $article,
-            'authors' => Author::all()
+            'article' => $article,
+            'author' => $author
         ]);
 
     }

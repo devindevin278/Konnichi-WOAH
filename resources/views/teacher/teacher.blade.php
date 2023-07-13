@@ -69,7 +69,8 @@
             <div class="col-12 mt-0 d-flex justify-content-between">
                 {{-- <div class="d-flex justify-content-center align-items-center"> --}}
                 <div class="d-flex justify-content-center align-items-center">
-                    <svg width="50px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="50px" height="40px" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier">
@@ -88,11 +89,11 @@
             </div>
             <div class="container m-auto mt-2" style="height: 2px; background-color: black;"></div>
 
-            <form class="mt-0" action="/teacher" method="GET">
+            <form class="mt-0 d-flex justify-content-between" action="/teacher" method="GET">
                 @csrf
-                <div class="mt-0 d-flex col gap-3 justify-content-center">
+                <div class="mt-4 d-flex gap-3">
                     {{-- Province --}}
-                    <div class="d-flex align-item-center mt-4">
+                    <div class="d-flex align-item-center">
                         <select class="form-select filterbutton rounded-5" id="province" name="province"
                             style="background-color: #FFC6C7; width: 170px;">
                             <option value="">Province</option>
@@ -105,7 +106,7 @@
                     </div>
 
                     {{-- City --}}
-                    <div class="d-flex align-item-center mt-4 ">
+                    <div class="d-flex align-item-center ">
                         <select class="form-select filterbutton rounded-5" id="city" name="city"
                             style="background-color: #FFC6C7; width: 170px;">
                             <option value="">City</option>
@@ -118,7 +119,7 @@
 
                     {{-- Price --}}
 
-                    <div class="d-flex align-item-center mt-4 gap-3">
+                    <div class="d-flex align-item-center">
                         <select class="form-select filterbutton rounded-5" name="price_range" id="price-range-select"
                             style="background-color: #FFC6C7; width: 170px;">
                             <option value="">Price</option>
@@ -129,83 +130,81 @@
                         </select>
                     </div>
 
-                    {{-- <label for="customRange2" class="form-label">Price</label>
-<input type="range" class="form-range" min="0" max="100000" id="customRange2"> --}}
+                </div>
 
-
-
-                    <div class="d-flex col justify-content-end mt-3">
-
-                        <button type="submit" class="btn filbut">
-                            <svg width="40px" height="40px" viewBox="0 0 5.8208335 5.8208335"
-                                xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
-                                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg"
-                                id="svg8" version="1.1" fill="#000000">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                <g id="SVGRepo_iconCarrier">
-                                    <metadata id="metadata5">
-                                        <rdf:rdf>
-                                            <cc:work>
-                                                <dc:format>image/svg+xml</dc:format>
-                                                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
-                                                <dc:title></dc:title>
-                                                <dc:date>2021</dc:date>
-                                                <dc:creator>
-                                                    <cc:agent>
-                                                        <dc:title>Timothée Giet</dc:title>
-                                                    </cc:agent>
-                                                </dc:creator>
-                                                <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/">
-                                                </cc:license>
-                                            </cc:work>
-                                            <cc:license rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
-                                                <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction">
-                                                </cc:permits>
-                                                <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution">
-                                                </cc:permits>
-                                                <cc:requires rdf:resource="http://creativecommons.org/ns#Notice">
-                                                </cc:requires>
-                                                <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution">
-                                                </cc:requires>
-                                                <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks">
-                                                </cc:permits>
-                                                <cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike">
-                                                </cc:requires>
-                                            </cc:license>
-                                        </rdf:rdf>
-                                    </metadata>
-                                    <g transform="translate(0 -291.18)" id="layer1">
-                                        <path id="path5822"
-                                            d="M2.646 293.56v.53l1.058 1.058v1.323l1.058.529v-1.852l1.059-1.058v-.53zm.529.53h2.117l-.794.793v1.588l-.53-.265v-1.323z"
-                                            style="fill:#FF8BA7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:.35277778px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1">
-                                        </path>
-                                        <g style="fill:#FF8BA7;fill-opacity:1"
-                                            transform="matrix(.26458 0 0 .26458 -1.058 18.033)" id="layer1-6">
-                                            <path id="path824"
-                                                d="M15 1035.362v2h-4a5 5 0 0 0 0 10h2v2h-2a7 7 0 0 1-7-7c0-3.866 3.134-7.06 7-7z"
-                                                style="opacity:1;vector-effect:none;fill:#FF8BA7;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:3.20000005;stroke-opacity:.55063291">
-                                            </path>
-                                            <path id="path842" d="m17 1036.362-4 4v-8z"
-                                                style="fill:#FF8BA7;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1">
-                                            </path>
-                                        </g>
-                                    </g>
+                <div class="d-flex mt-4">
+                    {{-- <svg width="40px" height="40px" viewBox="0 0 5.8208335 5.8208335"
+                        xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg"
+                        id="svg8" version="1.1" fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <metadata id="metadata5">
+                                <rdf:rdf>
+                                    <cc:work>
+                                        <dc:format>image/svg+xml</dc:format>
+                                        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+                                        <dc:title></dc:title>
+                                        <dc:date>2021</dc:date>
+                                        <dc:creator>
+                                            <cc:agent>
+                                                <dc:title>Timothée Giet</dc:title>
+                                            </cc:agent>
+                                        </dc:creator>
+                                        <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/">
+                                        </cc:license>
+                                    </cc:work>
+                                    <cc:license rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+                                        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction">
+                                        </cc:permits>
+                                        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution">
+                                        </cc:permits>
+                                        <cc:requires rdf:resource="http://creativecommons.org/ns#Notice">
+                                        </cc:requires>
+                                        <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution">
+                                        </cc:requires>
+                                        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks">
+                                        </cc:permits>
+                                        <cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike">
+                                        </cc:requires>
+                                    </cc:license>
+                                </rdf:rdf>
+                            </metadata>
+                            <g transform="translate(0 -291.18)" id="layer1">
+                                <path id="path5822"
+                                    d="M2.646 293.56v.53l1.058 1.058v1.323l1.058.529v-1.852l1.059-1.058v-.53zm.529.53h2.117l-.794.793v1.588l-.53-.265v-1.323z"
+                                    style="fill:#FF8BA7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:.35277778px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1">
+                                </path>
+                                <g style="fill:#FF8BA7;fill-opacity:1"
+                                    transform="matrix(.26458 0 0 .26458 -1.058 18.033)" id="layer1-6">
+                                    <path id="path824"
+                                        d="M15 1035.362v2h-4a5 5 0 0 0 0 10h2v2h-2a7 7 0 0 1-7-7c0-3.866 3.134-7.06 7-7z"
+                                        style="opacity:1;vector-effect:none;fill:#FF8BA7;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:3.20000005;stroke-opacity:.55063291">
+                                    </path>
+                                    <path id="path842" d="m17 1036.362-4 4v-8z"
+                                        style="fill:#FF8BA7;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1">
+                                    </path>
                                 </g>
-                            </svg>
-                            <button type="submit" name="refresh" value="1" class="btn refbut ms-3">
-                                <svg width="35px" height="35px" fill="#FF8BA7" viewBox="0 0 1920 1920"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <path
-                                            d="M960 0v213.333c411.627 0 746.667 334.934 746.667 746.667S1371.627 1706.667 960 1706.667 213.333 1371.733 213.333 960c0-197.013 78.4-382.507 213.334-520.747v254.08H640V106.667H53.333V320h191.04C88.64 494.08 0 720.96 0 960c0 529.28 430.613 960 960 960s960-430.72 960-960S1489.387 0 960 0"
-                                            fill-rule="evenodd"></path>
-                                    </g>
-                                </svg>
-                    </div>
-
+                            </g>
+                        </g>
+                    </svg> --}}
+                    <button type="submit" class="btn m-0 p-2 px-3 rounded-5 btn-back"
+                        style="background-color: #FFC6C7; width: fit-content;">
+                        <p class="m-0 text-dark p-0">Search</p>
+                    </button>
+                    <button type="submit" name="refresh" value="1" class="btn refbut ms-3">
+                        <svg width="35px" height="35px" fill="#FF8BA7" viewBox="0 0 1920 1920"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M960 0v213.333c411.627 0 746.667 334.934 746.667 746.667S1371.627 1706.667 960 1706.667 213.333 1371.733 213.333 960c0-197.013 78.4-382.507 213.334-520.747v254.08H640V106.667H53.333V320h191.04C88.64 494.08 0 720.96 0 960c0 529.28 430.613 960 960 960s960-430.72 960-960S1489.387 0 960 0"
+                                    fill-rule="evenodd"></path>
+                            </g>
+                        </svg>
+                    </button>
                 </div>
 
             </form>
@@ -216,65 +215,64 @@
 
 
         {{-- show --}}
-        <div class="d-flex justify-content-center m-auto mt-4 container" style="padding-bottom: 30px;"
-            data-aos="fade-up" data-aos-duration="1000">
+        <div class="d-flex justify-content-center m-auto mt-4 container" style="padding-bottom: 30px;" data-aos="fade-up"
+            data-aos-duration="1000">
             {{-- <div class="d-flex justify-content-center" style="background-color: #FAEEE7; border-radius: 30px;"> --}}
-                {{-- <div class=" d-flex justify-content-around"> --}}
+            {{-- <div class=" d-flex justify-content-around"> --}}
 
-                    @if (count($filteredTeachers) > 0)
-                    @else
-                        <div class="col-12">
-                            <a class="d-flex justify-content-center mt-3 text-decoration-none text-dark">No teacher
-                                found</a>
-                        </div>
-                    @endif
+            @if (count($filteredTeachers) > 0)
+            @else
+                <div class="col-12">
+                    <a class="d-flex justify-content-center mt-3 text-decoration-none text-dark">No teacher
+                        found</a>
+                </div>
+            @endif
 
-                    <div class="row w-100 d-flex justify-content-around align-items-center">
-                        @php $count = 0; @endphp
-                        @foreach ($filteredTeachers as $index => $teacher)
-                            @if ($teacher->userIsTeacher == 1)
-                                <a class="col-md-4 my-1 text-decoration-none text-dark"
-                                    href="/viewTeacher/{{ $teacher->name }}">
-                                    <div class="card mt-2 mb-5 d-flex p-0 justify-content-around mx-auto"
-                                        style="background-color: #ffffff; width: 85%">
-                                        <div class="container d-flex imgcard justify-content-around">
-                                            <div class="imgcards d-flex " style="overflow: hidden;">
-                                                <img class="card-img-top b-3 "
-                                                    src="{{ asset('storage/' . $teacher->photo) }}"
-                                                    style="width: 100%; height: 200px; object-fit: cover;">
-                                            </div>
-                                        </div>
+            <div class="row w-100 d-flex justify-content-around align-items-center">
+                @php $count = 0; @endphp
+                @foreach ($filteredTeachers as $index => $teacher)
+                    @if ($teacher->userIsTeacher == 1)
+                        <a class="col-md-4 my-1 text-decoration-none text-dark" href="/viewTeacher/{{ $teacher->name }}">
+                            <div class="card mt-2 mb-5 d-flex p-0 justify-content-around mx-auto"
+                                style="background-color: #ffffff; width: 85%">
+                                <div class="container d-flex imgcard justify-content-around">
+                                    <div class="imgcards d-flex " style="overflow: hidden;">
+                                        <img class="card-img-top b-3 " src="{{ asset('storage/' . $teacher->photo) }}"
+                                            style="width: 100%; height: 200px; object-fit: cover;">
+                                    </div>
+                                </div>
 
-                                        <div class="card-body idxz d-flex gap-2 row shadow rounded-4 justify-content-center"
-                                            style="background-color: #fff;">
-                                            <h5 class="mb-0" style="height: 3.2vw;">{{ $teacher->name }}</h5>
-                                            <h5 class="" style="font-size: 12px">{{ $teacher->city }},
-                                                {{ $teacher->province }}</h5>
-                                            <div style="background-color: black; height: 1px; width: 100%;"></div>
-                                            <div class="d">
-                                                <p class="" style=" height: 2.5vw">
-                                                    @if (strlen($teacher->descteacher) > 30)
-                                                        {{ \Illuminate\Support\Str::limit($teacher->descteacher, 30) }}
-                                                    @else
-                                                        {{ $teacher->descteacher }}
-                                                    @endif
-                                                </p>
-                                                {{-- <img src="{{ asset('img/email.png') }}" style="width: 20px; height: 15px;"> {{ $teacher->email }} --}}
-                                            </div>
-                                            {{-- <div class="d-flex viewbt justify-content-center mt-2 align-items-center" style="width: 100px;">
+                                <div class="card-body idxz d-flex gap-2 row shadow rounded-4 justify-content-center"
+                                    style="background-color: #fff;">
+                                    <h5 class="mb-0" style="height: 3.2vw;">{{ $teacher->name }}</h5>
+                                    <h5 class="" style="font-size: 12px">{{ $teacher->city }},
+                                        {{ $teacher->province }}</h5>
+                                    <div style="background-color: black; height: 1px; width: 100%;"></div>
+                                    <div class="d">
+                                        <p class="" style=" height: 2.5vw">
+                                            @if (strlen($teacher->descteacher) > 30)
+                                                {{ \Illuminate\Support\Str::limit($teacher->descteacher, 30) }}
+                                            @else
+                                                {{ $teacher->descteacher }}
+                                            @endif
+                                        </p>
+                                        {{-- <img src="{{ asset('img/email.png') }}" style="width: 20px; height: 15px;"> {{ $teacher->email }} --}}
+                                    </div>
+                                    {{-- <div class="d-flex viewbt justify-content-center mt-2 align-items-center" style="width: 100px;">
                                             <a class="col d-flex justify-content-around btn rounded-5 viewbt" style="background-color: #C3F0CA;" href="/viewTeacher/{{ $teacher->name }}">View</a>
                                         </div> --}}
-                                        <div class="viewbt rounded-5 d-flex px-2 py-1 me-auto" style="width: fit-content">
-                                            <p class="m-auto" style="font-size: 14px">Rp {{ number_format($teacher->price, 0, ',', '.') }}/week</p>
-                                        </div>
-
-                                        </div>
+                                    <div class="viewbt rounded-5 d-flex px-2 py-1 me-auto" style="width: fit-content">
+                                        <p class="m-auto" style="font-size: 14px">Rp
+                                            {{ number_format($teacher->price, 0, ',', '.') }}/week</p>
                                     </div>
-                                </a>
-                            @endif
-                        @endforeach
-                    </div>
-                {{-- </div> --}}
+
+                                </div>
+                            </div>
+                        </a>
+                    @endif
+                @endforeach
+            </div>
+            {{-- </div> --}}
             {{-- </div> --}}
         </div>
 
@@ -358,19 +356,21 @@
         });
     </script>
 
-{{-- buat scroll filter --}}
-<script>
-    window.onscroll = function() {myFunction()};
+    {{-- buat scroll filter --}}
+    <script>
+        window.onscroll = function() {
+            myFunction()
+        };
 
-    var navbar = document.getElementById("filter");
-    var sticky = navbar.offsetTop;
+        var navbar = document.getElementById("filter");
+        var sticky = navbar.offsetTop;
 
-    function myFunction() {
-      if (window.pageYOffset >= sticky + 50) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
+        function myFunction() {
+            if (window.pageYOffset >= sticky + 50) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
     </script>
 @endsection
