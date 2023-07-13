@@ -75,7 +75,7 @@
                                                     style="display:block; border-radius: 50%; max-height: 100%;width: 200px;
                                                 height: 200px;
                                                 border-radius: 50%;
-                                                border:solid #A08A8F;">
+                                                border:solid #A08A8F;object-fit: cover;">
                                             </div>
                                         @endif
                                     </div>
