@@ -74,7 +74,7 @@
             </div>
         </div>
         @endif
-        @if ($loop->iteration > 3)
+        @if ($loop->iteration >= 3)
             @break
         @endif
         @endforeach

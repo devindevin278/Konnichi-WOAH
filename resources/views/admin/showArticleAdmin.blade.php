@@ -25,7 +25,7 @@
     {{-- <div class="row col-md-11 mx-auto p-0"> --}}
         <div class="col-md-8 m-0 p-0 mx-auto">
             <div class="mt-3 d-flex jusify-content-around">
-                <img src="img/calendar.png" alt="" >
+                {{-- <img src="img/calendar.png" alt="" > --}}
                 <h3 class="tgl">by <a href="/author/{{ $article->author->name }}" class="text-dark"><strong>{{ $article->author->name }}</strong></a> | </h5>
                 {{-- <h5 class="tgl">2023年4月29日</h5> --}}
                 <h3 class="tgl ms-1"> {{ $article->articlepublish }}</h5>
@@ -74,7 +74,7 @@
             </div>
         </div>
         @endif
-        @if ($loop->iteration > 3)
+        @if ($loop->iteration >= 3)
             @break
         @endif
         @endforeach

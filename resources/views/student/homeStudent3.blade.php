@@ -2,6 +2,13 @@
 
 @section('content')
 
+@php
+    $student = count(App\Models\User::where('userIsTeacher', 0)->get());
+    $article = count(App\Models\Article::all());
+    $games = count(App\Models\Point::all());
+    $teacher = count(App\Models\User::where('userIsTeacher', 1)->get())
+@endphp
+
 <body style="background: #faeee7;font-family: Poppins, sans-serif;">
     <header>
         <div class="carousel slide d-flex justify-content-center" data-bs-ride="false" id="carousel-1" style="margin-top: 114px;padding-bottom: 90px;">
@@ -103,25 +110,25 @@
             <div class="row row-cols-2 row-cols-md-4">
                 <div class="col">
                     <div class="p-3">
-                        <h4 class="display-5 fw-bold text-white mb-0">123+</h4>
+                        <h4 class="display-5 fw-bold text-white mb-0">{{ $student }}+</h4>
                         <p class="mb-0">Students</p>
                     </div>
                 </div>
                 <div class="col">
                     <div class="p-3">
-                        <h4 class="display-5 fw-bold text-white mb-0">45+</h4>
+                        <h4 class="display-5 fw-bold text-white mb-0">{{ $games }}+</h4>
                         <p class="mb-0">Games</p>
                     </div>
                 </div>
                 <div class="col">
                     <div class="p-3">
-                        <h4 class="display-5 fw-bold text-white mb-0">67+</h4>
+                        <h4 class="display-5 fw-bold text-white mb-0">{{ $article }}+</h4>
                         <p class="mb-0" style="color: rgb(255,255,255);">Article</p>
                     </div>
                 </div>
                 <div class="col">
                     <div class="p-3">
-                        <h4 class="display-5 fw-bold text-white mb-0">89</h4>
+                        <h4 class="display-5 fw-bold text-white mb-0">{{ $teacher }}+</h4>
                         <p class="mb-0">Teacher</p>
                     </div>
                 </div>

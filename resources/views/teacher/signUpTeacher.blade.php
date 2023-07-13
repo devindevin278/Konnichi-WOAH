@@ -47,7 +47,7 @@
             <img src="img/Upload icon.png" alt="">
             <p class="atas m-0 mb-2">Drag and Drop files or <a class="text-decoration-underline" style="color: #FF8BA7">Browse</a></p>
             <p class="bawah">Supported formates: JPEG, PNG, PDF</p>
-          <input type="file" onChange="dragNdrop(event)"  ondragover="drag()" ondrop="drop()"  id="image" name="image"  />
+          <input type="file" onChange="dragNdrop(event)"  ondragover="drag()" ondrop="drop()"  id="imageCertif" name="image"  />
           </span>
 
         </div>

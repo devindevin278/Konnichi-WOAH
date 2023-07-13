@@ -2,22 +2,23 @@
 
 @section('content')
     <section class="article pt-2">
-        <div class="container d-flex justify-content-around">
-            <div class="mt-1">
-                @if (session()->has('success'))
-                    <div class="alert alert-success alert-dismissible fade show col" role="alert">
-                        {{ session('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @elseif(session()->has('error'))
-                    <div class="alert alert-danger alert-dismissible fade show col" role="alert">
-                        {{ session('error') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
+        <div class="container mt-1">
+            @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show col" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+            @elseif(session()->has('error'))
+                <div class="alert alert-danger alert-dismissible fade show col" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+        </div>
 
-            <div class="container  align-items-center mt-5">
+        <div class="container d-flex justify-content-around">
+
+            <div class="container align-items-center mt-5">
                 <div class="d-flex align-items-center justify-content-between">
                     {{-- <div class="m-0 p-0"> --}}
                         {{-- <div style="justify-content:start;"> --}}
