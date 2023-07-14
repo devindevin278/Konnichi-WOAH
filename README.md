@@ -72,6 +72,9 @@ Konnichi-WOAH! is an online Japanese language learning platform designed for stu
 ### 👨🏻‍🏫 Teacher
 ![teacher](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/teacher.png "Teacher")
 
+### 🧑🏻 Profile
+![profile](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/profile.png "Profile")
+
 ## ⚙ Technologies Used
 
 - Laravel : PHP framework for backend development.
@@ -108,36 +111,44 @@ Please follow the steps below to install and run your Konnichi-WOAH! website:
 2. **Open the Project in VSCode:** Launch VSCode and open the project folder by selecting "Open Folder" from the "File" menu. Navigate to the folder where you cloned or extracted the project.
 
 3. **Install Dependencies:** Open the integrated terminal in VSCode by selecting "View" -> "Terminal" from the menu. In the terminal, navigate to the project's root directory (where the `composer.json` file is located) and run the following command to install the required dependencies:
-
     ```bash
     composer install
 
-4. **Install Frontend Dependencies:** Still in the terminal, run the following command to install the frontend dependencies using npm:
-    ```bash
-    npm install
-    
-5. **Set Up Environment Variables:** Copy the `.env.example` file in the project root directory and rename the copy to `.env`. Open the `.env` file and update the configuration options such as database connection details according to your local environment:
+4. **Install the Laravel Socialite package:** In the terminal, run the following command to install the required dependencies:
+   ```bash
+   composer require laravel/socialite
+
+5. **Install Frontend Dependencies:** To install Bootstrap using npm, you can run the following command in your project's root directory:
+   ```
+   npm install bootstrap
+   ```
+6. **Install Slug Model:** To generate slugs for your Eloquent models,  run the following command to install the required dependencies:
+   ```
+   composer require cviebrock/eloquent-sluggable
+   ```
+
+7. **Set Up Environment Variables:** Copy the `.env.example` file in the project root directory and rename the copy to `.env`. Open the `.env` file and update the configuration options such as database connection details according to your local environment:
     ```bash
     cp .env.example .env
 
-6. **Generate Application Key:** In the VSCode terminal, run the following command to generate an application key:
+8. **Generate Application Key:** In the VSCode terminal, run the following command to generate an application key:
 
     ```bash
     php artisan key:generate
 
-7. **Create Symbolic Link for Storage:** To access files stored in the Laravel `storage` directory, you need to create a symbolic link. Run the following command in the VSCode terminal:
+9. **Create Symbolic Link for Storage:** To access files stored in the Laravel `storage` directory, you need to create a symbolic link. Run the following command in the VSCode terminal:
 
    ```bash
     php artisan storage:link
 
-8. **Database Setup:** Start XAMPP and ensure that Apache and MySQL are running. Create a new MySQL database for your Konnichi-WOAH! application. Open the `.env` file and update the database configuration options (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`) with your database details.
+10. **Database Setup:** Start XAMPP and ensure that Apache and MySQL are running. Create a new MySQL database for your Konnichi-WOAH! application. Open the `.env` file and update the database configuration options (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`) with your database details.
 
-9. **Run Migrations:** In the VSCode terminal, run the following command to run the database migrations and set up the required tables:
+11. **Run Migrations:** In the VSCode terminal, run the following command to run the database migrations and set up the required tables:
 
     ```bash
     php artisan migrate
 
-10. **Set Up Google OAuth Credentials:** To enable Google login using Socialite, you need to set up OAuth credentials from the Google Developer Console. Follow these steps:
+12. **Set Up Google OAuth Credentials:** To enable Google login using Socialite, you need to set up OAuth credentials from the Google Developer Console. Follow these steps:
     - Go to the [Google Developer Console](https://console.developers.google.com/) and create a new project.
     - Enable the Google+ API for your project.
     - Under the "Credentials" tab, create a new OAuth client ID.
@@ -151,19 +162,28 @@ Please follow the steps below to install and run your Konnichi-WOAH! website:
       GOOGLE_REDIRECT_URI=http://localhost:8000/login/google/callback
       ```
   
-11. **Build Frontend Assets:** In the VSCode terminal, run the following command to build the frontend assets:
+13. **Build Frontend Assets:** In the VSCode terminal, run the following command to build the frontend assets:
     
      ```
      npm run build
      ```
+     
+14. **Run the migrations and seeders:** Type the following command and press Enter:
+    ```
+    php artisan migrate --seed
+    ```
 
-12. **Start the Development Server:** In the VSCode terminal, run the following command to start the Laravel development server:
-    
+15. **Compile the assets:** Type the following command to terminal and press Enter:
+      ```
+      npm run dev
+      ```
+      
+16. **Start the Development Server:** In the VSCode terminal, run the following command to start the Laravel development server:
      ```
      php artisan serve
      ```
 
-14. **Access Your Website:** Open a web browser and visit `http://localhost:8000` to access your Konnichi-WOAH! website. If everything is set up correctly, you should see your application running.
+17. **Access Your Website:** Open a web browser and visit `http://localhost:8000` to access your Konnichi-WOAH! website. If everything is set up correctly, you should see your application running.
 
 ## Additional Information
 
