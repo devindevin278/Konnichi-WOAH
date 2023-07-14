@@ -1,10 +1,10 @@
 @extends('layouts.mainStudent')
 
 @section('content')
-    <main class="form-signin margin-top">
+    <main class="form-signin">
     <form class=" m-auto" action="/signUpStudent" method="post">
         @csrf
-      {{-- <h1 class="h3 fs-1" style="font-weight: 600;">Sign Up</h1> --}}
+      <h1 class="h3 fs-1" style="font-weight: 600;">Sign Up</h1>
 
       <div class="transisi d-flex">
         <a href="" class="text-decoration-underline">As a Student</a>
