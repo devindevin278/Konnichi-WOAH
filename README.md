@@ -5,9 +5,9 @@ Are you looking for an easy and fun way to learn Japanese? Look no further than 
 
 Konnichi-WOAH! is an online Japanese language learning platform designed for students, teachers, and administrators. This README provides an overview of the website's features and functionality.
 
-## Key Features
+## 🔑 Key Features
 
-### For Students
+### 👨🏻‍🎓 For Students
 
 - Accessible home page with easy navigation.
 - Learn page featuring interactive games, a notebook for conversational Japanese, flashcards for hiragana and katakana, and a leaderboard to track progress.
@@ -15,21 +15,50 @@ Konnichi-WOAH! is an online Japanese language learning platform designed for stu
 - Teacher page to find qualified instructors for advanced language learning.
 - Profile section for personalizing user information.
 
-### For Teachers
+### 👨🏻‍🏫 For Teachers
 
 - Accessible home page with easy navigation.
 - Notification section to manage student registrations efficiently.
 - Article section providing teaching resources and materials.
 - Profile section for maintaining and updating personal information.
 
-### For Administrators
+### 👨🏻‍💼 For Administrators
 
 - Accessible home page with easy navigation.
 - Verify Teacher section to review and verify qualifications of potential instructors.
 - Article section with full control for adding and editing content.
 - Profile section for managing personal information securely.
 
-## Technologies Used
+## Documentation
+
+### 🏡 Home
+
+![home](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/home.png "Home")
+
+### 🎮 Games
+
+![Games](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/game.png "Game")
+
+### 🗒 Notebook
+
+![Notebook](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/notebook.png "Notebook")
+
+### 🎴 Flash Card
+
+![flashcard](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/hira.png "Flashcard")
+
+### 🏆 Leaderboard
+
+![leaderboard](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/leaderboard.png "Leaderoard")
+
+### 📑 Article
+
+![Article](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/article1.png "Article")
+
+### 👨🏻‍🏫 Teacher
+![teacher](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/teacher.png "Teacher")
+
+## ⚙ Technologies Used
 
 - Laravel : PHP framework for backend development.
 - MySQL : Database management system.
@@ -37,7 +66,9 @@ Konnichi-WOAH! is an online Japanese language learning platform designed for stu
 - Socialite : Authentication library for social logins.
 - Other dependencies as listed in the project's `composer.json` and `package.json` files.
 
-# Website Installation Guide
+
+
+# 👨🏻‍💻 Website Installation Guide
 
 This guide provides step-by-step instructions on how to install and set up your Konnichi-WOAH! website, a Japanese language learning website, using Visual Studio Code (VSCode) and Laravel framework. It assumes that you have already installed XAMPP, Laravel, and have a basic understanding of Laravel's directory structure and concepts.
 
