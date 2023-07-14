@@ -1,7 +1,13 @@
 # Konnichi-WOAH! [Japanese Learning Website]
-Welcome to Konnichi-WOAH! 
-A captivating Japanese language learning platform!
-Are you looking for an easy and fun way to learn Japanese? Look no further than Konnichiwoah! We offer a wide range of exciting features to help you master the Japanese language with ease and effectiveness.
+ 
+<p align="center">
+  <img src="https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/logo_web.png" alt="Logo" width="200" height="200">
+</p>
+
+Welcome to Konnichi-WOAH! <br>
+A captivating Japanese language learning platform! Are you looking for an easy and fun way to learn Japanese? Look no further than Konnichiwoah! We offer a wide range of exciting features to help you master the Japanese language with ease and effectiveness.
+
+<br>
 
 Konnichi-WOAH! is an online Japanese language learning platform designed for students, teachers, and administrators. This README provides an overview of the website's features and functionality.
 
@@ -30,6 +36,14 @@ Konnichi-WOAH! is an online Japanese language learning platform designed for stu
 - Profile section for managing personal information securely.
 
 ## Documentation
+
+### 🗳 Sign Up
+
+![Signup](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/sign_up.png "Sign Up")
+
+### 🚪 Sign In
+
+![Signin](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/sign_in.png "Sign In")
 
 ### 🏡 Home
 
@@ -65,7 +79,9 @@ Konnichi-WOAH! is an online Japanese language learning platform designed for stu
 - Bootstrap : Frontend CSS framework.
 - Socialite : Authentication library for social logins.
 - Other dependencies as listed in the project's `composer.json` and `package.json` files.
+<br>
 
+___
 
 
 # 👨🏻‍💻 Website Installation Guide
