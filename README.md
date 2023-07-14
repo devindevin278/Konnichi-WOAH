@@ -7,7 +7,7 @@
 Welcome to Konnichi-WOAH! <br>
 A captivating Japanese language learning platform! Are you looking for an easy and fun way to learn Japanese? Look no further than Konnichiwoah! We offer a wide range of exciting features to help you master the Japanese language with ease and effectiveness.
 
-<br>
+
 
 Konnichi-WOAH! is an online Japanese language learning platform designed for students, teachers, and administrators. This README provides an overview of the website's features and functionality.
 
