@@ -2,9 +2,9 @@
 
 @section('content')
 
-<section class="profileStudent">
+<section class="profileStudent p-0 py-4">
 
-        <div class="mt-5">
+        <div class="">
 
             @if(session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show col" role="alert">
@@ -22,7 +22,7 @@
 
         </div>
 
-        <div class="container col container-profileStudent bg-white mt-5 mb-5">
+        <div class="container col container-profileStudent bg-white mb-5">
 
 
             <div class="row">
@@ -77,7 +77,7 @@
 
                                     <div class="container d-flex justify-content-center align-items-center mt-3">
                                         <div class="photo-input">
-                                            <input type="file" id="photo" name="photo" accept="image/*" class="photo" onchange="previewImage()" >
+                                            <input type="file" id="photoProfile" name="photo" accept="image/*" class="photo" onchange="previewImage()" >
                                             <label for="photo">Choose a photo</label>
                                         </div>
                                     </div>
@@ -206,7 +206,7 @@
 <script>
 
     function previewImage(){
-        const image = document.querySelector('#photo');
+        const image = document.querySelector('#photoProfile');
         const imgPreview = document.querySelector('.img-preview');
         imgPreview.style.display = 'block';
         imgPreview.style.borderRadius = '50%';

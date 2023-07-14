@@ -68,13 +68,13 @@ class LoginController extends Controller
             $match_user = DB::table('users')->where('email', $credentials['email'])->get();
             if($match_user[0]->userIsTeacher) {
                 $request->session()->regenerate();
-                return redirect()->intended('/homeTeacher');
+                return redirect('/homeTeacher');
             } elseif($match_user[0]->userIsAdmin){
                 $request->session()->regenerate();
-                return redirect()->intended('/homeAdmin');
+                return redirect('/homeAdmin');
             } else {
                 $request->session()->regenerate();
-                return redirect()->intended('/homeStudent');
+                return redirect('/homeStudent');
             }
         }
         // dd('berhasil login teacher');
