@@ -1,8 +1,9 @@
 @extends('layouts.mainTeacher')
 
 @section('content')
-    <main class="form-signin">
-    <form class=" m-auto" action="/certificate" method="post" enctype="multipart/form-data">
+    <main class="form-signin ">
+    <form class=" m-auto " action="/certificate" method="post" enctype="multipart/form-data">
+
         @csrf
       <h1 class="h3 fs-1" style="font-weight: 600;">Sign Up</h1>
 
