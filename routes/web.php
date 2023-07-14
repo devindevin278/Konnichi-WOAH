@@ -149,10 +149,10 @@ Route::resource('/verifyTeacher', CertificateController::class);
 // Home
 Route::get('/', function () {
     return view('student.homeStudent3',["title" => "homeStudent"]);
-});
+})->middleware('guest');
 Route::get('/homeStudent', function () {
     return view('student.homeStudent3',["title" => "homeStudent"]);
-});
+})->middleware('auth');
 Route::get('/homeTeacher', function () {
     return view('teacher.homeTeacher',["title" => "homeTeacher"]);
 });

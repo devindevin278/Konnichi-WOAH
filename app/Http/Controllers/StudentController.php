@@ -19,20 +19,30 @@ class StudentController extends Controller
         // // $this->middleware('auth');
         // $id = auth()->user()->id;
 
-        $this->middleware('auth');
+        // $this->middleware('auth');
 
         try {
-            $id = auth()->user()->id;
+
+            if(auth()->user()->userIsTeacher = 0) {
+                $id = auth()->user()->id;
+                $user = User::where('id', $id)->get();
+        // dd($this);
+                return view('student.profileStudent', [
+                    'user' => $user[0]
+                ]);
+
+                
+            } else {
+                redirect()->to('/login')->send();
+
+            }
+            // dd(auth()->user());
         } catch (\Throwable $e) {
             redirect()->to('/login')->send();
         }
 
 
-        $user = User::where('id', $id)->get();
-        // dd($this);
-        return view('student.profileStudent', [
-            'user' => $user[0]
-        ]);
+
 
 
     }
