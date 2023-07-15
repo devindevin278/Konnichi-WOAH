@@ -365,6 +365,8 @@ section.findTeacher{
 .photo-input {
     text-align: center;
     align-items: center;
+    position: relative;
+    /* background-color: #33272A; */
 }
 
 /* .photo-input input[type="file"] {
@@ -403,6 +405,15 @@ input[type='file']#imageArticle {
     opacity: 0;
     position: absolute;
     top: 0;
+}
+
+input[type='file']#photoProfile {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+
 }
 
 

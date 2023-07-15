@@ -14,36 +14,32 @@
                 @php
                     $user = App\Models\User::all();
                 @endphp
+
                 @if (auth()->user())
+                    <a>Konnichiwa, {{ auth()->user()->name }}</a>
 
-                @endif
-                {{-- @else --}}
-                {{-- <a href="/profileStudent/{{ auth()->user() }}" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a> --}}
-                @auth
-                <a>Konnichiwa, {{ auth()->user()->name }}</a>
+                    @if (auth()->user()->photo)
+                    <a href="/profileStudent" class="navbar-brand"  ><img src="{{ asset('storage/'.auth()->user()->photo) }}" style="
+                        background-color: solid #FF8BA7;
 
-                @if (auth()->user()->photo)
-                <a href="/profileStudent" class="navbar-brand"  ><img src="{{ asset('storage/'.auth()->user()->photo) }}" style="
-                    background-color: solid #FF8BA7;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+                        overflow:hidden;" ></a>
 
-                    height: 40px;
-                    width: 40px;
-                    border-radius: 50%;
-                    overflow:hidden;" ></a>
-
-                @else
-                <a href="/profileStudent" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" style="
-                    background-color: solid #FF8BA7;
-
-                    height: 40px;
-                    border-radius: 50%;
-                    overflow:hidden;" ></a>
-
-                @endif
                     @else
-                    <button class="btn btn-primary">Login</button>
+                    <a href="/profileStudent" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" style="
+                        background-color: solid #FF8BA7;
 
-                    @endauth
+                        height: 40px;
+                        border-radius: 50%;
+                        overflow:hidden;" ></a>
+
+                    @endif
+                    @else
+                    <a href="" class="navbar-brand"  ><img src="{{ asset('img/PROFILE.png') }}" ></a>
+                @endif
+
             </div>
 
   </nav><!-- .navbar -->

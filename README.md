@@ -114,14 +114,19 @@ Please follow the steps below to install and run your Konnichi-WOAH! website:
     ```bash
     composer install
 
-5. **Install the Laravel Socialite package:** In the terminal, run the following command to install the required dependencies:
+4. **Install the Laravel Socialite package:** In the terminal, run the following command to install the required dependencies:
    ```bash
    composer require laravel/socialite
 
-6. **Install Frontend Dependencies:** To install Bootstrap using npm, you can run the following command in your project's root directory:
+5. **Install Frontend Dependencies:** To install Bootstrap using npm, you can run the following command in your project's root directory:
    ```
    npm install bootstrap
    ```
+6. **Install Slug Model:** To generate slugs for your Eloquent models,  run the following command to install the required dependencies:
+   ```
+   composer require cviebrock/eloquent-sluggable
+   ```
+
 7. **Set Up Environment Variables:** Copy the `.env.example` file in the project root directory and rename the copy to `.env`. Open the `.env` file and update the configuration options such as database connection details according to your local environment:
     ```bash
     cp .env.example .env
