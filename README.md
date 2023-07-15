@@ -1,7 +1,7 @@
 # Konnichi-WOAH! [Japanese Learning Website]
  
 <p align="center">
-  <img src="https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/logo_web.png" alt="Logo" width="200" height="200">
+  <img src="https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/logo.gif" alt="Logo" width="200" height="200">
 </p>
 
 Welcome to Konnichi-WOAH! <br>
