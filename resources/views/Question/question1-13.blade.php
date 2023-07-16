@@ -7,6 +7,7 @@
 
 <div class="maincont">
     <h3 class="question">Please be careful</h3>
+    
     <div class="choices">
         <button class="ans" onclick="showDiv('2')">
             <h4 class="answer">助けて ください</h4>

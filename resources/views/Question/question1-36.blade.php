@@ -7,7 +7,8 @@
 
 <div class="maincont">
     <h3 class="question">遅く なりそなので、 行ってきます</h3>
-    <h3 class="question2">reply the dialog</h3>
+    <h3 class="question1">Osoku narisonanode, ittekimasu</h3>
+    <h3 class="question1">reply the dialog</h3>
     <div class="choices">
         <button class="ans" onclick="showDiv('2')">
             <h4 class="answer">まだです、これをしなければなりません</h4>

@@ -7,6 +7,7 @@
 
 <div class="maincont">
     <h3 class="question">また 明日</h3>
+    <h3 class="question1">Mata ashita</h3>
     <div class="choices">
 
         <button class="ans" onclick="showDiv('1')">
