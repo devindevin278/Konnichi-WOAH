@@ -23,26 +23,25 @@ class StudentController extends Controller
 
         try {
 
-            if(auth()->user()->userIsTeacher = 0) {
-                $id = auth()->user()->id;
-                $user = User::where('id', $id)->get();
-        // dd($this);
-                return view('student.profileStudent', [
-                    'user' => $user[0]
-                ]);
+            // if(auth()->user()->userIsTeacher == 0) {
+            //     // $id = auth()->user()->id;
 
-                
-            } else {
-                redirect()->to('/login')->send();
 
-            }
+            // } else {
+            //     redirect()->to('/login')->send();
+
+            // }
             // dd(auth()->user());
         } catch (\Throwable $e) {
             redirect()->to('/login')->send();
         }
 
 
+        $user = User::find(auth()->user()->id);
 
+        return view('student.profileStudent', [
+            'user' => $user
+        ]);
 
 
     }

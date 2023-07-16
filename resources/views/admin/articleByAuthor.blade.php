@@ -3,8 +3,6 @@
 @section('content')
 
 
-
-
 <section class="articleByAuthor">
     <div class="container row  d-flex justify-content-around">
 
