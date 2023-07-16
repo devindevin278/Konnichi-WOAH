@@ -146,14 +146,24 @@ Please follow the steps below to install and run your Konnichi-WOAH! website:
 
     ```bash
     php artisan migrate
-
-12. **Set Up Google OAuth Credentials:** To enable Google login using Socialite, you need to set up OAuth credentials from the Google Developer Console. Follow these steps:
-    - Go to the [Google Developer Console](https://console.developers.google.com/) and create a new project.
-    - Enable the Google+ API for your project.
-    - Under the "Credentials" tab, create a new OAuth client ID.
-    - Set the authorized redirect URI to `http://localhost:8000/login/google/callback`.
-    - Copy the client ID and client secret.
-    - Open the `.env` file in your project and add the following lines, replacing `<YOUR_CLIENT_ID>` and         `<YOUR_CLIENT_SECRET>` with your actual values:
+    
+12. **Setting up Google Cloud API for Socialite Integration:** This guide will walk you through the process of setting up Google Cloud API for integration with Laravel Socialite. Google Cloud API allows you to connect Socialite with various Google services such as Google Calendar, Google Drive, or Gmail.
+    
+    **Step 1: Create a Google Cloud Project**
+    - Go to the [Google Cloud Console](https://console.cloud.google.com/) and sign in with your Google account.
+    - Click on the project dropdown menu in the top navigation bar and then click on the "New Project" button.
+    - Enter a name for your project and click on the "Create" button.
+    
+    **Step 2: Set Up Credentials**
+    - Once your project is created, click on the project dropdown menu and select your newly created project.
+    - In the left sidebar, click "API & Services" and then click "Credentials".
+    - Click the "Create Credentials" button and select OAuth client ID
+    - Click "Configure Consent Screen" and choose User Type External, and then click "Create"
+    - Complete as requested, then click "Save & Continue"
+    - And then, click "Create Credentials" and select OAuth client ID again
+    - Choose "Web Application" and follow the data filling according to the image below
+      ![auth](https://github.com/devindevin278/Konnichi-WOAH/blob/main/documentation/auth.jpeg "Auth")
+    - Next, open the `.env` file in your project and add the following lines, replacing `<YOUR_CLIENT_ID>` and `<YOUR_CLIENT_SECRET>` with your actual values:
       
       ```
       GOOGLE_CLIENT_ID=<YOUR_CLIENT_ID>
