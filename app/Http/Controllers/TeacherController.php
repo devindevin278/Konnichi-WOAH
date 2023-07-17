@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Province;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\TeacherNotification;
 use Illuminate\Support\Facades\Storage;
 
 class TeacherController extends Controller
@@ -26,9 +27,11 @@ class TeacherController extends Controller
             redirect()->to('/login')->send();
         }
 
+
+
         $user = User::where('id', $id)->get();
         return view('teacher.profileTeacher', [
-            'user' => $user[0]
+            'user' => $user[0],
         ]);
     }
 
@@ -60,7 +63,7 @@ class TeacherController extends Controller
         $filteredQuery = User::query();
 
         // dd($province);
-        $provinces = User::distinct('province')->pluck('province');
+        $provinces = User::distinct('province')->orderBy('province', 'asc')->pluck('province');
 
         // Filter cities based on selected province
         $cities = User::where('province', $province)->distinct('city')->pluck('city');
@@ -85,19 +88,38 @@ class TeacherController extends Controller
         // Unfiltered Teachers
         // $unfilteredTeachers = User::query()->whereNotIn('id', $filteredTeachers->pluck('id'))->get();
 
+        $pendingTeacherId = TeacherNotification::where('studentid', $id)->where('verified', 0)->get();
+        $ids = [];
+        for($i=0; $i<count($pendingTeacherId); $i++) {
+            $ids[$i] = $pendingTeacherId[$i]->teacherid;
+            // dd($ids);
+        }
+        $pendingTeacher = User::whereIn('id', $ids)->get();
+        // dd($pendingTeacherId[0]->teacherid);
+
         return view('teacher.teacher', [
             'filteredTeachers' => $filteredTeachers,
             // 'unfilteredTeachers' => $unfilteredTeachers,
             'provinces' => $provinces->skip(1),
-            'cities' => $cities
+            'cities' => $cities,
+            'pendingTeacher' => $pendingTeacher
         ]);
     }
 
     public function viewTeacher(User $user, Request $request)
     {
+        $id = auth()->user()->id;
+        $pendingTeacherId = TeacherNotification::where('studentid', $id)->where('verified', 0)->get();
+        $ids = [];
+        for($i=0; $i<count($pendingTeacherId); $i++) {
+            $ids[$i] = $pendingTeacherId[$i]->teacherid;
+            // dd($ids);
+        }
+        // $pendingTeacher = User::whereIn('id', $ids)->get();
 
         return view('teacher.viewTeacher',[
-            'user' => $user
+            'user' => $user,
+            'pendingTeacherId' => $ids
         ]);
     }
 
@@ -165,8 +187,12 @@ class TeacherController extends Controller
         $province = $request->input('province');
         $cities = Province::where('name', $province)->get()[0]->cities;
         // dd($cities);
+        $selectedCity = auth()->user()->city;
 
-        return response()->json(['cities' => $cities]);
+        return response()->json([
+            'cities' => $cities,
+            'selectedCity' => $selectedCity
+        ]);
     }
 
     public function show($id)

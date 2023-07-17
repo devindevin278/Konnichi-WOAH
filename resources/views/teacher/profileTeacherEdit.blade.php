@@ -9,7 +9,7 @@
 @section('content')
     <section class="profileTeacherEdit">
 
-        <div class="mt-5">
+        <div class="">
 
             @if (session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show col" role="alert">
@@ -25,7 +25,7 @@
 
         </div>
 
-        <div class="container col container-profileTeacherEdit bg-white mt-5 mb-5">
+        <div class="container col container-profileTeacherEdit bg-white mb-5">
 
 
             <div class="row">
@@ -83,11 +83,11 @@
 
                                     <div class="container row d-flex justify-content-center align-items-center mt-3">
 
-                                         <div class="photo-input">
-                                            <input type="file" id="photo" name="photo" accept="image/*" class="photo" onchange="previewImage()">
+                                        <div class="photo-input">
+                                            <input type="file" id="photoProfile" name="photo" accept="image/*"
+                                                class="photo" onchange="previewImage()">
 
-
-                                            <label for="photo">Choose a photo</label>
+                                            <label for="photoProfile">Choose a photo</label>
                                         </div>
                                     </div>
 
@@ -184,12 +184,12 @@
 
                                 <select class="form-control" name="city" style="border: solid #A08A8F;" id="city">
                                     <option value="">Select City</option>
-                                    {{-- @foreach (\App\Models\City::all() as $city)
+                                    @foreach (\App\Models\City::all() as $city)
                                         <option value="{{ $city->id }}"
-                                            {{ old('city', $user->city) == $city->id ? 'selected' : '' }}>
+                                            {{ old('city', $user->city) == $city->name ? 'selected' : '' }}>
                                             {{ $city->name }}
                                         </option>
-                                    @endforeach --}}
+                                    @endforeach
                                 </select>
 
                             </div>
@@ -325,13 +325,13 @@
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    @php
+    {{-- @php
         $formattedPrice = number_format($user->price, 0, ',', '.');
-    @endphp
+    @endphp --}}
 
-    <script>
+    {{-- <script>
         document.getElementById('priceInput').value = 'Rp {{ $formattedPrice }}';
-    </script>
+    </script> --}}
 
     <script>
         $(document).ready(function() {
@@ -341,7 +341,9 @@
                 console.log("Selected province:", province);
 
                 // Clear the city dropdown
-                $('#city').empty().append('<option value="">City</option>');
+                $('#city').empty().append(`<option value="">
+                                            Select city
+                                        </option>`);
 
                 // console.log('succ')
                 // If a province is selected
@@ -357,12 +359,18 @@
                         success: function(response) {
                             // Populate the city dropdown with the received cities
                             var cities = response.cities || [];
-                            // console.log(cities);
+                            console.log(cities);
                             $.each(cities, function(index, city) {
-                                $('#city').append($('<option>', {
+                                let option = $('<option>', {
                                     value: city['name'],
                                     text: city['name']
-                                }));
+                                });
+
+                                if (city['name'] == response.selectedCity) {
+                                    option.attr('selected', 'selected');
+                                }
+
+                                $('#city').append(option)
                             });
                         },
                         error: function(xhr, status, error) {
@@ -377,25 +385,21 @@
         });
     </script>
 
-<script>
-
-    function previewImage(){
-        const image = document.querySelector('#photo');
-        const imgPreview = document.querySelector('.img-preview');
-        imgPreview.style.display = 'block';
-        imgPreview.style.borderRadius = '50%';
-        imgPreview.style.maxHeight = '100%';
-        // imgPreview.style.width = '300px';
-        const oFReader = new FileReader();
-        oFReader.readAsDataURL(image.files[0]);
-        oFReader.onload = function(oFRevent){
-            imgPreview.src = oFRevent.target.result;
+    <script>
+        function previewImage() {
+            const image = document.querySelector('#photoProfile');
+            const imgPreview = document.querySelector('.img-preview');
+            imgPreview.style.display = 'block';
+            imgPreview.style.borderRadius = '50%';
+            imgPreview.style.maxHeight = '100%';
+            // imgPreview.style.width = '300px';
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+            oFReader.onload = function(oFRevent) {
+                imgPreview.src = oFRevent.target.result;
+            }
         }
-    }
-
-
-
-</script>
+    </script>
 
     {{-- <script>
         // console.log('hiii');

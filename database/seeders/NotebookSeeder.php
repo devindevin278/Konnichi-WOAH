@@ -14,71 +14,21 @@ class NotebookSeeder extends Seeder
     public function run(): void
     {
         //
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
-        Notebook::create([
-            'unit_id' => 1
-        ]);
 
-
+        for($i=0; $i<20; $i++) {
+            Notebook::create([
+                'unit_id' => 1
+            ]);
+        }
         for($i=0; $i<10; $i++) {
             Notebook::create([
                 'unit_id' => 2
+            ]);
+        }
+
+        for($i=0; $i<10; $i++) {
+            Notebook::create([
+                'unit_id' => 3
             ]);
         }
 

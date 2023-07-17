@@ -11,10 +11,10 @@
                     <img src="{{ asset('img/crown.png') }}" alt="crown">
                 </div>
                 <div style="font-weight:700; font-size:36px;">
-                    TOP 20 GLOBAL
+                    TOP 10 GLOBAL
                 </div>
                 <div>
-                    Top 20 global all over the world
+                    Top 10 global all over the world
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                                 @if ($student->photo)
                                 <img class="leaderboard_photo" src="{{ asset('storage/'.$student->photo) }}" alt="crown">
                                 @else
-                                <img class="leaderboard_photo" src="{{ asset('img/pp4.png') }}" alt="crown">
+                                <img class="leaderboard_photo" src="{{ asset('img/pp.png') }}" alt="crown">
                                 @endif
                             </div>
                             <div class="leaderboardText justify-content-around ms-5" style="color:#00B91D;">
@@ -66,7 +66,7 @@
 
                                 <img class="leaderboard_photo" src="{{ asset('storage/'.$student->photo) }}" alt="crown">
                                 @else
-                                <img class="leaderboard_photo" src="{{ asset('img/pp2.png') }}" alt="crown">
+                                <img class="leaderboard_photo" src="{{ asset('img/emptypp.png') }}" alt="crown">
                                 @endif
                             </div>
                             <div class="leaderboardText justify-content-around ms-5" style="color:#A08A8F;">
@@ -99,7 +99,12 @@
                                     {{ $loop->iteration }}
                                 </div>
                                 <div class="ms-4">
-                                    <img src="{{ asset('img/pp.png') }}" alt="crown">
+                                    {{-- <img src="{{ asset('img/pp.png') }}" alt="crown"> --}}
+                                    @if ($student->photo)
+                                    <img class="leaderboard_photo" src="{{ asset('storage/'.$student->photo) }}" alt="crown">
+                                    @else
+                                    <img class="leaderboard_photo" src="{{ asset('img/pp.png') }}" alt="crown">
+                                    @endif
                                 </div>
                                 <div class="leaderboardText justify-content-around ms-5" style="color:#00B91D;">
                                     {{ $student->name }}

@@ -335,6 +335,12 @@ section.viewTeacher{
     font-weight: 600;
 }
 
+.reqteacher .submitbtn {
+    width: 60%;
+    height: 40px;
+    font-weight: 600;
+}
+
 .tuition{
     height: 50px;
     background: #C3F0CA;

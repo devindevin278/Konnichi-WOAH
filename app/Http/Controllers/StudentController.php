@@ -171,7 +171,7 @@ class StudentController extends Controller
 
     public function leaderboard() {
 
-        $students = User::where('userisTeacher', 0)->orderBy('pointxp', 'desc')->take(5)->get();
+        $students = User::where('userisTeacher', 0)->orderBy('pointxp', 'desc')->take(10)->get();
 
         return view('student.learn.leaderboard', [
             'students' => $students

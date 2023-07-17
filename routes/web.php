@@ -203,5 +203,5 @@ Route::delete('/profileAdmin/{user:id}', [AdminController::class, 'destroy'])->m
 
 Route::get('/teacher', [TeacherController::class, 'showAllTeacher'])->middleware('auth')->middleware('student');
 Route::get('/fetch-cities', [TeacherController::class, 'fetchCities'])->middleware('student');
-Route::get('/fetchcities', [TeacherController::class, 'fetchAllCities'])->middleware('student');
+Route::get('/fetchcities', [TeacherController::class, 'fetchAllCities'])->middleware('teacher');
 

@@ -17,9 +17,9 @@
         is-invalid
         @enderror"
                     id="floatingInput" placeholder="Fullname" value="{{ old('name') }}">
-                @if ($errors->first('name') == 'validation.required')
-                    <p class="mb-0" style="color: red;">Name field is required</p>
-                @endif
+                    @error('name')
+                    <p class="mb-0" style="color: red;">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="form-floating">

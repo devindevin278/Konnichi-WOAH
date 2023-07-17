@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Two\InvalidStateException;
+
 class LoginController extends Controller
 {
 
@@ -19,7 +21,14 @@ class LoginController extends Controller
 
     public function handleGoogleCallback()
     {
+        // dd($request);
+
         $user = Socialite::driver('google')->user();
+        // try {
+        //     $user = Socialite::driver('google')->user();
+        // } catch (InvalidStateException $e) {
+        //     $user = Socialite::driver('google')->stateless()->user();
+        // }
 
         // Check if the user exists in the database
         $existingUser = User::where('email', $user->email)->first();
@@ -76,9 +85,11 @@ class LoginController extends Controller
                 $request->session()->regenerate();
                 return redirect('/homeStudent');
             }
+        } else {
+
+            return back()->with('loginError','Login Failed! Please check your email or password');
         }
         // dd('berhasil login teacher');
-        return back()->with('loginError','Login Failed');
     }
 
     public function logout(Request $request){

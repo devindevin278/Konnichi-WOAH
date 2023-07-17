@@ -17,16 +17,16 @@ class AuthorSeeder extends Seeder
     {
         //
         Author::create([
-            'name' => 'devin'
+            'name' => 'Devin'
         ]);
         Author::create([
-            'name' => 'hasna'
+            'name' => 'Hasna'
         ]);
         Author::create([
-            'name' => 'hansen'
+            'name' => 'Hansen'
         ]);
         Author::create([
-            'name' => 'mike'
+            'name' => 'Mike'
         ]);
     }
 }

@@ -63,7 +63,6 @@
                                 <p>
                                     <small class="text-muted">
                                         By <a class="card-title text-decoration-none"
-                                            href="/author/{{ $articles[0]->author->name }}"
                                             style="color:black;">{{ $articles[0]->author->name }}</a>
                                         {{ $articles[0]->created_at->diffForHumans() }}
                                     </small>
@@ -90,11 +89,10 @@
                                         <div class="card-body rounded-bottom border-0"
                                             style="background-color: #ffffff;">
                                             <h5 class="card-title " style="height: 8vw">
-                                                <a href="/student/{{ $article->slug }}"
+                                                <a href="/teacher/{{ $article->slug }}"
                                                     style="color: black;">{{ $article->title }}</a>
                                             </h5>
                                             <a class="card-title text-decoration-none"
-                                                href="/author/{{ $article->author->name }}"
                                                 style="color: black;">{{ $article->author->name }}</a>
                                             <p class="card-text">{{ $article->created_at->diffForHumans() }}</p>
                                         </div>

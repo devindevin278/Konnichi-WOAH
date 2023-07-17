@@ -43,23 +43,29 @@ class TeacherNotificationController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $username = $request->input('name');
         $email = $request->input('email');
+        $phone = $request->input('phone');
+        $address = $request->input('address');
+        $photo = $request->input('photo');
         $teacherid = $request->input('teacherid');
         $studentid = $request->input('studentid');
 
-        // dd($teacherid);
 
         $teacherNotification = new TeacherNotification();
         $teacherNotification->name = $username;
         $teacherNotification->email = $email;
+        $teacherNotification->address = $address;
+        $teacherNotification->phone = $phone;
+        $teacherNotification->photo = $photo;
         $teacherNotification->teacherid = $teacherid;
         $teacherNotification->studentid = $studentid;
         $teacherNotification->save();
         // dd($teacherNotification);
 
 
-        return redirect('/teacher')->with('success', 'Your teacher request has been delivered, Please wait the verificcation.');
+        return redirect('/teacher')->with('success', 'Your teacher request has been delivered, Please wait the verification.');
     }
 
 
