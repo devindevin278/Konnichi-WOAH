@@ -5,27 +5,26 @@
 @include('Question.layouts.progress')
 
 <div class="maincont">
-    <h3 class="question">ごめん ください</h3>
-    <h3 class="question1">Gomen kudasai</h3>
+    <h3 class="question">Food</h3>
     <div class="choices">
         <button class="ans" onclick="showDiv('2')">
-            <h4 class="answer">Please help</h4>
+            <h4 class="answer">のみもの</h4>
         </button>
 
         <button class="ans" onclick="showDiv('1')">
-            <h4 class="answer">Excuse me</h4>
+            <h4 class="answer">たべもの</h4>
         </button>
 
         <button class="ans" onclick="showDiv('2')">
-            <h4 class="answer">I'm helping</h4>
+            <h4 class="answer">デザート</h4>
         </button>
     </div>
 
 </div>
 
-{{-- <div class="downer" id="5">
+<div class="downer" id="5">
     <button class="skib" onclick="showDiv('2')">SKIP</button>
-</div> --}}
+</div>
 
 
 @endsection

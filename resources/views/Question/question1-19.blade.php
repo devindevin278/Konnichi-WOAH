@@ -7,7 +7,8 @@
 
 <div class="maincont">
     <h3 class="question">も 午後です、 行ってきます</h3>
-    <h3 class="question2">reply the dialog</h3>
+    <h3 class="question1">Mo gogodesu, ittekimasu</h3>
+    <h3 class="question1">reply the dialog</h3>
     <div class="choices">
         <button class="ans" onclick="showDiv('2')">
             <h4 class="answer">助けて ください</h4>

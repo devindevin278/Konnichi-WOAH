@@ -7,7 +7,8 @@
 
 <div class="maincont">
     <h3 class="question">こんにちわ、 改めて よろしく お願いします</h3>
-    <h3 class="question2">reply the dialog</h3>
+    <h3 class="question1">Kon'nichiwa, aratamete yoroshiku onegaishimasu</h3>
+    <h3 class="question1">reply the dialog</h3>
     <div class="choices">
         <button class="ans" onclick="showDiv('2')">
             <h4 class="answer">気をつけて ください</h4>
