@@ -30,6 +30,15 @@ h1,h2,h3,h4,h5,h6 {
     top: 0;
 }
 
+.fireStreak {
+    width: 2rem;
+}
+
+.ans:hover, .skib:hover {
+    background-color: #cfcfcf;
+    color:#4B4B4B;
+}
+
 .upper{
     margin-top: 5.56%;
     justify-content: center;
@@ -48,9 +57,6 @@ h1,h2,h3,h4,h5,h6 {
     width: 1.5vw;
     margin-right: 1vw;
     stroke-width: 3;
-}
-.back-button:hover {
-    color:#4B4B4B;
 }
 
 #process-bar{
@@ -87,13 +93,21 @@ h1,h2,h3,h4,h5,h6 {
 
 .question{
     font-size: 2vw;
-    line-height: 2.7vw;
-    height: 6vw;
+    line-height: 1.5vw;
+    height: 2vw;
+}
+
+.question1{
+    font-size: 1.8vw;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
 }
 
 .choices{
     display: flex;
     flex-direction: column;
+    padding-top: 2vw;
 }
 
 .ans{
@@ -109,11 +123,6 @@ h1,h2,h3,h4,h5,h6 {
 
     width: 35vw;
     margin-top: 0.6vw;
-}
-
-.ans:hover, .skib:hover {
-    background-color: #cfcfcf;
-    color:#4B4B4B;
 }
 
 .continue:active, .ans:active, .skib:active{
@@ -167,10 +176,6 @@ h1,h2,h3,h4,h5,h6 {
     color: white;
     font-size: 1.3vw;
     padding: 0.9vw 2vw;
-}
-
-.fireStreak {
-    width: 2rem;
 }
 
 .downer{

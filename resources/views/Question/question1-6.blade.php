@@ -7,6 +7,8 @@
 
 <div class="maincont">
     <h3 class="question">ど いたしまして</h3>
+    <h3 class="question1">Do itashimashite</h3>
+
     <div class="choices">
         <button class="ans" onclick="showDiv('1')">
             <h4 class="answer">You're welcome</h4>

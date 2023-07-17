@@ -6,6 +6,7 @@
 
 <div class="maincont">
     <h3 class="question">おめでと ございます</h3>
+    <h3 class="question1">Omedetōgozaimasu</h3>
     <div class="choices">
         <button class="ans" onclick="showDiv('2')">
             <h4 class="answer">Please Help</h4>

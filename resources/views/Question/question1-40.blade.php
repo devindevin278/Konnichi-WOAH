@@ -7,7 +7,8 @@
 
 <div class="maincont">
     <h3 class="question">早くお大事に、薬を飲んでね  </h3>
-    <h3 class="question2">reply the dialog</h3>
+    <h3 class="question1">Hayaku o daiji ni, kusuri o nonde ne</h3>
+    <h3 class="question1">reply the dialog</h3>
     <div class="choices">
         <button class="ans" onclick="showDiv('1')">
             <h4 class="answer">はい、 ありがとう ございます</h4>

@@ -7,7 +7,8 @@
 
 <div class="maincont">
     <h3 class="question">お手紙ありがとうございました。嬉しかったです。</h3>
-    <h3 class="question2">reply the dialog</h3>
+    <h3 class="question1">O tegami arigatōgozaimashita. Ureshikattadesu.</h3>
+    <h3 class="question1">reply the dialog</h3>
     <div class="choices">
         <button class="ans" onclick="showDiv('2')">
             <h4 class="answer">おやすみなさい。良い夢を見てくださいね。</h4>
