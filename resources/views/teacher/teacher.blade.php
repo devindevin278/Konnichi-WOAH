@@ -32,8 +32,12 @@
                                 style="background-color: #ffffff; width: 85%">
                                 <div class="container d-flex imgcard justify-content-around">
                                     <div class="imgcards d-flex " style="overflow: hidden;">
-                                        <img class="card-img-top b-3 " src="{{ asset('storage/' . $teacher->photo) }}"
-                                            style="width: 100%; height: 200px; object-fit: cover;">
+
+                                            @if ($teacher->photo)
+                                            <img class="card-img-top b-3 " src="{{ asset('storage/' . $teacher->photo) }}" style="width: 100%; height: 200px; object-fit: cover;">
+                                            @else
+                                            <img class="leaderboard_photo" src="{{ asset('img/pp.png') }}" alt="crown">
+                                            @endif
                                     </div>
                                 </div>
 
@@ -234,8 +238,11 @@
                                 style="background-color: #ffffff; width: 85%">
                                 <div class="container d-flex imgcard justify-content-around">
                                     <div class="imgcards d-flex " style="overflow: hidden;">
-                                        <img class="card-img-top b-3 " src="{{ asset('storage/' . $teacher->photo) }}"
-                                            style="width: 100%; height: 200px; object-fit: cover;">
+                                        @if ($teacher->photo)
+                                            <img class="card-img-top b-3 " src="{{ asset('storage/' . $teacher->photo) }}" style="width: 100%; height: 200px; object-fit: cover;">
+                                            @else
+                                            <img class="leaderboard_photo" src="{{ asset('img/profilespic.png') }}"  alt="crown" style="width: 100%; height: 200px; object-fit: cover;">
+                                            @endif
                                     </div>
                                 </div>
 

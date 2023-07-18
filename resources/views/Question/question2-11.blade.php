@@ -22,9 +22,9 @@
 
 </div>
 
-<div class="downer" id="5">
+{{-- <div class="downer" id="5">
     <button class="skib" onclick="showDiv('2')">SKIP</button>
-</div>
+</div> --}}
 
 
 @endsection

@@ -13,7 +13,7 @@
     <header>
         <div class="carousel slide d-flex justify-content-center" data-bs-ride="carousel" id="carousel-1" style="margin-top: 114px;padding-bottom: 90px;">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
+                <div class="carousel-item active" data-bs-interval="2500">
                     <!-- Start: 1 Row 2 Columns -->
                     <div class="container d-xl-flex justify-content-xl-center align-items-xl-center">
                         <div class="row d-xl-flex justify-content-xl-center align-items-xl-center" style="padding-top: 0;margin-top: 1px;margin-right: 14px;margin-left: 61px;">
@@ -25,7 +25,7 @@
                         </div>
                     </div><!-- End: 1 Row 2 Columns -->
                 </div>
-                <div class="carousel-item" data-bs-interval="3000">
+                <div class="carousel-item" data-bs-interval="2500">
                     <!-- Start: 1 Row 2 Columns -->
                     <div class="container d-xl-flex justify-content-xl-center align-items-xl-center">
                         <div class="row d-xl-flex justify-content-xl-center align-items-xl-center" style="padding-top: 0;margin-top: 0;margin-right: 96px;margin-left: 6px;">
@@ -37,7 +37,7 @@
                         </div>
                     </div><!-- End: 1 Row 2 Columns -->
                 </div>
-                <div class="carousel-item" data-bs-interval="3000">
+                <div class="carousel-item" data-bs-interval="2500">
                     <!-- Start: 1 Row 2 Columns -->
                     <div class="container d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 0;">
                         <div class="row d-xl-flex justify-content-xl-center align-items-xl-center" style="padding-top: 0;margin-top: 36px;margin-right: 14px;margin-left: 61px;padding-right: 36px;padding-left: 78px;">

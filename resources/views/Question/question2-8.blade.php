@@ -9,7 +9,7 @@
     <h3 class="question">地下鉄 は どうやって 行きますか？</h3>
     <h3 class="question1">chikatetsu wa douyatte ikimasuka?</h3>
     <h3 class="question1">reply the dialog</h3>
-    
+
     <div class="choices">
         <button class="ans" onclick="showDiv('1')">
             <h4 class="answer">ちかてつはまっすぐ行くと行けます。</h4>
@@ -26,9 +26,9 @@
 
 </div>
 
-<div class="downer" id="5">
+{{-- <div class="downer" id="5">
     <button class="skib" onclick="showDiv('2')">SKIP</button>
-</div>
+</div> --}}
 
 
 @endsection

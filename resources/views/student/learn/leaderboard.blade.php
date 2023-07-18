@@ -49,7 +49,7 @@
                         @if (auth()->user()->id == $student->id)
                             <div class="ms-4">
                                 @if ($student->photo)
-                                <img class="leaderboard_photo" src="{{ asset('storage/'.$student->photo) }}" alt="crown">
+                                <img class="leaderboard_photo rounded-circle" src="{{ asset('storage/'.$student->photo) }}" alt="crown">
                                 @else
                                 <img class="leaderboard_photo" src="{{ asset('img/pp.png') }}" alt="crown">
                                 @endif
@@ -64,7 +64,7 @@
                             <div class="ms-4">
                                 @if ($student->photo)
 
-                                <img class="leaderboard_photo" src="{{ asset('storage/'.$student->photo) }}" alt="crown">
+                                <img class="leaderboard_photo rounded-circle" src="{{ asset('storage/'.$student->photo) }}" alt="crown">
                                 @else
                                 <img class="leaderboard_photo" src="{{ asset('img/emptypp.png') }}" alt="crown">
                                 @endif

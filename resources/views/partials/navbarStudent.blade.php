@@ -4,12 +4,10 @@
         <a class="navbar-brand text-center justify-content-around" href="/"> <img src="{{ asset('img/logo.png') }}"
                 alt="logo"> </a>
         <ul>
-            <li> <a class="nav-link {{ Request::is('homeStudent') ? 'active' : '' }}"
-                    href="@can('auth')
+            <li> <a class="nav-link {{ Request::is('homeStudent') || Request::is('/') ? 'active' : '' }}"
+                    href="@can('student')
                     /homeStudent
-                @else
-                /
-                @endcan">Home</a> </li>
+                @else/@endcan">Home</a></li>
             <li> <a class="nav-link {{ Request::is('learnStudent/*') || Request::is('notebook/*') ? 'active' : '' }}"
                     href="/learnStudent/games">Learn</a> </li>
             <li> <a class="nav-link {{ Request::is('articleStudent') || Request::is('student/*') || Request::is('jpnstudent/*') ? 'active' : '' }}"

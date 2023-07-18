@@ -148,8 +148,8 @@ Route::resource('/verifyTeacher', CertificateController::class);
 
 // Home
 Route::get('/', function () {
-    return view('student.homeStudent3',["title" => "homeStudent"]);
-})->middleware('guest');
+    return view('student.homeStudent3', ["title" => "homeStudent"]);
+});
 Route::get('/homeStudent', function () {
     return view('student.homeStudent3',["title" => "homeStudent"]);
 })->middleware('auth')->middleware('student');
