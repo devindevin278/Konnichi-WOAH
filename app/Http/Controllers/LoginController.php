@@ -89,7 +89,6 @@ class LoginController extends Controller
 
             return back()->with('loginError','Login Failed! Please check your email or password');
         }
-        // dd('berhasil login teacher');
     }
 
     public function logout(Request $request){

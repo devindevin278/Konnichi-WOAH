@@ -60,19 +60,11 @@ public function index()
 
         $daily = StudentPointProgress::whereRaw('user_id = ? and day(created_at) = day(CURRENT_DATE)', auth()->user()->id)->selectRaw('sum(total_xp)')->groupByRaw('date(created_at)')->orderByRaw('date(created_at)')->get();
 
-        // dd(Carbon::now());
     if($daily->isEmpty()) {
-        // dd($daily);
         $dailyXp = 0;
     } else {
         $dailyXp = $daily[0]['sum(total_xp)'];
-        // $dailyXp = 0;
     }
-
-        // dd(Unit::first()->points->last());
-        // dd($userPoints->contains(Unit::first()->points->last()));
-
-        // dd($userUnits);
 
     return view('student.learn.games', [
         'units' => Unit::all(),
@@ -98,7 +90,6 @@ public function index()
      */
     public function store(Request $request)
     {
-        // dd($request);
 
         $data['user_id'] = $request->user_id;
         $data['point_id'] = $request->point_id;
@@ -109,50 +100,38 @@ public function index()
         StudentPointProgress::create($data);
 
         // update user xp
-        // $prevxp = auth()->user()->pointxp;
         User::where('id', $request->user_id)->increment('pointxp', $request->total_xp);
 
         // delete from temp progress
-
         TempProgress::where('user_id',$request->user_id)->delete();
 
         // jika point ke 4 maka simpan ke unit progress
         if($request->point_id % 4 == 0) {
             $unit['user_id'] = $request->user_id;
             $unit['unit_id'] = $request->unit_id;
-            // $unit['unit_id'] = $request->user_id;
 
             StudentUnitProgress::create($unit);
         }
 
 
         return redirect('/learnStudent/games');
-
     }
 
     public function storeTemp(Request $request) {
-        // dd($request);
         $data['user_id'] = $request->user_id;
-        // $data['point_id'] = (json_decode($request->point))->id;
         $data['point_id'] = $request->point_id;
         $data['page_id'] = $request->page_id;
         $data['correct'] = $request->correct;
-        // $data['bonusxp'] = $request->bonusxp;
 
-        // $point = Point::where('id', json_decode($request->point)->id)->get();
         $point = Point::find($request->point_id);
-        // dd($point);
-        // if soal pertama dan benar maka streak 1
-        // if(($data['page_id'] - 1) % 10 == 0 && $data['correct']) {
+
         if(($point->pages->first()->id == $request->page_id) && $data['correct']) {
             $data['streak'] = 1;
-            // $data['bonusxp'] = 1;
         } else {
             $streakProg = TempProgress::where('user_id', auth()->user()->id)->get();
             //  if salah maka streak balik ke 0
             if(!$data['correct']) {
                 $data['streak'] = 0;
-                // $data['bonusxp'] = 0;
 
                 // jika benar maka cek streak sebelumnya
             } else {
@@ -187,17 +166,10 @@ public function index()
 
             // show streak terbesar
             $maxStreak = TempProgress::where('user_id', auth()->user()->id)->max('streak');
-            // dd($maxStreak);
             $bonusxp = TempProgress::where('user_id', auth()->user()->id)->sum('bonusxp');
-
             $correctCount = TempProgress::where('user_id', auth()->user()->id)->sum('correct');
-
             $totalxp = $bonusxp + ($correctCount*3);
-
             $unit_id = $point->unit_id;
-            // dd($unit_id);
-            // dd($totalxp);
-            // total perolehan xp
 
             return view('student.congrats', [
                 'point' => $point,
@@ -205,10 +177,8 @@ public function index()
                 'totalxp' => $totalxp,
                 'correctCount' => $correctCount,
                 'unit_id' => $unit_id
-                // 'page' => $page
             ]);
         }
-
     }
 
     public function openChest(Request $request) {
@@ -237,34 +207,23 @@ public function index()
     }
 
     public function weekChart() {
-        // dd($request);
-        // Log::debug('eror');
         $user_id = auth()->user()->id;
-        // $date = Carbon::parse();
         $week = StudentPointProgress::whereRaw('user_id = ? and YEARWEEK(created_at)=YEARWEEK(NOW())', $user_id)->selectRaw('sum(total_xp), date(created_at)')->groupByRaw('date(created_at)')->orderByRaw('date(created_at)')->get();
 
-
-        // dd($test);
         return response()->json($week);
     }
 
     public function monthChart() {
         $user_id = auth()->user()->id;
-        // $date = Carbon::parse();
         $month = StudentPointProgress::whereRaw('user_id = ? and EXTRACT(YEAR_MONTH FROM created_at) =  EXTRACT(YEAR_MONTH FROM now())', $user_id)->selectRaw('sum(total_xp), date(created_at)')->groupByRaw('date(created_at)')->orderByRaw('date(created_at)')->get();
 
-
-        // dd($test);
         return response()->json($month);
     }
 
     public function yearChart() {
         $user_id = auth()->user()->id;
-        // $date = Carbon::parse();
         $year = StudentPointProgress::whereRaw('user_id = ? and YEAR(created_at) = YEAR(NOW())', $user_id)->selectRaw('sum(total_xp), month(created_at)')->groupByRaw('month(created_at)')->orderByRaw('month(created_at)')->get();
 
-
-        // dd($test);
         return response()->json($year);
     }
 

@@ -360,6 +360,21 @@ class UserSeeder extends Seeder
             'photo' => 'profile-images/teacher15.avif',
             'descteacher' => 'Jika Anda mencari guru bahasa Jepang yang berdedikasi, berpengalaman, dan berorientasi pada hasil, saya siap membantu Anda mencapai tujuan bahasa Jepang Anda. Saya percaya bahwa dengan kerja keras dan bimbingan yang tepat, Anda dapat mencapai tingkat keahlian yang Anda inginkan.'
         ]);
+        User::create([
+            'name' => 'Devin Berlam',
+            'userIsTeacher' => 1,
+            'email' => 'teacher16@gmail.com',
+            'password' => Hash::make('12345'),
+            'phoneNumber' => '08123456778',
+            'gender' => 1,
+            'DOB' => '2023-07-03',
+            'address' => 'Jalan Achmad Yani',
+            'province' => 'East Java',
+            'city' => 'Surabaya',
+            'price' => mt_rand(100000, 400000),
+            'photo' => 'profile-images/teacher15.avif',
+            'descteacher' => 'Jika Anda mencari guru bahasa Jepang yang berdedikasi, berpengalaman, dan berorientasi pada hasil, saya siap membantu Anda mencapai tujuan bahasa Jepang Anda. Saya percaya bahwa dengan kerja keras dan bimbingan yang tepat, Anda dapat mencapai tingkat keahlian yang Anda inginkan.'
+        ]);
 
     }
 }

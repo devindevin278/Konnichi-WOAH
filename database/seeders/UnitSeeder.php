@@ -16,15 +16,15 @@ class UnitSeeder extends Seeder
         //
 
         Unit::create([
-            'Content' => 'Greeting people and Introducing yourself',
+            'Content' => 'Greeting people and introducing yourself',
             'color' => '#58CC02'
         ]);
         Unit::create([
-            'Content' => 'Asking for direction and get around the city',
+            'Content' => 'Order food and drink',
             'color' => '#CE82FF'
         ]);
         Unit::create([
-            'Content' => 'Order food and drink',
+            'Content' => 'Asking for direction and get around the city',
             'color' => '#00CD9C'
         ]);
     }

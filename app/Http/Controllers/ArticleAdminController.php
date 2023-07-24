@@ -240,18 +240,8 @@ class ArticleAdminController extends Controller
             $rules['slug'] = 'required|unique:articles';
         }
 
-        // dd($request);
-
-
-
-        // dd($request);
         $validatedData = $request->validate($rules);
-        // try {
-        //     $validatedData = $request->validate($rules);
 
-        // } catch (\Illuminate\Validation\ValidationException $e) {
-        //     dd($e->getMessage());
-        // }
 
         if($request->file('image')){
             if($request->oldImage){
@@ -262,7 +252,7 @@ class ArticleAdminController extends Controller
 
         $article[0]->update($validatedData);
 
-        return redirect('/admin')->with('success','Article has been updated!');
+        return redirect('/admin')->with('success','Article has been dated!');
     }
 
     /**

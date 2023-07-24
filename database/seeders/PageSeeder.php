@@ -367,13 +367,58 @@ class PageSeeder extends Seeder
             'correction' => 'It\'s a sweet food'
         ]);
 
-
-
         Page::create([
             'point_id' => 8,
-            'page_name' => 'question1-30',
-            'correction' => 'はい、 どうぞ [hai, douzo]'
+            'page_name' => 'question2-21',
+            'correction' => 'Welcome'
         ]);
+        Page::create([
+            'point_id' => 8,
+            'page_name' => 'question2-22',
+            'correction' => 'Let\'s eat'
+        ]);
+        Page::create([
+            'point_id' => 8,
+            'page_name' => 'question2-23',
+            'correction' => 'Two coffees, please'
+        ]);
+        Page::create([
+            'point_id' => 8,
+            'page_name' => 'question2-24',
+            'correction' => 'How much for one udon set?'
+        ]);
+        Page::create([
+            'point_id' => 8,
+            'page_name' => 'question2-25',
+            'correction' => 'Four donuts, please'
+        ]);
+        Page::create([
+            'point_id' => 8,
+            'page_name' => 'question2-26',
+            'correction' => ''
+        ]);
+        Page::create([
+            'point_id' => 8,
+            'page_name' => 'question2-27',
+            'correction' => 'Which one will you drink?'
+        ]);
+        Page::create([
+            'point_id' => 8,
+            'page_name' => 'question2-28',
+            'correction' => 'Mom doesn\'t eat rice balls'
+        ]);
+        Page::create([
+            'point_id' => 8,
+            'page_name' => 'question2-29',
+            'correction' => 'Is it spicy?'
+        ]);
+        Page::create([
+            'point_id' => 8,
+            'page_name' => 'question2-30',
+            'correction' => 'It\'s a sweet food'
+        ]);
+
+
         Page::create([
             'point_id' => 9,
             'page_name' => 'question1-30',

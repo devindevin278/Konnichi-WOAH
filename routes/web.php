@@ -162,7 +162,7 @@ Route::get('/homeAdmin', function () {
 
 
 //test
-// Article
+//
 
 Route::get('/admin/checkSlug',[ArticleAdminController::class, 'checkSlug'])->middleware('admin');
 Route::delete('/admin/{article:slug}', [ArticleAdminController::class, 'destroy'])->middleware('admin');

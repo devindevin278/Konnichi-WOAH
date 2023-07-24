@@ -81,7 +81,6 @@ class PageController extends Controller
     public function showPage(Request $request) {
         $page = Page::where('id', $request->page_id)->get();
         $point = Point::where('id', $request->point_id)->get();
-        // dd($page);
 
         return view('Question.' . $request->page_name, [
             'point' => $point[0],

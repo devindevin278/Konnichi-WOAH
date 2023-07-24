@@ -27,7 +27,6 @@ class AcceptedStudentController extends Controller
         $teacherNotification = TeacherNotification::where('teacherid', $teacherid)
             ->where('studentid', $studentid)
             ->first();
-        // dd($teacherNotification);
         if (!$teacherNotification) {
             return redirect('/acceptedstudent')->with('error', 'Teacher notification not found');
         }

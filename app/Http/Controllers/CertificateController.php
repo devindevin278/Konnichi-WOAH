@@ -42,8 +42,6 @@ class CertificateController extends Controller
         //
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            // 'userIsTeacher' => 'required',
-            // 'username' => ['required', 'min:4', 'max:255', 'unique:users'],
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255',
             'image' => 'required|image|file'

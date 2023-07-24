@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="profileAdmin p-0 pt-4">
+<section class="profileAdmin p-0 pt-4 pb-4">
 
         <div class="">
 

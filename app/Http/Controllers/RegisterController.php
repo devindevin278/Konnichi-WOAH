@@ -62,24 +62,15 @@ class RegisterController extends Controller
 
     public function store(Request $request) {
 
-        // dd('test');
-        // $user = Socialite::driver('google')->user();
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255'
         ]);
 
-
-        // klo di atas lolos, maka akan jalanin yg di bawah
-
-        // $validatedData['password'] = bcrypt($validatedData['password']);
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::create($validatedData);
-
-
-        // $request->session()->flash('success', 'Registration successfull! Please Login');
 
         return redirect('/login')->with('success', 'Registration successfull! Please Login');
 
@@ -87,13 +78,8 @@ class RegisterController extends Controller
 
     public function storeTeacher(Request $request) {
 
-        // dd($request);
-
-        // return $request->file('image')->store('post-images');
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            // 'userIsTeacher' => 'required',
-            // 'username' => ['required', 'min:4', 'max:255', 'unique:users'],
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255',
             'photo' => 'image|file'
@@ -110,12 +96,7 @@ class RegisterController extends Controller
             $validatedData['userIsTeacher'] = 0;
         }
 
-        // dd($validatedData);
-
-
         // klo di atas lolos, maka akan jalanin yg di bawah
-
-        // $validatedData['password'] = bcrypt($validatedData['password']);
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::create($validatedData);
